@@ -625,7 +625,7 @@
         <node concept="2iRfu4" id="3pydsmp7IG8" role="2iSdaV" />
       </node>
       <node concept="3F1sOY" id="3pydsmp7INv" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:3pydsmp63Wp" resolve="_loggingContainer" />
+        <ref role="1NtTu8" to="yy1h:3pydsmp63Wp" resolve="_loggingFacet" />
       </node>
       <node concept="1X3_iC" id="35npzpEaW1l" role="lGtFl">
         <property role="3V$3am" value="childCellModel" />

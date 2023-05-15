@@ -37,7 +37,7 @@ class World;
 #define FILOPODIA_METRICS true
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING false
-#define SOLIDNESS_CHECK false
+#define SOLIDNESS_CHECK true
 
 #define DSL_EXTENSION_PROB true
 #define DSL_ENV_SELECTION true
@@ -194,12 +194,12 @@ extern float M2_lambda;
 ///SPRING_SETUP
 #define springConstant 0.05f
 #define FAspringConstant 0.05f
-#define filSpringConstant 0.95f
-#define filBaseConstant 0.7f ///was 0.7 lower as smaller cells?
-#define junctionConstant 0.4f
+#define filSpringConstant 0.05f /// TOM: CHANGING FROM 0.95 TO 0.05
+#define filBaseConstant 0.7f /// was 0.7 lower as smaller cells?
+#define junctionConstant 0.05f /// TOM: CHANGING FROM 0.4 TO 0.05
 #define filSpringLength 0.1f
 #define springLength 1.0f
-#define JunctionSpringLength 0.5f
+#define JunctionSpringLength 1.0f /// TOM: CHANGING FROM 0.5 TO 1.0
 
 
 /////analysis/quantification

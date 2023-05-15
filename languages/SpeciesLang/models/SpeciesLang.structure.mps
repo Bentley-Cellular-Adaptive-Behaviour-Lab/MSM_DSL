@@ -80,7 +80,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_species" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVft2" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540802" />
@@ -131,7 +131,7 @@
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjJ">
     <property role="EcuMT" value="3125878369731540207" />
-    <property role="TrG5h" value="Species" />
+    <property role="TrG5h" value="Component" />
     <property role="3GE5qa" value="Species" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2Hxmt3eVfsW" role="PzmwI">
@@ -276,16 +276,28 @@
       <property role="20kJfa" value="Expression" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="7htKkgETCrz" role="1TKVEi">
+      <property role="IQ2ns" value="8385070579755419363" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Min_Bound_Expression" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="7htKkgETCrs" role="1TKVEi">
+      <property role="IQ2ns" value="8385070579755419356" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Max_Bound_Expression" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
     <node concept="1TJgyj" id="6WHzz7cWc8d" role="1TKVEi">
       <property role="IQ2ns" value="8011215656704852493" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Min_Expression" />
+      <property role="20kJfa" value="Min_Sweep_Expression" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="6WHzz7cWc88" role="1TKVEi">
       <property role="IQ2ns" value="8011215656704852488" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Max_Expression" />
+      <property role="20kJfa" value="Max_Sweep_Expression" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="6ngYmLdV2b1" role="1TKVEi">
@@ -308,6 +320,11 @@
     <node concept="1TJgyi" id="6WHzz7cWc7L" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704852465" />
       <property role="TrG5h" value="_doingParameterSteps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="3ZkAk9E1$3c" role="1TKVEl">
+      <property role="IQ2nx" value="4599469629977805004" />
+      <property role="TrG5h" value="_showBounds" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="1PDLoEBBeNS" role="1TKVEl">
@@ -335,7 +352,7 @@
       <property role="IQ2ns" value="3125878369731540215" />
       <property role="20kJfa" value="Species_Ref" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfFy">
@@ -404,7 +421,7 @@
       <property role="IQ2ns" value="1155607132028676491" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="109yD1s_YGM">
@@ -441,7 +458,7 @@
       <property role="IQ2ns" value="1155607132030626611" />
       <property role="20kJfa" value="_speciesTarget" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="6pt0UY9yhWg">
@@ -565,13 +582,13 @@
       <property role="IQ2ns" value="6116071663380263021" />
       <property role="20kJfa" value="_source" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyj" id="5jwDGo4Bf1E" role="1TKVEi">
       <property role="IQ2ns" value="6116071663380263018" />
       <property role="20kJfa" value="_target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="PrWs8" id="5jwDGo4Bf3s" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -743,6 +760,18 @@
       <property role="20kJfa" value="_parameter" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7htKkgETCsx">
+    <property role="EcuMT" value="8385070579755419425" />
+    <property role="TrG5h" value="ParameterBoundExpression" />
+    <property role="R4oN_" value="Used to set both sweep and bounds for parameters." />
+    <node concept="1TJgyj" id="7htKkgETHR1" role="1TKVEi">
+      <property role="IQ2ns" value="8385070579755441601" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="expr" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
   </node>
 </model>

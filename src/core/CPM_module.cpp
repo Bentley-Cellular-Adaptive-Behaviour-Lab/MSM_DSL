@@ -1384,8 +1384,8 @@ void CPM_module::createMedium(void) {
     int i, j, k;
     MedAgent* medp;
 
-    for (i = 0; i < xMAX; i++) {
-        for (j = 0; j < yMAX; j++) {
+    for (i = 0; i < worldP->gridXDimensions; i++) {
+        for (j = 0; j < worldP->gridYDimensions; j++) {
             if (worldP->grid[i][j][0].getType() != const_M) {
                 worldP->grid[i][j][0].setType(MED);
                 medp = new MedAgent(worldP);

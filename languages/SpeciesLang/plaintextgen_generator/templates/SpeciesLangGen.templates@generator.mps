@@ -24439,7 +24439,7 @@
         <node concept="356sEK" id="2vZs7RNVb9O" role="383Ya9">
           <node concept="373pV1" id="2vZs7RNVb9P" role="356sEH" />
           <node concept="356sEF" id="2vZs7RNVb9Q" role="356sEH">
-            <property role="TrG5h" value="return " />
+            <property role="TrG5h" value="auto expr = " />
           </node>
           <node concept="356sEF" id="2vZs7RNVb9R" role="356sEH">
             <property role="TrG5h" value="EXPRESSION" />
@@ -24464,6 +24464,165 @@
             <property role="TrG5h" value=";" />
           </node>
           <node concept="2EixSi" id="2vZs7RNVba5" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="4Gg5920q7jC" role="383Ya9">
+          <node concept="373pV1" id="4Gg5920qalb" role="356sEH" />
+          <node concept="356sEF" id="4Gg5920qalo" role="356sEH">
+            <property role="TrG5h" value="if (expr &gt; " />
+          </node>
+          <node concept="356sEF" id="4Gg5920qals" role="356sEH">
+            <property role="TrG5h" value="MAX" />
+            <node concept="17Uvod" id="4Gg5920qn3Q" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="4Gg5920qn3R" role="3zH0cK">
+                <node concept="3clFbS" id="4Gg5920qn3S" role="2VODD2">
+                  <node concept="3cpWs6" id="4Gg5920qnSw" role="3cqZAp">
+                    <node concept="2YIFZM" id="4Gg5920qpgy" role="3cqZAk">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <node concept="2OqwBi" id="4Gg5920qr12" role="37wK5m">
+                        <node concept="30H73N" id="4Gg5920qqAI" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="4Gg5920qsSX" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3ZkAk9E1cy1" resolve="getBoundMaxValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="4Gg5920qalt" role="356sEH">
+            <property role="TrG5h" value=") { expr = " />
+          </node>
+          <node concept="356sEF" id="4Gg5920qaly" role="356sEH">
+            <property role="TrG5h" value="MAX" />
+            <node concept="17Uvod" id="4Gg5920qwOd" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="4Gg5920qwOe" role="3zH0cK">
+                <node concept="3clFbS" id="4Gg5920qwOf" role="2VODD2">
+                  <node concept="3cpWs6" id="4Gg5920qwSV" role="3cqZAp">
+                    <node concept="2YIFZM" id="4Gg5920qwSW" role="3cqZAk">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="4Gg5920qwSX" role="37wK5m">
+                        <node concept="30H73N" id="4Gg5920qwSY" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="4Gg5920qwSZ" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3ZkAk9E1cy1" resolve="getBoundMaxValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="4Gg5920qalz" role="356sEH">
+            <property role="TrG5h" value="; }" />
+          </node>
+          <node concept="2EixSi" id="4Gg5920q7jE" role="2EinRH" />
+          <node concept="1W57fq" id="4Gg5920qm29" role="lGtFl">
+            <node concept="3IZrLx" id="4Gg5920qm2a" role="3IZSJc">
+              <node concept="3clFbS" id="4Gg5920qm2b" role="2VODD2">
+                <node concept="3cpWs6" id="4Gg5920qm6a" role="3cqZAp">
+                  <node concept="2OqwBi" id="4Gg5920quYO" role="3cqZAk">
+                    <node concept="2OqwBi" id="4Gg5920qmpp" role="2Oq$k0">
+                      <node concept="30H73N" id="4Gg5920qmao" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4Gg5920qmRf" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:7htKkgETCrs" resolve="Max_Bound_Expression" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="4Gg5920qw97" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEK" id="4Gg5920qddy" role="383Ya9">
+          <node concept="373pV1" id="4Gg5920qf2a" role="356sEH" />
+          <node concept="356sEF" id="4Gg5920qf2g" role="356sEH">
+            <property role="TrG5h" value="if (expr &lt; " />
+          </node>
+          <node concept="356sEF" id="4Gg5920q_3d" role="356sEH">
+            <property role="TrG5h" value="MIN" />
+            <node concept="17Uvod" id="4Gg5920q_eA" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="4Gg5920q_eB" role="3zH0cK">
+                <node concept="3clFbS" id="4Gg5920q_eC" role="2VODD2">
+                  <node concept="3cpWs6" id="4Gg5920q_jk" role="3cqZAp">
+                    <node concept="2YIFZM" id="4Gg5920q_jl" role="3cqZAk">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <node concept="2OqwBi" id="4Gg5920q_jm" role="37wK5m">
+                        <node concept="30H73N" id="4Gg5920q_jn" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="4Gg5920q_jo" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3ZkAk9E1cxx" resolve="getBoundMinValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="4Gg5920q_3e" role="356sEH">
+            <property role="TrG5h" value=") { expr = " />
+          </node>
+          <node concept="356sEF" id="4Gg5920qf2k" role="356sEH">
+            <property role="TrG5h" value="MIN" />
+            <node concept="17Uvod" id="4Gg5920qAV0" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="4Gg5920qAV1" role="3zH0cK">
+                <node concept="3clFbS" id="4Gg5920qAV2" role="2VODD2">
+                  <node concept="3cpWs6" id="4Gg5920qEcF" role="3cqZAp">
+                    <node concept="2YIFZM" id="4Gg5920qEcG" role="3cqZAk">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="4Gg5920qEcH" role="37wK5m">
+                        <node concept="30H73N" id="4Gg5920qEcI" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="4Gg5920qEcJ" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3ZkAk9E1cxx" resolve="getBoundMinValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="4Gg5920qf2l" role="356sEH">
+            <property role="TrG5h" value="; }" />
+          </node>
+          <node concept="2EixSi" id="4Gg5920qdd$" role="2EinRH" />
+          <node concept="1W57fq" id="4Gg5920qysr" role="lGtFl">
+            <node concept="3IZrLx" id="4Gg5920qyss" role="3IZSJc">
+              <node concept="3clFbS" id="4Gg5920qyst" role="2VODD2">
+                <node concept="3cpWs6" id="4Gg5920qywu" role="3cqZAp">
+                  <node concept="2OqwBi" id="4Gg5920qywv" role="3cqZAk">
+                    <node concept="2OqwBi" id="4Gg5920qyww" role="2Oq$k0">
+                      <node concept="30H73N" id="4Gg5920qywx" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4Gg5920qywy" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:7htKkgETCrz" resolve="Min_Bound_Expression" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="4Gg5920qywz" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEK" id="4Gg5920pZf7" role="383Ya9">
+          <node concept="373pV1" id="4Gg5920q28c" role="356sEH" />
+          <node concept="2EixSi" id="4Gg5920pZf9" role="2EinRH" />
+          <node concept="356sEF" id="4Gg5920qalh" role="356sEH">
+            <property role="TrG5h" value="return expr;" />
+          </node>
         </node>
         <node concept="356sEK" id="2vZs7RNVba6" role="383Ya9">
           <node concept="356sEF" id="2vZs7RNVba7" role="356sEH">

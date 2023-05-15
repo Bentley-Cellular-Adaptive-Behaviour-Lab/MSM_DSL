@@ -165,7 +165,7 @@
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
   </node>
   <node concept="1M2fIO" id="5$qoOFye2an">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
   </node>
   <node concept="1M2fIO" id="4Ei2F7s4c4V">
     <ref role="1M2myG" to="w3cn:3F9nTx49ScX" resolve="SpeciesContainerHeader" />

@@ -29,24 +29,35 @@ void Tissue_Container::tissue_set_up(World* world) {
     world->setTissueContainer(this);
 
     // Cell Type Creation //
-    auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-    EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
-    EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
-    EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
-    EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
-    EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
+    auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 10, 20);
+    EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("ALK1", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("BMP9_ALK1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("SMAD", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("LFRINGE", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
 
     // Tissue Type Creation //
-    auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 6, 6);
+    auto CellLineType_4_Type = define_tissue_type("CellLineType_4", EndothelialType_Type, CELL_CONFIGURATION_FLAT, 1, 4);
+    auto CellLineType_6_Type = define_tissue_type("CellLineType_6", EndothelialType_Type, CELL_CONFIGURATION_FLAT, 1, 6);
+    auto CellLineType_8_Type = define_tissue_type("CellLineType_8", EndothelialType_Type, CELL_CONFIGURATION_FLAT, 1, 8);
 
     // Cell Creation //
 
     // Tissue Creation //
-    auto Vessel_Pos = Coordinates(60, 6, 20);
-    create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
+    auto CellLine_8_Pos = Coordinates(120, 80, 30);
+    create_tissue("CellLine_8", CellLineType_8_Type, &(CellLine_8_Pos));
+    auto CellLine_6_Pos = Coordinates(120, 60, 30);
+    create_tissue("CellLine_6", CellLineType_6_Type, &(CellLine_6_Pos));
+    auto CellLine_4_Pos = Coordinates(120, 40, 30);
+    create_tissue("CellLine_4", CellLineType_4_Type, &(CellLine_4_Pos));
 
     // Track environmental proteins //
     add_env_protein_to_tissues("VEGF");
+    add_env_protein_to_tissues("BMP9");
 }
 
 double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
@@ -57,7 +68,7 @@ double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
 		double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true);
 		double FILCONST = calc_FILCONST_rate(true);
 		double ACTIVE_PROP_VEGFR = calc_ACTIVE_PROP_VEGFR_rate(VEGF_VEGFR_ON, VEGFR, true);
-		auto prob = pow(ACTIVE_PROP_VEGFR,0.6) * FILCONST;
+		auto prob = pow(ACTIVE_PROP_VEGFR,0.4) * FILCONST;
 		if (prob > 1) {return 1;} else if (prob < 0) {return 0;} else {return prob;}
 	}
 	return -1; // Prevent extension if the cell type isn't found.

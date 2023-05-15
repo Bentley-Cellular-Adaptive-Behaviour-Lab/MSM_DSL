@@ -147,7 +147,7 @@
     </node>
   </node>
   <node concept="jA7cl" id="NorXrSjN6a">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     <node concept="3v3Etx" id="NorXrSjN6b" role="j$A37">
       <ref role="j_u2Y" to="w3cn:6pt0UY9x86b" resolve="Degradation_Term" />
       <node concept="3clFbS" id="NorXrSjN6c" role="2VODD2">

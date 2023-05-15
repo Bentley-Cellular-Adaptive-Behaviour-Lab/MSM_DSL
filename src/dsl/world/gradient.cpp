@@ -671,7 +671,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
 
 void Gradient::apply_gradient_to_sphere() {
     // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
-    auto radius = std::floor(m_centre_position->x - (float) m_spherical_radius);
+	auto radius = (float) m_spherical_radius;
     float dist_from_centre;
     Env *ep;
 

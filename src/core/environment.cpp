@@ -297,8 +297,8 @@ int Env::checkForEnv(void) {
 
         //-------------------------------
         //toroidal only X
-        if (m >= xMAX) m = 0;
-        if (m < 0) m = xMAX - 1;
+        if (m >= worldP->gridXDimensions) m = 0;
+        if (m < 0) m = worldP->gridXDimensions - 1;
         //-------------------------------
 
         if (worldP->insideWorld(m, n, p)) {

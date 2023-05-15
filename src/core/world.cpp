@@ -7490,7 +7490,7 @@ void World::log_filopodia() {
 bool World::solidness_check(Env* ep) {
 	float prob = 1 - ep->m_solidness;
 	auto chance = (float) this->new_rand() / (float) NEW_RAND_MAX;
-	return prob <= chance;
+	return prob >= chance;
 }
 
 float World::get_average_DLL4() {

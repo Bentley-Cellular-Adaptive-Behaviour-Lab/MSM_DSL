@@ -4149,7 +4149,7 @@
             </node>
           </node>
           <node concept="356sEF" id="ZNkh68ymJs" role="356sEH">
-            <property role="TrG5h" value="_shape = new Shape_Sphere(SUBSTRATE_SHAPE_SPHERE, " />
+            <property role="TrG5h" value="_shape = new Shape_Sphere(SUBSTRATE_SHAPE_SPHERICAL, " />
           </node>
           <node concept="356sEF" id="ZNkh68y$nN" role="356sEH">
             <property role="TrG5h" value="SHAPE_RADIUS" />

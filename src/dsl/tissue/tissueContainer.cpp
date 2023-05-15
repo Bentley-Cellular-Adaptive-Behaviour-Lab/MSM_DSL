@@ -333,7 +333,8 @@ void Tissue_Container::create_2d_square_cell(const int& cell_number,
             memp->Mx = (float) i;
             memp->My = (float) j;
             memp->Mz = (float) centreZ;
-            m_single_cell_agents[cell_number-1]->nodeAgents.push_back(memp);
+
+			m_single_cell_agents[cell_number-1]->nodeAgents.push_back(memp);
             m_world->setMLocation(int(i), int(j), centreZ, memp);
             memp->node = true;
             // Distribute proteins belonging to the cell type out to memAgents

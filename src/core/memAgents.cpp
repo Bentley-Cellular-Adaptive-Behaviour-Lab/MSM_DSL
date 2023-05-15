@@ -811,7 +811,6 @@ void MemAgent::calcForce(void) {
 
     //have different lengths and constants for different types of spring
     if ((FIL == TIP) && !FA) {
-
         sConst = filSpringConstant;
         SL = filSpringLength;
     }
@@ -900,7 +899,7 @@ void MemAgent::calcForce(void) {
     //toroidal on x axis
     if(TOROIDAL_X==true){
     if(newX<0){
-        newX =  (float)worldP->gridXDimensions+newX;
+        newX = (float)worldP->gridXDimensions+newX;
     }
     if(newX>=(float)worldP->gridXDimensions){
         
