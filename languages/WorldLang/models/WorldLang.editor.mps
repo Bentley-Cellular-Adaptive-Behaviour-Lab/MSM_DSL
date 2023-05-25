@@ -2407,7 +2407,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="2S6lVSSv_l0" role="3EZMnx">
-          <property role="3F0ifm" value="--&gt; {" />
+          <property role="3F0ifm" value="--&gt; " />
           <node concept="2biZxu" id="2FvyIAlFjye" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -2420,15 +2420,6 @@
       <node concept="3EZMnI" id="3seu8bO3Kdw" role="3EZMnx">
         <node concept="VPM3Z" id="3seu8bO3Kdy" role="3F10Kt" />
         <node concept="3XFhqQ" id="3seu8bO3KdU" role="3EZMnx" />
-        <node concept="3F0ifn" id="3seu8bO3Ke0" role="3EZMnx">
-          <property role="3F0ifm" value="Sink :" />
-          <node concept="2biZxu" id="2FvyIAlFjyi" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlFjyj" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
         <node concept="1iCGBv" id="3seu8bO3Ke8" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
           <node concept="1sVBvm" id="3seu8bO3Kea" role="1sWHZn">
@@ -2448,15 +2439,6 @@
       <node concept="3EZMnI" id="2S6lVSSv_ln" role="3EZMnx">
         <node concept="VPM3Z" id="2S6lVSSv_lo" role="3F10Kt" />
         <node concept="3XFhqQ" id="2S6lVSSv_lp" role="3EZMnx" />
-        <node concept="3F0ifn" id="3seu8bO3Kes" role="3EZMnx">
-          <property role="3F0ifm" value="Source :" />
-          <node concept="2biZxu" id="2FvyIAlFjyI" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlFjyJ" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
         <node concept="1iCGBv" id="2S6lVSSv_pW" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
           <node concept="1sVBvm" id="2S6lVSSv_pY" role="1sWHZn">
@@ -2474,7 +2456,6 @@
         <node concept="2iRfu4" id="2S6lVSSv_lw" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="2S6lVSSv_lx" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
         <node concept="2biZxu" id="2FvyIAlFjyU" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
