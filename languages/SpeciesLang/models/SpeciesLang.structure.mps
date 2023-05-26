@@ -241,6 +241,11 @@
       <property role="TrG5h" value="_concSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="6fP6NhPIFrf" role="1TKVEl">
+      <property role="IQ2nx" value="7202693091176396495" />
+      <property role="TrG5h" value="_doesCellSweep" />
+      <ref role="AX2Wp" node="4wGSNcrzMe8" resolve="doesCellSweepEnum" />
+    </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
       <property role="20kJfa" value="Degradation_Term" />
@@ -331,6 +336,11 @@
       <property role="IQ2nx" value="2119442298962767096" />
       <property role="TrG5h" value="_valueSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4wGSNcrOyB_" role="1TKVEl">
+      <property role="IQ2nx" value="5200781478355675621" />
+      <property role="TrG5h" value="_doesCellSweep" />
+      <ref role="AX2Wp" node="4wGSNcrzMe8" resolve="doesCellSweepEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjM">
@@ -772,6 +782,32 @@
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="25R3W" id="4wGSNcrzMe8">
+    <property role="3F6X1D" value="5200781478351283080" />
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="doesCellSweepEnum" />
+    <ref role="1H5jkz" node="4wGSNcrzMg8" resolve="No" />
+    <node concept="25R33" id="4wGSNcrzMe9" role="25R1y">
+      <property role="3tVfz5" value="5200781478351283081" />
+      <property role="TrG5h" value="Yes" />
+      <property role="1L1pqM" value="Yes" />
+    </node>
+    <node concept="25R33" id="4wGSNcrzMg8" role="25R1y">
+      <property role="3tVfz5" value="5200781478351283208" />
+      <property role="TrG5h" value="No" />
+      <property role="1L1pqM" value="No" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6_eTNevhST5">
+    <property role="EcuMT" value="7588256631067479621" />
+    <property role="TrG5h" value="CellSweepBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="6_eTNevhST6" role="1TKVEl">
+      <property role="IQ2nx" value="7588256631067479622" />
+      <property role="TrG5h" value="cellNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

@@ -111,6 +111,11 @@
       <property role="TrG5h" value="maxTimeSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="4wGSNcrJYH4" role="1TKVEl">
+      <property role="IQ2nx" value="5200781478354479940" />
+      <property role="TrG5h" value="sweepCellNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="PrWs8" id="7wJJsVzwloN" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     </node>
@@ -231,6 +236,11 @@
     <property role="EcuMT" value="6087312672701024096" />
     <property role="TrG5h" value="IncrementCombination" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4wGSNcrNaPB" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355316071" />
+      <property role="20kJfa" value="_tissueTypeRef" />
+      <ref role="20lvS9" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    </node>
     <node concept="1TJgyj" id="5hUuDYP51rN" role="1TKVEi">
       <property role="IQ2ns" value="6087312672701028083" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -354,6 +364,36 @@
       <property role="3tVfz5" value="746713701979771937" />
       <property role="TrG5h" value="FORMAT_CSV" />
       <property role="1L1pqM" value="CSV" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4wGSNcrNaNH">
+    <property role="EcuMT" value="5200781478355315949" />
+    <property role="TrG5h" value="ClusterParamBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4wGSNcrNJfC" role="1TKVEl">
+      <property role="IQ2nx" value="5200781478355465192" />
+      <property role="TrG5h" value="_sweepCellNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfw" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465184" />
+      <property role="20kJfa" value="_tissueTypeRef" />
+      <ref role="20lvS9" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfx" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465185" />
+      <property role="20kJfa" value="_parameterRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfy" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465186" />
+      <property role="20kJfa" value="_speciesRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfz" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465187" />
+      <property role="20kJfa" value="_gradientRef" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBB" resolve="Gradient" />
     </node>
   </node>
 </model>
