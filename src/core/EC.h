@@ -166,9 +166,11 @@ public:
     [[deprecated]] void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
+	double protein_level_guard(Protein *protein, const double& query_level);
     bool has_protein(const std::string& protein_name) const;
     double get_cell_protein_level(const std::string& protein_name, const int& timestep_value);
     void set_cell_protein_level(const std::string& protein_name, const double& new_level, const int& timestep_value);
+	void set_cell_all_protein_levels(const std::string& protein_name, const double& new_level);
     void print_current_protein_levels(const int& timestep_interval);
     void print_memAgent_protein_levels(int timestep_interval);
 

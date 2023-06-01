@@ -2801,7 +2801,7 @@
                 <node concept="2OqwBi" id="1hmTeryMvsU" role="3uHU7B">
                   <node concept="13iPFW" id="1hmTeryMvsV" role="2Oq$k0" />
                   <node concept="3TrcHB" id="1hmTeryMvsW" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:5qSYbADreYw" resolve="_width" />
+                    <ref role="3TsBF5" to="nguq:5qSYbADreYu" resolve="_height" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="1hmTeryMvsX" role="3uHU7w">
@@ -17960,6 +17960,37 @@
       <node concept="3Tm1VV" id="57WjpeqoyKy" role="1B3o_S" />
       <node concept="10Oyi0" id="57WjpeqoyKz" role="3clF45" />
       <node concept="3clFbS" id="57WjpeqoyK$" role="3clF47">
+        <node concept="3SKdUt" id="5ekfU1yq182" role="3cqZAp">
+          <node concept="1PaTwC" id="5ekfU1yq183" role="1aUNEU">
+            <node concept="3oM_SD" id="5ekfU1yq1Kk" role="1PaTwD">
+              <property role="3oM_SC" value="Gets" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1Ku" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1KD" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1KP" role="1PaTwD">
+              <property role="3oM_SC" value="Y" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1La" role="1PaTwD">
+              <property role="3oM_SC" value="coordinate" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1Lo" role="1PaTwD">
+              <property role="3oM_SC" value="value" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1Lv" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1LJ" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="5ekfU1yq1LS" role="1PaTwD">
+              <property role="3oM_SC" value="tissue." />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="57WjpeqoyK_" role="3cqZAp">
           <node concept="3clFbS" id="57WjpeqoyKA" role="3clFbx">
             <node concept="3cpWs8" id="57WjpeqoyKB" role="3cqZAp">
@@ -18126,7 +18157,7 @@
       <node concept="P$JXv" id="57WjpeqoyLJ" role="lGtFl">
         <node concept="TZ5HA" id="57WjpeqoyLK" role="TZ5H$">
           <node concept="1dT_AC" id="57WjpeqoyLL" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns the highest X-coordinate gridpoint of the tissue for boundary-checking purposes." />
+            <property role="1dT_AB" value="Returns the lowest Y-coordinate gridpoint of the tissue for boundary-checking purposes." />
           </node>
         </node>
         <node concept="x79VA" id="57WjpeqoyLM" role="3nqlJM">
@@ -18583,57 +18614,6 @@
           <node concept="37vLTw" id="EX9x3XxjyM" role="3cqZAk">
             <ref role="3cqZAo" node="EX9x3XwYqs" resolve="fixedName" />
           </node>
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="4MFt7FnVQ7u" role="13h7CS">
-      <property role="TrG5h" value="hasSpecies" />
-      <node concept="3Tm1VV" id="4MFt7FnVQ7v" role="1B3o_S" />
-      <node concept="10P_77" id="4MFt7FnVQfc" role="3clF45" />
-      <node concept="3clFbS" id="4MFt7FnVQ7x" role="3clF47">
-        <node concept="2Gpval" id="4MFt7FnVQgu" role="3cqZAp">
-          <node concept="2GrKxI" id="4MFt7FnVQgv" role="2Gsz3X">
-            <property role="TrG5h" value="speciesRef" />
-          </node>
-          <node concept="2OqwBi" id="4MFt7FnVQq_" role="2GsD0m">
-            <node concept="13iPFW" id="4MFt7FnVQi0" role="2Oq$k0" />
-            <node concept="3Tsc0h" id="4MFt7FnVQGp" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="4MFt7FnVQgx" role="2LFqv$">
-            <node concept="3clFbJ" id="4MFt7FnVQJd" role="3cqZAp">
-              <node concept="17R0WA" id="4MFt7FnVQTn" role="3clFbw">
-                <node concept="2OqwBi" id="4MFt7FnVR4M" role="3uHU7w">
-                  <node concept="2GrUjf" id="4MFt7FnVQUe" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="4MFt7FnVQgv" resolve="speciesRef" />
-                  </node>
-                  <node concept="3TrEf2" id="4MFt7FnVRpX" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="4MFt7FnVQJZ" role="3uHU7B">
-                  <ref role="3cqZAo" node="4MFt7FnVQfC" resolve="querySpecies" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="4MFt7FnVQJf" role="3clFbx">
-                <node concept="3cpWs6" id="4MFt7FnVRsR" role="3cqZAp">
-                  <node concept="3clFbT" id="4MFt7FnVRtW" role="3cqZAk">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="4MFt7FnVRwj" role="3cqZAp">
-          <node concept="3clFbT" id="4MFt7FnVRxM" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4MFt7FnVQfC" role="3clF46">
-        <property role="TrG5h" value="querySpecies" />
-        <node concept="3Tqbb2" id="4MFt7FnVQfB" role="1tU5fm">
-          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
         </node>
       </node>
     </node>

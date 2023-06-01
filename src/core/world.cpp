@@ -7723,7 +7723,13 @@ void World::create_component_outfile_csv(const std::string &protein_name) {
 	// Create file.
 	int file_buffer_size = 200;
 	char file_buffer[file_buffer_size];
-	auto file_name = "results/" + protein_name
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/" + protein_name + "_"
+					 + param_val_string
 					 + "_replicate_" + std::to_string(m_replicate_number)
 					 + "_run_" + std::to_string(m_run_number)
 					 + ".csv";
@@ -7761,13 +7767,18 @@ void World::create_component_outfile_csv(const std::string &protein_name) {
 }
 
 void World::create_filopodia_outfile_csv() {
-	auto file_name = "results/filopodiaEvents_replicate_" + std::to_string(m_replicate_number)
-					 + "_run_" + std::to_string(m_run_number)
-					 + ".csv";
-
-	std::ofstream file;
 	int file_buffer_size = 200;
 	char file_buffer[file_buffer_size];
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/filopodiaEvents_replicate_"
+					 + param_val_string
+					 + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
 
 	// Delete results files that exist already.
 	// Create a new file in either case.
@@ -7775,6 +7786,7 @@ void World::create_filopodia_outfile_csv() {
 	std::remove(file_name.c_str());
 	sprintf(file_buffer, "%s", file_name.c_str());
 
+	std::ofstream file;
 	try {
 		file.open(file_name.c_str(), std::ios_base::app);
 		if (file.is_open()) {
@@ -7790,7 +7802,12 @@ void World::create_filopodia_outfile_csv() {
 }
 
 void World::write_to_component_outfile_csv(const std::string &protein_name) {
-	auto file_name = "results/" + protein_name
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/" + protein_name + "_"
+					 + param_val_string
 					 + "_replicate_" + std::to_string(m_replicate_number)
 					 + "_run_" + std::to_string(m_run_number)
 					 + ".csv";
@@ -7824,7 +7841,13 @@ void World::write_to_component_outfile_csv(const std::string &protein_name) {
 }
 
 void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgent, const double prob= 0.0) {
-	auto file_name = "results/filopodiaEvents_replicate_" + std::to_string(m_replicate_number)
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/filopodiaEvents_replicate_"
+					 + param_val_string
+					 + std::to_string(m_replicate_number)
 					 + "_run_" + std::to_string(m_run_number)
 					 + ".csv";
 	std::ofstream file;

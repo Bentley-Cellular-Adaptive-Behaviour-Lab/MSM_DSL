@@ -2434,7 +2434,7 @@
                             <ref role="1YBMHb" node="4MFt7FnTeY$" resolve="cellType" />
                           </node>
                           <node concept="2qgKlT" id="4MFt7FnVSSt" role="2OqNvi">
-                            <ref role="37wK5l" to="4ebj:4MFt7FnVQ7u" resolve="hasSpecies" />
+                            <ref role="37wK5l" to="4ebj:2iYrNGjrG4s" resolve="hasSpecies" />
                             <node concept="2GrUjf" id="4MFt7FnVT0Q" role="37wK5m">
                               <ref role="2Gs0qQ" node="4MFt7FnVAwq" resolve="querySpecies" />
                             </node>

@@ -550,5 +550,15 @@
     <property role="34LRSv" value="No shape behaviour." />
     <ref role="1TJDcQ" node="5j_l9LXEwof" resolve="ShapeBehaviour" />
   </node>
+  <node concept="1TIwiD" id="7hT7CbBqNUj">
+    <property role="EcuMT" value="8392772928158776979" />
+    <property role="TrG5h" value="CellSweepBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7hT7CbBqNUk" role="1TKVEl">
+      <property role="IQ2nx" value="8392772928158776980" />
+      <property role="TrG5h" value="_cellNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
 </model>
 

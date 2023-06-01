@@ -226,8 +226,6 @@ int main(int argc, char * argv[]) {
         char outfilename[500];
 
 
-//    RUNSfile.open(outfilename);
-
         std::cout << "Creating world..." << "\n";
 
 

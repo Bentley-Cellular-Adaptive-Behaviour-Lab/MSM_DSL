@@ -31,10 +31,6 @@
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
-        <child id="1224071154657" name="classifierType" index="0kSFW" />
-        <child id="1224071154656" name="expression" index="0kSFX" />
-      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -6740,6 +6736,18 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3cpWs8" id="4lxYGWcjzz0" role="3cqZAp">
+                        <node concept="3cpWsn" id="4lxYGWcjzz3" role="3cpWs9">
+                          <property role="TrG5h" value="cellNumber" />
+                          <node concept="10Oyi0" id="4lxYGWcjzyY" role="1tU5fm" />
+                          <node concept="2OqwBi" id="4lxYGWcjH4r" role="33vP2m">
+                            <node concept="30H73N" id="4lxYGWcjFhd" role="2Oq$k0" />
+                            <node concept="3TrcHB" id="4lxYGWcjMAH" role="2OqNvi">
+                              <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="3vcTe5vyuQ9" role="3cqZAp">
                         <node concept="d57v9" id="3vcTe5vyuQa" role="3clFbG">
                           <node concept="Xl_RD" id="3vcTe5vyuQc" role="37vLTx">
@@ -7144,21 +7152,6 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="4wGSNcrNtOU" role="3cqZAp">
-                                      <node concept="37vLTI" id="4wGSNcrNwzP" role="3clFbG">
-                                        <node concept="37vLTw" id="4wGSNcrNxOT" role="37vLTx">
-                                          <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
-                                        </node>
-                                        <node concept="2OqwBi" id="4wGSNcrSl_4" role="37vLTJ">
-                                          <node concept="37vLTw" id="4wGSNcrSkQC" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
-                                          </node>
-                                          <node concept="3TrcHB" id="4wGSNcrSmZs" role="2OqNvi">
-                                            <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
                                   </node>
                                   <node concept="9aQIb" id="4wGSNcrSoa_" role="9aQIa">
                                     <node concept="3clFbS" id="4wGSNcrSoaA" role="9aQI4">
@@ -7172,23 +7165,23 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3clFbF" id="4wGSNcrSuCt" role="3cqZAp">
-                                        <node concept="37vLTI" id="4wGSNcrSuCu" role="3clFbG">
-                                          <node concept="37vLTw" id="4wGSNcrSuCv" role="37vLTx">
-                                            <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
-                                          </node>
-                                          <node concept="2OqwBi" id="4wGSNcrSuCw" role="37vLTJ">
-                                            <node concept="37vLTw" id="4wGSNcrSuCx" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
-                                            </node>
-                                            <node concept="3TrcHB" id="4wGSNcrSuCy" role="2OqNvi">
-                                              <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
                                     </node>
                                   </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4wGSNcrSuCt" role="3cqZAp">
+                            <node concept="37vLTI" id="4wGSNcrSuCu" role="3clFbG">
+                              <node concept="37vLTw" id="4wGSNcrSuCv" role="37vLTx">
+                                <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
+                              </node>
+                              <node concept="2OqwBi" id="4wGSNcrSuCw" role="37vLTJ">
+                                <node concept="37vLTw" id="4wGSNcrSuCx" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
+                                </node>
+                                <node concept="3TrcHB" id="4wGSNcrSuCy" role="2OqNvi">
+                                  <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
                                 </node>
                               </node>
                             </node>
@@ -7402,21 +7395,6 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3clFbF" id="4wGSNcsm1p_" role="3cqZAp">
-                                <node concept="37vLTI" id="4wGSNcsm85e" role="3clFbG">
-                                  <node concept="37vLTw" id="4wGSNcsmasg" role="37vLTx">
-                                    <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
-                                  </node>
-                                  <node concept="2OqwBi" id="4wGSNcsm2AZ" role="37vLTJ">
-                                    <node concept="37vLTw" id="4wGSNcsm1pz" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
-                                    </node>
-                                    <node concept="3TrcHB" id="4wGSNcsm4XN" role="2OqNvi">
-                                      <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                             </node>
                             <node concept="2OqwBi" id="4wGSNcrT2vN" role="3clFbw">
                               <node concept="3w_OXm" id="4wGSNcrT2vO" role="2OqNvi" />
@@ -7446,21 +7424,6 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="4wGSNcrT2w1" role="3cqZAp">
-                                      <node concept="37vLTI" id="4wGSNcrT2w2" role="3clFbG">
-                                        <node concept="37vLTw" id="4wGSNcrT2w3" role="37vLTx">
-                                          <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
-                                        </node>
-                                        <node concept="2OqwBi" id="4wGSNcrT2w4" role="37vLTJ">
-                                          <node concept="37vLTw" id="4wGSNcrT2w5" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
-                                          </node>
-                                          <node concept="3TrcHB" id="4wGSNcrT2w6" role="2OqNvi">
-                                            <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
                                   </node>
                                   <node concept="9aQIb" id="4wGSNcrT2w7" role="9aQIa">
                                     <node concept="3clFbS" id="4wGSNcrT2w8" role="9aQI4">
@@ -7474,23 +7437,23 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3clFbF" id="4wGSNcrT2wd" role="3cqZAp">
-                                        <node concept="37vLTI" id="4wGSNcrT2we" role="3clFbG">
-                                          <node concept="37vLTw" id="4wGSNcrT2wf" role="37vLTx">
-                                            <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
-                                          </node>
-                                          <node concept="2OqwBi" id="4wGSNcrT2wg" role="37vLTJ">
-                                            <node concept="37vLTw" id="4wGSNcrT2wh" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
-                                            </node>
-                                            <node concept="3TrcHB" id="4wGSNcrT2wi" role="2OqNvi">
-                                              <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
                                     </node>
                                   </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4wGSNcrT2wd" role="3cqZAp">
+                            <node concept="37vLTI" id="4wGSNcrT2we" role="3clFbG">
+                              <node concept="37vLTw" id="4wGSNcrT2wf" role="37vLTx">
+                                <ref role="3cqZAo" node="4wGSNcrMxr1" resolve="currentCellNumber" />
+                              </node>
+                              <node concept="2OqwBi" id="4wGSNcrT2wg" role="37vLTJ">
+                                <node concept="37vLTw" id="4wGSNcrT2wh" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4wGSNcrS9XG" resolve="newBin" />
+                                </node>
+                                <node concept="3TrcHB" id="4wGSNcrT2wi" role="2OqNvi">
+                                  <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
                                 </node>
                               </node>
                             </node>
@@ -8424,51 +8387,11 @@
                 </node>
                 <node concept="3clFbJ" id="6dETgETgycX" role="3cqZAp">
                   <node concept="3clFbS" id="6dETgETgycY" role="3clFbx">
-                    <node concept="1X3_iC" id="4wGSNcsg28e" role="lGtFl">
-                      <property role="3V$3am" value="statement" />
-                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                      <node concept="3clFbF" id="6dETgETgycZ" role="8Wnug">
-                        <node concept="d57v9" id="6dETgETgyd0" role="3clFbG">
-                          <node concept="2YIFZM" id="6dETgETgyd1" role="37vLTx">
-                            <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                            <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
-                            <node concept="2OqwBi" id="6dETgETgyd2" role="37wK5m">
-                              <node concept="0kSF2" id="6dETgETgyd3" role="2Oq$k0">
-                                <node concept="3uibUv" id="6dETgETgyd4" role="0kSFW">
-                                  <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
-                                </node>
-                                <node concept="2YIFZM" id="6dETgETgyd5" role="0kSFX">
-                                  <ref role="37wK5l" to="pbu6:3xDNhgd54rl" resolve="evaluate" />
-                                  <ref role="1Pybhc" to="pbu6:3xDNhgd53E_" resolve="IETS3ExprEvalHelper" />
-                                  <node concept="2OqwBi" id="6dETgETgyd6" role="37wK5m">
-                                    <node concept="2OqwBi" id="6dETgETgyd7" role="2Oq$k0">
-                                      <node concept="30H73N" id="6dETgETgyd8" role="2Oq$k0" />
-                                      <node concept="3TrEf2" id="6dETgETgyd9" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="yy1h:2D4cW4vJ_GC" resolve="_parameterRef" />
-                                      </node>
-                                    </node>
-                                    <node concept="3TrEf2" id="6dETgETgyda" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc88" resolve="Max_Sweep_Expression" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="6dETgETgydb" role="2OqNvi">
-                                <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="6dETgETgydc" role="37vLTJ">
-                            <ref role="3cqZAo" node="6dETgETgycU" resolve="max" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="4wGSNcsg5M7" role="3cqZAp">
                       <node concept="d57v9" id="4wGSNcsg850" role="3clFbG">
                         <node concept="2YIFZM" id="4wGSNcsgb_d" role="37vLTx">
-                          <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
                           <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                          <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
                           <node concept="2OqwBi" id="4wGSNcsg_jP" role="37wK5m">
                             <node concept="2OqwBi" id="4wGSNcsgukz" role="2Oq$k0">
                               <node concept="30H73N" id="4wGSNcsgtm9" role="2Oq$k0" />
@@ -8476,8 +8399,8 @@
                                 <ref role="3Tt5mk" to="yy1h:2D4cW4vJ_GC" resolve="_parameterRef" />
                               </node>
                             </node>
-                            <node concept="3TrEf2" id="4wGSNcsgBFj" role="2OqNvi">
-                              <ref role="3Tt5mk" to="w3cn:7htKkgETCrs" resolve="Max_Bound_Expression" />
+                            <node concept="2qgKlT" id="5ekfU1ywvBC" role="2OqNvi">
+                              <ref role="37wK5l" to="f3yh:EvUBVylh1m" resolve="getSweepMaxValue" />
                             </node>
                           </node>
                         </node>

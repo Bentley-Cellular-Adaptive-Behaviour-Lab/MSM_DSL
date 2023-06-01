@@ -1035,7 +1035,8 @@ double EC::get_cell_protein_level(const std::string& protein_name,
 
 /*****************************************************************************************
 *  Name:		set_cell_protein_level
-*  Description: If a cell possesses a protein, then set the amount that cell has of that protein.
+*  Description: If a cell possesses a protein, then set the amount that cell has of that protein
+*	  			at a given timestep.
 *  Returns:		float
 ******************************************************************************************/
 
@@ -1046,18 +1047,10 @@ void EC::set_cell_protein_level(const std::string& protein_name,
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
                 if (protein->get_name() == protein_name) {
-                    if (new_level < 0) {
-                        // Not sure if this can ever happen, but better to be safe.
-                        protein->set_cell_level(0, timestep_value);
-                    } else if (new_level < protein->get_min()) {
-                        protein->set_cell_level(protein->get_min(), timestep_value);
-                    } else if (new_level > protein->get_max() && protein->get_max() != -1) {
-                        // If the max is set to -1, then it has no limit.
-                        protein->set_cell_level(protein->get_max(), timestep_value);
-                    } else {
-                        protein->set_cell_level(new_level, timestep_value);
-                    }
-                }
+					auto assigned_level = protein_level_guard(protein, new_level);
+					protein->set_cell_level(assigned_level, timestep_value);
+					break; // Found the protein, so stop looking.
+				}
             }
         } else {
             throw std::invalid_argument(protein_name);
@@ -1067,6 +1060,45 @@ void EC::set_cell_protein_level(const std::string& protein_name,
         std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
         exit(1);
     }
+}
+
+
+
+void EC::set_cell_all_protein_levels(const std::string& protein_name, const double& new_level) {
+	for (auto protein : this->m_cell_type->proteins) {
+		if (protein->get_name() == protein_name) {
+			// Guards against invalid protein levels.
+			auto assigned_level = protein_level_guard(protein, new_level);
+			for (auto protein_level : protein->cell_levels) {
+				protein_level = assigned_level;
+			}
+			break; // Found the protein, so stop looking.
+		}
+	}
+}
+
+/*****************************************************************************************
+*  Name:		protein_level_guard
+*  Description: Checks a level against the mins and maxes of proteins, and returns a level
+*				commensurate with those boundaries. Otherwise, return the level straight away.
+*  Returns:		float
+******************************************************************************************/
+
+double EC::protein_level_guard(Protein *protein, const double& query_level) {
+	double tmp_level;
+	double protein_min = protein->get_min();
+	double protein_max = protein->get_max();
+
+	if (query_level < 0) {
+		tmp_level = 0;
+	} else if (protein_min != -1 && query_level < protein_min) {
+		tmp_level = protein_min;
+	} else if (protein_max != -1 && query_level > protein_max) {
+		tmp_level = protein_max;
+	} else {
+		return query_level;
+	}
+	return tmp_level;
 }
 
 /*****************************************************************************************
