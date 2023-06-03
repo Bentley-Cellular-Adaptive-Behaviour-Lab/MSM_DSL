@@ -111,6 +111,11 @@
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
+    <node concept="1TJgyi" id="4$2ETQS0MSE" role="1TKVEl">
+      <property role="IQ2nx" value="5260956008607591978" />
+      <property role="TrG5h" value="hasCrossCellComponent" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="2Hxmt3eVfjT" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540217" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
