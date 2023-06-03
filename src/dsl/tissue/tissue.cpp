@@ -928,8 +928,8 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
     int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
-    for (i = (int) (std::floor( (float) centreX - (float)cell_width /2.0f));
-            i < (int)( std::floor((float) centreX + (float) cell_width/2.0f));
+    for (i = (int) (std::floor( (float) centreX - (float)cell_width / 2.0f));
+            i < (int)( std::floor((float) centreX + (float) cell_width / 2.0f));
             i++) {
         for (j = (int) (std::floor( (float) centreY - (float) cell_height / 2.0f));
                 j < (int) (std::floor((float) centreY + (float)cell_height / 2.0f));
