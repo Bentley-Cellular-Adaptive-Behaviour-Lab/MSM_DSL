@@ -6736,18 +6736,6 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="4lxYGWcjzz0" role="3cqZAp">
-                        <node concept="3cpWsn" id="4lxYGWcjzz3" role="3cpWs9">
-                          <property role="TrG5h" value="cellNumber" />
-                          <node concept="10Oyi0" id="4lxYGWcjzyY" role="1tU5fm" />
-                          <node concept="2OqwBi" id="4lxYGWcjH4r" role="33vP2m">
-                            <node concept="30H73N" id="4lxYGWcjFhd" role="2Oq$k0" />
-                            <node concept="3TrcHB" id="4lxYGWcjMAH" role="2OqNvi">
-                              <ref role="3TsBF5" to="yy1h:4wGSNcrNJfC" resolve="_sweepCellNumber" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="3vcTe5vyuQ9" role="3cqZAp">
                         <node concept="d57v9" id="3vcTe5vyuQa" role="3clFbG">
                           <node concept="Xl_RD" id="3vcTe5vyuQc" role="37vLTx">
@@ -7696,7 +7684,7 @@
       </node>
       <node concept="356sEK" id="112TUCABrRo" role="383Ya9">
         <node concept="356sEF" id="112TUCABrRp" role="356sEH">
-          <property role="TrG5h" value="#endif //SPRINGAGENT_CLUSTERPARAMS_H" />
+          <property role="TrG5h" value="#endif /*SPRINGAGENT_CLUSTERPARAMS_H*/" />
         </node>
         <node concept="2EixSi" id="112TUCABrRq" role="2EinRH" />
       </node>
@@ -7723,7 +7711,7 @@
       </node>
       <node concept="356sEK" id="6dETgET7PBU" role="383Ya9">
         <node concept="356sEF" id="6dETgET7PBV" role="356sEH">
-          <property role="TrG5h" value="ssh login.camp.thecrick.org  &quot;cd " />
+          <property role="TrG5h" value="ssh meadt@login.nemo.thecrick.org  &quot;cd " />
         </node>
         <node concept="356sEF" id="4LUnzNQHIt_" role="356sEH">
           <property role="TrG5h" value="CAMP_FOLDER_NAME" />
@@ -7993,7 +7981,7 @@
       </node>
       <node concept="356sEK" id="6dETgETdEdC" role="383Ya9">
         <node concept="356sEF" id="6dETgETdEdD" role="356sEH">
-          <property role="TrG5h" value="for replicate_number in {1.." />
+          <property role="TrG5h" value="for replicate_number in {0.." />
         </node>
         <node concept="356sEF" id="6dETgETjNC6" role="356sEH">
           <property role="TrG5h" value="REPLICATES" />
@@ -8066,7 +8054,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2D4cW4vJ5n3" role="356sEH">
-            <property role="TrG5h" value=" in {1.." />
+            <property role="TrG5h" value=" in {0.." />
           </node>
           <node concept="356sEF" id="2D4cW4vujgH" role="356sEH">
             <property role="TrG5h" value="INCREMENT" />
