@@ -111,9 +111,9 @@
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
-    <node concept="1TJgyi" id="4$2ETQS0MSE" role="1TKVEl">
-      <property role="IQ2nx" value="5260956008607591978" />
-      <property role="TrG5h" value="hasCrossCellComponent" />
+    <node concept="1TJgyi" id="4$2ETQSJD$w" role="1TKVEl">
+      <property role="IQ2nx" value="5260956008619874592" />
+      <property role="TrG5h" value="isInverseReaction" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVfjT" role="1TKVEi">
@@ -346,6 +346,11 @@
       <property role="IQ2nx" value="5200781478355675621" />
       <property role="TrG5h" value="_doesCellSweep" />
       <ref role="AX2Wp" node="4wGSNcrzMe8" resolve="doesCellSweepEnum" />
+    </node>
+    <node concept="1TJgyi" id="4$2ETQTiT6_" role="1TKVEl">
+      <property role="IQ2nx" value="5260956008629113253" />
+      <property role="TrG5h" value="_isCopy" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjM">

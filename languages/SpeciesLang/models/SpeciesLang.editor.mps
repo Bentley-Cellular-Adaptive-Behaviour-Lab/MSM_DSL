@@ -1300,6 +1300,12 @@
       </node>
       <node concept="3F0ifn" id="4dvrVnANx3A" role="3EZMnx">
         <property role="3F0ifm" value="&lt;-C" />
+        <node concept="2biZxu" id="4$2ETQSBRwD" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4$2ETQSBRwE" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
         <node concept="pkWqt" id="4dvrVnANx3T" role="pqm2j">
           <node concept="3clFbS" id="4dvrVnANx3U" role="2VODD2">
             <node concept="3clFbF" id="4dvrVnANx3Z" role="3cqZAp">
