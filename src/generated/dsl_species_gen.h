@@ -14,8 +14,6 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 6> EndothelialCell_cell_ode_states;
-typedef boost::array<double, 10> EndothelialCell_memAgent_ode_states;
 typedef boost::array<double, 11> EndothelialCell_cell_only_ode_states;
 
 class ODEs {
@@ -28,10 +26,6 @@ public:
 	void check_cell_ODEs(EC *ec);
 	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
 	void check_cell_only_ODEs(EC *ec);
-	static void EndothelialCell_cell_system(const EndothelialCell_cell_ode_states &x, EndothelialCell_cell_ode_states &dxdt, double t);
-	void EndothelialCell_run_cell_ODEs(EC *ec);
-	static void EndothelialCell_memAgent_system(const EndothelialCell_memAgent_ode_states &x, EndothelialCell_memAgent_ode_states &dxdt, double t);
-	void EndothelialCell_run_memAgent_ODEs(MemAgent *memAgent);
 	static void EndothelialCell_cell_only_system(const EndothelialCell_cell_only_ode_states &x, EndothelialCell_cell_only_ode_states &dxdt, double t);
 	void EndothelialCell_run_cell_only_ODEs(EC *ec);
 };
@@ -65,23 +59,13 @@ static double calc_v4_rate(double theta, double VEGF_VEGFR2, double nu, const bo
 	return expr;
 }
 
-static double calc_v5_OUT_rate(double k2, double DLL4, double NOTCH_MEAN, const bool memAgent) {
+static double calc_v5_rate(double k2, double DLL4, double NOTCH_MEAN, const bool memAgent) {
 	auto expr = k2*DLL4*NOTCH_MEAN;
 	return expr;
 }
 
-static double calc_v6_OUT_rate(double k_2, double DLL4_NOTCH_MEAN, const bool memAgent) {
+static double calc_v6_rate(double k_2, double DLL4_NOTCH_MEAN, const bool memAgent) {
 	auto expr = k_2*DLL4_NOTCH_MEAN;
-	return expr;
-}
-
-static double calc_v5_IN_rate(double k2, double DLL4_MEAN, double NOTCH, const bool memAgent) {
-	auto expr = k2*DLL4_MEAN*NOTCH;
-	return expr;
-}
-
-static double calc_v6_IN_rate(double k_2, double DLL4_NOTCH, const bool memAgent) {
-	auto expr = k_2*DLL4_NOTCH;
 	return expr;
 }
 
@@ -141,7 +125,7 @@ static double calc_k5_rate(const bool memAgent) {
 }
 
 static double calc_k6_rate(const bool memAgent) {
-	auto expr = 0.005;
+	auto expr = 0.001;
 	return expr;
 }
 
@@ -156,7 +140,7 @@ static double calc_theta_rate(const bool memAgent) {
 }
 
 static double calc_phi_rate(const bool memAgent) {
-	auto expr = 0.005;
+	auto expr = 0.001;
 	return expr;
 }
 
@@ -175,11 +159,6 @@ static double calc_beta_rate(const bool memAgent) {
 	return expr;
 }
 
-static double calc_DLL4_PROD_rate(double beta, double v6_IN, const bool memAgent) {
-	auto expr = beta+v6_IN;
-	return expr;
-}
-
 static double calc_deg_NOTCH_rate(double NOTCH, double phi, const bool memAgent) {
 	auto expr = NOTCH*phi;
 	return expr;
@@ -187,11 +166,6 @@ static double calc_deg_NOTCH_rate(double NOTCH, double phi, const bool memAgent)
 
 static double calc_deg_DLL4_rate(double DLL4, double phi, const bool memAgent) {
 	auto expr = DLL4*phi;
-	return expr;
-}
-
-static double calc_DLL4_removal_rate(double deg_DLL4, double v5_IN, const bool memAgent) {
-	auto expr = deg_DLL4+v5_IN;
 	return expr;
 }
 

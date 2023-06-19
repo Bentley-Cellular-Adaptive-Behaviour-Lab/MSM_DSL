@@ -98,7 +98,7 @@ public:
 
     std::vector<float> calculate_dist_from_source(Env* ep) const;
 
-    void add_env_protein(Env *ep, const double calc_level) const;
+    void add_env_protein(Env *ep, const float calc_level) const;
 
     //Generic functions for creating new protein gradients.
     void calc_constant_env_protein(Env* ep) const;

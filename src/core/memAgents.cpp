@@ -4389,6 +4389,8 @@ void MemAgent::cycleProteinLevels() {
     }
 }
 
+
+
 void MemAgent::update_env_levels() {
     // Update average levels seen by the agent.
     for (auto &pair : this->m_mean_env_proteins_sensed) {
@@ -4397,7 +4399,7 @@ void MemAgent::update_env_levels() {
     }
     // Update total levels seen by the cell.
     for (auto &pair : this->Cell->get_env_protein_values()) {
-        auto newLevel = pair.second + env_protein_search(pair.first);
+        auto newLevel = pair.second + mean_env_protein_search(pair.first);
         this->Cell->get_env_protein_values()[pair.first] = newLevel;
     }
 }
@@ -4411,7 +4413,9 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
                     && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
                     if (worldP->grid[x][y][z].getType() == const_E) {
                         auto env = worldP->grid[x][y][z].getEid();
-                        result += env->get_protein_level(proteinName);
+						if (!env->inside && env->has_protein(proteinName)) {
+							result += env->get_protein_level(proteinName);
+						}
                     }
                 }
             }
@@ -4423,21 +4427,30 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
 double MemAgent::mean_env_protein_search(const std::string& proteinName) {
     double result = 0;
     double count = 0;
-    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
-        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
-            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+	int currentX = std::floor(Mx);
+	int currentY = std::floor(My);
+	int currentZ = std::floor(Mz);
+    for (int x = (int) (currentX - 1); x <= (int) (currentX + 1); x++) {
+        for (int y = (int) (currentY - 1); y <= (int) (currentY + 1); y++) {
+            for (int z = (int) (currentZ - 1); z <= (int) (currentZ + 1); z++) {
                 if (worldP->insideWorld(x, y, z)
-                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    && !(x == currentX && y == currentY && z == currentZ)) {
                     if (worldP->grid[x][y][z].getType() == const_E) {
                         auto env = worldP->grid[x][y][z].getEid();
-                        count += 1;
-                        result += env->get_protein_level(proteinName);
+						if (!env->inside && env->has_protein(proteinName)) {
+							count += 1;
+							result += env->get_protein_level(proteinName);
+						}
                     }
                 }
             }
         }
     }
-    return result / count;
+	if (count == 0) {
+		return 0;
+	} else {
+		return result / count;
+	}
 }
 
 bool MemAgent::vonNeighSearch() {

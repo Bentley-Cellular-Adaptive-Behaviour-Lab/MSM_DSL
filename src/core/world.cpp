@@ -1890,7 +1890,11 @@ void World::updateMemAgents_MSM() {
         memp->vonNeighSearch();
 
 		// Update the level of environmental proteins seen by the cell.
-        memp->update_env_levels();
+//		if (memp->node) {
+//			memp->update_env_levels();
+//		}
+//		memp->update_env_levels();
+
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
@@ -2005,9 +2009,16 @@ void World::updateECagents_MSM() {
 	int i, j;
 	int upto = ECagents.size();
 
+	auto cell1 = ECagents[0];
+	auto cell2 = ECagents[1];
+
 	for (j = 0; j < upto; j++) {
 		if (analysis_type == ANALYSIS_TYPE_COMS) {
 			ECagents[j]->store_cell_COM(); //to see cell movement, monitor its centre of mass
+		}
+		int test = ECagents[j]->nodeAgents.size();
+		for (auto nodeAgent : ECagents[j]->nodeAgents) {
+			nodeAgent->update_env_levels();
 		}
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.

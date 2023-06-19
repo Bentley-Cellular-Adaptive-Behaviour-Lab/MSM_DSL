@@ -15701,7 +15701,7 @@
                 <node concept="2EixSi" id="4$2ETQR5M8v" role="2EinRH" />
                 <node concept="373pV1" id="4$2ETQR5M8w" role="356sEH" />
                 <node concept="356sEF" id="4$2ETQR5M8x" role="356sEH">
-                  <property role="TrG5h" value="auto agents = (int) ec-&gt;nodeAgents.size() + (int) ec-&gt;surfaceAgents.size() + (int) ec-&gt;springAgents.size();" />
+                  <property role="TrG5h" value="auto agents = (int) ec-&gt;nodeAgents.size();" />
                 </node>
                 <node concept="1W57fq" id="4$2ETQR5M8y" role="lGtFl">
                   <node concept="3IZrLx" id="4$2ETQR5M8z" role="3IZSJc">
