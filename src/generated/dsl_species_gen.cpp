@@ -62,14 +62,10 @@ void ODEs::EndothelialCell_cell_only_system(const EndothelialCell_cell_only_ode_
 	double k1_0 = calc_k1_rate(false);
 	double k6_0 = calc_k6_rate(false);
 	double k_1_0 = calc_k_1_rate(false);
-	double v5_0 = calc_v5_rate(k2_0, DLL4_0, NOTCH_MEAN_0, false);
 	double k2_0 = calc_k2_rate(false);
-	double v6_0 = calc_v6_rate(k_2_0, DLL4_NOTCH_MEAN_0, false);
 	double k_2_0 = calc_k_2_rate(false);
 	double k4_0 = calc_k4_rate(false);
-	double v5_inverse_0 = calc_v5_inverse_rate(k2_inverse_0, DLL4_MEAN_0, NOTCH_0, false);
 	double k2_inverse_0 = calc_k2_inverse_rate(false);
-	double v6_inverse_0 = calc_v6_inverse_rate(k_2_inverse_0, DLL4_NOTCH_0, false);
 	double k_2_inverse_0 = calc_k_2_inverse_rate(false);
 	double phi_0 = calc_phi_rate(false);
 	double gamma_0 = calc_gamma_rate(false);
@@ -86,14 +82,18 @@ void ODEs::EndothelialCell_cell_only_system(const EndothelialCell_cell_only_ode_
 	double v9_0 = calc_v9_rate(k5_0, VEGF_VEGFR2_0, nu_0, false);
 	double VEGF_0 = calc_VEGF_rate(VEGF_INITIAL_0, k6_0, FILOPODIA_0, nu_0, false);
 	double v2_0 = calc_v2_rate(k_1_0, VEGF_VEGFR2_0, false);
+	double v5_0 = calc_v5_rate(k2_0, DLL4_0, NOTCH_MEAN_0, false);
+	double v6_0 = calc_v6_rate(k_2_0, DLL4_NOTCH_MEAN_0, false);
 	double v7_0 = calc_v7_rate(k4_0, DLL4_NOTCH_0, false);
+	double v5_inverse_0 = calc_v5_inverse_rate(k2_inverse_0, DLL4_MEAN_0, NOTCH_0, false);
+	double v6_inverse_0 = calc_v6_inverse_rate(k_2_inverse_0, DLL4_NOTCH_0, false);
 	double deg_VEGFR2_0 = calc_deg_VEGFR2_rate(VEGFR2_0, phi_0, false);
 	double deg_FILOPODIA_0 = calc_deg_FILOPODIA_rate(FILOPODIA_0, phi_f_0, false);
 	double v1_0 = calc_v1_rate(k1_0, VEGF_0, VEGFR2_0, false);
 	// ODE Definitions
 	dxdt[0] = +(gamma_0)-(deg_VEGFR2_0)-(v1_0)*1+(v2_0)*1-(v3_0); // VEGFR2_1
 	dxdt[1] = -(deg_VEGF_VEGFR2_0)+(v1_0)*1-(v2_0)*1; // VEGF_VEGFR2_1
-	dxdt[2] = +(gamma_0)-(deg_FILOPODIA_0)+(v9_0); // FILOPODIA_1
+	dxdt[2] = +(beta_0)-(deg_FILOPODIA_0)+(v9_0); // FILOPODIA_1
 	dxdt[3] = +(beta_0)-(deg_DLL4_0)-(v5_0)*1+(v6_0)*1+(v4_0); // DLL4_1
 	dxdt[4] = +(gamma_0)-(deg_NOTCH_0)-(v5_inverse_0)*1+(v6_inverse_0)*1; // NOTCH_1
 	dxdt[5] = -(deg_DLL4_NOTCH_0)-(v7_0)*1+(v5_inverse_0)*1-(v6_inverse_0)*1; // DLL4_NOTCH_1
