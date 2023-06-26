@@ -180,7 +180,7 @@ TEST_F(ComparisonTest, compareNOTCHBinding) {
 	auto ACTIVE_NOTCH_MSM = cell->activeNotchtot;
 
 	// Do a whole cell DSL update.
-	auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, true);
+	auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, true, 0);
 	auto NOTCH = cell->get_cell_protein_level("VEGFR",0);
 	auto NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, true);
 	auto ACTIVE_NOTCH_CELL = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
@@ -216,7 +216,7 @@ TEST_F(ComparisonTest, compareVEGFRInhibition) {
 		memAgent->NotchResponse();
 
 		// Do a whole cell DSL update.
-		auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, false);
+		auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, false, 0);
 		auto NOTCH = cell->get_cell_protein_level("VEGFR",0);
 		auto NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, true);
 		auto ACTIVE_NOTCH = calc_ACTIVE_NOTCH_rate(DLL4_SUM,

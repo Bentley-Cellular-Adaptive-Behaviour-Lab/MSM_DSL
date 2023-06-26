@@ -44,6 +44,10 @@ class World;
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
 
+// This should only be used in the configuration for the initial DSL paper.
+#define DSL_PATTERNING_SCORE true
+#define DSL_PATTERNED_AT_PROP 0.4
+
 // Analysis types for the DSL.
 
 extern int analysis_type;

@@ -243,7 +243,7 @@ public:
 	double calc_adjacent_species_level(const std::string& species_name,
 									   const bool memAgentODEs,
 									   const bool getsAverage,
-									   const unsigned int);
+									   const unsigned int delay);
 
 	int get_max_fils();
 	int get_current_fils();

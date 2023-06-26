@@ -28,6 +28,7 @@ class MemAgent;
 class ODEs;
 class ProtrusionType;
 class Tissue_Container;
+class Tissue;
 class WorldContainer;
 class WorldLogger;
 
@@ -426,6 +427,11 @@ public:
 
 	void set_max_delay(unsigned int new_delay);
 	unsigned int get_max_delay();
+
+	void create_pattern_outfile();
+	void write_to_pattern_outfile();
+	unsigned int tissue_has_patterned(Tissue *tissue);
+	bool cell_is_tip(EC *cellAgent);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

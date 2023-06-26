@@ -222,7 +222,7 @@ void ComparisonTest::ComparisonType_run_cell_ODEs(EC *ec) {
 	states[1] = ec->get_cell_protein_level("DLL4", 27);
 	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
 	states[3] = ec->get_cell_protein_level("VEGFR2", 27);
-	states[4] = ec->calc_adjacent_species_level("NOTCH", true, true);
+	states[4] = ec->calc_adjacent_species_level("NOTCH", true, true, 0);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
@@ -356,8 +356,8 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 	states[9] = ec->get_cell_protein_level("VEGFR", 0) / VEGFR2_scalar;
 	states[5] = ec->get_env_protein_level("VEGF") / agents;
 	states[8] = ec->get_env_protein_level("VEGF");
-	states[6] = ec->calc_adjacent_species_level("DLL4", false, false);
-	states[7] = ec->calc_adjacent_species_level("NOTCH", false, false);
+	states[6] = ec->calc_adjacent_species_level("DLL4", false, false, 0);
+	states[7] = ec->calc_adjacent_species_level("NOTCH", false, false, 0);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;

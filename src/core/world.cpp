@@ -25,6 +25,7 @@
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueType.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/utils/utils.h"
 #include "../dsl/world/worldContainer.h"
@@ -1684,6 +1685,11 @@ void World::creationTimestep(int movie) {
 	auto *tissue_container = new Tissue_Container(this);
 	tissue_container->tissue_set_up(this);
 
+	if (DSL_PATTERNING_SCORE) {
+		create_pattern_outfile();
+		write_to_pattern_outfile();
+	}
+
 	//now place agents onto gridded lattice
 	for (int j = 0; j < (int) ECagents.size(); j++)
 		ECagents[j]->gridAgents();
@@ -1763,6 +1769,7 @@ void World::simulateTimestep_MSM() {
 		creationTimestep(movie);
 		// DSL logging.
 		write_to_component_outfiles();
+
 	} else {
         for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
@@ -1790,7 +1797,126 @@ void World::simulateTimestep_MSM() {
 		updateEnvironment_MSM();
 		// DSL logging.
 		write_to_component_outfiles();
+		if (DSL_PATTERNING_SCORE) {
+			write_to_pattern_outfile();
+		}
 	}
+}
+
+void World::create_pattern_outfile() {
+	// Create file.
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/pattern_times_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	// Add header information to file.
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Parameter Arguments: ";
+			for (auto &value : m_param_increments) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep,";
+			for (auto &tissue : m_tissueContainer->m_tissues) {
+				file << tissue->m_name << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create pattern results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_pattern_outfile() {
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/pattern_times_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &tissue : m_tissueContainer->m_tissues) {
+				// Go over all tissues, report the result for each in the file.
+				file << std::to_string(tissue_has_patterned(tissue)) << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create pattern results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+
+}
+
+unsigned int World::tissue_has_patterned(Tissue *tissue) {
+	bool neighbouringTipCells = false;
+	unsigned int n_tip_cells = 0;
+	for (auto *cellAgent : tissue->m_cell_agents) {
+		if (cell_is_tip(cellAgent)) {
+			n_tip_cells += 1;
+			// If this cell is a tip, then check there are no
+			// neighbouring tip cells.
+			for (auto *neighCell :cellAgent->getNeighCellVector()) {
+				if (cell_is_tip(neighCell)) {
+					neighbouringTipCells = true;
+					break;
+				}
+			}
+		}
+		if (neighbouringTipCells) {
+			break;
+		}
+	}
+	if (!neighbouringTipCells) {
+		// Check if we've met the threshold of tip cells.
+		// Default is 40%.
+		if (n_tip_cells / tissue->m_cell_agents.size() > DSL_PATTERNED_AT_PROP) {
+			return 1; // Patterned.
+		} else {
+			return 0; // Haven't patterned due to not meeting threshold.
+		}
+	} else {
+		return 0; // Haven't patterned due to neighbouring tip cells.
+	}
+}
+
+bool World::cell_is_tip(EC *cellAgent) {
+	// Cells are defined as tip cells when the level of active VEGFR
+	// is greater than 50% of the total amount of VEGFR.
+	auto VEGFR = cellAgent->get_cell_protein_level("VEGFR",0);
+	auto VEGF_VEGFR = cellAgent->get_cell_protein_level("VEGF_VEGFR",0);
+	return VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > 0.5;
 }
 
 void World::simulateTimestep_DSL() {

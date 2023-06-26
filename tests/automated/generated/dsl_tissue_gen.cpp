@@ -39,16 +39,16 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 }
 
-bool World::can_extend(EC* cell, MemAgent* memAgent) {
-    auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
-    if (cell->m_cell_type->m_name == "Endothelial") {
-        auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-        auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-        auto prob = VEGF_VEGFR / (VEGF_VEGFR + VEGFR);
-        return chance < prob;
-    }
-    return false; // Check has failed, so just return false.
-}
+//bool World::can_extend(EC* cell, MemAgent* memAgent) {
+//    auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
+//    if (cell->m_cell_type->m_name == "Endothelial") {
+//        auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+//        auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+//        auto prob = VEGF_VEGFR / (VEGF_VEGFR + VEGFR);
+//        return chance < prob;
+//    }
+//    return false; // Check has failed, so just return false.
+//}
 
 bool World::cytoprotein_check(EC *cell,
                               float distance,
@@ -76,11 +76,15 @@ bool World::cytoprotein_check(EC *cell,
 	return false;
 }
 
-Env* World::highest_search(MemAgent *memAgent) {
-	if (memAgent->Cell->m_cell_type->m_name == "EndothelialType") {
-		return findHighestConcPosition(memAgent, "VEGF", 1.0, true);
-	}
-	return nullptr;
+//Env* World::highest_search(MemAgent *memAgent) {
+//	if (memAgent->Cell->m_cell_type->m_name == "EndothelialType") {
+//		return findHighestConcPosition(memAgent, "VEGF", 1.0, true);
+//	}
+//	return nullptr;
+//}
+
+double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
+	return -1; // Prevent extension if the cell type isn't found.
 }
 
 bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiffAdNeighCell) {
@@ -98,4 +102,12 @@ bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiff
 		return VEGF_VEGFR2 < 200;
 	}
 	return false;
+}
+
+double Env::get_extension_target_level(MemAgent *memAgent) {
+	return 0;  // Return 0 if cell type is not found.
+}
+
+float MemAgent::get_sensitivity() {
+	return 1.0;  // Return 1 if cell type is not found.
 }
