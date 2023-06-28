@@ -163,7 +163,7 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/test_shape.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
-            tests/automated/generated/dsl_world_gen.cpp)
+            tests/automated/generated/dsl_world_gen.cpp tests/automated/helper_venk_ODE.cpp tests/automated/helper_venk_ODE.h tests/automated/test_venk_ODE.cpp)
 
     set (Headers src/core/contact.h
             src/core/coordinates.h
@@ -202,7 +202,7 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/helper_memAgent.h
             tests/automated/helper_ODE.h
             tests/automated/helper_shape.h
-            tests/automated/generated/dsl_species_gen.h tests/automated/helper_comparison.cpp tests/automated/helper_comparison.h tests/automated/test_comparison.cpp)
+            tests/automated/generated/dsl_species_gen.h tests/automated/helper_comparison.cpp tests/automated/helper_comparison.h tests/automated/test_comparison.cpp tests/automated/helper_venk_ODE.cpp tests/automated/helper_venk_ODE.h)
 
     find_package(Boost REQUIRED)
 

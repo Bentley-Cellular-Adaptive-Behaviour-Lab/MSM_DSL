@@ -1881,7 +1881,7 @@ void World::write_to_pattern_outfile() {
 
 unsigned int World::tissue_has_patterned(Tissue *tissue) {
 	bool neighbouringTipCells = false;
-	unsigned int n_tip_cells = 0;
+	int n_tip_cells = 0;
 	for (auto *cellAgent : tissue->m_cell_agents) {
 		if (cell_is_tip(cellAgent)) {
 			n_tip_cells += 1;
@@ -1901,7 +1901,8 @@ unsigned int World::tissue_has_patterned(Tissue *tissue) {
 	if (!neighbouringTipCells) {
 		// Check if we've met the threshold of tip cells.
 		// Default is 40%.
-		if (n_tip_cells / tissue->m_cell_agents.size() > DSL_PATTERNED_AT_PROP) {
+		float activeProp = (float) n_tip_cells / (float) tissue->m_cell_agents.size();
+		if (activeProp > DSL_PATTERNED_AT_PROP) {
 			return 1; // Patterned.
 		} else {
 			return 0; // Haven't patterned due to not meeting threshold.
@@ -1916,7 +1917,9 @@ bool World::cell_is_tip(EC *cellAgent) {
 	// is greater than 50% of the total amount of VEGFR.
 	auto VEGFR = cellAgent->get_cell_protein_level("VEGFR",0);
 	auto VEGF_VEGFR = cellAgent->get_cell_protein_level("VEGF_VEGFR",0);
-	return VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > 0.5;
+	auto prop = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
+	auto test = VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > DSL_PATTERN_THRESHOLD;
+	return VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > DSL_PATTERN_THRESHOLD;
 }
 
 void World::simulateTimestep_DSL() {

@@ -46,6 +46,9 @@ class World;
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE true
+// Level of active VEGFR needed for a cell to be considered a "tip" cell.
+#define DSL_PATTERN_THRESHOLD 0.1
+// Number of tip cells needed for a tissue to be considered "patterned".
 #define DSL_PATTERNED_AT_PROP 0.4
 
 // Analysis types for the DSL.

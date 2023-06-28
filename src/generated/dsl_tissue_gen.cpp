@@ -54,6 +54,7 @@ void Tissue_Container::tissue_set_up(World* world) {
     // Track environmental proteins //
     add_env_protein_to_tissues("VEGF");
     add_env_protein_to_tissues("SEMA3A");
+    add_env_protein_to_tissues("BMP9");
 
 }
 

@@ -14,7 +14,7 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 12> EndothelialType_cell_only_ode_states;
+typedef boost::array<double, 14> EndothelialType_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -58,6 +58,16 @@ static double calc_VEGF_VEGFR_ON_rate(double VEGF_MEAN, double VEGFR, const bool
 
 static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR, const bool memAgent) {
 	auto expr = VEGF_VEGFR*0.01;
+	return expr;
+}
+
+static double calc_SEMA_PLEXIN_ON_rate(double SEMA3A_MEAN, double PLEXIND1, const bool memAgent) {
+	auto expr = SEMA3A_MEAN*PLEXIND1*0.1;
+	return expr;
+}
+
+static double calc_SEMA_PLEXIN_OFF_rate(double SEMA3A_PLEXIND1, const bool memAgent) {
+	auto expr = SEMA3A_PLEXIND1*0.01;
 	return expr;
 }
 
@@ -106,6 +116,26 @@ static double calc_VEGF_VEGFR2_DEG_rate(double VEGF_VEGFR, double DEG_RATE, cons
 	return expr;
 }
 
+static double calc_PLEXIND1_DEG_rate(double PLEXIND1, double DEG_RATE, const bool memAgent) {
+	auto expr = PLEXIND1*DEG_RATE;
+	return expr;
+}
+
+static double calc_SEMA3A_PLEXIND1_DEG_rate(double SEMA3A_PLEXIND1, double DEG_RATE, const bool memAgent) {
+	auto expr = SEMA3A_PLEXIND1*DEG_RATE;
+	return expr;
+}
+
+static double calc_ALK1_DEG_rate(double ALK1, double DEG_RATE, const bool memAgent) {
+	auto expr = ALK1*DEG_RATE;
+	return expr;
+}
+
+static double calc_BMP9_ALK1_DEG_rate(double BMP9_ALK1, double DEG_RATE, const bool memAgent) {
+	auto expr = BMP9_ALK1*DEG_RATE;
+	return expr;
+}
+
 static double calc_FILCONST_rate(const bool memAgent) {
 	auto expr = 2;
 	return expr;
@@ -120,6 +150,16 @@ static double calc_SEMA_FIL_INHIBITION_rate(double SEMA3A_MEAN, const bool memAg
 	auto expr = 1-SEMA3A_MEAN;
 	if (expr > 1.0) { expr = 1.0; }
 	if (expr < 0.0) { expr = 0.0; }
+	return expr;
+}
+
+static double calc_BMP9_ALK1_ON_rate(double BMP9_MEAN, double ALK1, const bool memAgent) {
+	auto expr = BMP9_MEAN*ALK1*0.1;
+	return expr;
+}
+
+static double calc_BMP9_ALK1_OFF_rate(double BMP9_ALK1, const bool memAgent) {
+	auto expr = BMP9_ALK1*0.01;
 	return expr;
 }
 

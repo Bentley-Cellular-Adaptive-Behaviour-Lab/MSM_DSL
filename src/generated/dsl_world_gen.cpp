@@ -19,9 +19,15 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
     world->set_max_delay(10);
 
     // GRADIENT CREATION
-    auto VEGF_GRADIENT_VEGF = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.0, 0, -1, -1);
+    auto VEGF_GRADIENT_VEGF = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 2.0, 0, -1, -1);
+    auto SEMA3A_BLOCK_1_SEMA3A = new Protein("SEMA3A", PROTEIN_LOCATION_ENVIRONMENT, 0.5, 0, -1, -1);
+    auto SEMA3A_BLOCK_2_SEMA3A = new Protein("SEMA3A", PROTEIN_LOCATION_ENVIRONMENT, 0.5, 0, -1, -1);
     auto VEGF_GRADIENT_centre = Coordinates(120, 200, 20);
+    auto SEMA3A_BLOCK_1_centre = Coordinates(60, 200, 20);
+    auto SEMA3A_BLOCK_2_centre = Coordinates(180, 200, 20);
     create_gradient(GRADIENT_TYPE_LINEAR, VEGF_GRADIENT_VEGF, &(VEGF_GRADIENT_centre), GRADIENT_DIRECTION_INC_Y, 240, 200, 40, false);
+    create_gradient(GRADIENT_TYPE_CONSTANT, SEMA3A_BLOCK_1_SEMA3A, &(SEMA3A_BLOCK_1_centre), GRADIENT_DIRECTION_INC_X, 60, 200, 40, false);
+    create_gradient(GRADIENT_TYPE_CONSTANT, SEMA3A_BLOCK_2_SEMA3A, &(SEMA3A_BLOCK_2_centre), GRADIENT_DIRECTION_INC_X, 60, 200, 40, false);
     // SUBSTRATE CREATION
     auto EXTRACELLULAR_MATRIX_shape = new Shape_Cuboid(SUBSTRATE_SHAPE_CUBOIDAL, 120, 200, 40);
     auto EXTRACELLULAR_MATRIX_centre = Coordinates(120, 200, 20);
