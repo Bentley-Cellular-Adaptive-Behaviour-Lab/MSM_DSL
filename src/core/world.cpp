@@ -1903,12 +1903,12 @@ unsigned int World::tissue_has_patterned(Tissue *tissue) {
 		// Default is 40%.
 		float activeProp = (float) n_tip_cells / (float) tissue->m_cell_agents.size();
 		if (activeProp > DSL_PATTERNED_AT_PROP) {
-			return 1; // Patterned.
+			return 0; // Patterned.
 		} else {
-			return 0; // Haven't patterned due to not meeting threshold.
+			return 1; // Haven't patterned due to not meeting threshold.
 		}
 	} else {
-		return 0; // Haven't patterned due to neighbouring tip cells.
+		return 2; // Haven't patterned due to neighbouring tip cells.
 	}
 }
 
