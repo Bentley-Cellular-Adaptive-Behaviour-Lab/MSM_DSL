@@ -23,8 +23,8 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-//#define GRAPHICS false
-//#define MAXtime 1000
+#define GRAPHICS false
+#define MAXtime 2000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -34,18 +34,18 @@ class World;
 #define DSL_TESTING true
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
-#define PROTEIN_TESTING true
+#define PROTEIN_TESTING false // Set to true.
 #define SWEEP_TESTING false
 #define SOLIDNESS_CHECK true
 
-#define DSL_EXTENSION_PROB true
-#define DSL_ENV_SELECTION true
+#define DSL_EXTENSION_PROB false // Set to true.
+#define DSL_ENV_SELECTION false // Set to true.
 #define DSL_SENSITIVITY false
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
 
 // This should only be used in the configuration for the initial DSL paper.
-#define DSL_PATTERNING_SCORE true
+#define DSL_PATTERNING_SCORE false
 // Level of active VEGFR needed for a cell to be considered a "tip" cell.
 #define DSL_PATTERN_THRESHOLD 0.1
 // Number of tip cells needed for a tissue to be considered "patterned".

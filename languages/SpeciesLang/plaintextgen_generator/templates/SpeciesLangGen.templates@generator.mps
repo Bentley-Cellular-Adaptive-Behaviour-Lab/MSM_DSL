@@ -27365,6 +27365,28 @@
             </node>
           </node>
         </node>
+        <node concept="356sEK" id="7nIZj48Gcf_" role="383Ya9">
+          <node concept="373pV1" id="7nIZj48Gg2Z" role="356sEH" />
+          <node concept="356sEF" id="7nIZj48Gg35" role="356sEH">
+            <property role="TrG5h" value="if (isnan(expr)) {" />
+          </node>
+          <node concept="2EixSi" id="7nIZj48GcfB" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="7nIZj48GqT1" role="383Ya9">
+          <node concept="373pV1" id="7nIZj48Guig" role="356sEH" />
+          <node concept="373pV1" id="7nIZj48Guim" role="356sEH" />
+          <node concept="356sEF" id="7nIZj48Guiu" role="356sEH">
+            <property role="TrG5h" value="expr = 0.0;" />
+          </node>
+          <node concept="2EixSi" id="7nIZj48GqT3" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="7nIZj48GjCc" role="383Ya9">
+          <node concept="373pV1" id="7nIZj48GnoR" role="356sEH" />
+          <node concept="356sEF" id="7nIZj48GnoX" role="356sEH">
+            <property role="TrG5h" value="}" />
+          </node>
+          <node concept="2EixSi" id="7nIZj48GjCe" role="2EinRH" />
+        </node>
         <node concept="356sEK" id="4Gg5920pZf7" role="383Ya9">
           <node concept="373pV1" id="4Gg5920q28c" role="356sEH" />
           <node concept="2EixSi" id="4Gg5920pZf9" role="2EinRH" />

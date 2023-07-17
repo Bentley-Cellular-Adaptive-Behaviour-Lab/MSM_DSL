@@ -1590,7 +1590,12 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 		if (timeStep % 10 == 0) {
-			std::cout << "Timestep: " << timeStep << "\n";
+//			std::cout << "Timestep: " << timeStep << "\n";
+			std::cout << timeStep << ",";
+			for (auto *cell : ECagents) {
+				std::cout << cell->activeNotchtot << ",";
+			}
+			std::cout << "\n";
 		}
 
 		simulateTimestep_MSM();
@@ -1759,10 +1764,14 @@ void World::creationTimestep(int movie) {
 	if (analysis_type == ANALYSIS_TYPE_PROTLEVELS)
 		output_cell_protlevels(dataFile);
 
+	if (movie == 1) {
+		system("mkdir movie; rm -vf movie/*");
+	}
+
 }
 
 void World::simulateTimestep_MSM() {
-	int movie = 0;
+	int movie = 1;
 
 	timeStep++;
 	if (timeStep == 0) {
@@ -2022,7 +2031,7 @@ void World::updateMemAgents_MSM() {
 //		if (memp->node) {
 //			memp->update_env_levels();
 //		}
-//		memp->update_env_levels();
+
 
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
@@ -2138,16 +2147,15 @@ void World::updateECagents_MSM() {
 	int i, j;
 	int upto = ECagents.size();
 
-	auto cell1 = ECagents[0];
-	auto cell2 = ECagents[1];
-
 	for (j = 0; j < upto; j++) {
 		if (analysis_type == ANALYSIS_TYPE_COMS) {
 			ECagents[j]->store_cell_COM(); //to see cell movement, monitor its centre of mass
 		}
-		int test = ECagents[j]->nodeAgents.size();
+
 		for (auto nodeAgent : ECagents[j]->nodeAgents) {
-			nodeAgent->update_env_levels();
+			if (nodeAgent->vonNeu) {
+				nodeAgent->update_env_levels();
+			}
 		}
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
@@ -2173,7 +2181,6 @@ void World::updateECagents_MSM() {
         }
 
 		ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
-
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {

@@ -795,11 +795,11 @@
       <node concept="30bXRB" id="4wGSNcs4p4G" role="2zRkKW">
         <property role="30bXRw" value="0" />
       </node>
-      <node concept="30bXRB" id="4wGSNcs4p4X" role="2zRkKT">
-        <property role="30bXRw" value="4" />
-      </node>
       <node concept="Cfe3L" id="2n3iPRoSSQV" role="CfdIH">
         <ref role="Cfe3M" node="2n3iPRoSSo6" resolve="v10" />
+      </node>
+      <node concept="30bXRB" id="59vMsuaG2nC" role="2zRkKT">
+        <property role="30bXRw" value="1" />
       </node>
     </node>
     <node concept="3_zqOx" id="5iwB_lz6lM3" role="3_zqUl">
@@ -868,7 +868,7 @@
     <node concept="3_zqOx" id="5iwB_lz6oaz" role="3_zqUl">
       <property role="TrG5h" value="k6" />
       <node concept="30bXRB" id="5iwB_lz6oci" role="3_zqNk">
-        <property role="30bXRw" value="0.001" />
+        <property role="30bXRw" value="0.005" />
       </node>
       <node concept="Cfe3L" id="2n3iPRoSSQW" role="CfdIH">
         <ref role="Cfe3M" node="2n3iPRoSSo6" resolve="v10" />
@@ -898,7 +898,7 @@
     <node concept="3_zqOx" id="5iwB_lz6lKK" role="3_zqUl">
       <property role="TrG5h" value="phi" />
       <node concept="30bXRB" id="5iwB_lz6ocS" role="3_zqNk">
-        <property role="30bXRw" value="0.001" />
+        <property role="30bXRw" value="0.005" />
       </node>
       <node concept="Cfe3L" id="6fP6NhPrkJP" role="CfdIH">
         <ref role="Cfe3M" node="6fP6NhPrk$l" resolve="deg_NOTCH" />
@@ -925,7 +925,7 @@
     <node concept="3_zqOx" id="5iwB_lz6lKV" role="3_zqUl">
       <property role="TrG5h" value="gamma" />
       <node concept="30bXRB" id="5iwB_lz6odb" role="3_zqNk">
-        <property role="30bXRw" value="0.005" />
+        <property role="30bXRw" value="0.007" />
       </node>
     </node>
     <node concept="3_zqOx" id="5iwB_lz6lL7" role="3_zqUl">

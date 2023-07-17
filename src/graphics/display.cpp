@@ -804,7 +804,7 @@ void World::viewMesh(void) {
                                 else if(viewType==12){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
                                 else if(viewType==13){ red = 0.534f;
-                                    green = 0.0623f+mp->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                    green = 0.0623f+(mp->Cell->get_cell_protein_level("VEGF_VEGFR",0)*2.0); blue = 0.5923f;}
                                 else if(viewType==14){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
                                 else if(viewType==15){ red = 0.534f;
@@ -2139,7 +2139,7 @@ void displayGlui(int * argc, char  ** argv) {
 
     statText->set_text("Recording...");
     startRecordButton->disable();
-    screenRecordState = NotRecording;
+    screenRecordState = Recording;
     
     GLUI_Panel *viewer= glui->add_panel("View", true);
     

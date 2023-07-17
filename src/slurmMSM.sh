@@ -3,12 +3,12 @@
 #SBATCH --ntasks=1
 #SBATCH --time=12:00:00
 #SBATCH --mem=8gb
-#SBATCH --array=1-50
+#SBATCH --array=1-100
 
 found=false
 
 count=0
-for replicate_number in {1..50}
+for replicate_number in {0..100}
 do
 count=$((count+1))
 if [ $count == $SLURM_ARRAY_TASK_ID ]
