@@ -811,6 +811,10 @@ void World::viewMesh(void) {
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
                                 else if(viewType==16){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
+								else if(viewType==17){ auto time_factor = timeStep;
+									red = 0.534f;
+									green = (2*exp(-0.0025*timeStep))+(mp->Cell->get_cell_protein_level("VEGF_VEGFR",0)*4.0);
+									blue = 0.5923f;}
 
 
                                //if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
@@ -2160,6 +2164,7 @@ void displayGlui(int * argc, char  ** argv) {
     listbox->add_item(14, "DSL - DLL4");
     listbox->add_item(15, "DSL - NOTCH");
     listbox->add_item(16, "DSL - DLL4_NOTCH");
+	listbox->add_item(17, "DSL - Shane Inverse View");
 
     GLUI_Panel *vessels= glui->add_panel("Display elements", true);
     glui->add_checkbox_to_panel( vessels, "Mesh", &meshView);

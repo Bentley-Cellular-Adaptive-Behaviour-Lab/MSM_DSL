@@ -385,7 +385,7 @@
         <node concept="1v6uyg" id="2B5sNxPuZuM" role="3EZMnx">
           <property role="2oejA6" value="true" />
           <node concept="3F0ifn" id="2B5sNxPuZz0" role="wsdo6">
-            <property role="3F0ifm" value="Create surfaces for cells to adhere to." />
+            <property role="3F0ifm" value="Create surfaces for cells to interact with." />
             <node concept="2biZxu" id="2FvyIAlFjQj" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
@@ -878,72 +878,76 @@
         </node>
         <node concept="2iRfu4" id="32SFKJHUDG7" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="2XF6SaabILU" role="3EZMnx">
-        <node concept="VPM3Z" id="2XF6SaabILW" role="3F10Kt" />
-        <node concept="1v6uyg" id="57Wjpeqjntf" role="3EZMnx">
-          <property role="2oejA6" value="true" />
-          <node concept="3EZMnI" id="57Wjpeqjnty" role="wsdo6">
-            <node concept="3F0ifn" id="57Wjpeqjnt$" role="3EZMnx">
-              <property role="3F0ifm" value="Controls distances between gridpoints in the simulation world." />
-              <node concept="2biZxu" id="2FvyIAlFjLT" role="3F10Kt">
+      <node concept="1X3_iC" id="6629h2n5soo" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="2XF6SaabILU" role="8Wnug">
+          <node concept="VPM3Z" id="2XF6SaabILW" role="3F10Kt" />
+          <node concept="1v6uyg" id="57Wjpeqjntf" role="3EZMnx">
+            <property role="2oejA6" value="true" />
+            <node concept="3EZMnI" id="57Wjpeqjnty" role="wsdo6">
+              <node concept="3F0ifn" id="57Wjpeqjnt$" role="3EZMnx">
+                <property role="3F0ifm" value="Controls distances between gridpoints in the simulation world." />
+                <node concept="2biZxu" id="2FvyIAlFjLT" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="2FvyIAlFjLU" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="57WjpeqjntD" role="3EZMnx">
+                <property role="3F0ifm" value="Smaller distances cause a higher degree of spatial resolution." />
+                <node concept="2biZxu" id="2FvyIAlFjLX" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="2FvyIAlFjLY" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="57WjpeqjntG" role="3EZMnx">
+                <property role="3F0ifm" value="Only a resolution of 0.5 microns is currently supported!" />
+                <node concept="2biZxu" id="2FvyIAlFjMp" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="2FvyIAlFjMq" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="2iRkQZ" id="57Wjpeqjnt_" role="2iSdaV" />
+            </node>
+            <node concept="3F0ifn" id="57Wjpeqjntq" role="1j7Clw">
+              <property role="3F0ifm" value="Coarseness" />
+              <node concept="VQ3r3" id="57Wjpeqjntt" role="3F10Kt">
+                <property role="2USNnj" value="gtbM8PH/underlined" />
+              </node>
+              <node concept="2biZxu" id="2FvyIAlFjLs" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
-              <node concept="VSNWy" id="2FvyIAlFjLU" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
+              <node concept="VSNWy" id="2FvyIAlFjLt" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
               </node>
             </node>
-            <node concept="3F0ifn" id="57WjpeqjntD" role="3EZMnx">
-              <property role="3F0ifm" value="Smaller distances cause a higher degree of spatial resolution." />
-              <node concept="2biZxu" id="2FvyIAlFjLX" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="2FvyIAlFjLY" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
-              </node>
-            </node>
-            <node concept="3F0ifn" id="57WjpeqjntG" role="3EZMnx">
-              <property role="3F0ifm" value="Only a resolution of 0.5 microns is currently supported!" />
-              <node concept="2biZxu" id="2FvyIAlFjMp" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="2FvyIAlFjMq" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
-              </node>
-            </node>
-            <node concept="2iRkQZ" id="57Wjpeqjnt_" role="2iSdaV" />
           </node>
-          <node concept="3F0ifn" id="57Wjpeqjntq" role="1j7Clw">
-            <property role="3F0ifm" value="Coarseness" />
-            <node concept="VQ3r3" id="57Wjpeqjntt" role="3F10Kt">
-              <property role="2USNnj" value="gtbM8PH/underlined" />
+          <node concept="3F0ifn" id="2XF6SaabILY" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+          </node>
+          <node concept="3F0A7n" id="57WjpeqcpLk" role="3EZMnx">
+            <ref role="1NtTu8" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
+            <node concept="VechU" id="1S53i998Del" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
             </node>
-            <node concept="2biZxu" id="2FvyIAlFjLs" role="3F10Kt">
+            <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
+            <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
-            <node concept="VSNWy" id="2FvyIAlFjLt" role="3F10Kt">
+            <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
               <property role="1lJzqX" value="16" />
             </node>
           </node>
+          <node concept="2iRfu4" id="2XF6SaabILZ" role="2iSdaV" />
         </node>
-        <node concept="3F0ifn" id="2XF6SaabILY" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-        </node>
-        <node concept="3F0A7n" id="57WjpeqcpLk" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
-          <node concept="VechU" id="1S53i998Del" role="3F10Kt">
-            <property role="Vb096" value="fLwANPu/blue" />
-          </node>
-          <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
-            <property role="Vbekb" value="g1_k_vY/BOLD" />
-          </node>
-          <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="2XF6SaabILZ" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="57Wjpeqlm9w" role="3EZMnx">
         <node concept="VPM3Z" id="57Wjpeqlm9y" role="3F10Kt" />

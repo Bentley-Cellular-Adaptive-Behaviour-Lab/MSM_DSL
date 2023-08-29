@@ -1590,10 +1590,9 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 		if (timeStep % 10 == 0) {
-//			std::cout << "Timestep: " << timeStep << "\n";
-			std::cout << timeStep << ",";
+			std::cout << "Timestep: " << timeStep << "\n";
 			for (auto *cell : ECagents) {
-				std::cout << cell->activeNotchtot << ",";
+				std::cout << cell->activeVEGFRtot << ",";
 			}
 			std::cout << "\n";
 		}
@@ -2061,7 +2060,7 @@ void World::updateMemAgents_MSM() {
             }
 
             // Run MEMAGENT ODES, then update the cell's level of that particular protein.
-            if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
+            if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
                 memp->passBackBufferLevels();
             }
@@ -2160,7 +2159,7 @@ void World::updateECagents_MSM() {
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-		if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
+		if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
             ECagents[j]->updateFutureProteinLevels();
             // Then, calculate deltas then apply the delta values
@@ -2168,7 +2167,7 @@ void World::updateECagents_MSM() {
             this->odes->check_cell_ODEs(ECagents[j]);
             ECagents[j]->calculateDeltaValues();
             ECagents[j]->syncDeltaValues();
-		} else if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
+		} else if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
             // Perform ODEs.
             this->odes->check_cell_only_ODEs(ECagents[j]);
         }

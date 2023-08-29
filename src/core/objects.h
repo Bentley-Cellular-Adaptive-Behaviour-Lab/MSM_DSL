@@ -23,8 +23,8 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-#define GRAPHICS false
-#define MAXtime 2000
+//#define GRAPHICS false
+//#define MAXtime 2000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -34,15 +34,15 @@ class World;
 #define DSL_TESTING true
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
-#define PROTEIN_TESTING false // Set to true.
 #define SWEEP_TESTING false
 #define SOLIDNESS_CHECK true
 
-#define DSL_EXTENSION_PROB false // Set to true.
-#define DSL_ENV_SELECTION false // Set to true.
-#define DSL_SENSITIVITY false
+#define DSL_SIGNALLING true // Set to false for MSM GRN.
+#define DSL_EXTENSION_PROB true // Set to false for MSM filopodia extension rules.
+#define DSL_ENV_SELECTION true // Set to false for MSM environment selection based on VEGF levels.
+#define DSL_SENSITIVITY true // Set to false in order to use epsilon for extension probability.
 #define DSL_EXTENSION_PROTEIN_USAGE false
-#define DSL_MAX_FILS false
+#define DSL_MAX_FILS false // Set to true to set a limit for the number of fils on a cell.
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false
@@ -238,7 +238,6 @@ extern int memINIT;
 #define UNEQUAL_NEIGHS 2
 #define OPTIMAL_UNEQUAL 3
 extern float CellPosOffset;
-
 
 ///declared constants
 #define Pi 3.1415927
