@@ -61,95 +61,99 @@ void CPM_module::run_CPM() {
 		calc_Cell_areas_DSL();
     } else {
         for (steps = 0; steps < MCS_STEPS; steps++) {
-            upto = (int) worldP->JunctionAgents.size();
-            flag = 0;
-            replaced_med = nullptr;
-            replaced_mem = nullptr;
-            replacer_mem = nullptr;
-            replacer_med = nullptr;
-            do {
-                chose = worldP->new_rand() % upto;
-                worldP->JunctionAgents[chose]->checkNeighs(true);
-                if (((worldP->JunctionAgents[chose]->FIL==BASE) || (worldP->JunctionAgents[chose]->FIL==NONE))){
-                    count = 0;
-                    flag2 = 0;
-                    for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++){
-                        if (worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL)
-                            if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
-                                count++;
-                                flag2=1;
-                            }
-                        }
-                        if (flag2 == 1) {
-                        	if (count != 1) {
-								choseReplacer = worldP->new_rand()%count;
-                        	} else {
-								choseReplacer=1;
-                        	}
-                            
-                        	count = 1;
-                        	for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
-                        		if (worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL) {
-                                	if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
-                                		if (count==choseReplacer) {
-                                			replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
-                                			replaced_mem = worldP->JunctionAgents[chose];
-                                    		pos = chose;
-                                    		flag=1;
-                                		} else {
-                                			count++;
-                                		}
-                                	}
-                        		}
-                        	}
-                        }
-                    }
-            } while (flag == 0);
+			upto = (int) worldP->JunctionAgents.size();
+			flag = 0;
+			replaced_med = nullptr;
+			replaced_mem = nullptr;
+			replacer_mem = nullptr;
+			replacer_med = nullptr;
+			do {
+				chose = worldP->new_rand() % upto;
+				auto tissueType = worldP->JunctionAgents[chose]->Cell->m_tissue->m_tissue_type;
+				if ((worldP->does_DSL_CPM() && tissueType->runs_cpm()) || worldP->does_MSM_CPM()) {
+					worldP->JunctionAgents[chose]->checkNeighs(true);
+					if (((worldP->JunctionAgents[chose]->FIL == BASE)
+						|| (worldP->JunctionAgents[chose]->FIL == NONE))) {
+						count = 0;
+						flag2 = 0;
+						for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
+							if (worldP->JunctionAgents[chose]->SpringNeigh[k] != NULL)
+								if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+									count++;
+									flag2 = 1;
+								}
+						}
+						if (flag2 == 1) {
+							if (count != 1) {
+								choseReplacer = worldP->new_rand() % count;
+							} else {
+								choseReplacer = 1;
+							}
 
-            if (flag == 1) {
-                changeH = calc_local_change(replacer_mem, replaced_mem, replacer_med, replaced_med);
-                accept = calcProb(changeH);
-                if (worldP->timeStep > 100) {
-                    if (biased_mig_diffAd) {
-                        biasAccept = check_gradient(replaced_mem, replacer_mem);
-                        if (biasAccept) {
-                            float prob = (float)worldP->new_rand() / (float)RAND_MAX;
-                            if (prob < BIAS_DIFFAD_CHANCE) {
-                                accept = true;
+							count = 1;
+							for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
+								if (worldP->JunctionAgents[chose]->SpringNeigh[k] != NULL) {
+									if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+										if (count == choseReplacer) {
+											replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
+											replaced_mem = worldP->JunctionAgents[chose];
+											pos = chose;
+											flag = 1;
+										} else {
+											count++;
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-            }
-                if (accept) {
-                    if (worldP->JunctionAgents[chose]->FIL==BASE){
-                        moved = move_fil_base(worldP->JunctionAgents[chose]);
-                    } else {
-                        moved = true;
-                    }
+			} while (flag == 0);
 
-                    if (moved) {
-                        replace_agent(replacer_mem, replaced_mem, replacer_med, replaced_med, pos);
-                    } else {
-                        if (replaced_med != NULL) {
-                            replaced_med->diffAd_replaced = NULL;
-                        }
-                        if (replaced_mem != NULL) {
-						    replaced_mem->diffAd_replaced_cell = NULL;
-						    replaced_mem->diffAd_replaced_med = NULL;
-					    }
-                    }
-                } else {
-                    if (replaced_med != NULL) {
-                	    replaced_med->diffAd_replaced = NULL;
-                    }
-                    if (replaced_mem != NULL) {
-                        replaced_mem->diffAd_replaced_cell = NULL;
-                        replaced_mem->diffAd_replaced_med = NULL;
-                    }
-                }
-            }
-        }
-    }
+			if (flag == 1) {
+				changeH = calc_local_change(replacer_mem, replaced_mem, replacer_med, replaced_med);
+				accept = calcProb(changeH);
+				if (worldP->timeStep > 100) {
+					if (biased_mig_diffAd) {
+						biasAccept = check_gradient(replaced_mem, replacer_mem);
+						if (biasAccept) {
+							float prob = (float) worldP->new_rand() / (float) RAND_MAX;
+							if (prob < BIAS_DIFFAD_CHANCE) {
+								accept = true;
+							}
+						}
+					}
+				}
+				if (accept) {
+					if (worldP->JunctionAgents[chose]->FIL == BASE) {
+						moved = move_fil_base(worldP->JunctionAgents[chose]);
+					} else {
+						moved = true;
+					}
+
+					if (moved) {
+						replace_agent(replacer_mem, replaced_mem, replacer_med, replaced_med, pos);
+					} else {
+						if (replaced_med != NULL) {
+							replaced_med->diffAd_replaced = NULL;
+						}
+						if (replaced_mem != NULL) {
+							replaced_mem->diffAd_replaced_cell = NULL;
+							replaced_mem->diffAd_replaced_med = NULL;
+						}
+					}
+				} else {
+					if (replaced_med != NULL) {
+						replaced_med->diffAd_replaced = NULL;
+					}
+					if (replaced_mem != NULL) {
+						replaced_mem->diffAd_replaced_cell = NULL;
+						replaced_mem->diffAd_replaced_med = NULL;
+					}
+				}
+			}
+		}
+	}
     clearUpSmallSeparatedBitsOfCells();
 }
 //----------------------------------------------------------------------------------
