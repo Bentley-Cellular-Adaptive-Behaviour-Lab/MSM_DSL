@@ -474,6 +474,16 @@ void Tissue_Vessel::set_vessel_dist_from_edge(const int vessel_dist_from_edge) {
 }
 
 /*****************************************************************************************
+*  Name:		set_vessel_centre_x_coord
+*  Description: Records the y coordinate of the vessel's centre.
+*  Returns:		int
+******************************************************************************************/
+
+void Tissue_Vessel::set_vessel_centre_x_coord(const float vessel_centre_x_coord) {
+	this->m_vessel_centre_x_coord = vessel_centre_x_coord;
+}
+
+/*****************************************************************************************
 *  Name:		set_vessel_centre_y_coord
 *  Description: Records the y coordinate of the vessel's centre.
 *  Returns:		int
