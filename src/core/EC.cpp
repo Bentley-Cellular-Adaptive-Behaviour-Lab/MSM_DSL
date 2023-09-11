@@ -1372,7 +1372,7 @@ void EC::newNodes(void) {
                         memp->filPos = stp->start->filPos + 1;
 
 
-                    if (DSL_TESTING) {
+                    if (DSL_ADHESIVENESS_TESTING) {
                         this->worldP->set_focal_adhesion(memp);
                     } else {
                         memp->FA = true;
@@ -1385,7 +1385,6 @@ void EC::newNodes(void) {
                     memp->neigh[0] = stp->end;
                     memp->neighs = 1;
                     stp->end->filNeigh = memp;
-
 
                     //start
                     for (j = 0; j < stp->start->neighs; j++) {
