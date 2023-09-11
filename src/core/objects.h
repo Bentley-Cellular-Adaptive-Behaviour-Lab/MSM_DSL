@@ -35,7 +35,6 @@ class World;
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
 #define SWEEP_TESTING false
-#define SOLIDNESS_CHECK true
 
 #define DSL_SIGNALLING true // Set to false for MSM GRN.
 #define DSL_EXTENSION_PROB true // Set to false for MSM filopodia extension rules.
@@ -43,6 +42,9 @@ class World;
 #define DSL_SENSITIVITY true // Set to false in order to use epsilon for extension probability.
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false // Set to true to set a limit for the number of fils on a cell.
+#define DSL_ADHESIVENESS_TESTING true
+#define DSL_SOLIDNESS_CHECK true
+#define DSL_SHUFFLE_TEST true
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false
