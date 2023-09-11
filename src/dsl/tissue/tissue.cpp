@@ -579,6 +579,7 @@ Tissue_Vessel::Tissue_Vessel(  Tissue_Container *tissue_container,
             set_n_cells(tissue_type->get_length_in_cells() * tissue_type->get_cells_per_cross_section());
             set_vessel_length(tissue_type->get_length_in_cells() * tissue_type->m_cell_type->m_shape->get_width());
             set_vessel_interior_radius(tissue_type->get_total_radius() - 2 );
+			set_vessel_centre_x_coord(position->get_x_coord());
             set_vessel_centre_y_coord(position->get_y_coord());
             set_vessel_centre_z_coord(position->get_z_coord());
             std::cout << "Tissue: Vessel created successfully!" << std::endl;
