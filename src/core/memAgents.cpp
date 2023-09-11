@@ -1473,8 +1473,12 @@ bool MemAgent::extendFil(const double prob) {
 							if ((actinMax - Cell->actinUsed) >= distNeeded && maxFilCheck) {
 								Cell->increment_current_fils();
                             	Cell->actinUsed += distNeeded;
-                            	FA=true;
 
+								if (DSL_ADHESIVENESS_TESTING) {
+									this->worldP->set_focal_adhesion(this);
+								} else {
+									this->FA = true;
+								}
                             	mp = new MemAgent(Cell, worldP);
                             
                             	mp->Mx = highest->Ex;
