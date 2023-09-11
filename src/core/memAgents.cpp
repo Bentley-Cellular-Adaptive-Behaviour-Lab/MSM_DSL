@@ -1443,7 +1443,7 @@ bool MemAgent::extendFil(const double prob) {
 					highest = findHighestConc();
 
 					bool canExtend = true;
-					if (SOLIDNESS_CHECK) {
+					if (DSL_SOLIDNESS_CHECK) {
 						canExtend = worldP->solidness_check(highest);
 					}
 
