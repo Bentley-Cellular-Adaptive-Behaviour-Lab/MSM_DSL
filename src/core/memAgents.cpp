@@ -1485,11 +1485,12 @@ bool MemAgent::extendFil(const double prob) {
                             	mp->My = highest->Ey;
                             	mp->Mz = highest->Ez;
 
-								if (DSL_TESTING) {
+								if (DSL_ADHESIVENESS_TESTING) {
 									this->worldP->set_focal_adhesion(mp);
 								} else {
-								mp->FA = true;
+									mp->FA = true;
 								}
+
 								mp->setPreviousX(mp->Mx);
                             	mp->setPreviousY(mp->My);
                             	mp->setPreviousZ(mp->Mz);
