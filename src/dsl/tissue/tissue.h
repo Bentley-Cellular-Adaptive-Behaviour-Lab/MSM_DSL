@@ -85,6 +85,7 @@ private:
     int m_vessel_total_radius;
     int m_vessel_dist_from_edge;
 
+	float m_vessel_centre_x_coord;
     float m_vessel_centre_y_coord;
     float m_vessel_centre_z_coord;
 
@@ -98,7 +99,8 @@ public:
     [[nodiscard]] int get_vessel_total_radius() const;
     [[nodiscard]] int get_vessel_dist_from_edge() const;
 
-    float get_vessel_centre_y_coord() const;
+	float get_vessel_centre_x_coord() const;
+	float get_vessel_centre_y_coord() const;
     float get_vessel_centre_z_coord() const;
 
     // Setters //
@@ -110,7 +112,8 @@ public:
     void set_vessel_total_radius(int vessel_total_radius);
     void set_vessel_dist_from_edge(int vessel_dist_from_edge);
 
-    void set_vessel_centre_y_coord(float vessel_centre_y_coord);
+	void set_vessel_centre_x_coord(float vessel_centre_y_coord);
+	void set_vessel_centre_y_coord(float vessel_centre_y_coord);
     void set_vessel_centre_z_coord(float vessel_centre_y_coord);
 
     // Vessel-specific tissue constructor. //
