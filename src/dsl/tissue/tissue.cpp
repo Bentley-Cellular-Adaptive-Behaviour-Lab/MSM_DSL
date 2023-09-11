@@ -382,6 +382,16 @@ int Tissue_Vessel::get_vessel_dist_from_edge() const {
 }
 
 /*****************************************************************************************
+*  Name:		get_vessel_centre_x_coord
+*  Description: Gets the x coordinate of the vessel's centre.
+*  Returns:		int
+******************************************************************************************/
+
+float Tissue_Vessel::get_vessel_centre_x_coord() const {
+	return this->m_vessel_centre_x_coord;
+}
+
+/*****************************************************************************************
 *  Name:		get_vessel_centre_y_coord
 *  Description: Gets the y coordinate of the vessel's centre.
 *  Returns:		int
