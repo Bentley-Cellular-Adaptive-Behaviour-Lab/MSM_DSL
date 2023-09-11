@@ -18,6 +18,8 @@
 #include "world.h"
 
 #include "../dsl/utils/utils.h"
+#include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueType.h"
 
 std::vector<MemAgent*> deleteList;
 
