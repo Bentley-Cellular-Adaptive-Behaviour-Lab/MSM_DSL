@@ -928,7 +928,9 @@ void World::viewMesh(void) {
                     else if((mp->labelled2==true)&&(labelledView)){ red = 0.6; green = 0.6;}
                     }
 
-                    if((mp->FIL!=STALK)&&(mp->FA==true)&&(FAview))green = 1.8;
+//                    if((mp->FIL!=STALK)&&(mp->FA==true)&&(FAview))green = 1.8;
+                    if((mp->FA==true)&&(FAview))green = 1.8;
+
 
                     if(mutantView==1){
                         if(mp->Cell->mutant==true){
