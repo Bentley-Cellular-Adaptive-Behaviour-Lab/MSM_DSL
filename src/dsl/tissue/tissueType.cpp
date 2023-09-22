@@ -47,6 +47,24 @@ Tissue_Type::Tissue_Type(Tissue_Container *tissue_container,
     m_cell_type = new Cell_Type(*cell_type);
 }
 
+/*****************************************************************************************
+*  Name:		set_runs_cpm
+*  Description:	Sets whether a tissue type can run the CPM.
+*  Returns:		void
+******************************************************************************************/
+void Tissue_Type::set_runs_cpm(const bool runs_cpm) {
+	this->m_runs_cpm = runs_cpm;
+}
+
+/*****************************************************************************************
+*  Name:		runs_cpm
+*  Description:	Reports whether a tissue type can run the CPM.
+*  Returns:		bool
+******************************************************************************************/
+bool Tissue_Type::runs_cpm() const  {
+	return this->m_runs_cpm;
+}
+
 // Cylindrical //
 
 /*****************************************************************************************
