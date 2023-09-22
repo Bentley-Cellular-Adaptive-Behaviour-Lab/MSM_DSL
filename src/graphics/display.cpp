@@ -69,6 +69,11 @@ float xy_aspect;
 int   last_x, last_y;
 float rotationX = 0.0, rotationY = 0.0;
 
+// Sets threshold of VEGF_VEGFR to see cells
+// when running the Inverse Shane Setup. (viewType 17)
+const float active_threshold = 0.3;
+const float inactive_threshold = 0.001;
+
 //live vars
 
 int   show_sphere=1;
@@ -809,15 +814,29 @@ void World::viewMesh(void) {
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
                                 else if(viewType==15){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
-                                else if(viewType==16){ red = 0.534f;
+                                else if(viewType==16) { red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-								else if(viewType==17){ auto time_factor = timeStep;
-									red = 0.534f;
-									green = (2*exp(-0.0025*timeStep))+(mp->Cell->get_cell_protein_level("VEGF_VEGFR",0)*4.0);
-									blue = 0.5923f;}
+								else if(viewType==17) {
+									// Check if VEGF_VEGFR is above a threshold.
+									if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) > active_threshold) {
+										green = 1;
+										red = 0.534f;
+										blue = 0.5923f;
+									} else if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) < inactive_threshold) {
+										green = 0;
+										red = 0.534f;
+										blue = 0.5923f;
+									} else {
+										green = 0.5;
+										red = 0;
+										blue = 0.5;
+									}
+								} else if(viewType==18) {
+									red=mp->Cell->activeVEGFRtot/5.0f; green=0.2245098; blue = 0.545098;
+								}
 
 
-                               //if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
+									//if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
 
                     if(mutantView==1){
                         if(mp->Cell->mutant==true){
@@ -908,8 +927,23 @@ void World::viewMesh(void) {
                         green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
                     else if(viewType==16){ red = 0.534f;
                         green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-
-
+					else if(viewType==17) {
+						if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) > active_threshold) {
+							green = 1;
+							red = 0.534f;
+							blue = 0.5923f;
+						} else if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) < inactive_threshold) {
+							green = 0;
+							red = 0.534f;
+							blue = 0.5923f;
+						} else {
+							green = 0.5;
+							red = 0;
+							blue = 0.5;
+						}
+					} else if(viewType==18) {
+						red=mp->Cell->activeVEGFRtot/5.0f; green=0.2245098; blue = 0.545098;
+					}
                    
                     if(viewType==8){
                     if((mp->FIL==BASE)&&(baseView)){red = 0.8; green = 0.8; blue = 0.8;}
@@ -2167,6 +2201,7 @@ void displayGlui(int * argc, char  ** argv) {
     listbox->add_item(15, "DSL - NOTCH");
     listbox->add_item(16, "DSL - DLL4_NOTCH");
 	listbox->add_item(17, "DSL - Shane Inverse View");
+	listbox->add_item(18, "DSL - Active VEGFR");
 
     GLUI_Panel *vessels= glui->add_panel("Display elements", true);
     glui->add_checkbox_to_panel( vessels, "Mesh", &meshView);
