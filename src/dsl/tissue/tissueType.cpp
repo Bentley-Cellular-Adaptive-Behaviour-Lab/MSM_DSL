@@ -212,5 +212,4 @@ Tissue_Type_Flat::Tissue_Type_Flat(Tissue_Container *tissue_container,
         std::cout << "Invalid tissue configuration called (flat) for specified configuration: "
                   << tissue_configuration << ". Exception type: " << e;
     }
-
 }
