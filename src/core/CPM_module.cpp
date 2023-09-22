@@ -652,8 +652,6 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 //----------------------------------------------------------------------------------
 
 float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_mem, MedAgent* replacer_med, MedAgent* replaced_med) {
-
-
     float old_Jsum, oldAsum;
     float new_Jsum, newAsum;
     EC* ecp;
@@ -661,164 +659,65 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
     bool Do1 = false;
     bool Do2 = false;
     int conec_score;
-    int area =0;
-    int area2=0;
-    //calc local Jsum value before change, and cell size area values, store
+    int area = 0;
+    int area2 = 0;
 
-    //cout<<replacer_mem<<" "<<replaced_mem<<" "<<replacer_med<<" "<<replaced_med<<endl;
     old_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
-
-    //perimeterCheck----------------------------------------------------
-    /*if ((replaced_mem!= NULL)&&(replacer_mem!=NULL)) {
-        oldPsumC = 0;
-        newPsumC=0;
-        oldPsumD = 0;
-        newPsumD=0;
-        ecp = replaced_mem->Cell;
-        ecp2 = replacer_mem->Cell;
-
-        if( ecp->ODE.Variables[VR2] == 0) Do1 = true;
-        if( ecp2->ODE.Variables[VR2] == 0) Do2 = true;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            if(ecp->nodeAgents[i]->junction==true) oldPsumC++;
-        }
-
-        first = (oldPsumC - ideal_Perimeter)*(oldPsumC - ideal_Perimeter);
-        }
-        else first = 0;
-
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            if(ecp2->nodeAgents[i]->junction==true) oldPsumD++;
-        }
-        second = (oldPsumD - ideal_Perimeter)*(oldPsumD - ideal_Perimeter);
-        }
-        else second = 0;
-
-        oldPsum = (first)+(second);
-
-        replaced_mem->Cell = ecp2;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            ecp->nodeAgents[i]->JunctionTest(false);
-            if(ecp->nodeAgents[i]->junction==true) newPsumC++;
-        }
-        first = (newPsumC - ideal_Perimeter)*(newPsumC - ideal_Perimeter);
-        }
-        else first = 0;
-
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            ecp2->nodeAgents[i]->JunctionTest(false);
-            if(ecp2->nodeAgents[i]->junction==true) newPsumD++;
-        }
-        second = (newPsumD - ideal_Perimeter)*(newPsumD - ideal_Perimeter);
-        }
-        else second = 0;
-
-        newPsum = (first)+(second);
-
-        replaced_mem->Cell = ecp;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            ecp->nodeAgents[i]->JunctionTest(false);
-
-        }
-        }
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            ecp2->nodeAgents[i]->JunctionTest(false);
-
-        }
-        }
-
-    }*/
-
-    //-------------------------------------------------------------------
     conec_score = connectivity(replaced_mem, replacer_mem);
-    //cout<<"old J"<<old_Jsum<<endl;
 
     if (replaced_mem != NULL) {
-
         ecp = replaced_mem->Cell;
-        //if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-        for(i=0;i < (int) ecp->nodeAgents.size();i++){
-            if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area++;
+        for (i = 0; i < (int) ecp->nodeAgents.size(); i++) {
+            if ((ecp->nodeAgents[i]->FIL!=TIP) && (ecp->nodeAgents[i]->FIL!=STALK)) {
+				area++;
+			}
         }
-        //cout<<"mem replaced area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = (float) ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
+		oldAsum = (float) ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
 
-        //}
-
-        if (replacer_mem != NULL) {
+		if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
-          //   if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            for(i = 0; i < (int) ecp->nodeAgents.size();i++){
-            if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area2++;
-        }
-            //cout<<"mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
+            for (i = 0; i < (int) ecp->nodeAgents.size(); i++) {
+            	if ((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) {
+					area2++;
+				}
+        	}
             oldAsum += (float) ((area2  - ecp->ideal_Cell_area)*(area2  - ecp->ideal_Cell_area));
         }
-        //}
-        
-            //calc with change
-     } 
-    //if medium guy is to be assesed
+	}
     else {
-
         ecp = replacer_mem->Cell;
-        //cout<<"medium overtaken, mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
+		oldAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)
+				* (ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
      }
 
-    //cout<<"oldAsum "<<oldAsum<<endl;
-    //now replace temporarily
-    if(replaced_mem!=NULL){
-        if(replacer_mem!=NULL) replaced_mem->diffAd_replaced_cell = replacer_mem->Cell;
-        else  replaced_mem->diffAd_replaced_med = replacer_med;
-    }
-    else{
+    // Now replace temporarily
+    if (replaced_mem != NULL) {
+        if (replacer_mem!=NULL) {
+			replaced_mem->diffAd_replaced_cell = replacer_mem->Cell;
+		} else {
+			replaced_mem->diffAd_replaced_med = replacer_med;
+		}
+    } else {
         replaced_med->diffAd_replaced = replacer_mem;
     }
-        //replaced->labelled = true;
 
+	new_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
 
-        new_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
+	if (replaced_mem != NULL) {
+		ecp = replaced_mem->Cell;
+		newAsum = (float) ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
 
-        //cout<<"new Jsum "<<new_Jsum<<endl;
-        if (replaced_mem != NULL) {
-
-            ecp = replaced_mem->Cell;
-           //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            newAsum = (float) ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
-            // }
-
-        if (replacer_mem != NULL) {
+		if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
-           //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
             newAsum += (float) ((area2 +1 - ecp->ideal_Cell_area)*(area2 +1  - ecp->ideal_Cell_area));
-           //  }
         }
-         //calc with change
-     }
-    //if medium guy is to be assesed
-    else {
-
+     } else {
         ecp = replacer_mem->Cell;
-            newAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
+            newAsum = (float) ( (ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)
+					* (ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
      }
-       
-
-        //cout<<"new Asum "<<newAsum<<endl;
-        //return difference
-        return ((new_Jsum + newAsum)-(old_Jsum + oldAsum));
-        //return ((newAsum)-(oldAsum));
-        //return ((new_Jsum)-(old_Jsum));
-
+	// Return difference.
+	return ((new_Jsum + newAsum)-(old_Jsum + oldAsum));
 }
 
 
