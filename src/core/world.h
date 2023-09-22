@@ -66,6 +66,10 @@ private:
     Tissue_Container *m_tissueContainer;
     WorldContainer* m_worldContainer;
     WorldLogger *m_worldLogger;
+
+	// Used to log the number of active/inactive neighbours when
+	// testing the DSL and MSM CPM.
+	std::vector<std::vector<unsigned int>*> m_shuffling_results;
 public:
 
     const float m_VCONCST = 0.04;
@@ -432,6 +436,18 @@ public:
 	void write_to_pattern_outfile();
 	unsigned int tissue_has_patterned(Tissue *tissue);
 	bool cell_is_tip(EC *cellAgent);
+
+	// Shuffle test specific - checks the
+	// number of active/inactive neighbours over
+	// time and writes to a file for the MSM/DSL CPM.
+	inline bool file_exists(const std::string& name);
+	void create_shuffle_test_outfiles();
+	void save_neigh_results(const std::string &file_string);
+	unsigned int count_inactive_cells(EC* ec);
+	unsigned int count_active_cells(EC* ec);
+	std::vector<unsigned int> *evaluate_cells(unsigned int timestep);
+	void shuffleTest();
+	void write_to_shuffle_outfiles();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

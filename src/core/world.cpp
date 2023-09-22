@@ -1780,7 +1780,7 @@ void World::simulateTimestep_MSM() {
 		write_to_component_outfiles();
 
 	} else {
-        for (EC* ec : ECagents) {
+		for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
                 ec->getNeighCellVector().clear();
@@ -2189,9 +2189,11 @@ void World::updateECagents_MSM() {
         }
 
         // Total up the memAgents new active receptor levels, add to time delay stacks.
-        ECagents[j]->updateProteinTotals();
+		if (!DSL_SHUFFLE_TEST) {
+			ECagents[j]->updateProteinTotals();
+		}
 
-        if (!FEEDBACK_TESTING) {
+        if (!FEEDBACK_TESTING ) {
             ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
         }
 
@@ -6775,7 +6777,12 @@ void World::new_random_shuffle(_RandomAccessIterator first, _RandomAccessIterato
 
 void World::shuffleEnvAgents(std::vector<Env*> &envAgents) {
     // Hacky way to get the shuffle function working.
+	auto test1 = envAgents;
+
+//	std::shuffle(envAgents.begin(),envAgents.end(), g);
 	new_random_shuffle(envAgents.begin(), envAgents.end());
+	auto test2 = envAgents;
+
 }
 
 void World::shuffleLocations(std::vector<Location*> &locations) {
@@ -7650,9 +7657,9 @@ void World::log_filopodia() {
 }
 
 bool World::solidness_check(Env* ep) {
-	float prob = 1 - ep->m_solidness;
+//	float prob = 1 - ep->m_solidness;
 	auto chance = (float) this->new_rand() / (float) NEW_RAND_MAX;
-	return prob >= chance;
+	return ep->m_solidness <= chance;
 }
 
 float World::get_average_DLL4() {
@@ -8063,4 +8070,167 @@ void World::set_max_delay(unsigned int new_delay) {
 
 unsigned int World::get_max_delay() {
 	return this->m_max_delay;
+}
+
+// https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exists-using-standard-c-c11-14-17-c
+inline bool World::file_exists(const std::string& name) {
+	struct stat buffer;
+	return (stat (name.c_str(), &buffer) == 0);
+}
+
+
+void World::create_shuffle_test_outfiles() {
+	if (this->does_DSL_CPM() && !this->does_MSM_CPM()) {
+		std::string file_string = "results/test_DSL_CPM.csv";
+		// Delete file if it already exists.
+		if (file_exists(file_string)) {
+			std::remove(file_string.c_str());
+		}
+		// Create file.
+		int file_buffer_size = 200;
+		char file_buffer[file_buffer_size];
+
+		// Delete results files that exist already.
+		// Create a new file in either case.
+		sprintf(file_buffer, "%s", file_string.c_str());
+	} else if (!this->does_DSL_CPM() && this->does_MSM_CPM()) {
+		std::string file_string = "results/test_MSM_CPM.csv";
+		// Delete file if it already exists.
+		if (file_exists(file_string)) {
+			std::remove(file_string.c_str());
+		}
+		// Create file.
+		int file_buffer_size = 200;
+		char file_buffer[file_buffer_size];
+
+		// Delete results files that exist already.
+		// Create a new file in either case.
+		sprintf(file_buffer, "%s", file_string.c_str());
+	}
+}
+
+unsigned int World::count_inactive_cells(EC* ec) {
+	unsigned int count = 0;
+	// If we're not using the DSL CPM,
+	// then we're using the MSM CPM by
+	// default.
+	auto uses_DSL_CPM = this->does_DSL_CPM();
+
+	// Check just in case I've set these both to true or false.
+	// One of these should always be active, and the other inactive.
+	assert(uses_DSL_CPM != this->does_MSM_CPM());
+	for (auto *neighCell : ec->getNeighCellVector()) {
+		if (uses_DSL_CPM) {
+			if (neighCell->get_cell_protein_level("VEGF_VEGFR", 0) < 200) {
+				count++;
+			}
+		} else {
+			if (neighCell->activeVEGFRtot < 200) {
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+unsigned int World::count_active_cells(EC* ec) {
+	unsigned int count = 0;
+	// If we're not using the DSL CPM,
+	// then we're using the MSM CPM by
+	// default.
+	auto uses_DSL_CPM = this->does_DSL_CPM();
+
+	// Check just in case I've set these both to true or false.
+	// One of these should always be active, and the other inactive.
+	assert(uses_DSL_CPM != this->does_MSM_CPM());
+	for (auto *neighCell : ec->getNeighCellVector()) {
+		if (uses_DSL_CPM) {
+			if (neighCell->get_cell_protein_level("VEGF_VEGFR", 0) > 200) {
+				count++;
+			}
+		} else {
+			if (neighCell->activeVEGFRtot > 200) {
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+std::vector<unsigned int> *World::evaluate_cells(const unsigned int timestep) {
+	// Create a vector. Add the timestep to it.
+	// Go over all cells.
+	// For each cell, add the number of inactive
+	// and active neighbours.
+	auto *values = new std::vector<unsigned int>();
+	values->push_back(timestep);
+	for (auto *cell : this->ECagents) {
+		values->push_back(count_inactive_cells(cell));
+		values->push_back(count_active_cells(cell));
+	}
+	return values;
+}
+
+void World::shuffleTest() {
+	// Before evaluating CPM, force the
+	// cell levels of active VEGFR to a
+	// particular level.
+
+	for (auto *cellAgent : this->ECagents) {
+		if (cellAgent->cell_number % 2 == 0) {
+			cellAgent->activeVEGFRtot = 500;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+		} else {
+			cellAgent->activeVEGFRtot = 0;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+		}
+	}
+
+	if (this->does_MSM_CPM()) {
+		assert(!this->does_DSL_CPM());
+	}
+
+	if (this->does_DSL_CPM()) {
+		assert(!this->does_MSM_CPM());
+	}
+
+	if ((this->does_MSM_CPM() || this->does_DSL_CPM())
+		&& (this->timeStep > this->get_start_CPM())) {
+		this->diffAd->run_CPM();
+		// After the CPM has run,
+		// evaluate the cells and
+		// log the results.
+//		std::cout << "Evaluating cells." << "\n";
+		m_shuffling_results.push_back(evaluate_cells(this->timeStep));
+	}
+}
+
+void World::write_to_shuffle_outfiles() {
+	std::string file_name;
+	std::ofstream file;
+	if (this->does_MSM_CPM() && !this->does_DSL_CPM()) {
+		file_name = "results/test_MSM_CPM.csv";
+	} else if (!this->does_MSM_CPM() && this->does_DSL_CPM()) {
+		file_name = "results/test_DSL_CPM.csv";
+	} else {
+		std::cout << "Invalid booleans passed when logging shuffling results.";
+		exit(1);
+	}
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			for (auto *shuffle_result : this->m_shuffling_results) {
+				for (auto entry: *shuffle_result) {
+					file << entry << ",";
+				}
+				file << "\n";
+			}
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not write to results file for shuffling tests.";
+		exit(e);
+	}
 }
