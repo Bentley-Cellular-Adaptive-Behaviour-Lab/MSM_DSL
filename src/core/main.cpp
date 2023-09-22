@@ -184,13 +184,25 @@ void shuffleTestSetup(World* world, const bool DSL_mode) {
 	// Set mode for CPM to be DSL or MSM.
 	// Create files to log the number of
 	// active and inactive cells over time.
+
 	if (DSL_mode) {
-		world->set_MSM_CPM(true);
-		world->set_DSL_CPM(false);
-	} else {
 		world->set_MSM_CPM(false);
 		world->set_DSL_CPM(true);
+	} else {
+		world->set_MSM_CPM(true);
+		world->set_DSL_CPM(false);
 	}
+
+	for (auto *cellAgent : world->ECagents) {
+		if (cellAgent->cell_number % 2 == 0) {
+			cellAgent->activeVEGFRtot = 500;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+		} else {
+			cellAgent->activeVEGFRtot = 0;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+		}
+	}
+
 	world->create_shuffle_test_outfiles();
 }
 
@@ -224,7 +236,7 @@ int main(int argc, char * argv[]) {
 	WORLDpointer = world;
 
 	if (DSL_SHUFFLE_TEST) {
-		shuffleTestSetup(world, false);
+		shuffleTestSetup(world, true);
 	}
 
 #if GRAPHICS
