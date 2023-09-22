@@ -2,6 +2,7 @@
 // Created by Tom on 12/11/2020.
 //
 
+#include <algorithm>
 #include <unordered_map>
 #include <random>
 #include <sys/stat.h>
@@ -1591,9 +1592,9 @@ void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 		if (timeStep % 10 == 0) {
 			std::cout << "Timestep: " << timeStep << "\n";
-			for (auto *cell : ECagents) {
-				std::cout << cell->activeVEGFRtot << ",";
-			}
+//			for (auto *cell : ECagents) {
+//				std::cout << cell->activeVEGFRtot << ",";
+//			}
 			std::cout << "\n";
 		}
 
@@ -1793,12 +1794,27 @@ void World::simulateTimestep_MSM() {
         resetCellLevels();
 		updateMemAgents_MSM();
 
-        if (this->does_MSM_CPM() && (timeStep > this->get_start_CPM())) {
-            assert(!this->does_DSL_CPM());
-            this->diffAd->run_CPM();
-        } else if ((timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
-            assert(!this->does_MSM_CPM());
-            this->diffAd->run_CPM();
+		// If running the shuffle set-up from the thesis,
+		// do so here, otherwise, just check the CPM.
+		if (DSL_SHUFFLE_TEST) {
+			for (auto *cellAgent : this->ECagents) {
+				if (cellAgent->cell_number % 2 == 0) {
+					cellAgent->activeVEGFRtot = 500;
+					cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+				} else {
+					cellAgent->activeVEGFRtot = 0;
+					cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+				}
+			}
+			shuffleTest();
+		} else {
+			if (this->does_MSM_CPM() && (timeStep > this->get_start_CPM())) {
+				assert(!this->does_DSL_CPM());
+				this->diffAd->run_CPM();
+			} else if ((timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
+				assert(!this->does_MSM_CPM());
+				this->diffAd->run_CPM();
+			}
 		}
 
 		updateECagents_MSM();
