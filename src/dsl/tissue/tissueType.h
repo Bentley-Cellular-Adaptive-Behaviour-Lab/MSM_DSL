@@ -6,6 +6,8 @@
 #define SRC_SPRINGAGENT_TISSUETYPE_H
 
 class Tissue_Type {
+private:
+	bool m_runs_cpm = false;
 public:
     std::string m_name;
     int m_tissue_configuration;
@@ -16,6 +18,9 @@ public:
     virtual int get_tissue_configuration();
 
     Tissue_Type(Tissue_Container *tissue_container, std::string name, Cell_Type *cell_type, int tissue_configuration);
+
+	void set_runs_cpm(const bool runs_cpm);
+	bool runs_cpm() const;
 };
 
 class Tissue_Type_Cylindrical : public Tissue_Type {
