@@ -44,7 +44,11 @@ class World;
 #define DSL_MAX_FILS false // Set to true to set a limit for the number of fils on a cell.
 #define DSL_ADHESIVENESS_TESTING true
 #define DSL_SOLIDNESS_CHECK true
-#define DSL_SHUFFLE_TEST true
+
+// Sets a rather contrived situation (with alternating active VEGFR levels)
+// to test the effect of using the CPM in the DSL and MSM. If you're reading
+// this and the boolean is set to true, you probably want to turn it off.
+#define DSL_SHUFFLE_TEST false
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false
