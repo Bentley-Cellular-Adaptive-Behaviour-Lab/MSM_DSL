@@ -127,8 +127,8 @@ public:
     void tissue_vessel_draw_mesh(int i, int j, EC* cellAgent);
     void tissue_vessel_connect_mesh();
 
-    bool check_boundaries();
-    void determine_boundaries();
+    bool check_boundaries() override;
+    void determine_boundaries() override;
 };
 
 // TISSUE_MONOLAYER //

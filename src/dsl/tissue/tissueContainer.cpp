@@ -606,9 +606,26 @@ bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tiss
     auto y_offset_squared = y_offset * y_offset;
     auto z_offset_squared = z_offset * z_offset;
 
-    auto min_dist = std::sqrt(y_offset_squared + z_offset_squared);
+	auto min_dist = std::sqrt(y_offset_squared + z_offset_squared);
 
-    if ((float) vessel_1_radius + (float) vessel_2_radius >= min_dist) {
+	auto vessel_1_lowerx = vessel_1->get_vessel_centre_x_coord() - (vessel_1->get_vessel_length() / 2.0f);
+	auto vessel_1_upperx = vessel_1->get_vessel_centre_x_coord() + (vessel_1->get_vessel_length() / 2.0f);
+
+	auto vessel_2_lowerx = vessel_2->get_vessel_centre_x_coord() - (vessel_2->get_vessel_length() / 2.0f);
+	auto vessel_2_upperx = vessel_2->get_vessel_centre_x_coord() + (vessel_2->get_vessel_length() / 2.0f);
+
+	bool x_overlap = false;
+	if (vessel_1_lowerx >= vessel_2_lowerx && vessel_1_lowerx <= vessel_2_upperx) {
+		x_overlap = true;
+	} else if (vessel_1_upperx >= vessel_2_lowerx && vessel_1_upperx <= vessel_2_upperx) {
+		x_overlap = true;
+	} else if (vessel_2_lowerx >= vessel_1_lowerx && vessel_2_lowerx <= vessel_1_upperx) {
+		x_overlap = true;
+	} else if (vessel_2_upperx >= vessel_1_lowerx && vessel_2_upperx <= vessel_1_upperx) {
+		x_overlap = true;
+	}
+
+    if (((float) vessel_1_radius + (float) vessel_2_radius >= min_dist) && x_overlap) {
         return true;
     }
     return false;
