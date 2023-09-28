@@ -96,6 +96,7 @@ void write_time_to_outfile(const std::string &basicString, const int pattern);
 
 //   scale_ProtLevels_to_CellSize();
 //}
+
 World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s)
 {
 #ifdef _MSC_VER
@@ -1993,7 +1994,7 @@ void World::hysteresisAnalysis() {
 }
 
 /*****************************************************************************************
-*  Name:		updateMemAgents_MSM (CORE MSM)
+*  Name:		updateMemAgents_MSM
 *  Description: Asynchronously update all memAgents across all cells, grows/retracts
 *  				filopodia and lamellipodia veil advance, and activates receptors from local
 *   			ligand levels
@@ -2047,8 +2048,6 @@ void World::updateMemAgents_MSM() {
 //			memp->update_env_levels();
 //		}
 
-
-
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
 
@@ -2095,8 +2094,15 @@ void World::updateMemAgents_MSM() {
 					}
 				}
 
+				float current_FILTIPMAX;
+				if (SHANE_FILTIPMAX_RETRACT) {
+					current_FILTIPMAX = calc_shane_filtipmax(memp);
+				} else {
+					current_FILTIPMAX = FILTIPMAX;
+				}
+
 				// Retract filopodia if inactive.
-				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > FILTIPMAX))
+				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > current_FILTIPMAX))
 					|| ((RAND_FILRETRACT_CHANCE > -1) && (randomChance < RAND_FILRETRACT_CHANCE))) {
 					if (memp->filRetract()) {
 						tipDeleteFlag = true;
@@ -7959,7 +7965,7 @@ void World::create_filopodia_outfile_csv() {
 	try {
 		file.open(file_name.c_str(), std::ios_base::app);
 		if (file.is_open()) {
-			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb\n";
+			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb,retractTime\n";
 			file.close();
 		} else {
 			throw 1;
@@ -8048,7 +8054,15 @@ void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgen
 
 			// Add extension probability to file,
 			// if the event is a creation or extension event.
-			if (eventID == FIL_EVENT_CREATION || eventID == FIL_EVENT_EXTENSION) {
+			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_DISASSEMBLY) {
+				file << std::to_string(memAgent->filTipTimer);
+			} else {
+				file << "n/a";
+			}
+
+			// Add memAgent timer to file,
+			// if the event is a creation or extension event.
+			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_EXTENSION) {
 				file << std::to_string(prob);
 			} else {
 				file << "n/a";
@@ -8233,4 +8247,13 @@ void World::write_to_shuffle_outfiles() {
 		std::cout << "Error: Could not write to results file for shuffling tests.";
 		exit(e);
 	}
+}
+
+float World::calc_shane_filtipmax(MemAgent *memAgent) const {
+	auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
+	auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
+	double SEMA_PLEXIN_BOUND = SEMA3A_MEAN * PLEXIND1 * 0.1;
+	double PROP_PLEXIN_BOUND = SEMA_PLEXIN_BOUND / (SEMA_PLEXIN_BOUND + PLEXIND1);
+	double modifier = 1 - PROP_PLEXIN_BOUND;
+	return (float) FILTIPMAX * (modifier);
 }

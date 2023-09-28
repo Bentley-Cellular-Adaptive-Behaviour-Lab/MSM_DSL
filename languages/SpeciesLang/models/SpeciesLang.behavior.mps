@@ -312,7 +312,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="1Ch7j$N9XgI">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
     <node concept="13i0hz" id="1Ch7j$N9XgT" role="13h7CS">
       <property role="TrG5h" value="create_relation" />
@@ -3128,7 +3128,7 @@
       <node concept="3Tm1VV" id="4MFt7FnVeHl" role="1B3o_S" />
       <node concept="_YKpA" id="4MFt7FnVgXm" role="3clF45">
         <node concept="3Tqbb2" id="4MFt7FnV$Hz" role="_ZDj9">
-          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
         </node>
       </node>
       <node concept="3clFbS" id="4MFt7FnVeHn" role="3clF47">
@@ -3174,13 +3174,13 @@
             <property role="TrG5h" value="processList" />
             <node concept="_YKpA" id="4MFt7FnVhJ2" role="1tU5fm">
               <node concept="3Tqbb2" id="4MFt7FnVhKe" role="_ZDj9">
-                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
               </node>
             </node>
             <node concept="2ShNRf" id="4MFt7FnVhOC" role="33vP2m">
               <node concept="Tc6Ow" id="4MFt7FnVhO$" role="2ShVmc">
                 <node concept="3Tqbb2" id="4MFt7FnVhO_" role="HW$YZ">
-                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
                 </node>
               </node>
             </node>
@@ -6542,7 +6542,7 @@
       <node concept="37vLTG" id="5Cso5p4sseD" role="3clF46">
         <property role="TrG5h" value="inhibitsReaction" />
         <node concept="3Tqbb2" id="5Cso5p4sseC" role="1tU5fm">
-          <ref role="ehGHo" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
         </node>
       </node>
       <node concept="10P_77" id="$XkBXNfqU9" role="3clF45" />
@@ -8659,13 +8659,13 @@
             <property role="TrG5h" value="potentialProcesses" />
             <node concept="_YKpA" id="2AP3$9HzEnC" role="1tU5fm">
               <node concept="3Tqbb2" id="2AP3$9HzEpP" role="_ZDj9">
-                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
               </node>
             </node>
             <node concept="2ShNRf" id="2AP3$9HzEFU" role="33vP2m">
               <node concept="Tc6Ow" id="2AP3$9HzEFr" role="2ShVmc">
                 <node concept="3Tqbb2" id="2AP3$9HzEFs" role="HW$YZ">
-                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
                 </node>
               </node>
             </node>
@@ -9052,7 +9052,7 @@
       <node concept="3Tm1VV" id="2AP3$9HzIuq" role="1B3o_S" />
       <node concept="_YKpA" id="2AP3$9HzK54" role="3clF45">
         <node concept="3Tqbb2" id="2AP3$9HzK5F" role="_ZDj9">
-          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
         </node>
       </node>
       <node concept="3clFbS" id="2AP3$9HzIus" role="3clF47">
@@ -9132,13 +9132,13 @@
             <property role="TrG5h" value="potentialProcesses" />
             <node concept="_YKpA" id="2AP3$9H$iGv" role="1tU5fm">
               <node concept="3Tqbb2" id="2AP3$9H$jet" role="_ZDj9">
-                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
               </node>
             </node>
             <node concept="2ShNRf" id="2AP3$9H$jld" role="33vP2m">
               <node concept="Tc6Ow" id="2AP3$9H$jl9" role="2ShVmc">
                 <node concept="3Tqbb2" id="2AP3$9H$jla" role="HW$YZ">
-                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+                  <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
                 </node>
               </node>
             </node>
@@ -10173,7 +10173,7 @@
                   <node concept="1PxgMI" id="2AP3$9HzTZV" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="2AP3$9HzU15" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+                      <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
                     </node>
                     <node concept="37vLTw" id="2AP3$9HzTIU" role="1m5AlR">
                       <ref role="3cqZAo" node="2AP3$9HzHY5" resolve="process" />
@@ -10206,7 +10206,7 @@
                   <node concept="1PxgMI" id="2AP3$9HzUtO" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="2AP3$9HzUtP" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+                      <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
                     </node>
                     <node concept="37vLTw" id="2AP3$9HzUtQ" role="1m5AlR">
                       <ref role="3cqZAo" node="2AP3$9HzHY5" resolve="process" />
@@ -10237,7 +10237,7 @@
             </node>
             <node concept="1mIQ4w" id="2AP3$9HzSFJ" role="2OqNvi">
               <node concept="chp4Y" id="2AP3$9HzT24" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+                <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
               </node>
             </node>
           </node>
@@ -10338,7 +10338,7 @@
       <node concept="37vLTG" id="2AP3$9HzHY5" role="3clF46">
         <property role="TrG5h" value="process" />
         <node concept="3Tqbb2" id="2AP3$9HzHZj" role="1tU5fm">
-          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
         </node>
       </node>
     </node>
@@ -10542,7 +10542,7 @@
       <node concept="37vLTG" id="2AP3$9H$3rH" role="3clF46">
         <property role="TrG5h" value="process" />
         <node concept="3Tqbb2" id="2AP3$9H$3rG" role="1tU5fm">
-          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
         </node>
       </node>
     </node>
@@ -18555,7 +18555,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU1XLH">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU210_" role="13h7CS">
       <property role="TrG5h" value="rateContainsSpecies" />
@@ -18668,7 +18668,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU2gYx">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU2gYQ" role="13h7CS">
       <property role="TrG5h" value="forwardRateContainsSpecies" />
@@ -27144,7 +27144,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="20T6jFVkE_h">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="13h7C2" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     <node concept="13i0hz" id="20T6jFVkE_s" role="13h7CS">
       <property role="TrG5h" value="createRelations" />
@@ -27634,7 +27634,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6Hz4f3Di27u">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="13i0hz" id="6Hz4f3Dh3F6" role="13h7CS">
       <property role="TrG5h" value="containsSpecies" />
@@ -28491,8 +28491,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="EX9x3Xxtd$">
-    <property role="3GE5qa" value="Processes" />
-    <ref role="13h7C2" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+    <property role="3GE5qa" value="Interactions" />
+    <ref role="13h7C2" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
     <node concept="13i0hz" id="EX9x3XxtdJ" role="13h7CS">
       <property role="TrG5h" value="getFixedName" />
       <node concept="3Tm1VV" id="EX9x3XxtdK" role="1B3o_S" />

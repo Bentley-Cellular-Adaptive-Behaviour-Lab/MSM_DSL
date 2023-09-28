@@ -444,7 +444,7 @@
         <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
         <node concept="3XFhqQ" id="5gBmBO5aXxc" role="3EZMnx" />
         <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
-          <property role="3F0ifm" value="Has Species :" />
+          <property role="3F0ifm" value="Has Component :" />
           <node concept="2biZxu" id="2FvyIAlEDUV" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -927,7 +927,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtHYR" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP:" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtHYS" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -945,6 +945,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLCu" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMU46" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMU4v" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMU4w" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtHYU" role="2iSdaV" />
@@ -1487,7 +1496,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtHq3" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP :" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtHq4" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1505,6 +1514,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLA2" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMU6h" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMU6i" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMU6j" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtHq6" role="2iSdaV" />
@@ -1579,7 +1597,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtGNh" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP :" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtGNi" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1597,6 +1615,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLAa" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMUbM" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMUbN" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMUbO" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtGNk" role="2iSdaV" />
@@ -1745,21 +1772,25 @@
         </node>
         <node concept="2iRfu4" id="1fmp7ott7JS" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="2q_vzDIv7UP" role="3EZMnx">
-        <node concept="VPM3Z" id="2q_vzDIv7UR" role="3F10Kt" />
-        <node concept="3F0ifn" id="2q_vzDIv7UT" role="3EZMnx">
-          <property role="3F0ifm" value="Uses up " />
-          <node concept="2biZxu" id="2q_vzDIv8kM" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
+      <node concept="1X3_iC" id="5N5gXA13Icg" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="2q_vzDIv7UP" role="8Wnug">
+          <node concept="VPM3Z" id="2q_vzDIv7UR" role="3F10Kt" />
+          <node concept="3F0ifn" id="2q_vzDIv7UT" role="3EZMnx">
+            <property role="3F0ifm" value="Uses up " />
+            <node concept="2biZxu" id="2q_vzDIv8kM" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2q_vzDIv8kN" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
           </node>
-          <node concept="VSNWy" id="2q_vzDIv8kN" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
+          <node concept="3F1sOY" id="2q_vzDIv7Wl" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:5j_l9LXFFx5" resolve="_cytoskeletalProteinUsage" />
           </node>
+          <node concept="2iRfu4" id="2q_vzDIv7UU" role="2iSdaV" />
         </node>
-        <node concept="3F1sOY" id="2q_vzDIv7Wl" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5j_l9LXFFx5" resolve="_cytoskeletalProteinUsage" />
-        </node>
-        <node concept="2iRfu4" id="2q_vzDIv7UU" role="2iSdaV" />
       </node>
       <node concept="1X3_iC" id="5gt2Vd$4i7H" role="lGtFl">
         <property role="3V$3am" value="childCellModel" />
@@ -1851,7 +1882,7 @@
             </node>
           </node>
           <node concept="3F0ifn" id="7lZ8SQtxpUB" role="1j7Clw">
-            <property role="3F0ifm" value="Sensitivity :" />
+            <property role="3F0ifm" value="Sensitivity:" />
             <node concept="2biZxu" id="7lZ8SQtxpUE" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>

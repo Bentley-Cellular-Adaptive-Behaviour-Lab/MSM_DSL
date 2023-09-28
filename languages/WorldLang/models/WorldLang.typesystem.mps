@@ -19,6 +19,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -166,9 +167,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
@@ -880,475 +889,527 @@
         </node>
       </node>
       <node concept="3clFbH" id="11q$FfsVroX" role="3cqZAp" />
-      <node concept="3cpWs8" id="1r0uutBJvpF" role="3cqZAp">
-        <node concept="3cpWsn" id="1r0uutBJvpG" role="3cpWs9">
-          <property role="TrG5h" value="grid" />
-          <node concept="3Tqbb2" id="1r0uutBJvpH" role="1tU5fm">
-            <ref role="ehGHo" to="s9ob:7faAukhALBA" resolve="Grid" />
-          </node>
-          <node concept="2OqwBi" id="1r0uutBJvpI" role="33vP2m">
-            <node concept="2OqwBi" id="1r0uutBJvpJ" role="2Oq$k0">
-              <node concept="1YBJjd" id="1r0uutBJvpK" role="2Oq$k0">
-                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-              </node>
-              <node concept="2Xjw5R" id="1r0uutBJvpL" role="2OqNvi">
-                <node concept="1xMEDy" id="1r0uutBJvpM" role="1xVPHs">
-                  <node concept="chp4Y" id="1r0uutBJvpN" role="ri$Ld">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
-                  </node>
+      <node concept="1X3_iC" id="4gfHhj0ZmfP" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3cpWs8" id="1r0uutBJvpF" role="8Wnug">
+          <node concept="3cpWsn" id="1r0uutBJvpG" role="3cpWs9">
+            <property role="TrG5h" value="grid" />
+            <node concept="3Tqbb2" id="1r0uutBJvpH" role="1tU5fm">
+              <ref role="ehGHo" to="s9ob:7faAukhALBA" resolve="Grid" />
+            </node>
+            <node concept="2OqwBi" id="1r0uutBJvpI" role="33vP2m">
+              <node concept="2OqwBi" id="1r0uutBJvpJ" role="2Oq$k0">
+                <node concept="1YBJjd" id="1r0uutBJvpK" role="2Oq$k0">
+                  <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
                 </node>
-              </node>
-            </node>
-            <node concept="3TrEf2" id="1r0uutBJvpO" role="2OqNvi">
-              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbH" id="11q$FfsVsep" role="3cqZAp" />
-      <node concept="3SKdUt" id="1r0uutBJvpQ" role="3cqZAp">
-        <node concept="1PaTwC" id="1r0uutBJvpR" role="1aUNEU">
-          <node concept="3oM_SD" id="1r0uutBJvpS" role="1PaTwD">
-            <property role="3oM_SC" value="Is" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpT" role="1PaTwD">
-            <property role="3oM_SC" value="this" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpU" role="1PaTwD">
-            <property role="3oM_SC" value="triangular" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpV" role="1PaTwD">
-            <property role="3oM_SC" value="substrate" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpW" role="1PaTwD">
-            <property role="3oM_SC" value="extending" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpX" role="1PaTwD">
-            <property role="3oM_SC" value="out" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpY" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvpZ" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq0" role="1PaTwD">
-            <property role="3oM_SC" value="lower" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq1" role="1PaTwD">
-            <property role="3oM_SC" value="X" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq2" role="1PaTwD">
-            <property role="3oM_SC" value="boundary" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq3" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq4" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJvq5" role="1PaTwD">
-            <property role="3oM_SC" value="world?" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="1r0uutBJvq6" role="3cqZAp">
-        <node concept="3clFbS" id="1r0uutBJvq7" role="3clFbx">
-          <node concept="2MkqsV" id="11q$FfsVMgl" role="3cqZAp">
-            <node concept="3cpWs3" id="11q$FfsVMgm" role="2MkJ7o">
-              <node concept="3cpWs3" id="11q$FfsVMgn" role="3uHU7B">
-                <node concept="3cpWs3" id="11q$FfsVMgo" role="3uHU7B">
-                  <node concept="Xl_RD" id="11q$FfsVMgp" role="3uHU7B">
-                    <property role="Xl_RC" value="Vertex X extends out of the world. X gridpoint value: " />
-                  </node>
-                  <node concept="2OqwBi" id="11q$FfsVMgq" role="3uHU7w">
-                    <node concept="1YBJjd" id="11q$FfsVMXR" role="2Oq$k0">
-                      <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-                    </node>
-                    <node concept="2qgKlT" id="11q$FfsVN9f" role="2OqNvi">
-                      <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
+                <node concept="2Xjw5R" id="1r0uutBJvpL" role="2OqNvi">
+                  <node concept="1xMEDy" id="1r0uutBJvpM" role="1xVPHs">
+                    <node concept="chp4Y" id="1r0uutBJvpN" role="ri$Ld">
+                      <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                     </node>
                   </node>
                 </node>
-                <node concept="Xl_RD" id="11q$FfsVMgt" role="3uHU7w">
-                  <property role="Xl_RC" value="X lower gridpoint boundary: " />
-                </node>
               </node>
-              <node concept="2OqwBi" id="11q$FfsVMgu" role="3uHU7w">
-                <node concept="37vLTw" id="11q$FfsVMgv" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
-                </node>
-                <node concept="3TrcHB" id="11q$FfsVNcp" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
-                </node>
+              <node concept="3TrEf2" id="1r0uutBJvpO" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
-            </node>
-            <node concept="1YBJjd" id="11q$FfsVMKA" role="1urrMF">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-            </node>
-          </node>
-        </node>
-        <node concept="3eOVzh" id="11q$FfsVtiN" role="3clFbw">
-          <node concept="2OqwBi" id="11q$FfsVu0J" role="3uHU7w">
-            <node concept="37vLTw" id="11q$FfsVtNX" role="2Oq$k0">
-              <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
-            </node>
-            <node concept="3TrcHB" id="11q$FfsVu7r" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1r0uutBJvqw" role="3uHU7B">
-            <node concept="1YBJjd" id="1r0uutBJvqx" role="2Oq$k0">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-            </node>
-            <node concept="2qgKlT" id="11q$FfsVsJp" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbH" id="1r0uutBJKmY" role="3cqZAp" />
-      <node concept="3SKdUt" id="1r0uutBJLDT" role="3cqZAp">
-        <node concept="1PaTwC" id="1r0uutBJLDU" role="1aUNEU">
-          <node concept="3oM_SD" id="1r0uutBJKWn" role="1PaTwD">
-            <property role="3oM_SC" value="Is" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWo" role="1PaTwD">
-            <property role="3oM_SC" value="this" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWp" role="1PaTwD">
-            <property role="3oM_SC" value="triangular" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWq" role="1PaTwD">
-            <property role="3oM_SC" value="substrate" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWr" role="1PaTwD">
-            <property role="3oM_SC" value="extending" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWs" role="1PaTwD">
-            <property role="3oM_SC" value="out" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWt" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWu" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWv" role="1PaTwD">
-            <property role="3oM_SC" value="upper" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWw" role="1PaTwD">
-            <property role="3oM_SC" value="X" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWx" role="1PaTwD">
-            <property role="3oM_SC" value="boundary" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWy" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKWz" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJKW$" role="1PaTwD">
-            <property role="3oM_SC" value="world?" />
+      <node concept="1X3_iC" id="4gfHhj0ZmfQ" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbH" id="11q$FfsVsep" role="8Wnug" />
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0ZmfR" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3SKdUt" id="1r0uutBJvpQ" role="8Wnug">
+          <node concept="1PaTwC" id="1r0uutBJvpR" role="1aUNEU">
+            <node concept="3oM_SD" id="1r0uutBJvpS" role="1PaTwD">
+              <property role="3oM_SC" value="Is" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpT" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpU" role="1PaTwD">
+              <property role="3oM_SC" value="triangular" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpV" role="1PaTwD">
+              <property role="3oM_SC" value="substrate" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpW" role="1PaTwD">
+              <property role="3oM_SC" value="extending" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpX" role="1PaTwD">
+              <property role="3oM_SC" value="out" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpY" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvpZ" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq0" role="1PaTwD">
+              <property role="3oM_SC" value="lower" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq1" role="1PaTwD">
+              <property role="3oM_SC" value="X" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq2" role="1PaTwD">
+              <property role="3oM_SC" value="boundary" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq3" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq4" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJvq5" role="1PaTwD">
+              <property role="3oM_SC" value="world?" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbJ" id="1r0uutBJFBa" role="3cqZAp">
-        <node concept="3clFbS" id="1r0uutBJFBb" role="3clFbx">
-          <node concept="2MkqsV" id="11q$FfsVPFP" role="3cqZAp">
-            <node concept="3cpWs3" id="11q$FfsVPYD" role="2MkJ7o">
-              <node concept="2OqwBi" id="11q$FfsVPYE" role="3uHU7w">
-                <node concept="37vLTw" id="11q$FfsVPYF" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
-                </node>
-                <node concept="3TrcHB" id="11q$FfsVPYG" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
-                </node>
-              </node>
-              <node concept="3cpWs3" id="11q$FfsVPFQ" role="3uHU7B">
-                <node concept="3cpWs3" id="11q$FfsVPFR" role="3uHU7B">
-                  <node concept="3cpWs3" id="11q$FfsVPFS" role="3uHU7B">
-                    <node concept="Xl_RD" id="11q$FfsVPFT" role="3uHU7B">
+      <node concept="1X3_iC" id="4gfHhj0ZmfS" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbJ" id="1r0uutBJvq6" role="8Wnug">
+          <node concept="3clFbS" id="1r0uutBJvq7" role="3clFbx">
+            <node concept="2MkqsV" id="11q$FfsVMgl" role="3cqZAp">
+              <node concept="3cpWs3" id="11q$FfsVMgm" role="2MkJ7o">
+                <node concept="3cpWs3" id="11q$FfsVMgn" role="3uHU7B">
+                  <node concept="3cpWs3" id="11q$FfsVMgo" role="3uHU7B">
+                    <node concept="Xl_RD" id="11q$FfsVMgp" role="3uHU7B">
                       <property role="Xl_RC" value="Vertex X extends out of the world. X gridpoint value: " />
                     </node>
-                    <node concept="2OqwBi" id="11q$FfsVPFU" role="3uHU7w">
-                      <node concept="1YBJjd" id="11q$FfsVPFV" role="2Oq$k0">
+                    <node concept="2OqwBi" id="11q$FfsVMgq" role="3uHU7w">
+                      <node concept="1YBJjd" id="11q$FfsVMXR" role="2Oq$k0">
                         <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
                       </node>
-                      <node concept="2qgKlT" id="11q$FfsVPFW" role="2OqNvi">
+                      <node concept="2qgKlT" id="11q$FfsVN9f" role="2OqNvi">
                         <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
                       </node>
                     </node>
                   </node>
-                  <node concept="Xl_RD" id="11q$FfsVPFX" role="3uHU7w">
-                    <property role="Xl_RC" value="X upper gridpoint boundary: " />
+                  <node concept="Xl_RD" id="11q$FfsVMgt" role="3uHU7w">
+                    <property role="Xl_RC" value="X lower gridpoint boundary: " />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="11q$FfsVPYH" role="3uHU7w">
-                  <node concept="37vLTw" id="11q$FfsVPYI" role="2Oq$k0">
+                <node concept="2OqwBi" id="11q$FfsVMgu" role="3uHU7w">
+                  <node concept="37vLTw" id="11q$FfsVMgv" role="2Oq$k0">
                     <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
                   </node>
-                  <node concept="3TrcHB" id="11q$FfsVPYJ" role="2OqNvi">
-                    <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
+                  <node concept="3TrcHB" id="11q$FfsVNcp" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="1YBJjd" id="11q$FfsVPG1" role="1urrMF">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              <node concept="1YBJjd" id="11q$FfsVMKA" role="1urrMF">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
             </node>
           </node>
-        </node>
-        <node concept="3eOSWO" id="11q$FfsVvoQ" role="3clFbw">
-          <node concept="3cpWs3" id="11q$FfsVwen" role="3uHU7w">
-            <node concept="2OqwBi" id="11q$FfsVwj5" role="3uHU7w">
-              <node concept="37vLTw" id="11q$FfsVwiv" role="2Oq$k0">
+          <node concept="3eOVzh" id="11q$FfsVtiN" role="3clFbw">
+            <node concept="2OqwBi" id="11q$FfsVu0J" role="3uHU7w">
+              <node concept="37vLTw" id="11q$FfsVtNX" role="2Oq$k0">
                 <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
               </node>
-              <node concept="3TrcHB" id="11q$FfsVwrB" role="2OqNvi">
+              <node concept="3TrcHB" id="11q$FfsVu7r" role="2OqNvi">
                 <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
               </node>
             </node>
-            <node concept="2OqwBi" id="11q$FfsVwzE" role="3uHU7B">
-              <node concept="37vLTw" id="11q$FfsVvZQ" role="2Oq$k0">
-                <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+            <node concept="2OqwBi" id="1r0uutBJvqw" role="3uHU7B">
+              <node concept="1YBJjd" id="1r0uutBJvqx" role="2Oq$k0">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
               </node>
-              <node concept="3TrcHB" id="11q$FfsVw$L" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
+              <node concept="2qgKlT" id="11q$FfsVsJp" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1r0uutBJFBm" role="3uHU7B">
-            <node concept="1YBJjd" id="1r0uutBJFBn" role="2Oq$k0">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-            </node>
-            <node concept="2qgKlT" id="11q$FfsVuLL" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbH" id="1r0uutBJvq_" role="3cqZAp" />
-      <node concept="3SKdUt" id="1r0uutBJMto" role="3cqZAp">
-        <node concept="1PaTwC" id="1r0uutBJMtp" role="1aUNEU">
-          <node concept="3oM_SD" id="1r0uutBJMzl" role="1PaTwD">
-            <property role="3oM_SC" value="Is" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzm" role="1PaTwD">
-            <property role="3oM_SC" value="this" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzn" role="1PaTwD">
-            <property role="3oM_SC" value="triangular" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzo" role="1PaTwD">
-            <property role="3oM_SC" value="substrate" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzp" role="1PaTwD">
-            <property role="3oM_SC" value="extending" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzq" role="1PaTwD">
-            <property role="3oM_SC" value="out" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzr" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzs" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzL" role="1PaTwD">
-            <property role="3oM_SC" value="lower" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzZ" role="1PaTwD">
-            <property role="3oM_SC" value="Y" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzv" role="1PaTwD">
-            <property role="3oM_SC" value="boundary" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzw" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzx" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJMzy" role="1PaTwD">
-            <property role="3oM_SC" value="world?" />
+      <node concept="1X3_iC" id="4gfHhj0ZmfT" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbH" id="1r0uutBJKmY" role="8Wnug" />
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0ZmfU" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3SKdUt" id="1r0uutBJLDT" role="8Wnug">
+          <node concept="1PaTwC" id="1r0uutBJLDU" role="1aUNEU">
+            <node concept="3oM_SD" id="1r0uutBJKWn" role="1PaTwD">
+              <property role="3oM_SC" value="Is" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWo" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWp" role="1PaTwD">
+              <property role="3oM_SC" value="triangular" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWq" role="1PaTwD">
+              <property role="3oM_SC" value="substrate" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWr" role="1PaTwD">
+              <property role="3oM_SC" value="extending" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWs" role="1PaTwD">
+              <property role="3oM_SC" value="out" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWt" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWu" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWv" role="1PaTwD">
+              <property role="3oM_SC" value="upper" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWw" role="1PaTwD">
+              <property role="3oM_SC" value="X" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWx" role="1PaTwD">
+              <property role="3oM_SC" value="boundary" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWy" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKWz" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJKW$" role="1PaTwD">
+              <property role="3oM_SC" value="world?" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbJ" id="1r0uutBJDrX" role="3cqZAp">
-        <node concept="3clFbS" id="1r0uutBJDrY" role="3clFbx">
-          <node concept="2MkqsV" id="11q$FfsVQij" role="3cqZAp">
-            <node concept="3cpWs3" id="11q$FfsVQik" role="2MkJ7o">
-              <node concept="3cpWs3" id="11q$FfsVQil" role="3uHU7B">
-                <node concept="3cpWs3" id="11q$FfsVQim" role="3uHU7B">
-                  <node concept="Xl_RD" id="11q$FfsVQin" role="3uHU7B">
-                    <property role="Xl_RC" value="Vertex Y extends out of the world. Y gridpoint value: " />
+      <node concept="1X3_iC" id="4gfHhj0ZmfV" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbJ" id="1r0uutBJFBa" role="8Wnug">
+          <node concept="3clFbS" id="1r0uutBJFBb" role="3clFbx">
+            <node concept="2MkqsV" id="11q$FfsVPFP" role="3cqZAp">
+              <node concept="3cpWs3" id="11q$FfsVPYD" role="2MkJ7o">
+                <node concept="2OqwBi" id="11q$FfsVPYE" role="3uHU7w">
+                  <node concept="37vLTw" id="11q$FfsVPYF" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
                   </node>
-                  <node concept="2OqwBi" id="11q$FfsVQio" role="3uHU7w">
-                    <node concept="1YBJjd" id="11q$FfsVQip" role="2Oq$k0">
-                      <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-                    </node>
-                    <node concept="2qgKlT" id="11q$FfsVQ$S" role="2OqNvi">
-                      <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
-                    </node>
+                  <node concept="3TrcHB" id="11q$FfsVPYG" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                   </node>
                 </node>
-                <node concept="Xl_RD" id="11q$FfsVQir" role="3uHU7w">
-                  <property role="Xl_RC" value="Y lower gridpoint boundary: " />
+                <node concept="3cpWs3" id="11q$FfsVPFQ" role="3uHU7B">
+                  <node concept="3cpWs3" id="11q$FfsVPFR" role="3uHU7B">
+                    <node concept="3cpWs3" id="11q$FfsVPFS" role="3uHU7B">
+                      <node concept="Xl_RD" id="11q$FfsVPFT" role="3uHU7B">
+                        <property role="Xl_RC" value="Vertex X extends out of the world. X gridpoint value: " />
+                      </node>
+                      <node concept="2OqwBi" id="11q$FfsVPFU" role="3uHU7w">
+                        <node concept="1YBJjd" id="11q$FfsVPFV" role="2Oq$k0">
+                          <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+                        </node>
+                        <node concept="2qgKlT" id="11q$FfsVPFW" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="11q$FfsVPFX" role="3uHU7w">
+                      <property role="Xl_RC" value="X upper gridpoint boundary: " />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="11q$FfsVPYH" role="3uHU7w">
+                    <node concept="37vLTw" id="11q$FfsVPYI" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                    </node>
+                    <node concept="3TrcHB" id="11q$FfsVPYJ" role="2OqNvi">
+                      <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="11q$FfsVQis" role="3uHU7w">
-                <node concept="37vLTw" id="11q$FfsVQit" role="2Oq$k0">
+              <node concept="1YBJjd" id="11q$FfsVPG1" role="1urrMF">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3eOSWO" id="11q$FfsVvoQ" role="3clFbw">
+            <node concept="3cpWs3" id="11q$FfsVwen" role="3uHU7w">
+              <node concept="2OqwBi" id="11q$FfsVwj5" role="3uHU7w">
+                <node concept="37vLTw" id="11q$FfsVwiv" role="2Oq$k0">
                   <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
                 </node>
-                <node concept="3TrcHB" id="11q$FfsVQDo" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
+                <node concept="3TrcHB" id="11q$FfsVwrB" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="11q$FfsVwzE" role="3uHU7B">
+                <node concept="37vLTw" id="11q$FfsVvZQ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                </node>
+                <node concept="3TrcHB" id="11q$FfsVw$L" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
                 </node>
               </node>
             </node>
-            <node concept="1YBJjd" id="11q$FfsVQiv" role="1urrMF">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-            </node>
-          </node>
-        </node>
-        <node concept="3eOVzh" id="11q$FfsVxEj" role="3clFbw">
-          <node concept="2OqwBi" id="11q$FfsVxEk" role="3uHU7w">
-            <node concept="37vLTw" id="11q$FfsVxEl" role="2Oq$k0">
-              <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
-            </node>
-            <node concept="3TrcHB" id="11q$FfsVxUA" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="11q$FfsVxEn" role="3uHU7B">
-            <node concept="1YBJjd" id="11q$FfsVxEo" role="2Oq$k0">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
-            </node>
-            <node concept="2qgKlT" id="11q$FfsVxM4" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
+            <node concept="2OqwBi" id="1r0uutBJFBm" role="3uHU7B">
+              <node concept="1YBJjd" id="1r0uutBJFBn" role="2Oq$k0">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
+              <node concept="2qgKlT" id="11q$FfsVuLL" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3V40ltr1arY" resolve="get_vertex_xcoord_gridpoint" />
+              </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbH" id="1r0uutBJPGA" role="3cqZAp" />
-      <node concept="3SKdUt" id="1r0uutBJOVg" role="3cqZAp">
-        <node concept="1PaTwC" id="1r0uutBJOVh" role="1aUNEU">
-          <node concept="3oM_SD" id="1r0uutBJOVi" role="1PaTwD">
-            <property role="3oM_SC" value="Is" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVj" role="1PaTwD">
-            <property role="3oM_SC" value="this" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVk" role="1PaTwD">
-            <property role="3oM_SC" value="triangular" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVl" role="1PaTwD">
-            <property role="3oM_SC" value="substrate" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVm" role="1PaTwD">
-            <property role="3oM_SC" value="extending" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVn" role="1PaTwD">
-            <property role="3oM_SC" value="out" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVo" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVp" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVq" role="1PaTwD">
-            <property role="3oM_SC" value="upper" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVr" role="1PaTwD">
-            <property role="3oM_SC" value="X" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVs" role="1PaTwD">
-            <property role="3oM_SC" value="boundary" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVt" role="1PaTwD">
-            <property role="3oM_SC" value="of" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVu" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="1r0uutBJOVv" role="1PaTwD">
-            <property role="3oM_SC" value="world?" />
+      <node concept="1X3_iC" id="4gfHhj0ZmfW" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbH" id="1r0uutBJvq_" role="8Wnug" />
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0ZmfX" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3SKdUt" id="1r0uutBJMto" role="8Wnug">
+          <node concept="1PaTwC" id="1r0uutBJMtp" role="1aUNEU">
+            <node concept="3oM_SD" id="1r0uutBJMzl" role="1PaTwD">
+              <property role="3oM_SC" value="Is" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzm" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzn" role="1PaTwD">
+              <property role="3oM_SC" value="triangular" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzo" role="1PaTwD">
+              <property role="3oM_SC" value="substrate" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzp" role="1PaTwD">
+              <property role="3oM_SC" value="extending" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzq" role="1PaTwD">
+              <property role="3oM_SC" value="out" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzr" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzs" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzL" role="1PaTwD">
+              <property role="3oM_SC" value="lower" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzZ" role="1PaTwD">
+              <property role="3oM_SC" value="Y" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzv" role="1PaTwD">
+              <property role="3oM_SC" value="boundary" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzw" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzx" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJMzy" role="1PaTwD">
+              <property role="3oM_SC" value="world?" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="3clFbJ" id="1r0uutBJOVw" role="3cqZAp">
-        <node concept="3clFbS" id="1r0uutBJOVx" role="3clFbx">
-          <node concept="2MkqsV" id="11q$FfsVQOe" role="3cqZAp">
-            <node concept="3cpWs3" id="11q$FfsVS3J" role="2MkJ7o">
-              <node concept="2OqwBi" id="11q$FfsVSj$" role="3uHU7w">
-                <node concept="37vLTw" id="11q$FfsVScu" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
-                </node>
-                <node concept="3TrcHB" id="11q$FfsVSvz" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
-                </node>
-              </node>
-              <node concept="3cpWs3" id="11q$FfsVQOf" role="3uHU7B">
-                <node concept="3cpWs3" id="11q$FfsVQOg" role="3uHU7B">
-                  <node concept="3cpWs3" id="11q$FfsVQOh" role="3uHU7B">
-                    <node concept="Xl_RD" id="11q$FfsVQOi" role="3uHU7B">
+      <node concept="1X3_iC" id="4gfHhj0ZmfY" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbJ" id="1r0uutBJDrX" role="8Wnug">
+          <node concept="3clFbS" id="1r0uutBJDrY" role="3clFbx">
+            <node concept="2MkqsV" id="11q$FfsVQij" role="3cqZAp">
+              <node concept="3cpWs3" id="11q$FfsVQik" role="2MkJ7o">
+                <node concept="3cpWs3" id="11q$FfsVQil" role="3uHU7B">
+                  <node concept="3cpWs3" id="11q$FfsVQim" role="3uHU7B">
+                    <node concept="Xl_RD" id="11q$FfsVQin" role="3uHU7B">
                       <property role="Xl_RC" value="Vertex Y extends out of the world. Y gridpoint value: " />
                     </node>
-                    <node concept="2OqwBi" id="11q$FfsVQOj" role="3uHU7w">
-                      <node concept="1YBJjd" id="11q$FfsVQOk" role="2Oq$k0">
+                    <node concept="2OqwBi" id="11q$FfsVQio" role="3uHU7w">
+                      <node concept="1YBJjd" id="11q$FfsVQip" role="2Oq$k0">
                         <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
                       </node>
-                      <node concept="2qgKlT" id="11q$FfsVQOl" role="2OqNvi">
+                      <node concept="2qgKlT" id="11q$FfsVQ$S" role="2OqNvi">
                         <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
                       </node>
                     </node>
                   </node>
-                  <node concept="Xl_RD" id="11q$FfsVQOm" role="3uHU7w">
-                    <property role="Xl_RC" value="Y upper gridpoint boundary: " />
+                  <node concept="Xl_RD" id="11q$FfsVQir" role="3uHU7w">
+                    <property role="Xl_RC" value="Y lower gridpoint boundary: " />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="11q$FfsVQOn" role="3uHU7w">
-                  <node concept="37vLTw" id="11q$FfsVQOo" role="2Oq$k0">
+                <node concept="2OqwBi" id="11q$FfsVQis" role="3uHU7w">
+                  <node concept="37vLTw" id="11q$FfsVQit" role="2Oq$k0">
                     <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
                   </node>
-                  <node concept="3TrcHB" id="11q$FfsVRiP" role="2OqNvi">
-                    <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
+                  <node concept="3TrcHB" id="11q$FfsVQDo" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="1YBJjd" id="11q$FfsVQOq" role="1urrMF">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              <node concept="1YBJjd" id="11q$FfsVQiv" role="1urrMF">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
             </node>
           </node>
-        </node>
-        <node concept="3eOSWO" id="11q$FfsVxoY" role="3clFbw">
-          <node concept="3cpWs3" id="11q$FfsVxoZ" role="3uHU7w">
-            <node concept="2OqwBi" id="11q$FfsVxp0" role="3uHU7w">
-              <node concept="37vLTw" id="11q$FfsVxp1" role="2Oq$k0">
+          <node concept="3eOVzh" id="11q$FfsVxEj" role="3clFbw">
+            <node concept="2OqwBi" id="11q$FfsVxEk" role="3uHU7w">
+              <node concept="37vLTw" id="11q$FfsVxEl" role="2Oq$k0">
                 <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
               </node>
-              <node concept="3TrcHB" id="11q$FfsVxp2" role="2OqNvi">
+              <node concept="3TrcHB" id="11q$FfsVxUA" role="2OqNvi">
                 <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
               </node>
             </node>
-            <node concept="2OqwBi" id="11q$FfsVxp3" role="3uHU7B">
-              <node concept="37vLTw" id="11q$FfsVxp4" role="2Oq$k0">
-                <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+            <node concept="2OqwBi" id="11q$FfsVxEn" role="3uHU7B">
+              <node concept="1YBJjd" id="11q$FfsVxEo" role="2Oq$k0">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
               </node>
-              <node concept="3TrcHB" id="11q$FfsVxp5" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
+              <node concept="2qgKlT" id="11q$FfsVxM4" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="11q$FfsVxp6" role="3uHU7B">
-            <node concept="1YBJjd" id="11q$FfsVxp7" role="2Oq$k0">
-              <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+        </node>
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0ZmfZ" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbH" id="1r0uutBJPGA" role="8Wnug" />
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0Zmg0" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3SKdUt" id="1r0uutBJOVg" role="8Wnug">
+          <node concept="1PaTwC" id="1r0uutBJOVh" role="1aUNEU">
+            <node concept="3oM_SD" id="1r0uutBJOVi" role="1PaTwD">
+              <property role="3oM_SC" value="Is" />
             </node>
-            <node concept="2qgKlT" id="11q$FfsVxp8" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
+            <node concept="3oM_SD" id="1r0uutBJOVj" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVk" role="1PaTwD">
+              <property role="3oM_SC" value="triangular" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVl" role="1PaTwD">
+              <property role="3oM_SC" value="substrate" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVm" role="1PaTwD">
+              <property role="3oM_SC" value="extending" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVn" role="1PaTwD">
+              <property role="3oM_SC" value="out" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVo" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVp" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVq" role="1PaTwD">
+              <property role="3oM_SC" value="upper" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVr" role="1PaTwD">
+              <property role="3oM_SC" value="X" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVs" role="1PaTwD">
+              <property role="3oM_SC" value="boundary" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVt" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVu" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1r0uutBJOVv" role="1PaTwD">
+              <property role="3oM_SC" value="world?" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1X3_iC" id="4gfHhj0Zmg1" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbJ" id="1r0uutBJOVw" role="8Wnug">
+          <node concept="3clFbS" id="1r0uutBJOVx" role="3clFbx">
+            <node concept="2MkqsV" id="11q$FfsVQOe" role="3cqZAp">
+              <node concept="3cpWs3" id="11q$FfsVS3J" role="2MkJ7o">
+                <node concept="2OqwBi" id="11q$FfsVSj$" role="3uHU7w">
+                  <node concept="37vLTw" id="11q$FfsVScu" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                  </node>
+                  <node concept="3TrcHB" id="11q$FfsVSvz" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
+                  </node>
+                </node>
+                <node concept="3cpWs3" id="11q$FfsVQOf" role="3uHU7B">
+                  <node concept="3cpWs3" id="11q$FfsVQOg" role="3uHU7B">
+                    <node concept="3cpWs3" id="11q$FfsVQOh" role="3uHU7B">
+                      <node concept="Xl_RD" id="11q$FfsVQOi" role="3uHU7B">
+                        <property role="Xl_RC" value="Vertex Y extends out of the world. Y gridpoint value: " />
+                      </node>
+                      <node concept="2OqwBi" id="11q$FfsVQOj" role="3uHU7w">
+                        <node concept="1YBJjd" id="11q$FfsVQOk" role="2Oq$k0">
+                          <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+                        </node>
+                        <node concept="2qgKlT" id="11q$FfsVQOl" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="11q$FfsVQOm" role="3uHU7w">
+                      <property role="Xl_RC" value="Y upper gridpoint boundary: " />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="11q$FfsVQOn" role="3uHU7w">
+                    <node concept="37vLTw" id="11q$FfsVQOo" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                    </node>
+                    <node concept="3TrcHB" id="11q$FfsVRiP" role="2OqNvi">
+                      <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1YBJjd" id="11q$FfsVQOq" role="1urrMF">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3eOSWO" id="11q$FfsVxoY" role="3clFbw">
+            <node concept="3cpWs3" id="11q$FfsVxoZ" role="3uHU7w">
+              <node concept="2OqwBi" id="11q$FfsVxp0" role="3uHU7w">
+                <node concept="37vLTw" id="11q$FfsVxp1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                </node>
+                <node concept="3TrcHB" id="11q$FfsVxp2" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="11q$FfsVxp3" role="3uHU7B">
+                <node concept="37vLTw" id="11q$FfsVxp4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1r0uutBJvpG" resolve="grid" />
+                </node>
+                <node concept="3TrcHB" id="11q$FfsVxp5" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="11q$FfsVxp6" role="3uHU7B">
+              <node concept="1YBJjd" id="11q$FfsVxp7" role="2Oq$k0">
+                <ref role="1YBMHb" node="1r0uutBJvro" resolve="vertex" />
+              </node>
+              <node concept="2qgKlT" id="11q$FfsVxp8" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3V40ltr1cTa" resolve="get_vertex_ycoord_gridpoint" />
+              </node>
             </node>
           </node>
         </node>
@@ -2162,7 +2223,7 @@
         <node concept="3clFbS" id="cPxbW3twTa" role="3clFbx">
           <node concept="2MkqsV" id="cPxbW3t$80" role="3cqZAp">
             <node concept="Xl_RD" id="cPxbW3t$8f" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Gradient width cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Gradient width cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="cPxbW3t$i0" role="1urrMF">
               <node concept="1YBJjd" id="cPxbW3t$aN" role="2Oq$k0">
@@ -2174,10 +2235,7 @@
             </node>
           </node>
         </node>
-        <node concept="3eOVzh" id="cPxbW3tzGW" role="3clFbw">
-          <node concept="3cmrfG" id="cPxbW3tzR5" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj1icTm" role="3clFbw">
           <node concept="2OqwBi" id="cPxbW3tyv3" role="3uHU7B">
             <node concept="2OqwBi" id="cPxbW3txXo" role="2Oq$k0">
               <node concept="2OqwBi" id="cPxbW3twVB" role="2Oq$k0">
@@ -2196,13 +2254,16 @@
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
           </node>
+          <node concept="3cmrfG" id="cPxbW3tzR5" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
         </node>
       </node>
       <node concept="3clFbJ" id="cPxbW3txn0" role="3cqZAp">
         <node concept="3clFbS" id="cPxbW3txn2" role="3clFbx">
           <node concept="2MkqsV" id="cPxbW3t_lJ" role="3cqZAp">
             <node concept="Xl_RD" id="cPxbW3t_lK" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Gradient height cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Gradient height cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="cPxbW3t_lL" role="1urrMF">
               <node concept="1YBJjd" id="cPxbW3t_lM" role="2Oq$k0">
@@ -2214,10 +2275,7 @@
             </node>
           </node>
         </node>
-        <node concept="3eOVzh" id="cPxbW3t$Tm" role="3clFbw">
-          <node concept="3cmrfG" id="cPxbW3t$Tn" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj1icX5" role="3clFbw">
           <node concept="2OqwBi" id="cPxbW3t$To" role="3uHU7B">
             <node concept="2OqwBi" id="cPxbW3t$Tp" role="2Oq$k0">
               <node concept="2OqwBi" id="cPxbW3t$Tq" role="2Oq$k0">
@@ -2236,13 +2294,13 @@
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
           </node>
+          <node concept="3cmrfG" id="cPxbW3t$Tn" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
         </node>
       </node>
       <node concept="3clFbJ" id="cPxbW3twxj" role="3cqZAp">
-        <node concept="3eOVzh" id="cPxbW3tBVQ" role="3clFbw">
-          <node concept="3cmrfG" id="cPxbW3tCkK" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj1id0O" role="3clFbw">
           <node concept="2OqwBi" id="cPxbW3tALt" role="3uHU7B">
             <node concept="2OqwBi" id="cPxbW3t_Jr" role="2Oq$k0">
               <node concept="2OqwBi" id="cPxbW3twEs" role="2Oq$k0">
@@ -2261,11 +2319,14 @@
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
           </node>
+          <node concept="3cmrfG" id="cPxbW3tCkK" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
         </node>
         <node concept="3clFbS" id="cPxbW3twxl" role="3clFbx">
           <node concept="2MkqsV" id="cPxbW3tClO" role="3cqZAp">
             <node concept="Xl_RD" id="cPxbW3tClP" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Gradient depth cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Gradient depth cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="cPxbW3tClQ" role="1urrMF">
               <node concept="1YBJjd" id="cPxbW3tClR" role="2Oq$k0">
@@ -2343,7 +2404,7 @@
         <node concept="3clFbS" id="ZNkh68t7eg" role="3clFbx">
           <node concept="2MkqsV" id="ZNkh68t7eh" role="3cqZAp">
             <node concept="Xl_RD" id="ZNkh68t7ei" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Substrate width cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Substrate width cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="ZNkh68t7ej" role="1urrMF">
               <node concept="1YBJjd" id="ZNkh68t7ek" role="2Oq$k0">
@@ -2355,10 +2416,7 @@
             </node>
           </node>
         </node>
-        <node concept="3eOVzh" id="ZNkh68t7em" role="3clFbw">
-          <node concept="3cmrfG" id="ZNkh68t7en" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj0WByI" role="3clFbw">
           <node concept="2OqwBi" id="ZNkh68t7eo" role="3uHU7B">
             <node concept="2OqwBi" id="ZNkh68t7ep" role="2Oq$k0">
               <node concept="1YBJjd" id="ZNkh68t7eq" role="2Oq$k0">
@@ -2372,13 +2430,16 @@
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
           </node>
+          <node concept="3cmrfG" id="ZNkh68t7en" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
         </node>
       </node>
       <node concept="3clFbJ" id="ZNkh68t7$H" role="3cqZAp">
         <node concept="3clFbS" id="ZNkh68t7$I" role="3clFbx">
           <node concept="2MkqsV" id="ZNkh68t7$J" role="3cqZAp">
             <node concept="Xl_RD" id="ZNkh68t7$K" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Substrate height cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Substrate height cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="ZNkh68t7$L" role="1urrMF">
               <node concept="1YBJjd" id="ZNkh68t7$M" role="2Oq$k0">
@@ -2390,10 +2451,7 @@
             </node>
           </node>
         </node>
-        <node concept="3eOVzh" id="ZNkh68t7$O" role="3clFbw">
-          <node concept="3cmrfG" id="ZNkh68t7$P" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj0WBA3" role="3clFbw">
           <node concept="2OqwBi" id="ZNkh68t7$Q" role="3uHU7B">
             <node concept="2OqwBi" id="ZNkh68t7$R" role="2Oq$k0">
               <node concept="1YBJjd" id="ZNkh68t7$S" role="2Oq$k0">
@@ -2407,13 +2465,16 @@
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
           </node>
+          <node concept="3cmrfG" id="ZNkh68t7$P" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
         </node>
       </node>
       <node concept="3clFbJ" id="ZNkh68t5oU" role="3cqZAp">
         <node concept="3clFbS" id="ZNkh68t5oV" role="3clFbx">
           <node concept="2MkqsV" id="ZNkh68t5oW" role="3cqZAp">
             <node concept="Xl_RD" id="ZNkh68t5oX" role="2MkJ7o">
-              <property role="Xl_RC" value="Error : Substrate depth cannot be less than 0." />
+              <property role="Xl_RC" value="Error : Substrate depth cannot be less than or equal to 0." />
             </node>
             <node concept="2OqwBi" id="ZNkh68t5oY" role="1urrMF">
               <node concept="1YBJjd" id="ZNkh68t5oZ" role="2Oq$k0">
@@ -2425,10 +2486,7 @@
             </node>
           </node>
         </node>
-        <node concept="3eOVzh" id="ZNkh68t5p1" role="3clFbw">
-          <node concept="3cmrfG" id="ZNkh68t5p2" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
+        <node concept="2dkUwp" id="4gfHhj0WBDo" role="3clFbw">
           <node concept="2OqwBi" id="ZNkh68t5p3" role="3uHU7B">
             <node concept="2OqwBi" id="ZNkh68t5p5" role="2Oq$k0">
               <node concept="1YBJjd" id="ZNkh68t5p6" role="2Oq$k0">
@@ -2441,6 +2499,9 @@
             <node concept="liA8E" id="ZNkh68t5p9" role="2OqNvi">
               <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
             </node>
+          </node>
+          <node concept="3cmrfG" id="ZNkh68t5p2" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
           </node>
         </node>
       </node>

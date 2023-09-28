@@ -24,7 +24,7 @@ class World;
 
 /// below defines are set through makefile
 //#define GRAPHICS false
-//#define MAXtime 2000
+//#define MAXtime 200
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -49,6 +49,12 @@ class World;
 // to test the effect of using the CPM in the DSL and MSM. If you're reading
 // this and the boolean is set to true, you probably want to turn it off.
 #define DSL_SHUFFLE_TEST false
+
+// Sets whether to modify the time needed to retract a filopodia
+// by the proportion of active Plexin. Will only work if cells
+// are using Plexin from the DSL.
+#define SHANE_FILTIPMAX_RETRACT true
+#define SHANE_RETRACT_STRENGTH 10
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false

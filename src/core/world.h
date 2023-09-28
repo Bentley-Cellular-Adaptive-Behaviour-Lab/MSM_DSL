@@ -448,6 +448,9 @@ public:
 	std::vector<unsigned int> *evaluate_cells(unsigned int timestep);
 	void shuffleTest();
 	void write_to_shuffle_outfiles();
+
+	// Shane setup specific
+	float calc_shane_filtipmax(MemAgent *memAgent) const;
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

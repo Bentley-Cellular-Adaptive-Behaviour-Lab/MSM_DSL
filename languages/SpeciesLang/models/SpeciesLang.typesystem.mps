@@ -279,7 +279,7 @@
   </registry>
   <node concept="18kY7G" id="2Hxmt3eYkCd">
     <property role="TrG5h" value="noDuplicateReactants" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="2Hxmt3eYkCe" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYkCp" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYkCq" role="2Gsz3X">
@@ -400,7 +400,7 @@
   </node>
   <node concept="18kY7G" id="2Hxmt3eYqYx">
     <property role="TrG5h" value="noDuplicateProducts" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="2Hxmt3eYqYy" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYqY$" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYqY_" role="2Gsz3X">
@@ -521,7 +521,7 @@
   </node>
   <node concept="18kY7G" id="109yD1stpAs">
     <property role="TrG5h" value="constrainStoichiometry" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="109yD1stpAt" role="18ibNy">
       <node concept="3clFbJ" id="109yD1stpAI" role="3cqZAp">
         <node concept="3eOVzh" id="109yD1stqLV" role="3clFbw">
@@ -556,7 +556,7 @@
   </node>
   <node concept="18kY7G" id="109yD1sMU8G">
     <property role="TrG5h" value="warnExtracellularReaction" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="109yD1sMU8H" role="18ibNy">
       <node concept="3cpWs8" id="109yD1sMYd8" role="3cqZAp">
         <node concept="3cpWsn" id="109yD1sMYdb" role="3cpWs9">
@@ -829,7 +829,7 @@
   </node>
   <node concept="18kY7G" id="4Q3VeFU0AE2">
     <property role="TrG5h" value="SpeciesInReactionRate" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="4Q3VeFU0AE3" role="18ibNy">
       <node concept="2Gpval" id="4Q3VeFU1KB9" role="3cqZAp">
         <node concept="2GrKxI" id="4Q3VeFU1KBb" role="2Gsz3X">
@@ -1491,7 +1491,7 @@
   </node>
   <node concept="18kY7G" id="6YT8FA9DRVr">
     <property role="TrG5h" value="check_uniqueReactionNames" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <node concept="3clFbS" id="6YT8FA9DRVs" role="18ibNy">
       <node concept="2Gpval" id="6YT8FA9DS2o" role="3cqZAp">
         <node concept="2GrKxI" id="6YT8FA9DS2p" role="2Gsz3X">
@@ -1830,7 +1830,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfs3d">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_inhibitsValidity" />
     <node concept="3clFbS" id="$XkBXNfs3e" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4sBzB" role="3cqZAp">
@@ -2459,11 +2459,11 @@
     </node>
     <node concept="1YaCAy" id="$XkBXNfs3C" role="1YuTPh">
       <property role="TrG5h" value="inhibits" />
-      <ref role="1YaFvo" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+      <ref role="1YaFvo" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfLc1">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_upregulatesValidity" />
     <node concept="3clFbS" id="$XkBXNfLc2" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNfLfH" role="3cqZAp">
@@ -3096,7 +3096,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfTld">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_irreversibleValidity" />
     <node concept="3clFbS" id="$XkBXNfTle" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4t3da" role="3cqZAp">
@@ -3905,7 +3905,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNg5na">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_reversibleValidity" />
     <node concept="3clFbS" id="$XkBXNg5nb" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNg5FJ" role="3cqZAp">
@@ -4974,7 +4974,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="xhYrIU86oV">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_ReactionHasProducts" />
     <node concept="3clFbS" id="xhYrIU86oW" role="18ibNy">
       <node concept="3clFbJ" id="xhYrIU8c8H" role="3cqZAp">
@@ -5012,7 +5012,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="xhYrIU86pv">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_ReactionHasReactants" />
     <node concept="3clFbS" id="xhYrIU86pw" role="18ibNy">
       <node concept="3clFbJ" id="xhYrIU86q4" role="3cqZAp">
@@ -5050,7 +5050,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="xhYrIU9tzn">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_RegulationHasSource" />
     <node concept="3clFbS" id="xhYrIU9tzo" role="18ibNy">
       <node concept="3clFbJ" id="xhYrIU9tzV" role="3cqZAp">
@@ -5088,7 +5088,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="xhYrIU9vCE">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_RegulationHasTarget" />
     <node concept="3clFbS" id="xhYrIU9vCF" role="18ibNy">
       <node concept="3clFbJ" id="xhYrIU9vDA" role="3cqZAp">
@@ -8540,7 +8540,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="4$2ETQS5Fkk">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <property role="TrG5h" value="check_warnTermHasNoCrossCellExpr" />
     <node concept="3clFbS" id="4$2ETQS5Fkl" role="18ibNy">
       <node concept="3clFbJ" id="4$2ETQScLSp" role="3cqZAp">

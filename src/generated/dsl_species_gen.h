@@ -39,14 +39,6 @@ static double calc_DLL4_UPREG_rate(double VEGF_VEGFR, const bool memAgent) {
 	return expr;
 }
 
-static double calc_DLL4_INHIB_rate(double SEMA3A_PLEXIND1, const bool memAgent) {
-	auto expr = SEMA3A_PLEXIND1*0.1;
-	if (isnan(expr)) {
-		expr = 0.0;
-	}
-	return expr;
-}
-
 static double calc_VEGFR_INHIB_VIA_NOTCH_rate(double DLL4_NOTCH, const bool memAgent) {
 	auto expr = DLL4_NOTCH*0.5;
 	if (isnan(expr)) {
@@ -119,8 +111,8 @@ static double calc_DEG_RATE_rate(const bool memAgent) {
 	return expr;
 }
 
-static double calc_VEGFR_PARTIAL_KO_rate(const bool memAgent) {
-	auto expr = 0.025;
+static double calc_PROD_RATE_rate(const bool memAgent) {
+	auto expr = 0.05;
 	if (isnan(expr)) {
 		expr = 0.0;
 	}
@@ -167,14 +159,6 @@ static double calc_VEGFR_DEG_rate(double VEGFR, const bool memAgent) {
 	return expr;
 }
 
-static double calc_PROD_RATE_rate(const bool memAgent) {
-	auto expr = 0.05;
-	if (isnan(expr)) {
-		expr = 0.0;
-	}
-	return expr;
-}
-
 static double calc_VEGF_VEGFR2_DEG_rate(double VEGF_VEGFR, double DEG_RATE, const bool memAgent) {
 	auto expr = VEGF_VEGFR*DEG_RATE;
 	if (isnan(expr)) {
@@ -199,7 +183,15 @@ static double calc_SEMA3A_PLEXIND1_DEG_rate(double SEMA3A_PLEXIND1, double DEG_R
 	return expr;
 }
 
-static double calc_VEGF_VEGFR_INHIB_rate(double SEMA3A_PLEXIND1, const bool memAgent) {
+static double calc_VEGFR_PARTIAL_KO_rate(const bool memAgent) {
+	auto expr = 0.025;
+	if (isnan(expr)) {
+		expr = 0.0;
+	}
+	return expr;
+}
+
+static double calc_VEGF_VEGFR_INHIB_VIA_PLEXIN_rate(double SEMA3A_PLEXIND1, const bool memAgent) {
 	auto expr = SEMA3A_PLEXIND1;
 	if (isnan(expr)) {
 		expr = 0.0;

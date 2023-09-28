@@ -333,9 +333,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -605,72 +613,76 @@
           <property role="1lJzqX" value="16" />
         </node>
       </node>
-      <node concept="3EZMnI" id="3CMDXCk$9as" role="3EZMnx">
-        <node concept="VPM3Z" id="3CMDXCk$9au" role="3F10Kt" />
-        <node concept="3XFhqQ" id="3CMDXCkF7UM" role="3EZMnx" />
-        <node concept="1j7BWu" id="3CMDXCk$9e0" role="3EZMnx">
-          <node concept="3EZMnI" id="3CMDXCk$9ee" role="1j7ClA">
-            <node concept="3F0ifn" id="3CMDXCk$9eo" role="3EZMnx">
-              <property role="3F0ifm" value="Set whether ODEs occur on a" />
-              <node concept="2biZxu" id="3CMDXCk$9fN" role="3F10Kt">
+      <node concept="1X3_iC" id="5Uz$7rAkPco" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="3CMDXCk$9as" role="8Wnug">
+          <node concept="VPM3Z" id="3CMDXCk$9au" role="3F10Kt" />
+          <node concept="3XFhqQ" id="3CMDXCkF7UM" role="3EZMnx" />
+          <node concept="1j7BWu" id="3CMDXCk$9e0" role="3EZMnx">
+            <node concept="3EZMnI" id="3CMDXCk$9ee" role="1j7ClA">
+              <node concept="3F0ifn" id="3CMDXCk$9eo" role="3EZMnx">
+                <property role="3F0ifm" value="Set whether ODEs occur on a" />
+                <node concept="2biZxu" id="3CMDXCk$9fN" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="3CMDXCk$9fO" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="3CMDXCk$9ey" role="3EZMnx">
+                <property role="3F0ifm" value="whole cell-level, or with" />
+                <node concept="2biZxu" id="3CMDXCk$9fR" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="3CMDXCk$9fS" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="3CMDXCk$9eA" role="3EZMnx">
+                <property role="3F0ifm" value="both cells and memAgents." />
+                <node concept="2biZxu" id="3CMDXCk$9fV" role="3F10Kt">
+                  <property role="1rj3mz" value="Calibri" />
+                </node>
+                <node concept="VSNWy" id="3CMDXCk$9fW" role="3F10Kt">
+                  <property role="1lJzqX" value="12" />
+                </node>
+              </node>
+              <node concept="2iRkQZ" id="3CMDXCk$9eh" role="2iSdaV" />
+            </node>
+            <node concept="3F0ifn" id="3CMDXCk$9eb" role="1j7Clw">
+              <property role="3F0ifm" value="4. Set ODE Type" />
+              <node concept="VQ3r3" id="3CMDXCk$9f$" role="3F10Kt">
+                <property role="2USNnj" value="gtbM8PH/underlined" />
+              </node>
+              <node concept="2biZxu" id="3CMDXCk$9f_" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
-              <node concept="VSNWy" id="3CMDXCk$9fO" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
+              <node concept="VSNWy" id="3CMDXCk$9fA" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
               </node>
             </node>
-            <node concept="3F0ifn" id="3CMDXCk$9ey" role="3EZMnx">
-              <property role="3F0ifm" value="whole cell-level, or with" />
-              <node concept="2biZxu" id="3CMDXCk$9fR" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="3CMDXCk$9fS" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
-              </node>
-            </node>
-            <node concept="3F0ifn" id="3CMDXCk$9eA" role="3EZMnx">
-              <property role="3F0ifm" value="both cells and memAgents." />
-              <node concept="2biZxu" id="3CMDXCk$9fV" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="3CMDXCk$9fW" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
-              </node>
-            </node>
-            <node concept="2iRkQZ" id="3CMDXCk$9eh" role="2iSdaV" />
           </node>
-          <node concept="3F0ifn" id="3CMDXCk$9eb" role="1j7Clw">
-            <property role="3F0ifm" value="4. Set ODE Type" />
-            <node concept="VQ3r3" id="3CMDXCk$9f$" role="3F10Kt">
-              <property role="2USNnj" value="gtbM8PH/underlined" />
+          <node concept="3F0ifn" id="3CMDXCk$9dS" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+          </node>
+          <node concept="3F0A7n" id="3CMDXCk$9eP" role="3EZMnx">
+            <ref role="1NtTu8" to="w3cn:3CMDXCk$8Rx" resolve="_odeType" />
+            <node concept="VechU" id="3CMDXCk$9fZ" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
             </node>
-            <node concept="2biZxu" id="3CMDXCk$9f_" role="3F10Kt">
+            <node concept="Vb9p2" id="3CMDXCk$9g0" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
+            <node concept="2biZxu" id="3CMDXCk$9g1" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
-            <node concept="VSNWy" id="3CMDXCk$9fA" role="3F10Kt">
+            <node concept="VSNWy" id="3CMDXCk$9g2" role="3F10Kt">
               <property role="1lJzqX" value="16" />
             </node>
           </node>
+          <node concept="2iRfu4" id="3CMDXCk$9ax" role="2iSdaV" />
         </node>
-        <node concept="3F0ifn" id="3CMDXCk$9dS" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-        </node>
-        <node concept="3F0A7n" id="3CMDXCk$9eP" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:3CMDXCk$8Rx" resolve="_odeType" />
-          <node concept="VechU" id="3CMDXCk$9fZ" role="3F10Kt">
-            <property role="Vb096" value="fLwANPu/blue" />
-          </node>
-          <node concept="Vb9p2" id="3CMDXCk$9g0" role="3F10Kt">
-            <property role="Vbekb" value="g1_k_vY/BOLD" />
-          </node>
-          <node concept="2biZxu" id="3CMDXCk$9g1" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="3CMDXCk$9g2" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="3CMDXCk$9ax" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="2Hxmt3eVgJc" role="2iSdaV" />
     </node>
@@ -1247,7 +1259,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVhgV">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
     <node concept="3EZMnI" id="2Hxmt3eVhgX" role="2wV5jI">
       <node concept="3F0A7n" id="2Hxmt3eVhhb" role="3EZMnx">
@@ -1323,7 +1335,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVqBh">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="3EZMnI" id="59qBf2DVF$I" role="2wV5jI">
       <node concept="2iRkQZ" id="59qBf2DVF$J" role="2iSdaV" />
@@ -1433,7 +1445,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVtCN">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="3EZMnI" id="2FvyIAlIpL2" role="2wV5jI">
       <node concept="2iRkQZ" id="2FvyIAlIpL3" role="2iSdaV" />
@@ -1567,7 +1579,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVXfT">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjK" resolve="Rate" />
     <node concept="3F1sOY" id="2Hxmt3eVXfV" role="2wV5jI">
       <ref role="1NtTu8" to="w3cn:2Hxmt3eVfsU" resolve="Parameter" />
@@ -2904,7 +2916,7 @@
                 <node concept="37u81S" id="5jwDGo4DVhu" role="2Oq$k0" />
                 <node concept="1mIQ4w" id="5jwDGo4DVEx" role="2OqNvi">
                   <node concept="chp4Y" id="5jwDGo4DVHj" role="cj9EA">
-                    <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+                    <ref role="cht4Q" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
                   </node>
                 </node>
               </node>
@@ -3725,7 +3737,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5jwDGo4Bf05">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1XX52x" to="w3cn:5jwDGo4BeZX" resolve="Upregulates" />
     <node concept="3EZMnI" id="2FvyIAlIpN_" role="2wV5jI">
       <node concept="2iRkQZ" id="2FvyIAlIpNA" role="2iSdaV" />
@@ -3903,8 +3915,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="5jwDGo4Bf0W">
-    <property role="3GE5qa" value="Processes" />
-    <ref role="1XX52x" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+    <property role="3GE5qa" value="Interactions" />
+    <ref role="1XX52x" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
     <node concept="3EZMnI" id="2FvyIAlIpHD" role="2wV5jI">
       <node concept="2iRkQZ" id="2FvyIAlIpHE" role="2iSdaV" />
       <node concept="3EZMnI" id="5jwDGo4Bf0Y" role="3EZMnx">

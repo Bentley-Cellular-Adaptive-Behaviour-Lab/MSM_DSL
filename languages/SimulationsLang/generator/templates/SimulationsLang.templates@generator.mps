@@ -787,14 +787,14 @@
         <node concept="3clFbH" id="1PDLoEBZcDV" role="3cqZAp" />
         <node concept="3clFbJ" id="1PDLoEBSrHO" role="3cqZAp">
           <node concept="3clFbS" id="1PDLoEBSrHQ" role="3clFbx">
-            <node concept="3clFbF" id="1PDLoEC0nyj" role="3cqZAp">
-              <node concept="1rXfSq" id="1PDLoEC0nyh" role="3clFbG">
-                <ref role="37wK5l" node="7wJJsVzsNnd" resolve="buildLocalSpringAgent" />
-              </node>
-            </node>
             <node concept="3clFbF" id="44N$AKWk6B4" role="3cqZAp">
               <node concept="1rXfSq" id="44N$AKWk6B5" role="3clFbG">
                 <ref role="37wK5l" node="1vG5M8DurGE" resolve="fixBuildScriptPermissions" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="1PDLoEC0nyj" role="3cqZAp">
+              <node concept="1rXfSq" id="1PDLoEC0nyh" role="3clFbG">
+                <ref role="37wK5l" node="7wJJsVzsNnd" resolve="buildLocalSpringAgent" />
               </node>
             </node>
             <node concept="3clFbF" id="1PDLoEC0AGJ" role="3cqZAp">
@@ -7711,7 +7711,26 @@
       </node>
       <node concept="356sEK" id="6dETgET7PBU" role="383Ya9">
         <node concept="356sEF" id="6dETgET7PBV" role="356sEH">
-          <property role="TrG5h" value="ssh meadt@login.nemo.thecrick.org  &quot;cd " />
+          <property role="TrG5h" value="ssh " />
+        </node>
+        <node concept="356sEF" id="5yIY7OVennI" role="356sEH">
+          <property role="TrG5h" value="USERNAME" />
+          <node concept="17Uvod" id="5yIY7OVennV" role="lGtFl">
+            <property role="2qtEX9" value="name" />
+            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+            <node concept="3zFVjK" id="5yIY7OVennW" role="3zH0cK">
+              <node concept="3clFbS" id="5yIY7OVennX" role="2VODD2">
+                <node concept="3cpWs6" id="5yIY7OVenFV" role="3cqZAp">
+                  <node concept="Xl_RD" id="5yIY7OVenKG" role="3cqZAk">
+                    <property role="Xl_RC" value="meadt" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEF" id="5yIY7OVennJ" role="356sEH">
+          <property role="TrG5h" value="@login.nemo.thecrick.org  &quot;cd " />
         </node>
         <node concept="356sEF" id="4LUnzNQHIt_" role="356sEH">
           <property role="TrG5h" value="CAMP_FOLDER_NAME" />
@@ -9619,6 +9638,47 @@
                             <node concept="1mIQ4w" id="2D4cW4vTvhK" role="2OqNvi">
                               <node concept="chp4Y" id="2D4cW4vTv$z" role="cj9EA">
                                 <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbJ" id="5yIY7OVgoTm" role="3cqZAp">
+                          <node concept="3clFbS" id="5yIY7OVgoTo" role="3clFbx">
+                            <node concept="3clFbF" id="5yIY7OVgs5Z" role="3cqZAp">
+                              <node concept="d57v9" id="5yIY7OVgs60" role="3clFbG">
+                                <node concept="3cpWs3" id="5yIY7OVgs61" role="37vLTx">
+                                  <node concept="Xl_RD" id="5yIY7OVgs62" role="3uHU7w">
+                                    <property role="Xl_RC" value="_VALUE\&quot; " />
+                                  </node>
+                                  <node concept="3cpWs3" id="5yIY7OVgs63" role="3uHU7B">
+                                    <node concept="Xl_RD" id="5yIY7OVgs64" role="3uHU7B">
+                                      <property role="Xl_RC" value="\&quot;$INCREMENT_" />
+                                    </node>
+                                    <node concept="37vLTw" id="5yIY7OVgs65" role="3uHU7w">
+                                      <ref role="3cqZAo" node="2D4cW4vToN$" resolve="count" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="5yIY7OVgs66" role="37vLTJ">
+                                  <ref role="3cqZAo" node="2D4cW4vTn3k" resolve="argString" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="5yIY7OVgssX" role="3cqZAp">
+                              <node concept="3uNrnE" id="5yIY7OVgssY" role="3clFbG">
+                                <node concept="37vLTw" id="5yIY7OVgssZ" role="2$L3a6">
+                                  <ref role="3cqZAo" node="2D4cW4vToN$" resolve="count" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="5yIY7OVgpmL" role="3clFbw">
+                            <node concept="2GrUjf" id="5yIY7OVgoY3" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="2D4cW4vTnkn" resolve="param" />
+                            </node>
+                            <node concept="1mIQ4w" id="5yIY7OVgqWx" role="2OqNvi">
+                              <node concept="chp4Y" id="5yIY7OVgr0p" role="cj9EA">
+                                <ref role="cht4Q" to="s9ob:7faAukhALBB" resolve="Gradient" />
                               </node>
                             </node>
                           </node>

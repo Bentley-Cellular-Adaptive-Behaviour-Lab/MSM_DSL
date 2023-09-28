@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="SHANE_SEMA_MECH_1" uuid="d50ee27f-7956-478c-81ea-960529e42800" moduleVersion="0" compileInMPS="true">
+<solution name="ShufflingTest" uuid="4b4afbca-07cf-4b3e-84d9-7650b02d3ddf" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -42,7 +42,7 @@
     <language slang="l:6b277d9a-d52d-416f-a209-1919bd737f50:org.iets3.core.expr.simpleTypes" version="1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="d50ee27f-7956-478c-81ea-960529e42800(SHANE_SEMA_MECH_1)" version="0" />
+    <module reference="4b4afbca-07cf-4b3e-84d9-7650b02d3ddf(ShufflingTest)" version="0" />
   </dependencyVersions>
 </solution>
 

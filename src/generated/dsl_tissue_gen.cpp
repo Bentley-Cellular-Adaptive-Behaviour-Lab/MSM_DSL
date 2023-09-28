@@ -20,6 +20,7 @@
 
 
 
+
 static void assign_sweep_protein_levels(World* world) {
 }
 
@@ -38,7 +39,7 @@ void Tissue_Container::tissue_set_up(World* world) {
     EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 10));
     EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 10));
     EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.5, 0, -1, 10));
-    EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 10));
+    EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.05, 0, -1, 10));
     EndothelialType_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 10));
     EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 10));
 
@@ -48,7 +49,7 @@ void Tissue_Container::tissue_set_up(World* world) {
     // Cell Creation //
 
     // Tissue Creation //
-    auto Vessel_Pos = Coordinates(120, 100, 20);
+    auto Vessel_Pos = Coordinates(120, 6, 20);
     create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
 
     // Track environmental proteins //
@@ -62,19 +63,21 @@ double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
 		CURRENT_CELL = cell;
 		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true, false);
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+		auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
+		auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
 		double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true);
 		double FILCONST = calc_FILCONST_rate(true);
+		double SEMA_PLEXIN_ON = calc_SEMA_PLEXIN_ON_rate(SEMA3A_MEAN, PLEXIND1, true);
+		double PLEXCONST = calc_PLEXCONST_rate(true);
 		double ACTIVE_PROP_VEGFR = calc_ACTIVE_PROP_VEGFR_rate(VEGF_VEGFR_ON, VEGFR, true);
-		auto prob = (pow(ACTIVE_PROP_VEGFR,0.95) * FILCONST);
+		double ACTIVE_PROP_PLEXIN = calc_ACTIVE_PROP_PLEXIN_rate(SEMA_PLEXIN_ON, PLEXIND1, true);
+		double SEMA_FIL_INHIBITION = calc_SEMA_FIL_INHIBITION_rate(ACTIVE_PROP_PLEXIN, PLEXCONST, true);
+		auto prob = (pow(ACTIVE_PROP_VEGFR,0.95) * FILCONST) * SEMA_FIL_INHIBITION;
 		if (prob > 1) {return 1;} else if (prob < 0) {return 0;} else {return prob;}
 	}
 	return -1; // Prevent extension if the cell type isn't found.
 }
 
-bool World::cytoprotein_check(EC *cell, float distance, const bool extendingFil) {
-
-	return false;
-}
 
 bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiffAdNeighCell) {
 	EC *cell;

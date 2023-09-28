@@ -497,9 +497,12 @@
           <node concept="2iRfu4" id="2B5sNxPnwjq" role="2iSdaV" />
         </node>
       </node>
-      <node concept="3F0ifn" id="2B5sNxPnwgp" role="3EZMnx" />
-      <node concept="3F1sOY" id="7wJJsVzwepi" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:7wJJsVzvXDa" resolve="_analysisFacet" />
+      <node concept="1X3_iC" id="5yIY7OV9bN_" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3F1sOY" id="7wJJsVzwepi" role="8Wnug">
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXDa" resolve="_analysisFacet" />
+        </node>
       </node>
       <node concept="3F0ifn" id="2B5sNxPnwaR" role="3EZMnx" />
       <node concept="3F1sOY" id="7wJJsVzwehf" role="3EZMnx">
