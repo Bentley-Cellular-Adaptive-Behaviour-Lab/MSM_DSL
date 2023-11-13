@@ -1153,7 +1153,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="JH8k64hAva" role="3EZMnx">
-          <property role="3F0ifm" value="with start concentration" />
+          <property role="3F0ifm" value=" with start concentration" />
           <node concept="2biZxu" id="JH8k64hBFp" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1215,20 +1215,20 @@
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="JH8k64hAA0" role="3EZMnx">
-          <property role="3F0ifm" value="with min. start concentration" />
-          <node concept="2biZxu" id="JH8k64hBFt" role="3F10Kt">
+        <node concept="3F0ifn" id="2J8ELlqCmga" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="2J8ELlqCmlO" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="JH8k64hBFu" role="3F10Kt">
+          <node concept="VSNWy" id="2J8ELlqCmlP" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
-          <node concept="pkWqt" id="JH8k64hOyG" role="pqm2j">
-            <node concept="3clFbS" id="JH8k64hOyH" role="2VODD2">
-              <node concept="3clFbF" id="JH8k64hOyL" role="3cqZAp">
-                <node concept="2OqwBi" id="JH8k64hOyN" role="3clFbG">
-                  <node concept="pncrf" id="JH8k64hOyO" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="JH8k64hOyP" role="2OqNvi">
+          <node concept="pkWqt" id="2J8ELlqCmlT" role="pqm2j">
+            <node concept="3clFbS" id="2J8ELlqCmlU" role="2VODD2">
+              <node concept="3clFbF" id="2J8ELlqCmpL" role="3cqZAp">
+                <node concept="2OqwBi" id="2J8ELlqCmAm" role="3clFbG">
+                  <node concept="pncrf" id="2J8ELlqCmpK" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="2J8ELlqCn79" role="2OqNvi">
                     <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
                   </node>
                 </node>
@@ -1252,7 +1252,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="JH8k64hBHk" role="3EZMnx">
-          <property role="3F0ifm" value="and max. start concentration" />
+          <property role="3F0ifm" value="-" />
           <node concept="2biZxu" id="JH8k64hBIk" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

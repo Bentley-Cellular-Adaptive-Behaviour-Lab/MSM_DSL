@@ -15923,6 +15923,493 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="j1pJdqg4E$" role="13h7CS">
+      <property role="TrG5h" value="gradientsOverlap" />
+      <node concept="3Tm1VV" id="j1pJdqg4E_" role="1B3o_S" />
+      <node concept="10P_77" id="j1pJdqg9vI" role="3clF45" />
+      <node concept="3clFbS" id="j1pJdqg4EB" role="3clF47">
+        <node concept="3cpWs8" id="j1pJdqgbIy" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbI_" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_lowest_X" />
+            <node concept="10Oyi0" id="j1pJdqgbIw" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="j1pJdqgbKO" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbKP" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_lowest_Y" />
+            <node concept="10Oyi0" id="j1pJdqgbKQ" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="j1pJdqgbMb" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbMc" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_lowest_Z" />
+            <node concept="10Oyi0" id="j1pJdqgbMd" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="j1pJdqgbNz" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbN$" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_highest_X" />
+            <node concept="10Oyi0" id="j1pJdqgbN_" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="j1pJdqgbNA" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbNB" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_highest_Y" />
+            <node concept="10Oyi0" id="j1pJdqgbNC" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="j1pJdqgbND" role="3cqZAp">
+          <node concept="3cpWsn" id="j1pJdqgbNE" role="3cpWs9">
+            <property role="TrG5h" value="gradient_1_highest_Z" />
+            <node concept="10Oyi0" id="j1pJdqgbNF" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="j1pJdqgbKe" role="3cqZAp" />
+        <node concept="3clFbJ" id="j1pJdqg9TZ" role="3cqZAp">
+          <node concept="3clFbS" id="j1pJdqg9U1" role="3clFbx">
+            <node concept="3clFbF" id="j1pJdqgcbo" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgdsv" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgelo" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqge6R" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqge7U" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgdJG" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgdt1" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgdVL" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqge$q" role="2OqNvi">
+                    <ref role="37wK5l" node="57WjpeqpMzK" resolve="get_cuboid_lowerx_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgcbm" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbI_" resolve="gradient_1_lowest_X" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="j1pJdqgeXR" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgeXS" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgeXT" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqgeXU" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqgeXV" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgeXW" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgeXX" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgeXY" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgeXZ" role="2OqNvi">
+                    <ref role="37wK5l" node="57WjpeqpPoL" resolve="get_cuboid_lowery_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgeY0" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbKP" resolve="gradient_1_lowest_Y" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="j1pJdqgfsN" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgfsO" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgfsP" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqgfsQ" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqgfsR" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgfsS" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgfsT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgfsU" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgfsV" role="2OqNvi">
+                    <ref role="37wK5l" node="57WjpeqpSJw" resolve="get_cuboid_lowerz_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgfsW" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbMc" resolve="gradient_1_lowest_Z" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="j1pJdqgfUt" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgfUu" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgfUv" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqgfUw" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqgfUx" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgfUy" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgfUz" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgfU$" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgfU_" role="2OqNvi">
+                    <ref role="37wK5l" node="57WjpeqpIsP" resolve="get_cuboid_upperx_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgfUA" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbN$" resolve="gradient_1_highest_X" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="j1pJdqgfUB" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgfUC" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgfUD" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqgfUE" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqgfUF" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgfUG" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgfUH" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgfUI" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgfUJ" role="2OqNvi">
+                    <ref role="37wK5l" node="57WjpeqpNHo" resolve="get_cuboid_uppery_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgfUK" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbNB" resolve="gradient_1_highest_Y" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="j1pJdqgfUL" role="3cqZAp">
+              <node concept="37vLTI" id="j1pJdqgfUM" role="3clFbG">
+                <node concept="2OqwBi" id="j1pJdqgfUN" role="37vLTx">
+                  <node concept="1PxgMI" id="j1pJdqgfUO" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="j1pJdqgfUP" role="3oSUPX">
+                      <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+                    </node>
+                    <node concept="2OqwBi" id="j1pJdqgfUQ" role="1m5AlR">
+                      <node concept="37vLTw" id="j1pJdqgfUR" role="2Oq$k0">
+                        <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgfUS" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgfUT" role="2OqNvi">
+                    <ref role="37wK5l" node="11q$FfsSAUS" resolve="get_cuboid_upperz_gridpoints" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="j1pJdqgfUU" role="37vLTJ">
+                  <ref role="3cqZAo" node="j1pJdqgbNE" resolve="gradient_1_highest_Z" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="j1pJdqgaA2" role="3clFbw">
+            <node concept="2OqwBi" id="j1pJdqga3o" role="2Oq$k0">
+              <node concept="37vLTw" id="j1pJdqg9Us" role="2Oq$k0">
+                <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+              </node>
+              <node concept="3TrEf2" id="j1pJdqgagy" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="j1pJdqgblI" role="2OqNvi">
+              <node concept="chp4Y" id="j1pJdqgbqy" role="cj9EA">
+                <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="j1pJdqgbxM" role="3cqZAp">
+          <node concept="3clFbS" id="j1pJdqgbxN" role="3clFbx">
+            <node concept="3cpWs8" id="j1pJdqgiFx" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgiF$" role="3cpWs9">
+                <property role="TrG5h" value="sink_x" />
+                <node concept="10Oyi0" id="j1pJdqgiFv" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqglWu" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgleG" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgk8j" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgjTE" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgjWG" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgj5d" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgiUd" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgjC5" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgkS1" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqglrZ" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgmaB" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq3Rq" resolve="get_sink_x_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="j1pJdqgmsE" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgmsF" role="3cpWs9">
+                <property role="TrG5h" value="sink_y" />
+                <node concept="10Oyi0" id="j1pJdqgmsG" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqgmsH" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgmsI" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgmsJ" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgmsK" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgmsL" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgmsM" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgmsN" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgmsO" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgmsP" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqgmsQ" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgmsR" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq4vM" resolve="get_sink_y_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="j1pJdqgn73" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgn74" role="3cpWs9">
+                <property role="TrG5h" value="sink_z" />
+                <node concept="10Oyi0" id="j1pJdqgn75" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqgn76" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgn77" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgn78" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgn79" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgn7a" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgn7b" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgn7c" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgn7d" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgn7e" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqgn7f" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgn7g" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq56O" resolve="get_sink_z_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="j1pJdqgoMH" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgoMI" role="3cpWs9">
+                <property role="TrG5h" value="source_x" />
+                <node concept="10Oyi0" id="j1pJdqgoMJ" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqgoMK" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgoML" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgoMM" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgoMN" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgoMO" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgoMP" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgoMQ" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgoMR" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgoMS" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqgoMT" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgoMU" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq5HN" resolve="get_source_x_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="j1pJdqgoMV" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgoMW" role="3cpWs9">
+                <property role="TrG5h" value="source_y" />
+                <node concept="10Oyi0" id="j1pJdqgoMX" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqgoMY" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgoMZ" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgoN0" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgoN1" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgoN2" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgoN3" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgoN4" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgoN5" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgoN6" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqgoN7" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgoN8" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq4vM" resolve="get_sink_y_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="j1pJdqgoN9" role="3cqZAp">
+              <node concept="3cpWsn" id="j1pJdqgoNa" role="3cpWs9">
+                <property role="TrG5h" value="source_z" />
+                <node concept="10Oyi0" id="j1pJdqgoNb" role="1tU5fm" />
+                <node concept="2OqwBi" id="j1pJdqgoNc" role="33vP2m">
+                  <node concept="2OqwBi" id="j1pJdqgoNd" role="2Oq$k0">
+                    <node concept="2OqwBi" id="j1pJdqgoNe" role="2Oq$k0">
+                      <node concept="1PxgMI" id="j1pJdqgoNf" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="j1pJdqgoNg" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+                        </node>
+                        <node concept="2OqwBi" id="j1pJdqgoNh" role="1m5AlR">
+                          <node concept="37vLTw" id="j1pJdqgoNi" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+                          </node>
+                          <node concept="3TrEf2" id="j1pJdqgoNj" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="j1pJdqgoNk" role="2OqNvi">
+                        <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="j1pJdqgoNl" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="j1pJdqgoNm" role="2OqNvi">
+                    <ref role="37wK5l" node="57Wjpeqq56O" resolve="get_sink_z_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="j1pJdqgmOj" role="3cqZAp" />
+            <node concept="3clFbH" id="j1pJdqgbxO" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="j1pJdqgbxP" role="3clFbw">
+            <node concept="2OqwBi" id="j1pJdqgbxQ" role="2Oq$k0">
+              <node concept="37vLTw" id="j1pJdqgbxR" role="2Oq$k0">
+                <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+              </node>
+              <node concept="3TrEf2" id="j1pJdqgbxS" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="j1pJdqgbxT" role="2OqNvi">
+              <node concept="chp4Y" id="j1pJdqgbxU" role="cj9EA">
+                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="j1pJdqgbYP" role="3cqZAp">
+          <node concept="3clFbS" id="j1pJdqgbYR" role="3clFbx">
+            <node concept="3clFbH" id="j1pJdqgbYQ" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="j1pJdqgbZT" role="3clFbw">
+            <node concept="2OqwBi" id="j1pJdqgbZU" role="2Oq$k0">
+              <node concept="37vLTw" id="j1pJdqgbZV" role="2Oq$k0">
+                <ref role="3cqZAo" node="j1pJdqg9vM" resolve="gradient_1" />
+              </node>
+              <node concept="3TrEf2" id="j1pJdqgbZW" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="j1pJdqgbZX" role="2OqNvi">
+              <node concept="chp4Y" id="j1pJdqgbZY" role="cj9EA">
+                <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="j1pJdqgbxp" role="3cqZAp" />
+        <node concept="3clFbH" id="j1pJdqg9TI" role="3cqZAp" />
+        <node concept="3cpWs6" id="j1pJdqg9wj" role="3cqZAp">
+          <node concept="3clFbT" id="j1pJdqg9wu" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="j1pJdqg9vM" role="3clF46">
+        <property role="TrG5h" value="gradient_1" />
+        <node concept="3Tqbb2" id="j1pJdqg9vL" role="1tU5fm">
+          <ref role="ehGHo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="j1pJdqg9vY" role="3clF46">
+        <property role="TrG5h" value="gradient_2" />
+        <node concept="3Tqbb2" id="j1pJdqg9w8" role="1tU5fm">
+          <ref role="ehGHo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="4O6RXqWNGVI" role="13h7CS">
       <property role="TrG5h" value="nameContainsHyphen" />
       <node concept="3Tm1VV" id="4O6RXqWNGVJ" role="1B3o_S" />

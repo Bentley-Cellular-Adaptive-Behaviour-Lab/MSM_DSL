@@ -2511,5 +2511,14 @@
       <ref role="1YaFvo" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
     </node>
   </node>
+  <node concept="18kY7G" id="j1pJdqf_zf">
+    <property role="3GE5qa" value="Substrates" />
+    <property role="TrG5h" value="warn_substratesOverlap" />
+    <node concept="3clFbS" id="j1pJdqf_zg" role="18ibNy" />
+    <node concept="1YaCAy" id="j1pJdqf__g" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
+    </node>
+  </node>
 </model>
 
