@@ -54,7 +54,7 @@ class World;
 // by the proportion of active Plexin. Will only work if cells
 // are using Plexin from the DSL.
 #define SHANE_FILTIPMAX_RETRACT true
-#define SHANE_RETRACT_STRENGTH 10
+#define SHANE_RETRACT_STRENGTH 100000
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false

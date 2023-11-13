@@ -1596,7 +1596,7 @@ void World::runSimulation_MSM() {
 //			for (auto *cell : ECagents) {
 //				std::cout << cell->activeVEGFRtot << ",";
 //			}
-			std::cout << "\n";
+//			std::cout << "\n";
 		}
 
 		simulateTimestep_MSM();
@@ -2097,6 +2097,7 @@ void World::updateMemAgents_MSM() {
 				float current_FILTIPMAX;
 				if (SHANE_FILTIPMAX_RETRACT) {
 					current_FILTIPMAX = calc_shane_filtipmax(memp);
+//					current_FILTIPMAX = 1;
 				} else {
 					current_FILTIPMAX = FILTIPMAX;
 				}
@@ -8254,6 +8255,11 @@ float World::calc_shane_filtipmax(MemAgent *memAgent) const {
 	auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
 	double SEMA_PLEXIN_BOUND = SEMA3A_MEAN * PLEXIND1 * 0.1;
 	double PROP_PLEXIN_BOUND = SEMA_PLEXIN_BOUND / (SEMA_PLEXIN_BOUND + PLEXIND1);
-	double modifier = 1 - PROP_PLEXIN_BOUND;
-	return (float) FILTIPMAX * (modifier);
+	double modifier = 1 - (PROP_PLEXIN_BOUND * 10);
+	float result = (float) FILTIPMAX * (modifier);
+	if (result < 1) {
+		return 1;
+	} else {
+		return result;
+	}
 }
