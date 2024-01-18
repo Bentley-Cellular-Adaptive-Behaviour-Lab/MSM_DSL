@@ -39,25 +39,15 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
 // Logging statements from simulation container : Simulation
 void World::create_outfiles() {
 	create_component_outfile_csv("VEGF_VEGFR");
-	create_component_outfile_csv("SEMA3A");
-	create_component_outfile_csv("PLEXIND1");
 	create_component_outfile_csv("SEMA3A_PLEXIND1");
 	create_filopodia_outfile_csv();
 	write_to_component_outfile_csv("VEGF_VEGFR");
-	write_to_component_outfile_csv("SEMA3A");
-	write_to_component_outfile_csv("PLEXIND1");
 	write_to_component_outfile_csv("SEMA3A_PLEXIND1");
 }
 
 void World::write_to_component_outfiles() {
 	if (timeStep % 10 == 0 && timeStep != 0) {
 		write_to_component_outfile_csv("VEGF_VEGFR");
-	}
-	if (timeStep % 10 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("SEMA3A");
-	}
-	if (timeStep % 10 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("PLEXIND1");
 	}
 	if (timeStep % 10 == 0 && timeStep != 0) {
 		write_to_component_outfile_csv("SEMA3A_PLEXIND1");

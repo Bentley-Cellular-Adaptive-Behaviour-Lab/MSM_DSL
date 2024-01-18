@@ -206,6 +206,38 @@ void shuffleTestSetup(World* world, const bool DSL_mode) {
 	world->create_shuffle_test_outfiles();
 }
 
+void shane_alternate_start(const bool randomActive, World *world) {
+	if (randomActive) {
+		for (auto current_cell : world->ECagents) {
+			auto chance = (float) world->new_rand() / (float) NEW_RAND_MAX;
+			// Cell is partially active.
+			if (chance < SHANE_PROB_ACTIVE) {
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double & cell_level : active_VEGFR->cell_levels) {
+					cell_level = SHANE_ACTIVE_LEVEL;
+				}
+			// Cell is partially inactive.
+			} else {
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double & cell_level : active_VEGFR->cell_levels) {
+					cell_level = SHANE_INACTIVE_LEVEL;
+				}
+			}
+
+		}
+	} else {
+		for (unsigned int i = 0; i < world->ECagents.size(); i++) {
+			if (i % 2 != 0) {
+				auto current_cell = world->ECagents.at(i);
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double & cell_level : active_VEGFR->cell_levels) {
+					cell_level = 0;
+				}
+			}
+		}
+	}
+}
+
 int main(int argc, char * argv[]) {
 
 	World *world;
@@ -239,6 +271,10 @@ int main(int argc, char * argv[]) {
 		shuffleTestSetup(world, true);
 	}
 
+	if (SHANE_ALTERNATE_START) {
+		shane_alternate_start(true, world);
+	}
+
 #if GRAPHICS
 	std::cout << "World created." << "\n";
 	std::cout << "Running simulation." << std::endl;
@@ -256,4 +292,5 @@ int main(int argc, char * argv[]) {
 	std::cout << "End time: " << std::ctime(&end_time) << std::endl;
 #endif
 }
+
 

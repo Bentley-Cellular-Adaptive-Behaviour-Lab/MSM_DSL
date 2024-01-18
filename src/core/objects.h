@@ -53,8 +53,22 @@ class World;
 // Sets whether to modify the time needed to retract a filopodia
 // by the proportion of active Plexin. Will only work if cells
 // are using Plexin from the DSL.
-#define SHANE_FILTIPMAX_RETRACT true
-#define SHANE_RETRACT_STRENGTH 100000
+#define SHANE_FILTIPMAX_RETRACT false
+#define SHANE_RETRACT_STRENGTH 10000
+
+// Changes whether the start concentration of VEGF_VEGFR
+// is altered, depending on either a set spacing or
+// a random chance to be activated.
+#define SHANE_ALTERNATE_START true
+
+// Probability of a cell being partially active.
+#define SHANE_PROB_ACTIVE 0.345
+
+// Start level for partially active cells in the SemaPlexin setup.
+#define SHANE_ACTIVE_LEVEL 0.551
+
+// Start level for partially inactive cells in the SemaPlexin setup.
+#define SHANE_INACTIVE_LEVEL 0.154
 
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false

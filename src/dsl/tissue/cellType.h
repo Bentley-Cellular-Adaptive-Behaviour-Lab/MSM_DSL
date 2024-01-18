@@ -35,6 +35,7 @@ public:
 
     void add_protein(Protein* protein);
     bool has_protein(const std::string &proteinName);
+	Protein* get_protein(const std::string &proteinName);
 
     // Shape response functions.
     // Deprecating these in case somebody
@@ -43,7 +44,7 @@ public:
     [[deprecated]] void add_cytoprotein(CytoProtein *cytoProtein);
     [[deprecated]] bool has_cytoprotein(const std::string &cytoProteinName);
     [[deprecated]] CytoProtein* get_cytoprotein(const std::string &cytoProteinName);
-    [[deprecated]] Protein* get_protein(const std::string &proteinName);
+
 
 
     // Copy operator for Cell Type objects;

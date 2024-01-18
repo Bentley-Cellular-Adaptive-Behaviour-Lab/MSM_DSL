@@ -72,7 +72,7 @@ float rotationX = 0.0, rotationY = 0.0;
 // Sets threshold of VEGF_VEGFR to see cells
 // when running the Inverse Shane Setup. (viewType 17)
 const float active_threshold = 0.3;
-const float inactive_threshold = 0.001;
+const float inactive_threshold = 0.01;
 
 //live vars
 

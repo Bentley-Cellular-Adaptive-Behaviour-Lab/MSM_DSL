@@ -63,16 +63,10 @@ double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
 		CURRENT_CELL = cell;
 		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true, false);
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-		auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
-		auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
 		double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true);
 		double FILCONST = calc_FILCONST_rate(true);
-		double SEMA_PLEXIN_ON = calc_SEMA_PLEXIN_ON_rate(SEMA3A_MEAN, PLEXIND1, true);
-		double PLEXCONST = calc_PLEXCONST_rate(true);
 		double ACTIVE_PROP_VEGFR = calc_ACTIVE_PROP_VEGFR_rate(VEGF_VEGFR_ON, VEGFR, true);
-		double ACTIVE_PROP_PLEXIN = calc_ACTIVE_PROP_PLEXIN_rate(SEMA_PLEXIN_ON, PLEXIND1, true);
-		double SEMA_FIL_INHIBITION = calc_SEMA_FIL_INHIBITION_rate(ACTIVE_PROP_PLEXIN, PLEXCONST, true);
-		auto prob = (pow(ACTIVE_PROP_VEGFR,0.95) * FILCONST) * SEMA_FIL_INHIBITION;
+		auto prob = (pow(ACTIVE_PROP_VEGFR,0.95)  *  FILCONST);
 		if (prob > 1) {return 1;} else if (prob < 0) {return 0;} else {return prob;}
 	}
 	return -1; // Prevent extension if the cell type isn't found.
