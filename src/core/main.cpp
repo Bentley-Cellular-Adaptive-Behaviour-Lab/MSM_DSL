@@ -213,14 +213,20 @@ void shane_alternate_start(const bool randomActive, World *world) {
 			// Cell is partially active.
 			if (chance < SHANE_PROB_ACTIVE) {
 				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
-				for (double & cell_level : active_VEGFR->cell_levels) {
+				for (double &cell_level : active_VEGFR->cell_levels) {
 					cell_level = SHANE_ACTIVE_LEVEL;
+				}
+				for (float &level : current_cell->VEGFRDelayArray) {
+					level = VEGFRmin + (SHANE_ACTIVE_LEVEL*VEGFRmin);
 				}
 			// Cell is partially inactive.
 			} else {
 				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
-				for (double & cell_level : active_VEGFR->cell_levels) {
+				for (double &cell_level : active_VEGFR->cell_levels) {
 					cell_level = SHANE_INACTIVE_LEVEL;
+				}
+				for (float &level : current_cell->VEGFRDelayArray) {
+					level = VEGFRmin;
 				}
 			}
 

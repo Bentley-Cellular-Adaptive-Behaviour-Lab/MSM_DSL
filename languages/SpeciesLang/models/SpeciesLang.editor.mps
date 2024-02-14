@@ -1610,7 +1610,7 @@
                 <node concept="2OqwBi" id="3CIYR339JQr" role="3fr31v">
                   <node concept="pncrf" id="3CIYR339JQs" role="2Oq$k0" />
                   <node concept="3TrcHB" id="3CIYR339JQt" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -1762,7 +1762,7 @@
               <node concept="2OqwBi" id="3CIYR339K77" role="3clFbG">
                 <node concept="pncrf" id="3CIYR339K78" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3CIYR339K79" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                 </node>
               </node>
             </node>

@@ -24,7 +24,7 @@ class World;
 
 /// below defines are set through makefile
 //#define GRAPHICS false
-//#define MAXtime 200
+//#define MAXtime 1000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -32,6 +32,7 @@ class World;
 // Defines for turning DSL-specific features
 // (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
+#define MSM_LOGGING false // Prints active VEGFR total for each cell to console.
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
 #define SWEEP_TESTING false
@@ -39,7 +40,7 @@ class World;
 #define DSL_SIGNALLING true // Set to false for MSM GRN.
 #define DSL_EXTENSION_PROB true // Set to false for MSM filopodia extension rules.
 #define DSL_ENV_SELECTION true // Set to false for MSM environment selection based on VEGF levels.
-#define DSL_SENSITIVITY true // Set to false in order to use epsilon for extension probability.
+#define DSL_SENSITIVITY true // Set to false in order to use MSM epsilon for extension probability.
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false // Set to true to set a limit for the number of fils on a cell.
 #define DSL_ADHESIVENESS_TESTING true
@@ -59,17 +60,16 @@ class World;
 // Changes whether the start concentration of VEGF_VEGFR
 // is altered, depending on either a set spacing or
 // a random chance to be activated.
-#define SHANE_ALTERNATE_START true
-
+#define SHANE_ALTERNATE_START false
+// Sets whether the MSM extension probability uses
+// the level of nearby SEMA3A.
+#define SHANE_MSM_SEMA false
 // Probability of a cell being partially active.
-#define SHANE_PROB_ACTIVE 0.345
-
+#define SHANE_PROB_ACTIVE 0.5
 // Start level for partially active cells in the SemaPlexin setup.
-#define SHANE_ACTIVE_LEVEL 0.551
-
+#define SHANE_ACTIVE_LEVEL 0.55
 // Start level for partially inactive cells in the SemaPlexin setup.
-#define SHANE_INACTIVE_LEVEL 0.154
-
+#define SHANE_INACTIVE_LEVEL 0.15
 // This should only be used in the configuration for the initial DSL paper.
 #define DSL_PATTERNING_SCORE false
 // Level of active VEGFR needed for a cell to be considered a "tip" cell.
@@ -113,12 +113,12 @@ enum ODE_TYPE {
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.
 #define TIP_MEMS 1.2///lower limit on no. of Magents needed to qualify as a tip cell, X times the initial value TIP_MEMS is X
 
-#define TESTING true //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
+#define TESTING false //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
 #define on_the_fly_surface_agents false ///faster as doesnt do voxellisatoin but cant use for full runs as not correct
 #define oldVersion false ///old VEGFR-2 activatoin function from JTB 2008
 
-#define TOROIDAL_X true//cell_setup2: false ///will want if vessel (JTB or PLos) or some monolayers
-#define TOROIDAL_X_env true //this is true for the NCB and rearrnagement setups even though strictly the vessel cannotgrow toroidally (only env lookup toroidal) TOROIDAL_X will be false in this case ..
+#define TOROIDAL_X false//cell_setup2: false ///will want if vessel (JTB or PLos) or some monolayers
+#define TOROIDAL_X_env false //this is true for the NCB and rearrnagement setups even though strictly the vessel cannotgrow toroidally (only env lookup toroidal) TOROIDAL_X will be false in this case ..
 #define TOROIDAL_Y false ///for 2D monolayers
 
 ///WORLD_SETUP
@@ -179,15 +179,15 @@ extern float VconcST;
 extern float VconcSTMACRO;
 extern long long seed;
 ///cytoskeleton
-#define VEIL_ADVANCE false
+
 #define ANASTOMOSIS false
 extern float actinMax;///128(for 0.25 scale cells (rearrangement model)///512(in JTB 2008 and PLoS CB 2009)///max filagests extra, calcs on the fly with retraction = 1 and extension  =1 rather than i actual memagents as they are updated synchronously in this version, in calc force...and remove/grids spring agents
-#define RAND_VEIL_ADVANCE_CHANCE 0.000
+
 extern float RAND_FILRETRACT_CHANCE;
 
 #define NewNodeLength 4
 #define TokDisRate 5
-extern int FIL_SPACING; //determines how close in grid sites radius around it, a new filopoidum can extend from preexisting ones. Set to 4 if 3D vegf in envrionment, or 1 if using a more 2D env eg vegf from astrocytes.. used in tryTokenPassRadius from VEGFresponse()
+extern int FIL_SPACING; //determines how closse in grid sites radius around it, a new filopoidum can extend from preexisting ones. Set to 4 if 3D vegf in envrionment, or 1 if using a more 2D env eg vegf from astrocytes.. used in tryTokenPassRadius from VEGFresponse()
 extern float FILTIPMAX; /// max time a memagent can remain at filopodia tip before it begins to collapse.
 extern float tokenStrength; ///no. of tokens need to extend filopodia by 0.5 microns. increasing param value acts like a drug reducing the actin repsonse or signal to actin.
 extern float randFilExtend;
@@ -224,6 +224,22 @@ extern float M2_lambda;
 #define VsinkNorm 9.0f
 
 ///SPRING_SETUP
+#define VEIL_ADVANCE_TESTING false
+
+#if VEIL_ADVANCE_TESTING
+#define VEIL_ADVANCE true
+#define RAND_VEIL_ADVANCE_CHANCE 0.5
+#define springConstant 0.05f
+#define FAspringConstant 0.05f
+#define filSpringConstant 0.95f
+#define filBaseConstant 0.7f /// was 0.7 lower as smaller cells?
+#define junctionConstant 0.05f
+#define filSpringLength 0.1f
+#define springLength 1.0f
+#define JunctionSpringLength 0.5f
+#else
+#define VEIL_ADVANCE false
+#define RAND_VEIL_ADVANCE_CHANCE 0.5
 #define springConstant 0.05f
 #define FAspringConstant 0.05f
 #define filSpringConstant 0.05f /// TOM: CHANGING FROM 0.95 TO 0.05
@@ -232,6 +248,7 @@ extern float M2_lambda;
 #define filSpringLength 0.1f
 #define springLength 1.0f
 #define JunctionSpringLength 1.0f /// TOM: CHANGING FROM 0.5 TO 1.0
+#endif
 
 
 /////analysis/quantification

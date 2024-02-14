@@ -20,6 +20,7 @@
     <import index="5qo5" ref="r:6d93ddb1-b0b0-4eee-8079-51303666672a(org.iets3.core.expr.simpleTypes.structure)" implicit="true" />
     <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
+    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -5992,7 +5993,7 @@
                     <ref role="2Gs0qQ" node="3CIYR32XHaB" resolve="parameter" />
                   </node>
                   <node concept="3TrcHB" id="3CIYR32XHaJ" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="3CIYR32XHaK" role="3clFbx">
@@ -6413,7 +6414,7 @@
             <ref role="1YBMHb" node="EvUBVycfXd" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="EvUBVycfXc" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -6483,7 +6484,7 @@
             <ref role="1YBMHb" node="EvUBVycRfd" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="EvUBVycRfc" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -6566,7 +6567,7 @@
             <ref role="1YBMHb" node="EvUBVycRyF" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="EvUBVycRyE" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -6599,7 +6600,7 @@
                 <ref role="1YBMHb" node="13EEdumPOP$" resolve="parameter" />
               </node>
               <node concept="3TrcHB" id="13EEdumPRo0" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
               </node>
             </node>
           </node>
@@ -7304,7 +7305,7 @@
             <ref role="1YBMHb" node="6fJRP9OXqlT" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="6fJRP9OXqIp" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
         <node concept="3clFbS" id="6fJRP9OXqmm" role="3clFbx">
@@ -7605,7 +7606,7 @@
             <ref role="1YBMHb" node="3ZkAk9E0GFc" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="3ZkAk9E0GFb" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -7687,7 +7688,7 @@
             <ref role="1YBMHb" node="3ZkAk9E0GFG" resolve="parameter" />
           </node>
           <node concept="3TrcHB" id="3ZkAk9E0GFF" role="2OqNvi">
-            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -8138,7 +8139,7 @@
                       <ref role="2Gs0qQ" node="5ekfU1yy3bK" resolve="parameter" />
                     </node>
                     <node concept="3TrcHB" id="5ekfU1yy3c3" role="2OqNvi">
-                      <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                      <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                     </node>
                   </node>
                 </node>
@@ -8404,6 +8405,645 @@
     <node concept="1YaCAy" id="4$2ETQS5Fkn" role="1YuTPh">
       <property role="TrG5h" value="term" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="10MOZxVzc0q">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_ComponentWithParamInConc" />
+    <node concept="3clFbS" id="10MOZxVzc0r" role="18ibNy">
+      <node concept="3SKdUt" id="10MOZxVzm2B" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzm2C" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzm4l" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm8I" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm8T" role="1PaTwD">
+            <property role="3oM_SC" value="potential" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm9X" role="1PaTwD">
+            <property role="3oM_SC" value="parameters" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm95" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdG" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdH" role="1PaTwD">
+            <property role="3oM_SC" value="minimum" />
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="10MOZxVzmat" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzmad" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzm8d" role="1PaTwD">
+            <property role="3oM_SC" value="concentration" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm4u" role="1PaTwD">
+            <property role="3oM_SC" value="are" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm4z" role="1PaTwD">
+            <property role="3oM_SC" value="not" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm4D" role="1PaTwD">
+            <property role="3oM_SC" value="doing" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm4K" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm4S" role="1PaTwD">
+            <property role="3oM_SC" value="parameter" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm51" role="1PaTwD">
+            <property role="3oM_SC" value="sweep." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10MOZxVzdX8" role="3cqZAp">
+        <node concept="3clFbS" id="10MOZxVzdXa" role="3clFbx">
+          <node concept="3cpWs8" id="10MOZxVzgY8" role="3cqZAp">
+            <node concept="3cpWsn" id="10MOZxVzgYb" role="3cpWs9">
+              <property role="TrG5h" value="minConc" />
+              <node concept="3Tqbb2" id="10MOZxVzgY7" role="1tU5fm">
+                <ref role="ehGHo" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+              </node>
+              <node concept="2OqwBi" id="10MOZxVzh9I" role="33vP2m">
+                <node concept="1YBJjd" id="10MOZxVzgYV" role="2Oq$k0">
+                  <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                </node>
+                <node concept="3TrEf2" id="10MOZxVzhu8" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="10MOZxVzhvx" role="3cqZAp">
+            <node concept="3clFbS" id="10MOZxVzhvz" role="3clFbx">
+              <node concept="3cpWs8" id="10MOZxVzjdf" role="3cqZAp">
+                <node concept="3cpWsn" id="10MOZxVzjdi" role="3cpWs9">
+                  <property role="TrG5h" value="minParamExpr" />
+                  <node concept="3Tqbb2" id="10MOZxVzjdd" role="1tU5fm">
+                    <ref role="ehGHo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                  </node>
+                  <node concept="1PxgMI" id="10MOZxVzkwL" role="33vP2m">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="10MOZxVzky4" role="3oSUPX">
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                    </node>
+                    <node concept="2OqwBi" id="10MOZxVzjWo" role="1m5AlR">
+                      <node concept="2OqwBi" id="10MOZxVzjsr" role="2Oq$k0">
+                        <node concept="37vLTw" id="10MOZxVzjeC" role="2Oq$k0">
+                          <ref role="3cqZAo" node="10MOZxVzgYb" resolve="minConc" />
+                        </node>
+                        <node concept="3TrEf2" id="10MOZxVzjJp" role="2OqNvi">
+                          <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="10MOZxVzk8T" role="2OqNvi">
+                        <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="10MOZxVzkCM" role="3cqZAp">
+                <node concept="3clFbS" id="10MOZxVzkCO" role="3clFbx">
+                  <node concept="2MkqsV" id="10MOZxVzlzT" role="3cqZAp">
+                    <node concept="Xl_RD" id="10MOZxVzl$8" role="2MkJ7o">
+                      <property role="Xl_RC" value="Cannot use a parameter that is performing a sweep as a minimum concentration." />
+                    </node>
+                    <node concept="37vLTw" id="10MOZxVzlAz" role="1urrMF">
+                      <ref role="3cqZAo" node="10MOZxVzgYb" resolve="minConc" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="10MOZxVzlih" role="3clFbw">
+                  <node concept="2OqwBi" id="10MOZxVzkPS" role="2Oq$k0">
+                    <node concept="37vLTw" id="10MOZxVzkDb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="10MOZxVzjdi" resolve="minParamExpr" />
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzl4v" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:5jwSz93TLML" resolve="Parameter" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="10MOZxVzlxx" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="10MOZxVziRN" role="3clFbw">
+              <node concept="2OqwBi" id="10MOZxVziqh" role="2Oq$k0">
+                <node concept="2OqwBi" id="10MOZxVzhHz" role="2Oq$k0">
+                  <node concept="37vLTw" id="10MOZxVzhvQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="10MOZxVzgYb" resolve="minConc" />
+                  </node>
+                  <node concept="3TrEf2" id="10MOZxVzhY7" role="2OqNvi">
+                    <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="10MOZxVziDm" role="2OqNvi">
+                  <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="10MOZxVzj6B" role="2OqNvi">
+                <node concept="chp4Y" id="10MOZxVzj9n" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10MOZxVzeDk" role="3clFbw">
+          <node concept="2OqwBi" id="10MOZxVze8k" role="2Oq$k0">
+            <node concept="1YBJjd" id="10MOZxVzdXB" role="2Oq$k0">
+              <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+            </node>
+            <node concept="3TrEf2" id="10MOZxVzeqr" role="2OqNvi">
+              <ref role="3Tt5mk" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+            </node>
+          </node>
+          <node concept="3x8VRR" id="10MOZxVzfh7" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="10MOZxVzm5b" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzm5c" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzmda" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdb" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdc" role="1PaTwD">
+            <property role="3oM_SC" value="potential" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdd" role="1PaTwD">
+            <property role="3oM_SC" value="parameters" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmdW" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzme2" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzme9" role="1PaTwD">
+            <property role="3oM_SC" value="maximum" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmeh" role="1PaTwD">
+            <property role="3oM_SC" value="" />
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="10MOZxVzme_" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzmer" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzmeq" role="1PaTwD">
+            <property role="3oM_SC" value="concentration" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmgR" role="1PaTwD">
+            <property role="3oM_SC" value="are" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmgU" role="1PaTwD">
+            <property role="3oM_SC" value="not" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmgY" role="1PaTwD">
+            <property role="3oM_SC" value="doing" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmh3" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmho" role="1PaTwD">
+            <property role="3oM_SC" value="parameter" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmhv" role="1PaTwD">
+            <property role="3oM_SC" value="sweep." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10MOZxVzfil" role="3cqZAp">
+        <node concept="3clFbS" id="10MOZxVzfin" role="3clFbx">
+          <node concept="3cpWs8" id="10MOZxVzlAU" role="3cqZAp">
+            <node concept="3cpWsn" id="10MOZxVzlAV" role="3cpWs9">
+              <property role="TrG5h" value="maxConc" />
+              <node concept="3Tqbb2" id="10MOZxVzlAW" role="1tU5fm">
+                <ref role="ehGHo" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+              </node>
+              <node concept="2OqwBi" id="10MOZxVzlAX" role="33vP2m">
+                <node concept="1YBJjd" id="10MOZxVzlAY" role="2Oq$k0">
+                  <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                </node>
+                <node concept="3TrEf2" id="10MOZxVzlAZ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="10MOZxVzlB0" role="3cqZAp">
+            <node concept="3clFbS" id="10MOZxVzlB1" role="3clFbx">
+              <node concept="3cpWs8" id="10MOZxVzlB2" role="3cqZAp">
+                <node concept="3cpWsn" id="10MOZxVzlB3" role="3cpWs9">
+                  <property role="TrG5h" value="maxParamExpr" />
+                  <node concept="3Tqbb2" id="10MOZxVzlB4" role="1tU5fm">
+                    <ref role="ehGHo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                  </node>
+                  <node concept="1PxgMI" id="10MOZxVzlB5" role="33vP2m">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="10MOZxVzlB6" role="3oSUPX">
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                    </node>
+                    <node concept="2OqwBi" id="10MOZxVzlB7" role="1m5AlR">
+                      <node concept="2OqwBi" id="10MOZxVzlB8" role="2Oq$k0">
+                        <node concept="37vLTw" id="10MOZxVzlB9" role="2Oq$k0">
+                          <ref role="3cqZAo" node="10MOZxVzlAV" resolve="minConc" />
+                        </node>
+                        <node concept="3TrEf2" id="10MOZxVzlBa" role="2OqNvi">
+                          <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="10MOZxVzlBb" role="2OqNvi">
+                        <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="10MOZxVzlBc" role="3cqZAp">
+                <node concept="3clFbS" id="10MOZxVzlBd" role="3clFbx">
+                  <node concept="2MkqsV" id="10MOZxVzlBe" role="3cqZAp">
+                    <node concept="Xl_RD" id="10MOZxVzlBf" role="2MkJ7o">
+                      <property role="Xl_RC" value="Cannot use a parameter that is performing a sweep as a maximum concentration." />
+                    </node>
+                    <node concept="37vLTw" id="10MOZxVzlBg" role="1urrMF">
+                      <ref role="3cqZAo" node="10MOZxVzlAV" resolve="minConc" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="10MOZxVzlBh" role="3clFbw">
+                  <node concept="2OqwBi" id="10MOZxVzlBi" role="2Oq$k0">
+                    <node concept="37vLTw" id="10MOZxVzlBj" role="2Oq$k0">
+                      <ref role="3cqZAo" node="10MOZxVzlB3" resolve="minParamExpr" />
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzlBk" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:5jwSz93TLML" resolve="Parameter" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="10MOZxVzlBl" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="10MOZxVzlBm" role="3clFbw">
+              <node concept="2OqwBi" id="10MOZxVzlBn" role="2Oq$k0">
+                <node concept="2OqwBi" id="10MOZxVzlBo" role="2Oq$k0">
+                  <node concept="37vLTw" id="10MOZxVzlBp" role="2Oq$k0">
+                    <ref role="3cqZAo" node="10MOZxVzlAV" resolve="minConc" />
+                  </node>
+                  <node concept="3TrEf2" id="10MOZxVzlBq" role="2OqNvi">
+                    <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="10MOZxVzlBr" role="2OqNvi">
+                  <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="10MOZxVzlBs" role="2OqNvi">
+                <node concept="chp4Y" id="10MOZxVzlBt" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10MOZxVzgiu" role="3clFbw">
+          <node concept="2OqwBi" id="10MOZxVzfrH" role="2Oq$k0">
+            <node concept="1YBJjd" id="10MOZxVzfiW" role="2Oq$k0">
+              <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+            </node>
+            <node concept="3TrEf2" id="10MOZxVzg3l" role="2OqNvi">
+              <ref role="3Tt5mk" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+            </node>
+          </node>
+          <node concept="3x8VRR" id="10MOZxVzgWy" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3clFbH" id="10MOZxVzmhB" role="3cqZAp" />
+      <node concept="3SKdUt" id="10MOZxVzmm4" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzmm5" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzmon" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmow" role="1PaTwD">
+            <property role="3oM_SC" value="parameters" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmoz" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm$j" role="1PaTwD">
+            <property role="3oM_SC" value="sweep" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzm$o" role="1PaTwD">
+            <property role="3oM_SC" value="concentrations," />
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="10MOZxVzmI5" role="3cqZAp">
+        <node concept="1PaTwC" id="10MOZxVzmI6" role="1aUNEU">
+          <node concept="3oM_SD" id="10MOZxVzmKv" role="1PaTwD">
+            <property role="3oM_SC" value="are" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmKx" role="1PaTwD">
+            <property role="3oM_SC" value="not" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmK$" role="1PaTwD">
+            <property role="3oM_SC" value="themselves" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmKC" role="1PaTwD">
+            <property role="3oM_SC" value="performing" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmKH" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="10MOZxVzmKN" role="1PaTwD">
+            <property role="3oM_SC" value="sweep." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10MOZxVzc3Y" role="3cqZAp">
+        <node concept="2OqwBi" id="10MOZxVzceR" role="3clFbw">
+          <node concept="1YBJjd" id="10MOZxVzc4a" role="2Oq$k0">
+            <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+          </node>
+          <node concept="3TrcHB" id="10MOZxVzcpB" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="10MOZxVzc40" role="3clFbx">
+          <node concept="3SKdUt" id="10MOZxVzvIl" role="3cqZAp">
+            <node concept="1PaTwC" id="10MOZxVzvIm" role="1aUNEU">
+              <node concept="3oM_SD" id="10MOZxVzvJM" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVzvJO" role="1PaTwD">
+                <property role="3oM_SC" value="minimum" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVzvJR" role="1PaTwD">
+                <property role="3oM_SC" value="starting" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVzvK6" role="1PaTwD">
+                <property role="3oM_SC" value="concentration" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVzvKb" role="1PaTwD">
+                <property role="3oM_SC" value="in" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVzvKh" role="1PaTwD">
+                <property role="3oM_SC" value="sweep." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="10MOZxVzcu4" role="3cqZAp">
+            <node concept="3clFbS" id="10MOZxVzcu6" role="3clFbx">
+              <node concept="3cpWs8" id="10MOZxVzpgH" role="3cqZAp">
+                <node concept="3cpWsn" id="10MOZxVzpgK" role="3cpWs9">
+                  <property role="TrG5h" value="minStartConc" />
+                  <node concept="3Tqbb2" id="10MOZxVzpgF" role="1tU5fm">
+                    <ref role="ehGHo" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                  </node>
+                  <node concept="2OqwBi" id="10MOZxVzplJ" role="33vP2m">
+                    <node concept="1YBJjd" id="10MOZxVzphy" role="2Oq$k0">
+                      <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzpKg" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="10MOZxVzpP9" role="3cqZAp">
+                <node concept="3clFbS" id="10MOZxVzpPb" role="3clFbx">
+                  <node concept="3cpWs8" id="10MOZxVzrFd" role="3cqZAp">
+                    <node concept="3cpWsn" id="10MOZxVzrFg" role="3cpWs9">
+                      <property role="TrG5h" value="minStartParamExpr" />
+                      <node concept="3Tqbb2" id="10MOZxVzrFb" role="1tU5fm">
+                        <ref role="ehGHo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                      </node>
+                      <node concept="1PxgMI" id="10MOZxVzsOU" role="33vP2m">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="10MOZxVzsQd" role="3oSUPX">
+                          <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                        </node>
+                        <node concept="2OqwBi" id="10MOZxVzsnn" role="1m5AlR">
+                          <node concept="2OqwBi" id="10MOZxVzrTW" role="2Oq$k0">
+                            <node concept="37vLTw" id="10MOZxVzrG9" role="2Oq$k0">
+                              <ref role="3cqZAo" node="10MOZxVzpgK" resolve="minStartConc" />
+                            </node>
+                            <node concept="3TrEf2" id="10MOZxVzscU" role="2OqNvi">
+                              <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="10MOZxVzsAq" role="2OqNvi">
+                            <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="10MOZxVzsS3" role="3cqZAp">
+                    <node concept="3clFbS" id="10MOZxVzsS5" role="3clFbx">
+                      <node concept="2MkqsV" id="10MOZxVzu5s" role="3cqZAp">
+                        <node concept="Xl_RD" id="10MOZxVzu5t" role="2MkJ7o">
+                          <property role="Xl_RC" value="Cannot use a parameter that is performing a sweep as a minimum concentration." />
+                        </node>
+                        <node concept="37vLTw" id="10MOZxVzu5u" role="1urrMF">
+                          <ref role="3cqZAo" node="10MOZxVzpgK" resolve="minStartConc" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="10MOZxVztAG" role="3clFbw">
+                      <node concept="2OqwBi" id="10MOZxVzt59" role="2Oq$k0">
+                        <node concept="37vLTw" id="10MOZxVzsSs" role="2Oq$k0">
+                          <ref role="3cqZAo" node="10MOZxVzrFg" resolve="minStartParamExpr" />
+                        </node>
+                        <node concept="3TrEf2" id="10MOZxVztoU" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:5jwSz93TLML" resolve="Parameter" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="10MOZxVzu34" role="2OqNvi">
+                        <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="10MOZxVzr0h" role="3clFbw">
+                  <node concept="2OqwBi" id="10MOZxVzqyJ" role="2Oq$k0">
+                    <node concept="2OqwBi" id="10MOZxVzq3b" role="2Oq$k0">
+                      <node concept="37vLTw" id="10MOZxVzpPu" role="2Oq$k0">
+                        <ref role="3cqZAo" node="10MOZxVzpgK" resolve="minStartConc" />
+                      </node>
+                      <node concept="3TrEf2" id="10MOZxVzqol" role="2OqNvi">
+                        <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzqLO" role="2OqNvi">
+                      <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="10MOZxVzr$_" role="2OqNvi">
+                    <node concept="chp4Y" id="10MOZxVzrBl" role="cj9EA">
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="10MOZxVzd4D" role="3clFbw">
+              <node concept="2OqwBi" id="10MOZxVzcD3" role="2Oq$k0">
+                <node concept="1YBJjd" id="10MOZxVzcum" role="2Oq$k0">
+                  <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                </node>
+                <node concept="3TrEf2" id="10MOZxVzcQ0" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="10MOZxVzdoK" role="2OqNvi" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="10MOZxVEjlU" role="3cqZAp">
+            <node concept="1PaTwC" id="10MOZxVEjlV" role="1aUNEU">
+              <node concept="3oM_SD" id="10MOZxVEjnu" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVEjnw" role="1PaTwD">
+                <property role="3oM_SC" value="maximum" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVEjnz" role="1PaTwD">
+                <property role="3oM_SC" value="starting" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVEjnB" role="1PaTwD">
+                <property role="3oM_SC" value="concentration" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVEjnG" role="1PaTwD">
+                <property role="3oM_SC" value="in" />
+              </node>
+              <node concept="3oM_SD" id="10MOZxVEjnM" role="1PaTwD">
+                <property role="3oM_SC" value="sweep." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="10MOZxVzcrX" role="3cqZAp">
+            <node concept="2OqwBi" id="10MOZxVznZy" role="3clFbw">
+              <node concept="2OqwBi" id="10MOZxVzmVw" role="2Oq$k0">
+                <node concept="1YBJjd" id="10MOZxVzmLc" role="2Oq$k0">
+                  <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                </node>
+                <node concept="3TrEf2" id="10MOZxVznGT" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="10MOZxVzorF" role="2OqNvi" />
+            </node>
+            <node concept="3clFbS" id="10MOZxVzcrZ" role="3clFbx">
+              <node concept="3cpWs8" id="10MOZxVzvb$" role="3cqZAp">
+                <node concept="3cpWsn" id="10MOZxVzvb_" role="3cpWs9">
+                  <property role="TrG5h" value="maxStartConc" />
+                  <node concept="3Tqbb2" id="10MOZxVzvbA" role="1tU5fm">
+                    <ref role="ehGHo" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                  </node>
+                  <node concept="2OqwBi" id="10MOZxVzvbB" role="33vP2m">
+                    <node concept="1YBJjd" id="10MOZxVzvbC" role="2Oq$k0">
+                      <ref role="1YBMHb" node="10MOZxVzc3h" resolve="component" />
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzvbD" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="10MOZxVzvbE" role="3cqZAp">
+                <node concept="3clFbS" id="10MOZxVzvbF" role="3clFbx">
+                  <node concept="3cpWs8" id="10MOZxVzvbG" role="3cqZAp">
+                    <node concept="3cpWsn" id="10MOZxVzvbH" role="3cpWs9">
+                      <property role="TrG5h" value="maxStartParamExpr" />
+                      <node concept="3Tqbb2" id="10MOZxVzvbI" role="1tU5fm">
+                        <ref role="ehGHo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                      </node>
+                      <node concept="1PxgMI" id="10MOZxVzvbJ" role="33vP2m">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="10MOZxVzvbK" role="3oSUPX">
+                          <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                        </node>
+                        <node concept="2OqwBi" id="10MOZxVzvbL" role="1m5AlR">
+                          <node concept="2OqwBi" id="10MOZxVzvbM" role="2Oq$k0">
+                            <node concept="37vLTw" id="10MOZxVzvbN" role="2Oq$k0">
+                              <ref role="3cqZAo" node="10MOZxVzvb_" resolve="minStartConc" />
+                            </node>
+                            <node concept="3TrEf2" id="10MOZxVzvbO" role="2OqNvi">
+                              <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="10MOZxVzvbP" role="2OqNvi">
+                            <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="10MOZxVzvbQ" role="3cqZAp">
+                    <node concept="3clFbS" id="10MOZxVzvbR" role="3clFbx">
+                      <node concept="2MkqsV" id="10MOZxVzvbS" role="3cqZAp">
+                        <node concept="Xl_RD" id="10MOZxVzvbT" role="2MkJ7o">
+                          <property role="Xl_RC" value="Cannot use a parameter that is performing a sweep as a maximum concentration." />
+                        </node>
+                        <node concept="37vLTw" id="10MOZxVzvbU" role="1urrMF">
+                          <ref role="3cqZAo" node="10MOZxVzvb_" resolve="minStartConc" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="10MOZxVzvbV" role="3clFbw">
+                      <node concept="2OqwBi" id="10MOZxVzvbW" role="2Oq$k0">
+                        <node concept="37vLTw" id="10MOZxVzvbX" role="2Oq$k0">
+                          <ref role="3cqZAo" node="10MOZxVzvbH" resolve="minStartParamExpr" />
+                        </node>
+                        <node concept="3TrEf2" id="10MOZxVzvbY" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:5jwSz93TLML" resolve="Parameter" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="10MOZxVzvbZ" role="2OqNvi">
+                        <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="10MOZxVzvc0" role="3clFbw">
+                  <node concept="2OqwBi" id="10MOZxVzvc1" role="2Oq$k0">
+                    <node concept="2OqwBi" id="10MOZxVzvc2" role="2Oq$k0">
+                      <node concept="37vLTw" id="10MOZxVzvc3" role="2Oq$k0">
+                        <ref role="3cqZAo" node="10MOZxVzvb_" resolve="minStartConc" />
+                      </node>
+                      <node concept="3TrEf2" id="10MOZxVzvc4" role="2OqNvi">
+                        <ref role="3Tt5mk" to="ottv:68wdrURM_k0" resolve="value" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="10MOZxVzvc5" role="2OqNvi">
+                      <ref role="3Tt5mk" to="ottv:68wdrURM_jW" resolve="expr" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="10MOZxVzvc6" role="2OqNvi">
+                    <node concept="chp4Y" id="10MOZxVzvc7" role="cj9EA">
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="10MOZxVzc3h" role="1YuTPh">
+      <property role="TrG5h" value="component" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
 </model>

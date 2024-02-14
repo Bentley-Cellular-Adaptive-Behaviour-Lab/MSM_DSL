@@ -119,6 +119,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -956,6 +957,38 @@
     <node concept="1YaCAy" id="DsR2vrR0Qs" role="1YuTPh">
       <property role="TrG5h" value="facet" />
       <ref role="1YaFvo" to="yy1h:3pydsmp5XmG" resolve="LoggingFacet" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="355VSbVp8ky">
+    <property role="TrG5h" value="check_noEmptyStatement" />
+    <node concept="3clFbS" id="355VSbVp8kz" role="18ibNy">
+      <node concept="3clFbJ" id="355VSbVp8mq" role="3cqZAp">
+        <node concept="2OqwBi" id="355VSbVp9xc" role="3clFbw">
+          <node concept="2OqwBi" id="355VSbVp9bX" role="2Oq$k0">
+            <node concept="1YBJjd" id="355VSbVp8mF" role="2Oq$k0">
+              <ref role="1YBMHb" node="355VSbVp8mh" resolve="statement" />
+            </node>
+            <node concept="3TrEf2" id="355VSbVp9kK" role="2OqNvi">
+              <ref role="3Tt5mk" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="355VSbVp9H9" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="355VSbVp8ms" role="3clFbx">
+          <node concept="2MkqsV" id="355VSbVp9Ne" role="3cqZAp">
+            <node concept="Xl_RD" id="355VSbVp9Nt" role="2MkJ7o">
+              <property role="Xl_RC" value="Logging statements must have a Component or shape behaviour target. " />
+            </node>
+            <node concept="1YBJjd" id="355VSbVp9PS" role="1urrMF">
+              <ref role="1YBMHb" node="355VSbVp8mh" resolve="statement" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="355VSbVp8mh" role="1YuTPh">
+      <property role="TrG5h" value="statement" />
+      <ref role="1YaFvo" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
     </node>
   </node>
 </model>

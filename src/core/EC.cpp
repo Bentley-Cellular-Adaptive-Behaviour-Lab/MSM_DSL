@@ -1373,7 +1373,7 @@ void EC::newNodes(void) {
 
 
                     if (DSL_ADHESIVENESS_TESTING) {
-                        this->worldP->set_focal_adhesion(memp);
+                        this->worldP->set_focal_adhesion(memp); // TOM : TESTED
                     } else {
                         memp->FA = true;
                     }

@@ -53,7 +53,6 @@ void MemAgent::NotchResponseOld() {
 
 	do {
         if (worldP->neigh[i]->getType() == const_M) {
-			int test = worldP->neigh[i]->getMids().size();
             for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
                 if (flag == 0) {
                     if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
@@ -227,25 +226,26 @@ void MemAgent::veilAdvance(void) {
             count++;
             currentNode->FA = false;
             currentNode->SpringNeigh[0]->veilAdvancing = true; 
-            /** 
-             * important to flag as veil advancing here so that newNodes() doesnt insert a new node in the middle of the spring when it goes over threshold legnth for an adhesion node as per filopodia extension*/
+			// Important to flag as veil advancing here so
+			//  that newNodes() doesn't insert a new node in the
+			//  middle of the spring when it goes over threshold
+			//  length for an adhesion node as per filopodia extension
             nextNode = currentNode->filNeigh;
             currentNode = nextNode;
         } else if (count > 0) {
             flag = 1;
             for (i = 0; i < currentNode->neighs; i++)
-                if (currentNode->SpringNeigh[i]->filopodia == true) {
+                if (currentNode->SpringNeigh[i]->filopodia) {
                     currentNode->SpringNeigh[i]->veilAdvancing = true;
                 }
             currentNode->veilAdvancing = true;
         } else flag = 1;
 
-        if (currentNode->FIL == BASE)currentNode->veilAdvancing = true;
-
+        if (currentNode->FIL == BASE) {
+			currentNode->veilAdvancing = true;
+		}
 
     } while (flag == 0);
-
-
 }
 //----------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
@@ -734,9 +734,16 @@ void MemAgent::VEGFRresponse(void) {
                 // with no bias from VR->actin or VR gradient to direction.
                 prob = randFilExtend;
             } else {
-				prob = ((float) VEGFRactive /
-						((float) Cell->VEGFRnorm /
-						 (float) upto)) * Cell->filCONST;
+				if (SHANE_MSM_SEMA) {
+					auto SEMA3A = this->get_environment_level("SEMA3A", true, false);
+					prob = (((float) VEGFRactive /
+							 ((float) Cell->VEGFRnorm /
+							  (float) upto)) * Cell->filCONST) - SEMA3A;
+				} else {
+					prob = ((float) VEGFRactive /
+							 ((float) Cell->VEGFRnorm /
+							  (float) upto)) * Cell->filCONST;
+				}
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
         } else {
@@ -783,7 +790,7 @@ void MemAgent::VEGFRresponse(void) {
 //----------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 
-void MemAgent::calcForce(void) {
+void MemAgent::calcForce() {
 
     int i, k, T;
     float denom, length;
@@ -809,12 +816,16 @@ void MemAgent::calcForce(void) {
         sumDN.at(k) = 0.0f;
     }
 
-    //have different lengths and constants for different types of spring
+    // Have different lengths and constants for different types of spring
     if ((FIL == TIP) && !FA) {
         sConst = filSpringConstant;
         SL = filSpringLength;
     }
-    //calculate new force by summing neighbour vectors minused from current point PN1, PN2... then calculate the projection of S onto spring direction and get the difference, then 		  sum the elongated regions of each and times by k constant.n
+    // Calculate new force by summing neighbour vectors
+	// minus from current point PN1, PN2.
+	// Then calculate the projection of S onto spring direction
+	// and get the difference, before summing the elongated
+	// regions of each and times by k constant.n
 
     SL = springLength;
     i = 0;
@@ -834,7 +845,11 @@ void MemAgent::calcForce(void) {
                 sConst = FAspringConstant; //filBaseConstant;
                 SL = springLength;
             }
-            if (((FIL == BASE) || (FIL == STALK)) && (veilAdvancing == true) && ((neigh[i]->FIL == STALK) || (neigh[i]->FIL == TIP))) {
+
+            if (((FIL == BASE) || (FIL == STALK))
+			&& (veilAdvancing)
+			&& ((neigh[i]->FIL == STALK)
+			|| (neigh[i]->FIL == TIP))) {
                 sConst = filBaseConstant;
                 SL = filSpringLength;
             } else if (neigh[i]->Cell != Cell) {
@@ -918,11 +933,6 @@ void MemAgent::calcForce(void) {
     //----------------------------------------------------------------
 
     moveAgent(newX, newY, newZ, false);
-    
-
-
-    
-
 }
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
@@ -938,7 +948,8 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
     Z = (int) Mz;
 
 
-    //only bother to move grid version if its moving to another grid site - this is the int version of the float model for ease of local rule look up
+    //only bother to move grid version if its moving to another grid site -
+	// this is the int version of the float model for ease of local rule look up
     if ((newMx == X) && (newMy == Y) && (newMz == Z)) {
         //do nothing its in the same place;
 
@@ -957,7 +968,6 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
 
                 worldP->setMLocation(newMx, newMy, newMz, this);
 
-
                 //move agent in continuous space
                 Mx = newX;
                 My = newY;
@@ -965,22 +975,23 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
             }
         }            //------------------------------------------------------------------------------------------------------------------------------
             //------------------------------------------------------------------------------------------------------------------------------
-            //filopodia agents exist in either M or E state grid sites as they are thin.. only end up in M state if the veil somhow pulls up over them
-        else if ((FIL == TIP) || (FIL == STALK)) {
+            //filopodia agents exist in either M or E state grid sites as they are thin..
+			// only end up in M state if the veil somhow pulls up over them
+        	else if ((FIL == TIP) || (FIL == STALK)) {
 
-            worldP->deleteOldGridRef(this, true);
+            	worldP->deleteOldGridRef(this, true);
 
-            worldP->grid[newMx][newMy][newMz].addFilAgent(this);
+            	worldP->grid[newMx][newMy][newMz].addFilAgent(this);
 
-            //move agent in continuous space
-            Mx = newX;
-            My = newY;
-            Mz = newZ;
+            	//move agent in continuous space
+            	Mx = newX;
+            	My = newY;
+            	Mz = newZ;
         }
         //------------------------------------------------------------------------------------------------------------------------------
     }
 	if (DSL_ADHESIVENESS_TESTING) {
-		this->worldP->set_focal_adhesion(this);
+		this->worldP->set_focal_adhesion(this); // TOM : CHECKED
 	} else {
 		FA = FAset;
 	}
@@ -1475,9 +1486,17 @@ bool MemAgent::extendFil(const double prob) {
                             	Cell->actinUsed += distNeeded;
 
 								if (DSL_ADHESIVENESS_TESTING) {
-									this->worldP->set_focal_adhesion(this);
+									if (VEIL_ADVANCE && this->FIL != BASE) {
+										this->worldP->set_focal_adhesion(this); // TOM : TESTED
+									} else {
+										this->worldP->set_focal_adhesion(this); // TOM : TESTED
+									}
 								} else {
-									this->FA = true;
+									if (VEIL_ADVANCE && this->FIL != BASE) {
+										this->FA = true;
+									} else {
+										this->FA = true;
+									}
 								}
                             	mp = new MemAgent(Cell, worldP);
                             
@@ -1486,7 +1505,7 @@ bool MemAgent::extendFil(const double prob) {
                             	mp->Mz = highest->Ez;
 
 								if (DSL_ADHESIVENESS_TESTING) {
-									this->worldP->set_focal_adhesion(mp);
+									this->worldP->set_focal_adhesion(mp); // TOM : TESTED
 								} else {
 									mp->FA = true;
 								}
@@ -1575,9 +1594,7 @@ bool MemAgent::extendFil(const double prob) {
 			}
         }
     }
-
     return (ans);
-
 }
 //----------------------------------------------------------------------------------
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1966,7 +1983,11 @@ void MemAgent::calcRetractDist(void) {
                 sConst = FAspringConstant; //filBaseConstant;
                 SL = springLength;
             }
-            if (((FIL == BASE) || (FIL == STALK)) && (veilAdvancing == true) && ((neigh[i]->FIL == STALK) || (neigh[i]->FIL == TIP))) {
+
+            if (((FIL == BASE) || (FIL == STALK))
+			&& (veilAdvancing)
+			&& ((neigh[i]->FIL == STALK)
+			|| (neigh[i]->FIL == TIP))) {
                 sConst = filBaseConstant;
                 SL = filSpringLength;
             } else if (neigh[i]->Cell != Cell) {
@@ -4599,15 +4620,6 @@ void MemAgent::neighCellSearch(const bool doesVonNeumann) {
                     if (location.getType() == const_M) {
                         for (auto memAgent : location.getMids()) {
                             if (memAgent->Cell != this->Cell) {
-                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 1) {
-                                    int test = 0;
-                                }
-                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 3) {
-                                    int test = 0;
-                                }
-                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 4) {
-                                    int test = 0;
-                                }
                                 this->Cell->attempt_neigh_list_addition(memAgent->Cell);
                             }
                         }

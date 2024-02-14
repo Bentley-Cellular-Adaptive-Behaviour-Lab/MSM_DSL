@@ -1483,12 +1483,28 @@ void World::set_focal_adhesion(MemAgent *memp) {
 		Env *target_ep = worldP->grid[memp_x][memp_y][memp_z].getEid();
 		float chance = (float) new_rand() / (float) NEW_RAND_MAX;
 		// Check against the adhesiveness of the target environment location.
-		// Higher adhesiveness makes it easier to form an FA, therefore if the chance is less than
+		// Higher adhesiveness makes it easier to form an FA,
+		// therefore if the chance is less than
 		// a (high) prob, form a FA.
-		memp->FA = chance <= target_ep->m_adhesiveness;
+		// Also check for a tip
+		if (VEIL_ADVANCE) {
+			if (memp->FIL == TIP) {
+				memp->FA = chance <= target_ep->m_adhesiveness;
+			}
+		} else {
+			memp->FA = chance <= target_ep->m_adhesiveness;
+		}
+
 	} else {
-		// The mem agent is not on an environment agent and therefore cannot check for adhesiveness.
-		memp->FA = true;
+		// The mem agent is not on an environment agent
+		// and therefore cannot check for adhesiveness.
+		if (VEIL_ADVANCE) {
+			if (memp->FIL == TIP) {
+				memp->FA = true;
+			}
+		} else {
+			memp->FA = true;
+		}
 	}
 }
 
@@ -1822,6 +1838,15 @@ void World::simulateTimestep_MSM() {
 		updateEnvironment_MSM();
 		// DSL logging.
 		write_to_component_outfiles();
+		// Log levels of active VEGFR.
+		if (MSM_LOGGING) {
+			std::cout << this->timeStep << ",";
+			for (auto *cell : this->ECagents) {
+				std::cout << cell->activeVEGFRtot << ",";
+			}
+			std::cout << "\n";
+		}
+
 		if (DSL_PATTERNING_SCORE) {
 			write_to_pattern_outfile();
 		}
@@ -2191,7 +2216,7 @@ void World::updateECagents_MSM() {
             ECagents[j]->calculateDeltaValues();
             ECagents[j]->syncDeltaValues();
 		} else if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
-            // Perform ODEs.
+            // Perform ODEs on cells.
             this->odes->check_cell_only_ODEs(ECagents[j]);
         }
 
@@ -2200,7 +2225,7 @@ void World::updateECagents_MSM() {
 			ECagents[j]->updateProteinTotals();
 		}
 
-        if (!FEEDBACK_TESTING ) {
+        if (!DSL_SIGNALLING) {
             ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
         }
 
@@ -2222,15 +2247,17 @@ void World::updateECagents_MSM() {
 		}
 	}
 
-	for (j = 0; j < (int) ECagents.size(); j++) {
-        // Distribute back out the new VR-2 and Dll4 and Notch
-		// levels to voxelised memAgents across the whole new cell surface.
-        ECagents[j]->allocateProts();
+	if (!DSL_SIGNALLING) {
+		for (j = 0; j < (int) ECagents.size(); j++) {
+			// Distribute back out the new VR-2 and Dll4 and Notch
+			// levels to voxelised memAgents across the whole new cell surface.
+			ECagents[j]->allocateProts();
 
-        // use analysis method in JTB paper to obtain tip cell numbers,
-		// stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
-		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
-			ECagents[j]->calcStability();
+			// use analysis method in JTB paper to obtain tip cell numbers,
+			// stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
+			if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
+				ECagents[j]->calcStability();
+		}
 	}
 }
 
@@ -7967,6 +7994,8 @@ void World::create_filopodia_outfile_csv() {
 		file.open(file_name.c_str(), std::ios_base::app);
 		if (file.is_open()) {
 			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb,retractTime\n";
+			// TEST - REMOVE
+//			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb,retractTime,VEGF,VEGFR,VEGF_VEGFR,SEMA,PLEXIN,SEMA_PLEXIN,\n";
 			file.close();
 		} else {
 			throw 1;
@@ -8055,25 +8084,39 @@ void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgen
 
 			// Add extension probability to file,
 			// if the event is a creation or extension event.
-			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_DISASSEMBLY) {
-				file << std::to_string(memAgent->filTipTimer);
+			if (eventID == FIL_EVENT_CREATION || eventID == FIL_EVENT_EXTENSION) {
+				file << std::to_string(prob) << ",";
 			} else {
-				file << "n/a";
+				file << "n/a,";
 			}
 
-			// Add memAgent timer to file,
-			// if the event is a creation or extension event.
-			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_EXTENSION) {
-				file << std::to_string(prob);
+			// Add filtip time ( i.e. time extension began) to file,
+			// if the event is a retraction or disassembly event.
+			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_DISASSEMBLY) {
+				file << std::to_string(memAgent->filTipTimer) << ",";
 			} else {
-				file << "n/a";
+				file << "n/a,";
 			}
+
+			// TESTING - REMOVE.
+//			auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true, false);
+//			auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+//			auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
+//			auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
+//			file << VEGF_MEAN  << ",";
+//			file << VEGFR << ",";
+//			file << calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true) << ",";
+//			file << SEMA3A_MEAN  << ",";
+//			file << PLEXIND1 << ",";
+//			file << calc_SEMA_PLEXIN_ON_rate(SEMA3A_MEAN, PLEXIND1, true) << ",";
+
 			file << "\n";
 			file.close();
 		} else {
 			throw 1;
 		}
 	} catch (int e) {
+
 		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
 		exit(e);
 	}

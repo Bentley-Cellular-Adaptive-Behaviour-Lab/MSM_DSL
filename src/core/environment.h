@@ -39,11 +39,11 @@ public:
 	void calcInside();
 
 	// Determines the ability of filopodia to form focal adhesions
-	float m_adhesiveness;
+	float m_adhesiveness = 0;
 
 	// Determines the ability of filopodia to extend into
 	// a given location
-	float m_solidness;
+	float m_solidness = 0;
 
 	// List of proteins found at this location.
 	std::vector<Protein*> owned_proteins;
