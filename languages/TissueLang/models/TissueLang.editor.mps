@@ -8,6 +8,8 @@
   <imports>
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -92,8 +94,40 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
+        <child id="4705942098322609813" name="member" index="21noJM" />
+      </concept>
+      <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
+        <reference id="4705942098322467736" name="decl" index="21nZrZ" />
+      </concept>
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips">
@@ -340,6 +374,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fhwc1">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1XX52x" to="nguq:5qSYbADreYb" resolve="CellType" />
     <node concept="3EZMnI" id="1z0V6VU8XrN" role="2wV5jI">
       <node concept="3EZMnI" id="6mloH5uSw3x" role="3EZMnx">
@@ -409,7 +444,7 @@
         <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
         <node concept="3XFhqQ" id="5gBmBO5aXxc" role="3EZMnx" />
         <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
-          <property role="3F0ifm" value="Has Species:" />
+          <property role="3F0ifm" value="Has Component :" />
           <node concept="2biZxu" id="2FvyIAlEDUV" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -430,7 +465,7 @@
         <node concept="VPM3Z" id="2iYrNGjfSvk" role="3F10Kt" />
         <node concept="3XFhqQ" id="2iYrNGjfSw3" role="3EZMnx" />
         <node concept="3F0ifn" id="2iYrNGjfSw9" role="3EZMnx">
-          <property role="3F0ifm" value="Filopodia extend" />
+          <property role="3F0ifm" value="Behaviour :" />
           <node concept="2biZxu" id="2iYrNGjfSwd" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -439,7 +474,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="bKPOWXCUvO" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+          <ref role="1NtTu8" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
         </node>
         <node concept="2iRfu4" id="2iYrNGjfSvn" role="2iSdaV" />
       </node>
@@ -455,6 +490,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
     <node concept="3EZMnI" id="6mloH5uSvZ5" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uSvZ6" role="2iSdaV" />
@@ -528,6 +564,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhUeq">
+    <property role="3GE5qa" value="TissueType" />
     <ref role="1XX52x" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
     <node concept="3EZMnI" id="6mloH5uS3Mq" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uS3Mr" role="2iSdaV" />
@@ -628,6 +665,35 @@
         </node>
         <node concept="2iRfu4" id="6mloH5uS3SE" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="1Rle6qVWxwS" role="3EZMnx">
+        <node concept="VPM3Z" id="1Rle6qVWxwU" role="3F10Kt" />
+        <node concept="3XFhqQ" id="1Rle6qVWxxF" role="3EZMnx" />
+        <node concept="3F0ifn" id="1Rle6qVWxxP" role="3EZMnx">
+          <property role="3F0ifm" value="Shuffling Behaviour:" />
+          <node concept="2biZxu" id="1Rle6qVWxxX" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1Rle6qVWxxY" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1Rle6qVWy5_" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:1Rle6qVWwkq" resolve="_shuffling" />
+        </node>
+        <node concept="2iRfu4" id="1Rle6qVWxwX" role="2iSdaV" />
+        <node concept="pkWqt" id="1Rle6qVWxy1" role="pqm2j">
+          <node concept="3clFbS" id="1Rle6qVWxy2" role="2VODD2">
+            <node concept="3clFbF" id="1Rle6qVWx_T" role="3cqZAp">
+              <node concept="2OqwBi" id="1Rle6qVWxMu" role="3clFbG">
+                <node concept="pncrf" id="1Rle6qVWx_S" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1Rle6qVWxZk" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:1Rle6qVWwl2" resolve="showsCellShuffling" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3F0ifn" id="6mloH5uS3Nn" role="3EZMnx">
         <node concept="2biZxu" id="2FvyIAlGEVD" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
@@ -639,6 +705,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fi8p3">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     <node concept="3EZMnI" id="4JVq81Fi8qV" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPKgEv" role="3EZMnx">
@@ -860,7 +927,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtHYR" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP:" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtHYS" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -878,6 +945,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLCu" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMU46" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMU4v" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMU4w" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtHYU" role="2iSdaV" />
@@ -929,6 +1005,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FjdPh">
+    <property role="3GE5qa" value="Cell" />
     <ref role="1XX52x" to="nguq:5qSYbADreY8" resolve="Cell" />
     <node concept="3EZMnI" id="6mloH5uTNOS" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uTNOT" role="2iSdaV" />
@@ -1100,6 +1177,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FjBZK">
+    <property role="3GE5qa" value="Tissue" />
     <ref role="1XX52x" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="3EZMnI" id="3mEqLZyeByR" role="2wV5jI">
       <node concept="2iRkQZ" id="3mEqLZyeByS" role="2iSdaV" />
@@ -1206,6 +1284,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fl1FF">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     <node concept="3EZMnI" id="4JVq81Fl1FK" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPFce_" role="3EZMnx">
@@ -1417,7 +1496,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtHq3" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP :" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtHq4" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1435,6 +1514,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLA2" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMU6h" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMU6i" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMU6j" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtHq6" role="2iSdaV" />
@@ -1509,7 +1597,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="5A0f7KHtGNh" role="3EZMnx">
-          <property role="3F0ifm" value="cells; STEP :" />
+          <property role="3F0ifm" value="cells in " />
           <node concept="2biZxu" id="5A0f7KHtGNi" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1527,6 +1615,15 @@
           </node>
           <node concept="VechU" id="5A0f7KHtLAa" role="3F10Kt">
             <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7yuQB4lMUbM" role="3EZMnx">
+          <property role="3F0ifm" value="steps." />
+          <node concept="2biZxu" id="7yuQB4lMUbN" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7yuQB4lMUbO" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="2iRfu4" id="5A0f7KHtGNk" role="2iSdaV" />
@@ -1555,6 +1652,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Jfy4gqv_3A">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1XX52x" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
     <node concept="3EZMnI" id="2Jfy4gqw3nh" role="2wV5jI">
       <node concept="2iRfu4" id="2Jfy4gqw3ni" role="2iSdaV" />
@@ -1591,12 +1689,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="bKPOWXHII7">
-    <ref role="1XX52x" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:bKPOWXCUdu" resolve="ExtensionWhen" />
     <node concept="3EZMnI" id="bKPOWXHII9" role="2wV5jI">
       <node concept="3EZMnI" id="bKPOWXHIIg" role="3EZMnx">
         <node concept="VPM3Z" id="bKPOWXHIIi" role="3F10Kt" />
         <node concept="3F0ifn" id="bKPOWXHIIt" role="3EZMnx">
-          <property role="3F0ifm" value="always when -&gt;" />
+          <property role="3F0ifm" value="when -&gt;" />
           <node concept="2biZxu" id="bKPOWXHIIB" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1619,6 +1718,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="bKPOWXHIIQ">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1XX52x" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
     <node concept="3EZMnI" id="bKPOWXHIIS" role="2wV5jI">
       <node concept="3EZMnI" id="bKPOWXHIIZ" role="3EZMnx">
@@ -1634,10 +1734,433 @@
         </node>
         <node concept="3F1sOY" id="bKPOWXHIJi" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:bKPOWXCUdw" resolve="expr" />
+          <node concept="2biZxu" id="1Rle6qVxw8v" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1Rle6qVxw8w" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
         </node>
         <node concept="2iRfu4" id="bKPOWXHIJ4" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="bKPOWXHIIV" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5j_l9LXFFyj">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    <node concept="3EZMnI" id="5j_l9LXFFyB" role="2wV5jI">
+      <node concept="3EZMnI" id="1Rle6qVo2Pi" role="3EZMnx">
+        <node concept="3F0ifn" id="2q_vzDInT0u" role="3EZMnx">
+          <property role="3F0ifm" value="Creates filopodia, which extend towards" />
+          <node concept="2biZxu" id="2q_vzDInT0_" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2q_vzDInT0A" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="1Rle6qVo2Pj" role="2iSdaV" />
+        <node concept="3F1sOY" id="4YEYPh9qGd2" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:4YEYPh9qGaa" resolve="_extendsTowards" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="1fmp7ott7JN" role="3EZMnx">
+        <node concept="VPM3Z" id="1fmp7ott7JP" role="3F10Kt" />
+        <node concept="3F1sOY" id="1fmp7ott7Lk" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5j_l9LXFFwO" resolve="_extensionCondition" />
+        </node>
+        <node concept="2iRfu4" id="1fmp7ott7JS" role="2iSdaV" />
+      </node>
+      <node concept="1X3_iC" id="5N5gXA13Icg" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="2q_vzDIv7UP" role="8Wnug">
+          <node concept="VPM3Z" id="2q_vzDIv7UR" role="3F10Kt" />
+          <node concept="3F0ifn" id="2q_vzDIv7UT" role="3EZMnx">
+            <property role="3F0ifm" value="Uses up " />
+            <node concept="2biZxu" id="2q_vzDIv8kM" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2q_vzDIv8kN" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+          <node concept="3F1sOY" id="2q_vzDIv7Wl" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:5j_l9LXFFx5" resolve="_cytoskeletalProteinUsage" />
+          </node>
+          <node concept="2iRfu4" id="2q_vzDIv7UU" role="2iSdaV" />
+        </node>
+      </node>
+      <node concept="1X3_iC" id="5gt2Vd$4i7H" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="7lZ8SQtwFMT" role="8Wnug">
+          <node concept="2iRfu4" id="7lZ8SQtwFMU" role="2iSdaV" />
+          <node concept="1v6uyg" id="7lZ8SQtwFOA" role="3EZMnx">
+            <property role="2oejA6" value="true" />
+            <node concept="3F0ifn" id="7lZ8SQtwFOO" role="1j7Clw">
+              <property role="3F0ifm" value="Maximises distance from cell" />
+              <node concept="2biZxu" id="7lZ8SQtwFOR" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="7lZ8SQtwFOS" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
+              </node>
+              <node concept="VQ3r3" id="7lZ8SQtwFP8" role="3F10Kt">
+                <property role="2USNnj" value="gtbM8PH/underlined" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="7lZ8SQtwFQ9" role="wsdo6">
+              <node concept="2iRkQZ" id="7lZ8SQtwFQa" role="2iSdaV" />
+              <node concept="3F0ifn" id="7lZ8SQtwFPi" role="3EZMnx">
+                <property role="3F0ifm" value="When set, determines whether a filopodia  " />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQi" role="3EZMnx">
+                <property role="3F0ifm" value="always attempts to maximise its" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQm" role="3EZMnx">
+                <property role="3F0ifm" value="distance from the base of the filopodia." />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQq" role="3EZMnx">
+                <property role="3F0ifm" value="- Options:" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQ_" role="3EZMnx">
+                <property role="3F0ifm" value="- Yes" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQv" role="3EZMnx">
+                <property role="3F0ifm" value="- No" />
+              </node>
+            </node>
+          </node>
+          <node concept="3F0ifn" id="7lZ8SQtwFOo" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+            <node concept="2biZxu" id="7lZ8SQtwFNg" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="7lZ8SQtwFNh" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+          <node concept="3F0A7n" id="7lZ8SQtwFNk" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:7lZ8SQtwFKE" resolve="_filMaxesDistance" />
+            <node concept="VechU" id="1S53i998Del" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
+            </node>
+            <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
+            <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7lZ8SQtwFNK" role="3EZMnx">
+        <node concept="VPM3Z" id="7lZ8SQtwFNM" role="3F10Kt" />
+        <node concept="1v6uyg" id="7lZ8SQtxpTZ" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="7lZ8SQtxq84" role="wsdo6">
+            <node concept="2iRkQZ" id="7lZ8SQtxq85" role="2iSdaV" />
+            <node concept="3F0ifn" id="7lZ8SQtxq1b" role="3EZMnx">
+              <property role="3F0ifm" value="Determines whether a filopodia always goes to" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8d" role="3EZMnx">
+              <property role="3F0ifm" value="the point with the highest concentration it can" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8l" role="3EZMnx">
+              <property role="3F0ifm" value="find, or randomly chooses a different value." />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8v" role="3EZMnx">
+              <property role="3F0ifm" value="Takes a probability, which determines whether" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8_" role="3EZMnx">
+              <property role="3F0ifm" value="a filopodia performs random selection or not." />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="7lZ8SQtxpUB" role="1j7Clw">
+            <property role="3F0ifm" value="Sensitivity:" />
+            <node concept="2biZxu" id="7lZ8SQtxpUE" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="7lZ8SQtxpUF" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="7lZ8SQtxq13" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F1sOY" id="7lZ8SQtwFQU" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+        </node>
+        <node concept="2iRfu4" id="7lZ8SQtwFNP" role="2iSdaV" />
+        <node concept="pkWqt" id="7lZ8SQtwJdx" role="pqm2j">
+          <node concept="3clFbS" id="7lZ8SQtwJdy" role="2VODD2">
+            <node concept="3clFbF" id="7lZ8SQtwJhp" role="3cqZAp">
+              <node concept="2OqwBi" id="7lZ8SQtwJu0" role="3clFbG">
+                <node concept="pncrf" id="7lZ8SQtwJho" role="2Oq$k0" />
+                <node concept="3TrcHB" id="7lZ8SQtwJTO" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="5j_l9LXFFyE" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4YEYPh9ilwC">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:5j_l9LXyZkA" resolve="CytoskeletalProteinUsage" />
+    <node concept="3EZMnI" id="4YEYPh9ilwW" role="2wV5jI">
+      <node concept="3F1sOY" id="4YEYPh9ilXV" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:5j_l9LXyZox" resolve="requiredAmount" />
+        <node concept="2biZxu" id="4YEYPh9l96f" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l96g" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4YEYPh9ilxG" role="3EZMnx">
+        <property role="3F0ifm" value="of" />
+        <node concept="2biZxu" id="4YEYPh9l96n" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l96o" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="1iCGBv" id="4YEYPh9imgH" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:5j_l9LXyZov" resolve="targetSpecies" />
+        <node concept="2biZxu" id="4YEYPh9l96j" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l96k" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="1sVBvm" id="4YEYPh9imgJ" role="1sWHZn">
+          <node concept="3F0A7n" id="4YEYPh9imj7" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="VechU" id="1Rle6qVv$ny" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
+            </node>
+            <node concept="Vb9p2" id="1Rle6qVv$nz" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
+            <node concept="2biZxu" id="1Rle6qVv$n$" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="1Rle6qVv$n_" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4YEYPh9ilxM" role="3EZMnx">
+        <property role="3F0ifm" value="when extending" />
+        <node concept="2biZxu" id="4YEYPh9l96v" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l96w" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4YEYPh9ilxN" role="3EZMnx">
+        <property role="3F0ifm" value="0.5 microns." />
+        <node concept="2biZxu" id="4YEYPh9l96$" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l96_" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="pkWqt" id="4YEYPh9ilxO" role="pqm2j">
+          <node concept="3clFbS" id="4YEYPh9ilxP" role="2VODD2">
+            <node concept="3clFbF" id="4YEYPh9ilxQ" role="3cqZAp">
+              <node concept="2OqwBi" id="4YEYPh9ilxR" role="3clFbG">
+                <node concept="2OqwBi" id="4YEYPh9ilxS" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4YEYPh9ilxT" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4YEYPh9ilxU" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4YEYPh9ilxV" role="2Oq$k0">
+                        <node concept="2OqwBi" id="4YEYPh9ilxW" role="2Oq$k0">
+                          <node concept="pncrf" id="4YEYPh9ilxX" role="2Oq$k0" />
+                          <node concept="2Xjw5R" id="4YEYPh9ilxY" role="2OqNvi">
+                            <node concept="1xMEDy" id="4YEYPh9ilxZ" role="1xVPHs">
+                              <node concept="chp4Y" id="4YEYPh9ily0" role="ri$Ld">
+                                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4YEYPh9ily1" role="2OqNvi">
+                          <ref role="3Tt5mk" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="4YEYPh9ily2" role="2OqNvi">
+                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80Nz" resolve="_worldContainerRef" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="4YEYPh9ily3" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="4YEYPh9ily4" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
+                  </node>
+                </node>
+                <node concept="21noJN" id="4YEYPh9ily5" role="2OqNvi">
+                  <node concept="21nZrQ" id="4YEYPh9ily6" role="21noJM">
+                    <ref role="21nZrZ" to="s9ob:57Wjpeqc5T8" resolve="Half_Micron" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4YEYPh9ily7" role="3EZMnx">
+        <property role="3F0ifm" value="1.0 microns." />
+        <node concept="2biZxu" id="4YEYPh9l9jp" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4YEYPh9l9jq" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="pkWqt" id="4YEYPh9ily8" role="pqm2j">
+          <node concept="3clFbS" id="4YEYPh9ily9" role="2VODD2">
+            <node concept="3clFbF" id="4YEYPh9ilya" role="3cqZAp">
+              <node concept="2OqwBi" id="4YEYPh9ilyb" role="3clFbG">
+                <node concept="2OqwBi" id="4YEYPh9ilyc" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4YEYPh9ilyd" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4YEYPh9ilye" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4YEYPh9ilyf" role="2Oq$k0">
+                        <node concept="2OqwBi" id="4YEYPh9ilyg" role="2Oq$k0">
+                          <node concept="pncrf" id="4YEYPh9ilyh" role="2Oq$k0" />
+                          <node concept="2Xjw5R" id="4YEYPh9ilyi" role="2OqNvi">
+                            <node concept="1xMEDy" id="4YEYPh9ilyj" role="1xVPHs">
+                              <node concept="chp4Y" id="4YEYPh9ilyk" role="ri$Ld">
+                                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4YEYPh9ilyl" role="2OqNvi">
+                          <ref role="3Tt5mk" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="4YEYPh9ilym" role="2OqNvi">
+                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80Nz" resolve="_worldContainerRef" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="4YEYPh9ilyn" role="2OqNvi">
+                      <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="4YEYPh9ilyo" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
+                  </node>
+                </node>
+                <node concept="21noJN" id="4YEYPh9ilyp" role="2OqNvi">
+                  <node concept="21nZrQ" id="4YEYPh9ilyq" role="21noJM">
+                    <ref role="21nZrZ" to="s9ob:57Wjpeqc5Ta" resolve="One_Micron" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="4YEYPh9ilwZ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4YEYPh9qGaZ">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:4YEYPh9qGaf" resolve="ExtendsTowards" />
+    <node concept="3EZMnI" id="4YEYPh9qGbm" role="2wV5jI">
+      <node concept="1iCGBv" id="4YEYPh9qGbw" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4YEYPh9qGaQ" resolve="_targetSpecies" />
+        <node concept="1sVBvm" id="4YEYPh9qGby" role="1sWHZn">
+          <node concept="3F0A7n" id="4YEYPh9qGbK" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="VechU" id="4YEYPh9qGbN" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
+            </node>
+            <node concept="Vb9p2" id="4YEYPh9qGbO" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
+            <node concept="2biZxu" id="4YEYPh9qGbP" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="4YEYPh9qGbQ" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="4YEYPh9qGbp" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1Rle6qVWy6M">
+    <property role="3GE5qa" value="TissueType" />
+    <ref role="1XX52x" to="nguq:1Rle6qVWwjh" resolve="CellShuffling" />
+    <node concept="3EZMnI" id="1Rle6qVWy79" role="2wV5jI">
+      <node concept="1v6uyg" id="1Rle6qVWy7j" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3EZMnI" id="1Rle6qVWyeZ" role="wsdo6">
+          <node concept="3F0ifn" id="1Rle6qVWyf1" role="3EZMnx">
+            <property role="3F0ifm" value="Cells that are strongly adhesive will " />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyf6" role="3EZMnx">
+            <property role="3F0ifm" value="tend to cluster together within the tissue." />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyfd" role="3EZMnx">
+            <property role="3F0ifm" value="Weakly adhesive cells will tend to" />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyfi" role="3EZMnx">
+            <property role="3F0ifm" value="disperse to the edges of the tissues." />
+          </node>
+          <node concept="2iRkQZ" id="1Rle6qVWyf2" role="2iSdaV" />
+        </node>
+        <node concept="3F0ifn" id="1Rle6qVWy7t" role="1j7Clw">
+          <property role="3F0ifm" value="Cells are strongly adhesive when" />
+          <node concept="VQ3r3" id="1Rle6qVWy7w" role="3F10Kt">
+            <property role="2USNnj" value="gtbM8PH/underlined" />
+          </node>
+          <node concept="2biZxu" id="1Rle6qVWyeR" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1Rle6qVWyeS" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F1sOY" id="4AUFZlh_MUk" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:1Rle6qVWyfD" resolve="expr" />
+      </node>
+      <node concept="2iRfu4" id="1Rle6qVWy7c" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="21y0$1xK5XN">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:21y0$1xK5WP" resolve="NoShapeBehaviour" />
+    <node concept="3EZMnI" id="21y0$1xK5Y7" role="2wV5jI">
+      <node concept="3F0ifn" id="21y0$1xK5Ye" role="3EZMnx">
+        <property role="3F0ifm" value="None" />
+        <node concept="2biZxu" id="6fJRP9O$Uvu" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="6fJRP9O$Uvv" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="2iRfu4" id="21y0$1xK5Ya" role="2iSdaV" />
     </node>
   </node>
 </model>

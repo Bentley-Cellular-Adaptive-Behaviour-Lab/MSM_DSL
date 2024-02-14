@@ -20,6 +20,8 @@
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/utils/utils.h"
 
+#include "../generated/dsl_species_gen.h"
+
 float steps = 0.5f;
 float overallVEGF = 0.0f;
 int overallflag = 0;
@@ -43,21 +45,53 @@ void MemAgent::store_previous_triangle_pos() {
  * 
  * Calculate memAgents Notch receptor activation from local Dll4 ligands seen in grid
  */
+
+void MemAgent::NotchResponseOld() {
+	int i = 0;
+	int j;
+	int flag = 0;
+
+	do {
+        if (worldP->neigh[i]->getType() == const_M) {
+            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
+                if (flag == 0) {
+                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
+                        //if more than number of notch receptors  only take amount needed to activate notches
+                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
+                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+                            activeNotch = activeNotch + Notch1;
+                            Notch1 = 0.0f;
+                            flag = 1;
+
+                        }//take all of it if less than it has notch receptors
+                        else {
+                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+                        }
+                    }
+                }
+            }
+        }
+
+        i++;
+    } while ((flag == 0) && (i < NEIGH));
+
+}
+
 void MemAgent::NotchResponse(void) {
 
-    int i = 0;
-    int j;
-    int flag = 0;
-
 	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
+    // && is_VonNeu_position(x, y, z)
 	if (junction) {
-
 		std::vector<Location*> neighLocations;
 		// Get neighbour locations.
-		for (int x = Mx - 1; x <= Mx + 1; x++) {
-			for (int y = My - 1; y <= My + 1; y++) {
-				for (int z = Mz - 1; z <= Mz + 1; z++) {
-					neighLocations.push_back(&(worldP->grid[x][y][z]));
+		for (int x = Mx - 1; x <= (int) Mx + 1; x++) {
+			for (int y = My - 1; y <= (int) My + 1; y++) {
+				for (int z = Mz - 1; z <= (int) Mz + 1; z++) {
+					if (worldP->insideWorld(x, y, z) ) {
+						neighLocations.push_back(&(worldP->grid[x][y][z]));
+					}
 				}
 			}
 		}
@@ -92,8 +126,10 @@ void MemAgent::NotchResponse(void) {
 		}
 	}
 
-
-
+//	int i = 0;
+//	int j;
+//	int flag = 0;
+//
 //    do {
 //        if (worldP->neigh[i]->getType() == const_M) {
 //            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
@@ -190,25 +226,26 @@ void MemAgent::veilAdvance(void) {
             count++;
             currentNode->FA = false;
             currentNode->SpringNeigh[0]->veilAdvancing = true; 
-            /** 
-             * important to flag as veil advancing here so that newNodes() doesnt insert a new node in the middle of the spring when it goes over threshold legnth for an adhesion node as per filopodia extension*/
+			// Important to flag as veil advancing here so
+			//  that newNodes() doesn't insert a new node in the
+			//  middle of the spring when it goes over threshold
+			//  length for an adhesion node as per filopodia extension
             nextNode = currentNode->filNeigh;
             currentNode = nextNode;
         } else if (count > 0) {
             flag = 1;
             for (i = 0; i < currentNode->neighs; i++)
-                if (currentNode->SpringNeigh[i]->filopodia == true) {
+                if (currentNode->SpringNeigh[i]->filopodia) {
                     currentNode->SpringNeigh[i]->veilAdvancing = true;
                 }
             currentNode->veilAdvancing = true;
         } else flag = 1;
 
-        if (currentNode->FIL == BASE)currentNode->veilAdvancing = true;
-
+        if (currentNode->FIL == BASE) {
+			currentNode->veilAdvancing = true;
+		}
 
     } while (flag == 0);
-
-
 }
 //----------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
@@ -274,6 +311,10 @@ bool MemAgent::filRetract(void) {
          ///if the nodeAgent at the other end of the spring is the BASE of the filopodium then reset it to NONE state and delete all springs and agents associated
         if (mp->FIL == BASE) {
 
+			// If we start to remove this filopodia,
+			// then decrement the level of filopodia.
+			Cell->decrement_current_fils();
+
             mp->FIL = NONE;
             
             ///if vessel is blindended dont release adhesion, otherwise do. keeps it fixed and sewn up at front of sprout in this setup
@@ -319,6 +360,9 @@ bool MemAgent::filRetract(void) {
                 }
             }
 
+			// Log disassembly event.
+			worldP->write_to_filopodia_outfile(FIL_EVENT_DISASSEMBLY, mp, -1);
+
             mp->neighs--;
         } else {
            ///if filNeigh !=BASE then it is a stalk node within the filopodium. so just rename it the new current tip and delete the old tipnode
@@ -333,6 +377,8 @@ bool MemAgent::filRetract(void) {
             mp->deleteFlag = true;
             //pass down tipnodes actin to this new tip as the old will be deleted
             mp->filTokens += filTokens;
+			// Log retraction event.
+			worldP->write_to_filopodia_outfile(FIL_EVENT_RETRACTION, mp, -1);
         }
 
         mp->plusSite = NULL;
@@ -443,7 +489,7 @@ MemAgent* MemAgent::find_nearest_triangle_node(void) {
 }
 //---------------------------------------------------------------------------------------------
 //--------------------
-void MemAgent:: TokenTrading(void){
+void MemAgent::TokenTrading(void){
     //older version of actinFlow used in original papers.
     int flag=0;
     MemAgent* nearest;
@@ -661,31 +707,14 @@ void MemAgent::VEGFRresponse(void) {
 
     bool filopodiaOn = true;
 
-    if (FEEDBACK_TESTING) {
-        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
-        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
-
-        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
-        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-		double scalar = ((float) VEGFRNORM / (float) upto);
-		if (ODE_activeVEGFR == 0) {
-			prob = 0;
-		} else {
-			prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * Cell->filCONST;
-		}
-
-		if (worldP->timeStep % 9 == 0) {
-			Cell->get_extension_probs().push_back(prob);
-		}
+    if (DSL_EXTENSION_PROB) {
+		prob = worldP->calc_extension_prob(Cell, this);
     } else {
-        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
-		float scalar = ((float) VEGFRNORM / (float) upto);
-        VEGFRactiveProp = VEGFR / scalar;
+        // Calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
+		float scalar = ((float) Cell->VEGFRnorm / (float) upto);
+		VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
-
-		if (SumVEGF > 0) {
-			int test = 0;
-		}
+		Cell->MSM_VEGF += SumVEGF;
 
         //done exceed max level
         if (VEGFRactive > VEGFR) {
@@ -694,14 +723,6 @@ void MemAgent::VEGFRresponse(void) {
 
         // Test - getting length of extended filopodia.
         // FORCE FILOPODIA THAT ARE LONG TO HAVE HIGH ACTIVATION.
-
-        bool test = false;
-        if (FIL == TIP) {
-            auto n_nodes = get_n_nodes();
-            if (n_nodes > 1) {
-                test = true;
-            }
-        }
 
         //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
         if (filopodiaOn) {
@@ -713,9 +734,15 @@ void MemAgent::VEGFRresponse(void) {
                 // with no bias from VR->actin or VR gradient to direction.
                 prob = randFilExtend;
             } else {
-				prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
-				if (worldP->timeStep % 9 == 0) {
-					Cell->get_extension_probs().push_back(prob);
+				if (SHANE_MSM_SEMA) {
+					auto SEMA3A = this->get_environment_level("SEMA3A", true, false);
+					prob = (((float) VEGFRactive /
+							 ((float) Cell->VEGFRnorm /
+							  (float) upto)) * Cell->filCONST) - SEMA3A;
+				} else {
+					prob = ((float) VEGFRactive /
+							 ((float) Cell->VEGFRnorm /
+							  (float) upto)) * Cell->filCONST;
 				}
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
@@ -726,46 +753,44 @@ void MemAgent::VEGFRresponse(void) {
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-//    if (chance < prob) {
-    if (worldP->can_extend(Cell, this)) {
+    if (chance < prob) {
         // Award actin tokens
-
         filTokens++;
 
-        if (FIL == NONE)
-        	tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
+        if (FIL == NONE) {
+			tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
+		}
 
         if (oldVersion) {
             if (FIL == STALK) {
-                //passes its filExtend token to Magent in its plusSite
+                // Passes its filExtend token to Magent in its plusSite
                 plusSite->filTokens++;
                 filTokens--;
             }
         }
 
-        //--------------------------------------------------------------------------------------------
-        //filopodia extension
+        // Filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
-            if (!deleteFlag)
-            	moved = extendFil();
+            if (!deleteFlag) {
+				moved = extendFil(prob);
+			}
         }
-        //--------------------------------------------------------------------------------------------
-
         //reset VRinactive counter as now activated
         VRinactiveCounter = 0;
-
     } else  {
         VRinactiveCounter++;
     }
 
-    if (!moved)
-    	filTipTimer++;
-    else filTipTimer = 0;
+    if (!moved) {
+		filTipTimer++;
+	} else {
+		filTipTimer = 0;
+	}
 }
 //----------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 
-void MemAgent::calcForce(void) {
+void MemAgent::calcForce() {
 
     int i, k, T;
     float denom, length;
@@ -791,13 +816,16 @@ void MemAgent::calcForce(void) {
         sumDN.at(k) = 0.0f;
     }
 
-    //have different lengths and constants for different types of spring
+    // Have different lengths and constants for different types of spring
     if ((FIL == TIP) && !FA) {
-
         sConst = filSpringConstant;
         SL = filSpringLength;
     }
-    //calculate new force by summing neighbour vectors minused from current point PN1, PN2... then calculate the projection of S onto spring direction and get the difference, then 		  sum the elongated regions of each and times by k constant.n
+    // Calculate new force by summing neighbour vectors
+	// minus from current point PN1, PN2.
+	// Then calculate the projection of S onto spring direction
+	// and get the difference, before summing the elongated
+	// regions of each and times by k constant.n
 
     SL = springLength;
     i = 0;
@@ -817,7 +845,11 @@ void MemAgent::calcForce(void) {
                 sConst = FAspringConstant; //filBaseConstant;
                 SL = springLength;
             }
-            if (((FIL == BASE) || (FIL == STALK)) && (veilAdvancing == true) && ((neigh[i]->FIL == STALK) || (neigh[i]->FIL == TIP))) {
+
+            if (((FIL == BASE) || (FIL == STALK))
+			&& (veilAdvancing)
+			&& ((neigh[i]->FIL == STALK)
+			|| (neigh[i]->FIL == TIP))) {
                 sConst = filBaseConstant;
                 SL = filSpringLength;
             } else if (neigh[i]->Cell != Cell) {
@@ -843,11 +875,11 @@ void MemAgent::calcForce(void) {
 
         if (DONE == 0) {
 
-            if (sqrt(PN[i][0] * PN[i][0]) >= (float) xMAX / 2.0f) {
+            if (sqrt(PN[i][0] * PN[i][0]) >= (float) worldP->gridXDimensions / 2.0f) {
 
-                if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
-                else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
-                length = fabs(xMAX - PN[i][0]);
+                if (PN[i][0] > 0) PN[i][0] = -((float) worldP->gridXDimensions - PN[i][0]);
+                else PN[i][0] = (float) worldP->gridXDimensions - fabs(PN[i][0]);
+                length = fabs(worldP->gridXDimensions - PN[i][0]);
 
             }
             denom = sqrt((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2]));
@@ -882,30 +914,25 @@ void MemAgent::calcForce(void) {
     //toroidal on x axis
     if(TOROIDAL_X==true){
     if(newX<0){
-        newX =  (float)xMAX+newX;
+        newX = (float)worldP->gridXDimensions+newX;
     }
-    if(newX>=(float)xMAX){
+    if(newX>=(float)worldP->gridXDimensions){
         
-        newX = newX - (float)xMAX;
+        newX = newX - (float)worldP->gridXDimensions;
     }
     }
     if(TOROIDAL_Y==true){
     
     //roof on y ans z axis
     if(newY<0) newY = 0;
-    else if(newY>yMAX-1) newY = yMAX-1;
+    else if(newY>worldP->gridYDimensions-1) newY = worldP->gridYDimensions-1;
     
     if(newZ<0) newZ=0;
-    else if(newZ>zMAX-1) newZ = zMAX-1;
+    else if(newZ>worldP->gridZDimensions-1) newZ = worldP->gridZDimensions-1;
     }
     //----------------------------------------------------------------
 
     moveAgent(newX, newY, newZ, false);
-    
-
-
-    
-
 }
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
@@ -921,7 +948,8 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
     Z = (int) Mz;
 
 
-    //only bother to move grid version if its moving to another grid site - this is the int version of the float model for ease of local rule look up
+    //only bother to move grid version if its moving to another grid site -
+	// this is the int version of the float model for ease of local rule look up
     if ((newMx == X) && (newMy == Y) && (newMz == Z)) {
         //do nothing its in the same place;
 
@@ -940,7 +968,6 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
 
                 worldP->setMLocation(newMx, newMy, newMz, this);
 
-
                 //move agent in continuous space
                 Mx = newX;
                 My = newY;
@@ -948,22 +975,26 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
             }
         }            //------------------------------------------------------------------------------------------------------------------------------
             //------------------------------------------------------------------------------------------------------------------------------
-            //filopodia agents exist in either M or E state grid sites as they are thin.. only end up in M state if the veil somhow pulls up over them
-        else if ((FIL == TIP) || (FIL == STALK)) {
+            //filopodia agents exist in either M or E state grid sites as they are thin..
+			// only end up in M state if the veil somhow pulls up over them
+        	else if ((FIL == TIP) || (FIL == STALK)) {
 
-            worldP->deleteOldGridRef(this, true);
+            	worldP->deleteOldGridRef(this, true);
 
-            worldP->grid[newMx][newMy][newMz].addFilAgent(this);
+            	worldP->grid[newMx][newMy][newMz].addFilAgent(this);
 
-            //move agent in continuous space
-            Mx = newX;
-            My = newY;
-            Mz = newZ;
+            	//move agent in continuous space
+            	Mx = newX;
+            	My = newY;
+            	Mz = newZ;
         }
         //------------------------------------------------------------------------------------------------------------------------------
     }
-
-    FA = FAset;
+	if (DSL_ADHESIVENESS_TESTING) {
+		this->worldP->set_focal_adhesion(this); // TOM : CHECKED
+	} else {
+		FA = FAset;
+	}
 
 }
 //-----------------------------------------------------------------------------------------------------------------------
@@ -1217,17 +1248,17 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
             //-------------------------------
             //toroidal only X
-            if (m >= xMAX) {
+            if (m >= worldP->gridXDimensions) {
 				m = 0;
             }
             if (m < 0) {
-				m = xMAX - 1;
+				m = worldP->gridXDimensions - 1;
             }
-            if (n >= yMAX) {
+            if (n >= worldP->gridYDimensions) {
 				n = 0;
             }
             if (n < 0) {
-				n = yMAX - 1;
+				n = worldP->gridYDimensions - 1;
             }
 
             //-------------------------------
@@ -1239,16 +1270,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                         if ((worldP->grid[m][n][p].getMids()[y]->Cell != Cell) && (worldP->grid[m][n][p].getMids()[y]->FIL != STALK) && (worldP->grid[m][n][p].getMids()[y]->FIL != TIP)) {
                             junction = true;
                             flagA = 1;
-
-                            // TOM: Add the cell to the list of neighbours.
-                            // TOM: Only do this once if we're not doing cell shuffling.
-//                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
-//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-//                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == -1) {
-//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-//                            }
-//							this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-
 							worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells
@@ -1267,41 +1288,13 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
     if (flagA == 0) {
 		junction = false;
     }
-    //StoreInJunctionList=false;
+
     if ((StoreInJunctionList) && (node) && (FIL == NONE)) {//&&(previousJunction!=junction)){
-        //vector<MemAgent*>::iterator L;
-        //L = worldP->JunctionAgents.begin();
-        //flag=0;
-        //add to list
-        //m=0;
-        //if(worldP->JunctionAgents.size()>0){
-        if ((junction) && (addedJunctionList)) {
-            //  do{
-            //      if(worldP->JunctionAgents[m]==this) flag=1;
-            //      m++;
-            //  }while((flag==0)&&(m<worldP->JunctionAgents.size()));
-            //if(flag==1) cout<<"even without adding here it seems to be already in here:)"<<endl;
-            // if(flag==0)
+
+        if ((junction) && (!addedJunctionList)) {
             worldP->JunctionAgents.push_back(this);
             addedJunctionList = true;
         }
-
-        //remove from list
-
-        /*else{
-            m=0;
-        flag=0;
-           do{
-               if(worldP->JunctionAgents[m]==this){ worldP->JunctionAgents.erase(L+m); flag=1;}
-               m++;
-           }while((flag==0)&&(m<worldP->JunctionAgents.size()));
-        }
-    }
-    else{
-        if(junction==true){
-            worldP->JunctionAgents.push_back(this);
-        }
-    }*/
     }
 }
 //-------------------------------------------------------------------------------------------------------------------
@@ -1438,9 +1431,9 @@ bool testFilMax(EC* cell) {
 //---------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 
-bool MemAgent::extendFil(void) {
-
-    //cout<<"extending!"<<endl;
+bool MemAgent::extendFil(const double prob) {
+	// TOM: Prob is the value returned by the calculation
+	//
     MemAgent* mp;
     Env * highest;
     bool ans = false;
@@ -1452,152 +1445,156 @@ bool MemAgent::extendFil(void) {
     if (node == true) {
 
         //only extend if enough membrane - not limiting individual filopodia size, but overall cell stretch
-        //if((int)(Cell->nodeAgents.size()+Cell->springAgents.size()+Cell->surfaceAgents.size())<memMax){
 
         //find new position----------------------------------------------
         if (EnvNeighs.size() != 0) {
             if (Cell->actinUsed < actinMax) {
-                //if(LUMEN_BM){ for(i=0;i<EnvNeighs.size();i++){
-                 //   allow = false;
-                 //   if((EnvNeighs[i]->inside==false)&&(EnvNeighs[i]->BM!=true)) allow = true;
-                //}
-                //}
-                //else{
-                    allow = true;
-                //}
-                if(allow){
-                    highest = findHighestConc();
-                    if ((highest != NULL) && (highest->VEGF != 0)) {
+				allow = true;
+                if (allow) {
+					highest = findHighestConc();
 
-                    //-----------------------------------------------------------------------
-                        if (FIL == NONE) {
-                        //if(testFilMax(Cell)==false){
-                        //basal focal adhesion - inhibits veil and all cell body advance
+					bool canExtend = true;
+					if (DSL_SOLIDNESS_CHECK) {
+						canExtend = worldP->solidness_check(highest);
+					}
 
+					bool notZero;
+					if (DSL_ENV_SELECTION) {
+						notZero = highest->get_extension_target_level(this) > 0;
+					} else {
+						notZero = highest->VEGF > 0;
+					}
 
-                        if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
-                            if (highest->Ex > Mx)
-                                distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
-                            else
-                                distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
-
-                        } else
-                            distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
-
-
-                        if ((actinMax - Cell->actinUsed) >= distNeeded) {
-
-                            //cout<<distNeeded<<" B "<<Cell;
-                            Cell->actinUsed += distNeeded;
-                            FA=true;
-                            //Cell->fil = true;
-                            //create new node, only attached to the current guy. create it in highest VEGF site.
-                            mp = new MemAgent(Cell, worldP);
-                            
-                            mp->Mx = highest->Ex;
-                            mp->My = highest->Ey;
-                            mp->Mz = highest->Ez;
-
-							if (DSL_TESTING) {
-								this->worldP->set_focal_adhesion(mp);
-							} else {
-								mp->FA = true;
+                    if ((highest != NULL) && notZero && canExtend) {
+						if (FIL == NONE) {
+							if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > worldP->gridXDimensions / 2.0f) {
+								if (highest->Ex > Mx) {
+									distNeeded = worldP->getDist(highest->Ex - worldP->gridXDimensions, highest->Ey, highest->Ez, Mx, My, Mz);
+								} else {
+									distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - worldP->gridXDimensions, My, Mz);
+								}
+                        	} else {
+								distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
 							}
 
-                            mp->setPreviousX(mp->Mx);
-                            mp->setPreviousY(mp->My);
-                            mp->setPreviousZ(mp->Mz);
+							bool maxFilCheck = true;
+							if (DSL_MAX_FILS) {
+								maxFilCheck = Cell->get_current_fils() < Cell->get_max_fils();
+							}
+							if ((actinMax - Cell->actinUsed) >= distNeeded && maxFilCheck) {
+								Cell->increment_current_fils();
+                            	Cell->actinUsed += distNeeded;
 
-                            mp->FIL = TIP;
-                            FIL = BASE;
-
-
-                            Cell->nodeAgents.push_back(mp);
-
-                            worldP->setFilLocation((int) mp->Mx, (int) mp->My, (int) mp->Mz, mp);
-
-                            //connect the two nodes
-
-                            neigh[neighs] = mp;
-                            Cell->createSpringTokenObject(this, mp, neighs);
-                            neighs++;
-
-                            //this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
-                            mp->filNeigh = this;
-
-                            //link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
-                            plusSite = mp;
-                            mp->minusSite = this;
-
-                            //confirms the extension has succeeded
-                            ans = true;
-
-                            //spend the actin tokens
-                            filTokens -= tokenStrength;
-                            this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)mp->Mx, (int)mp->My, (int)mp->Mz});
-                            //mp->filTokens=filTokens;
-                            //focalAdhesions();
-
-                            //for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
-                            if (FILOPODIA_METRICS) {
-
-                                auto fp = new Filopodia(worldP);
-
-//                                worldP->filopodia.push_back(fp);
-
-                                base_fil_belong = fp;
-                                fp->time_created = worldP->timeStep;
-                                fp->base = this;
-                                fp->Cell = this->Cell;
-                            }
-                            //------------------------------------------
+								if (DSL_ADHESIVENESS_TESTING) {
+									if (VEIL_ADVANCE && this->FIL != BASE) {
+										this->worldP->set_focal_adhesion(this); // TOM : TESTED
+									} else {
+										this->worldP->set_focal_adhesion(this); // TOM : TESTED
+									}
+								} else {
+									if (VEIL_ADVANCE && this->FIL != BASE) {
+										this->FA = true;
+									} else {
+										this->FA = true;
+									}
+								}
+                            	mp = new MemAgent(Cell, worldP);
                             
+                            	mp->Mx = highest->Ex;
+                            	mp->My = highest->Ey;
+                            	mp->Mz = highest->Ez;
 
-                        }
+								if (DSL_ADHESIVENESS_TESTING) {
+									this->worldP->set_focal_adhesion(mp); // TOM : TESTED
+								} else {
+									mp->FA = true;
+								}
 
-                    } else {
+								mp->setPreviousX(mp->Mx);
+                            	mp->setPreviousY(mp->My);
+                            	mp->setPreviousZ(mp->Mz);
 
-                        if (highest->Ex - filNeigh->Mx > xMAX / 2.0f)
-                            newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                        else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f)
-                            newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                        else
-                            newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+                            	mp->FIL = TIP;
+								worldP->increment_unique_fils();
+								// Set unique id for both the base and tip filopodia.
+								this->m_fil_id = worldP->get_unique_fils();
+								mp->m_fil_id = worldP->get_unique_fils();
+                            	FIL = BASE;
+                            	Cell->nodeAgents.push_back(mp);
 
+                            	worldP->setFilLocation((int) mp->Mx, (int) mp->My, (int) mp->Mz, mp);
 
-                        if (Mx - filNeigh->Mx > xMAX / 2.0f)
-                            oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                        else if (filNeigh->Mx - Mx > xMAX / 2.0f)
-                            oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                        else
-                            oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+                            	//connect the two nodes
 
-                        distNeeded = newDist - oldDist;
+                            	neigh[neighs] = mp;
+                            	Cell->createSpringTokenObject(this, mp, neighs);
+                            	neighs++;
 
+                            	//this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
+                            	mp->filNeigh = this;
 
-                        if ((actinMax - Cell->actinUsed) >= distNeeded) {
-                            
-                            Cell->actinUsed += distNeeded;
+                            	//link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
+                            	plusSite = mp;
+                            	mp->minusSite = this;
 
-                            moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
-                            this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
-                            ans = true;
-                            filTokens -= tokenStrength;
-                            
+                            	//confirms the extension has succeeded
+                            	ans = true;
 
-                            //filTokens=0;
-                        }
-                    }
-                }
-            }
-            }
+                            	//spend the actin tokens
+								filTokens -= tokenStrength;
+								this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)mp->Mx, (int)mp->My, (int)mp->Mz});
+                            	//mp->filTokens=filTokens;
+                            	//focalAdhesions();
 
+                            	//for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
+                            	if (FILOPODIA_METRICS) {
 
+                                	auto fp = new Filopodia(worldP);
+
+//                               	 worldP->filopodia.push_back(fp);
+
+                                	base_fil_belong = fp;
+                                	fp->time_created = worldP->timeStep;
+                                	fp->base = this;
+                                	fp->Cell = this->Cell;
+                            	}
+								worldP->write_to_filopodia_outfile(FIL_EVENT_CREATION, mp, prob);
+                        	}
+                    	} else {
+							auto xMax = worldP->gridXDimensions;
+                        	if (highest->Ex - filNeigh->Mx > xMax / 2.0f) {
+								newDist = worldP->getDist(highest->Ex - xMax, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							} else if (filNeigh->Mx - highest->Ex > xMax / 2.0f) {
+								newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMax, filNeigh->My, filNeigh->Mz);
+							} else {
+								newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							}
+
+                        	if (Mx - filNeigh->Mx > xMax / 2.0f) {
+								oldDist = worldP->getDist(Mx - xMax, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							} else if (filNeigh->Mx - Mx > xMax / 2.0f) {
+								oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMax, filNeigh->My, filNeigh->Mz);
+							} else {
+								oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							}
+
+                        	distNeeded = newDist - oldDist;
+
+                        	if ((actinMax - Cell->actinUsed) >= distNeeded) {
+                            	Cell->actinUsed += distNeeded;
+                            	moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
+                            	this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
+                            	ans = true;
+								worldP->write_to_filopodia_outfile(FIL_EVENT_EXTENSION, this, prob);
+                            	filTokens -= tokenStrength;
+							}
+						}
+					}
+				}
+			}
         }
-
     }
     return (ans);
-
 }
 //----------------------------------------------------------------------------------
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1736,42 +1733,32 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
         //-------------------------------
         //toroidal only X
         if(TOROIDAL_X){
-        if (m >= xMAX) m = 0;
-        if (m < 0) m = xMAX - 1;
+        if (m >= worldP->gridXDimensions) m = 0;
+        if (m < 0) m = worldP->gridXDimensions - 1;
         }
 
         if(TOROIDAL_Y){
-        if (n >= yMAX) n = 0;
-        if (n < 0) n = yMAX - 1;
+        if (n >= worldP->gridYDimensions) n = 0;
+        if (n < 0) n = worldP->gridYDimensions - 1;
         }
 
 
         if (worldP->insideWorld(m, n, p)) {
-            // NEIGHS IS NULL - FOUND OUT WHY.
-            // ALSO, THIS MIGHT BE NULL ANYWAY, IN WHICH CASE INCLUDE A CONDITION FOR IT.
-            Location testLocation = worldP->grid[m][n][p];
-            std::vector<MemAgent*> test_mids = worldP->grid[m][n][p].getMids();
             worldP->neigh[x]->setMids(worldP->grid[m][n][p].getMids());
             worldP->neigh[x]->setFids(worldP->grid[m][n][p].getFids());
 
             worldP->neigh[x]->setType(worldP->grid[m][n][p].getType());
             worldP->neigh[x]->setEid(worldP->grid[m][n][p].getEid());
 
-
             if (worldP->neigh[x]->getType() == const_M) {
                 MneighCount++;
+
             } else if (worldP->neigh[x]->getType() == const_E) {
                 Eagent = worldP->neigh[x]->getEid();
                 SumVEGF += Eagent->VEGF;
                 EnvNeighs.push_back(Eagent);
             }
             
-            /*else if((node==true)&&(worldP->neigh[x].type==AS)){
-             *
-             * if(FATimer>=0) FA=true;
-             *
-             * }*/
-            //-----------NEW BIT!
 
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
@@ -1782,7 +1769,6 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                             if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                                 connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                                 if (connected) {
-
                                     if ((worldP->grid[m][n][p].getMids()[zed]->Cell != this->diffAd_replaced_cell)) {
                                         DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                         //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
@@ -1799,7 +1785,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                         for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
                             if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                                 connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
-                                if (connected == true) {
+                                if (connected) {
                                     //cout<<"*"<<endl;
                                     if (worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != NULL) {
                                         if ((worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != this->Cell)) {
@@ -1811,7 +1797,6 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                                             DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                             //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
                                         }
-
                                     }
                                 }
                             }
@@ -1860,128 +1845,86 @@ Env *MemAgent::findHighestConc(void){
     float furthestDist=0;
     Env* straight=NULL;
     float currLength;
-    
-   /* if(BAHTI_ANALYSIS==true){
-        
-        //memagent ID
-        worldP->dataFile2<<this<<"\t";
-        
-        //env neighbour coords and vegf level.
-        for(i=0;i<EnvNeighs.size();i++)
-        {
-            worldP->dataFile2<<EnvNeighs[i]->Ex<<"\t"<<EnvNeighs[i]->Ey<<"\t"<<EnvNeighs[i]->Ez<<"\t"<<EnvNeighs[i]->VEGF<<"\t";
-            
-        }
-        
-        worldP->dataFile2<<endl;
-    }*/
 
-    //if(FIL==TIP){
-    //   currLength = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    //}
-    //start=(int)((double)rand()*(double)EnvNeighs.size()/(double)RAND_MAX);
+	worldP->shuffleEnvAgents(EnvNeighs);
 
-    //direction=((double)rand()*2.00/(double)RAND_MAX);
-    //random_shuffle(EnvNeighs.begin(), EnvNeighs.end());
-    worldP->shuffleEnvAgents(EnvNeighs);
-    highest=EnvNeighs[0];
+    highest = EnvNeighs[0];
+
+	double highestProtein = 0;
+	if (DSL_ENV_SELECTION) {
+		highestProtein = EnvNeighs[0]->get_extension_target_level(this);
+	} else {
+		highestProtein = EnvNeighs[0]->VEGF;
+	}
+
+	// target = EnvNeighs[0]->VEGF; <- OLD VERSION.
     
-    if (EnvNeighs[0]->VEGF > 0)
-    {
+    if (highestProtein > 0) {
         furthest = EnvNeighs[0];
-        if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-            furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
-        else
-            furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+        if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) {
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
+		} else {
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+		}
     } else {
         furthest=NULL;
     }
     
     upto=EnvNeighs.size();
     
-    //direction = (int)((double)rand()*(double)2/(double)RAND_MAX);
-    
-    //if(direction==0) picked = start++;
-    //else picked = start--;
-    
-    //cout<<" D= "<<direction<<" S= "<<start;
-    
-    for(i=1;i<upto;i++){
-        //if(picked==upto)picked=0;
-        //else if(picked<0)picked=upto-1;
-        //if((EnvNeighs[i]->Ex==Mx)&&(EnvNeighs[i]->Ey==My+1)&&(EnvNeighs[i]->Ez==Mz)) straight = EnvNeighs[i];
-        //if(FIL==TIP)
-        //   if((EnvNeighs[i]->VEGF>=highest->VEGF)&&(worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
-        //       highest=EnvNeighs[i];
-        //  else
+    for(i = 1; i < upto; i++) {
+		double queryTargetProtein = 0;
+		if (DSL_ENV_SELECTION) {
+			queryTargetProtein = EnvNeighs[i]->get_extension_target_level(this);
+		} else {
+			queryTargetProtein = EnvNeighs[i]->VEGF;
+		}
 
-        if(EnvNeighs[i]->VEGF>=highest->VEGF)
-            highest=EnvNeighs[i];
-        if(EnvNeighs[i]->VEGF>0){
-            if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-                dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)Mx, (int)My, (int)Mz);
-            else
-                dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
-            
-            if(dist>=furthestDist){
-                furthestDist = dist;
-                furthest = EnvNeighs[i];
-            }
-        }
-        
-        //if(direction==0)
-        
-        //else picked--;
-        
+		// OLD VERSION
+//        if (EnvNeighs[i]->VEGF >= highest->VEGF) {
+//			highest = EnvNeighs[i];
+//		}
+
+		if (queryTargetProtein >= highestProtein) {
+			highestProtein = queryTargetProtein;
+			highest = EnvNeighs[i];
+		}
+
+        if (queryTargetProtein > 0) {
+			if ((FIL == NONE && !DSL_TESTING) ||
+				(DSL_TESTING & (FIL == BASE || FIL == NONE))) {
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) Mx, (int) My,
+									   (int) Mz);
+			} else {
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) filNeigh->Mx,
+									   (int) filNeigh->My, (int) filNeigh->Mz);
+			}
+
+			if (dist >= furthestDist) {
+				furthestDist = dist;
+				furthest = EnvNeighs[i];
+			}
+		}
     }
-    //chance = (float)rand()/(float)RAND_MAX;
+
     chance = (float)worldP->new_rand()/(float)NEW_RAND_MAX;
-    prob = EPSILON; //epsilon high (1) = greedy, always choses highest otherwise random.
-    if(chance<prob){
+    prob = EPSILON;
+
+	if (DSL_SENSITIVITY) {
+		prob = get_sensitivity();
+	} else {
+		prob = EPSILON;
+	}
+
+    if (chance < prob){
         chosen = highest;
-        //cout<<"highest"<<endl;
+    } else{
+        chosen = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
     }
     
-    //picking one that extends length, not necessarily the furthest one tho..
-    
-    //if((FIL==TIP)&&(worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
-    //chosen=highest;
-    //else if(FIL==NONE)
-    //chosen = highest;
-    else{
-        //pick a random direction to extend fil in -more realistic than always picking correct direction
-        //could randomly pick the correct one of course..
-        
-        //chosen  = EnvNeighs[(int)(((float)rand()*(float)EnvNeighs.size()/(float)RAND_MAX))];
-        chosen  = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
-        //chosen = furthest;
-        //if(straight!=NULL){
-        //cout<<"found straight!"<<endl;
-        //chosen = straight;
-        //}
-        //else
-        //chosen = furthest;
-        
-        //cout<<furthestDist<<endl;
-    }
-
-    //stats
-    /*if((chosen->Ex==Mx+1)&&(chosen->Ey==My+1)) right1++;
-     * if((chosen->Ex==Mx)&&(chosen->Ey==My+1)) middle++;
-     * if((chosen->Ex==Mx-1)&&(chosen->Ey==My+1)) left1++;
-     * if((chosen->Ex==Mx-1)&&(chosen->Ey==My)) left2++;
-     * if((chosen->Ex==Mx+1)&&(chosen->Ey==My)) right2++;
-     * count3++;*/
-
-    if (analysis_type == ANALYSIS_TYPE_BAHTI_ANALYSIS){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
-        
-    }
-    
-    return(chosen);
+    return (chosen);
 
 }
-
-
 
 //------------------------------------------------------------------------------------------
 
@@ -2001,10 +1944,10 @@ void MemAgent::calcRetractDist(void) {
     float oldDist;
 
 
-    if (Mx - filNeigh->Mx >= xMAX / 2.0f)
-        oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    else if (filNeigh->Mx - Mx >= xMAX / 2.0f)
-        oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+    if (Mx - filNeigh->Mx >= worldP->gridXDimensions / 2.0f)
+        oldDist = worldP->getDist(Mx - worldP->gridXDimensions, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+    else if (filNeigh->Mx - Mx >= worldP->gridXDimensions / 2.0f)
+        oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - worldP->gridXDimensions, filNeigh->My, filNeigh->Mz);
     else
         oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
 
@@ -2040,7 +1983,11 @@ void MemAgent::calcRetractDist(void) {
                 sConst = FAspringConstant; //filBaseConstant;
                 SL = springLength;
             }
-            if (((FIL == BASE) || (FIL == STALK)) && (veilAdvancing == true) && ((neigh[i]->FIL == STALK) || (neigh[i]->FIL == TIP))) {
+
+            if (((FIL == BASE) || (FIL == STALK))
+			&& (veilAdvancing)
+			&& ((neigh[i]->FIL == STALK)
+			|| (neigh[i]->FIL == TIP))) {
                 sConst = filBaseConstant;
                 SL = filSpringLength;
             } else if (neigh[i]->Cell != Cell) {
@@ -2066,11 +2013,11 @@ void MemAgent::calcRetractDist(void) {
 
         if (DONE == 0) {
 
-            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) xMAX / 2.0f) {
+            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) worldP->gridXDimensions / 2.0f) {
 
-                if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
-                else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
-                length = fabs((float) (xMAX - PN[i][0]));
+                if (PN[i][0] > 0) PN[i][0] = -((float) worldP->gridXDimensions - PN[i][0]);
+                else PN[i][0] = (float) worldP->gridXDimensions - fabs(PN[i][0]);
+                length = fabs((float) (worldP->gridXDimensions - PN[i][0]));
             }
             denom = sqrt((float) ((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2])));
 
@@ -2104,14 +2051,12 @@ void MemAgent::calcRetractDist(void) {
     newZ = Mz - (ForceTemp[2] / 2.0f);
 
 
-    if (newX - filNeigh->Mx >= xMAX / 2.0f)
-        newDist = worldP->getDist(newX - xMAX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    else if (filNeigh->Mx - newX >= xMAX / 2.0f)
-        newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+    if (newX - filNeigh->Mx >= worldP->gridXDimensions / 2.0f)
+        newDist = worldP->getDist(newX - worldP->gridXDimensions, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+    else if (filNeigh->Mx - newX >= worldP->gridXDimensions / 2.0f)
+        newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx - worldP->gridXDimensions, filNeigh->My, filNeigh->Mz);
     else
         newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-
-
 
     Cell->actinUsed -= (oldDist - newDist);
     //cout<<(oldDist-worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz))<<endl;
@@ -2392,6 +2337,10 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
         protein->set_memAgent_buffer_level(0);
     }
 
+	if (belongsTo->m_cell_type->proteins.size() == 14) {
+		int test = 0;
+	}
+
     for (auto pair : belongsTo->get_env_protein_values()) {
         this->m_mean_env_proteins_sensed.emplace(std::make_pair(std::get<0>(pair), 0));
     }
@@ -2467,9 +2416,6 @@ MemAgent::~MemAgent(void){
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
-    for (auto *cytoprotein : this->m_cytoproteins) {
-        delete cytoprotein;
-    }
 	EnvNeighs.clear();
 }
 
@@ -2577,145 +2523,90 @@ double MemAgent::get_memAgent_buffer_level(const std::string& protein_name) cons
 }
 
 /*****************************************************************************************
+*  Name:		is_VonNeu_position
+*  Description: Checks whether a position relative to a memAgent
+*  Returns:		float
+******************************************************************************************/
+
+bool MemAgent::is_VonNeu_position(const unsigned int x,
+								  const unsigned int y,
+								  const unsigned int z) {
+	unsigned int count = 0;
+	if (x == (int) Mx - 1 ||  x == (int) Mx + 1) {
+		count++;
+	}
+	if (y == (int) My - 1 ||  y == (int) My + 1) {
+		count++;
+	}
+	if (z == (int) Mz - 1 ||  z == (int) Mz + 1) {
+		count++;
+	}
+
+	if (count == 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/*****************************************************************************************
 *  Name:		get_environment_level
 *  Description: Returns the level of a protein in the nearby environment.
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_environment_level(const std::string& protein_name) {
-    Env *ep;
-    int m, n, p;
-    int i = (int) Mx;
-    int j = (int) My;
-    int k = (int) Mz;
+double MemAgent::get_environment_level(const std::string& protein_name,
+									   const bool getsAverage,
+									   const bool doesVonNeumann) {
 
     double protein_level = 0;
-    int relevant_memAgents = 0;
+    unsigned int relevant_envAgents = 0;
 
-    for (int x = 0; x < 26; x++) {
-        // Same layer.
-        if (x == 0) {
-            m = i + 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 1) {
-            m = i + 1;
-            n = j;
-            p = k;
-        } else if (x == 2) {
-            m = i + 1;
-            n = j + 1;
-            p = k;
-        } else if (x == 3) {
-            m = i;
-            n = j - 1;
-            p = k;
-        } else if (x == 4) {
-            m = i;
-            n = j + 1;
-            p = k;
-        } else if (x == 5) {
-            m = i - 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 6) {
-            m = i - 1;
-            n = j;
-            p = k;
-        } else if (x == 7) {
-            m = i - 1;
-            n = j + 1;
-            p = k;
-        }
-        // Layer below.
-        else if (x == 8) {
-            m = i + 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 9) {
-            m = i + 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 10) {
-            m = i + 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 11) {
-            m = i;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 12) {
-            m = i;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 13) {
-            m = i - 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 14) {
-            m = i - 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 15) {
-            m = i - 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 16) {
-            m = i;
-            n = j;
-            p = k - 1;
-        }
-        // Layer above.
-        else if (x == 17) {
-            m = i + 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 18) {
-            m = i + 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 19) {
-            m = i + 1;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 20) {
-            m = i;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 21) {
-            m = i;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 22) {
-            m = i - 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 23) {
-            m = i - 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 24) {
-            m = i - 1;
-            n = j + 1;
-            p = k + 1;
-        } else {
-            m = i;
-            n = j;
-            p = k + 1;
-        }
-        // If the environment agent at these coordinates is inside the world, and has the relevant protein,
-        // increase the count by the level at those coordinates.
-        if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].getType() == const_E) {
-                ep = worldP->grid[m][n][p].getEid();
-                if (ep->has_protein(protein_name)) {
-                    protein_level+= ep->get_protein_level(protein_name);
-                    relevant_memAgents++;
-                }
-            }
-        }
-    }
-    return (double) (protein_level / relevant_memAgents);
+	// Go over neighbouring sites.
+	// If the environment agent at these coordinates
+	// is inside the world, and has the relevant protein,
+	// increase the count by the level at those coordinates.
+	for (int x = (int) Mx - 1; x <= (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y <= (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z <= (int) Mz + 1; z++) {
+				// Check we can access the site and we are not
+				// checking this memAgent.
+				if (worldP->insideWorld(x, y, z)
+					&& ((int) Mx != x
+					|| (int) My != y
+					|| (int) Mz != z)) {
+					if (worldP->grid[x][y][z].getType() == const_E) {
+						// If we are only checking Von Neumann sites,
+						// then proceed if relevant. Otherwise,
+						// get the env agent.
+						if (doesVonNeumann) {
+							if (is_VonNeu_position(x, y, z)) {
+								Env *ep = worldP->grid[x][y][z].getEid();
+								if (ep->has_protein(protein_name)) {
+									protein_level += ep->get_protein_level(protein_name);
+									relevant_envAgents++;
+								}
+							}
+						} else {
+							Env *ep = worldP->grid[x][y][z].getEid();
+							if (ep->has_protein(protein_name)) {
+								protein_level += ep->get_protein_level(protein_name);
+								relevant_envAgents++;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (relevant_envAgents > 0 && getsAverage) {
+		return (double) (protein_level / relevant_envAgents);
+	} else if (!getsAverage) {
+		return protein_level;
+	} else {
+		return 0;
+	}
 }
 
 /*****************************************************************************************
@@ -2845,7 +2736,6 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
             p = k + 1;
         }
 
-
         //Search for protein in nearby memAgents - whether it is in a filopodia or not.
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].getType() == const_M) {
@@ -2873,144 +2763,64 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
-	int m, n, p;
-	int i = (int) Mx;
-	int j = (int) My;
-	int k = (int) Mz;
+double MemAgent::get_filopodia_protein_level(const std::string& protein_name,
+											 const bool getsAverage,
+											 const bool doesVonNeumann) {
 
 	double protein_level = 0;
-    int relevant_memAgents = 0;
+    unsigned int relevant_memAgents = 0;
 
-	for (int x = 0; x < 26; x++) {
-		// Same layer.
-		if (x == 0) {
-			m = i + 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 1) {
-			m = i + 1;
-			n = j;
-			p = k;
-		} else if (x == 2) {
-			m = i + 1;
-			n = j + 1;
-			p = k;
-		} else if (x == 3) {
-			m = i;
-			n = j - 1;
-			p = k;
-		} else if (x == 4) {
-			m = i;
-			n = j + 1;
-			p = k;
-		} else if (x == 5) {
-			m = i - 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 6) {
-			m = i - 1;
-			n = j;
-			p = k;
-		} else if (x == 7) {
-			m = i - 1;
-			n = j + 1;
-			p = k;
-		}
-			// Layer below.
-		else if (x == 8) {
-			m = i + 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 9) {
-			m = i + 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 10) {
-			m = i + 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 11) {
-			m = i;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 12) {
-			m = i;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 13) {
-			m = i - 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 14) {
-			m = i - 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 15) {
-			m = i - 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 16) {
-			m = i;
-			n = j;
-			p = k - 1;
-		}
-			// Layer above.
-		else if (x == 17) {
-			m = i + 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 18) {
-			m = i + 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 19) {
-			m = i + 1;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 20) {
-			m = i;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 21) {
-			m = i;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 22) {
-			m = i - 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 23) {
-			m = i - 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 24) {
-			m = i - 1;
-			n = j + 1;
-			p = k + 1;
-		} else {
-			m = i;
-			n = j;
-			p = k + 1;
-		}
-		// If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
-		// increase the count by the level at those coordinates.
-
-		if (worldP->insideWorld(m, n, p)) {
-			if (worldP->grid[m][n][p].getType() == const_E) {
-				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
-					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-						protein_level+= memAgent->get_memAgent_current_level(protein_name);
-                        relevant_memAgents++;
+	// Go over neighbouring sites.
+	// If the environment agent at these coordinates
+	// is inside the world, and has a memAgent with the
+	// relevant protein, increase the count by the level
+	// at those coordinates whilst tracking the number of
+	// memAgents accessed.
+	for (int x = (int) Mx - 1; x <= (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y <= (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z <= (int) Mz + 1; z++) {
+				// Check we can access the site and we are not
+				// checking this memAgent.
+				if (worldP->insideWorld(x, y, z)
+					&& ((int) Mx != x
+					|| (int) My != y
+					|| (int) Mz != z)) {
+					if (worldP->grid[x][y][z].getType() == const_M) {
+						// If we are only checking Von Neumann sites,
+						// then proceed if relevant. Otherwise,
+						// get the memAgent.
+						if (doesVonNeumann) {
+							if (is_VonNeu_position(x, y, z)) {
+								for (auto memAgent : worldP->grid[x][y][z].getFids()) {
+									if (memAgent->has_protein(protein_name)
+									&& !memAgent->junction
+									&& memAgent->Cell != this->Cell) {
+										protein_level+= memAgent->get_memAgent_current_level(protein_name);
+										relevant_memAgents++;
+									}
+								}
+							}
+						} else {
+							for (auto memAgent : worldP->grid[x][y][z].getFids()) {
+								if (memAgent->has_protein(protein_name)
+									&& !memAgent->junction
+									&& memAgent->Cell != this->Cell) {
+										protein_level+= memAgent->get_memAgent_current_level(protein_name);
+										relevant_memAgents++;
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 
-    if (relevant_memAgents > 0) {
+    if (relevant_memAgents > 0 && getsAverage) {
         return (double) (protein_level / relevant_memAgents);
-    } else {
+    } else if (!getsAverage) {
+		return protein_level;
+	} else {
         return 0;
     }
 }
@@ -3022,151 +2832,70 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_junction_protein_level(const std::string& protein_name) {
-    int m, n, p;
-    int i = (int) Mx;
-    int j = (int) My;
-    int k = (int) Mz;
+double MemAgent::get_junction_protein_level(const std::string& protein_name,
+											const bool getsAverage,
+											const bool doesVonNeumann) {
 
     double protein_level = 0;
     int relevant_memAgents = 0;
 
-    for (int x = 0; x < 26; x++) {
-        // Same layer.
-        if (x == 0) {
-            m = i + 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 1) {
-            m = i + 1;
-            n = j;
-            p = k;
-        } else if (x == 2) {
-            m = i + 1;
-            n = j + 1;
-            p = k;
-        } else if (x == 3) {
-            m = i;
-            n = j - 1;
-            p = k;
-        } else if (x == 4) {
-            m = i;
-            n = j + 1;
-            p = k;
-        } else if (x == 5) {
-            m = i - 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 6) {
-            m = i - 1;
-            n = j;
-            p = k;
-        } else if (x == 7) {
-            m = i - 1;
-            n = j + 1;
-            p = k;
-        }
-            // Layer below.
-        else if (x == 8) {
-            m = i + 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 9) {
-            m = i + 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 10) {
-            m = i + 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 11) {
-            m = i;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 12) {
-            m = i;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 13) {
-            m = i - 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 14) {
-            m = i - 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 15) {
-            m = i - 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 16) {
-            m = i;
-            n = j;
-            p = k - 1;
-        }
-            // Layer above.
-        else if (x == 17) {
-            m = i + 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 18) {
-            m = i + 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 19) {
-            m = i + 1;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 20) {
-            m = i;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 21) {
-            m = i;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 22) {
-            m = i - 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 23) {
-            m = i - 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 24) {
-            m = i - 1;
-            n = j + 1;
-            p = k + 1;
-        } else {
-            m = i;
-            n = j;
-            p = k + 1;
-        }
-
-        if (m == 25 && n == 26 && p == 25) {
-            int test = 0;
-        }
-
-        // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
-        // increase the count by the level at those coordinates.
-        if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].getType() == const_M) {
-                for (auto memAgent : worldP->grid[m][n][p].getMids()) {
-                	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
-                	if (memAgent->junction) {
-						if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-							protein_level+= memAgent->get_memAgent_current_level(protein_name);
-                            relevant_memAgents++;
+	// Go over neighbouring sites.
+	// If the environment agent at these coordinates
+	// is inside the world, and has a memAgent with the
+	// relevant protein, increase the count by the level
+	// at those coordinates whilst tracking the number of
+	// memAgents accessed.
+	for (int x = (int) Mx - 1; x <= (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y <= (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z <= (int) Mz + 1; z++) {
+				// Check we can access the site and we are not
+				// checking this memAgent.
+				if (worldP->insideWorld(x, y, z)
+					&& ((int) Mx != x
+					|| (int) My != y
+					|| (int) Mz != z)) {
+					if (worldP->grid[x][y][z].getType() == const_M) {
+						// If we are only checking Von Neumann sites,
+						// then proceed if relevant. Otherwise,
+						// get the memAgent.
+						if (doesVonNeumann) {
+							if (is_VonNeu_position(x, y, z)) {
+								for (auto memAgent: worldP->grid[x][y][z].getMids()) {
+									// Check that this memAgent is a junctional memAgent,
+									// it has the protein we're looking for,
+									// and that it belongs to a different cell.
+									if (memAgent->junction) {
+										if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+											protein_level += memAgent->get_memAgent_current_level(protein_name);
+											relevant_memAgents++;
+										}
+									}
+								}
+							}
+						} else {
+							for (auto memAgent: worldP->grid[x][y][z].getMids()) {
+								// Check that this memAgent is a junctional memAgent,
+								// it has the protein we're looking for,
+								// and that it belongs to a different cell.
+								if (memAgent->junction) {
+									if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+										protein_level += memAgent->get_memAgent_current_level(protein_name);
+										relevant_memAgents++;
+									}
+								}
+							}
 						}
-                	}
-                }
-            }
-        }
-    }
+					}
+				}
+			}
+		}
+	}
 
-    if (relevant_memAgents > 0) {
+    if (relevant_memAgents > 0 && getsAverage) {
         return (double) (protein_level / relevant_memAgents);
-    } else {
+    } else if (!getsAverage) {
+		return protein_level;
+	} else {
         return 0;
     }
 }
@@ -4478,27 +4207,27 @@ void MemAgent::gridSurfaceAgents(void) {
     //}
 }
 
-void MemAgent::setPreviousX(float previous_x) {
+void MemAgent::setPreviousX(const float previous_x) {
     this->m_previous_x = previous_x;
 }
 
-void MemAgent::setPreviousY(float previous_y) {
+void MemAgent::setPreviousY(const float previous_y) {
     this->m_previous_y = previous_y;
 }
 
-void MemAgent::setPreviousZ(float previous_z) {
+void MemAgent::setPreviousZ(const float previous_z) {
     this->m_previous_z = previous_z;
 }
 
-float MemAgent::getPreviousX() {
+float MemAgent::getPreviousX() const {
     return this->m_previous_x;
 }
 
-float MemAgent::getPreviousY() {
+float MemAgent::getPreviousY() const {
     return this->m_previous_y;
 }
 
-float MemAgent::getPreviousZ() {
+float MemAgent::getPreviousZ() const {
     return this->m_previous_z;
 }
 
@@ -4521,80 +4250,6 @@ void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
         }
         // Repeat until we've checked all cell proteins.
     }
-}
-
-bool MemAgent::has_cytoprotein(const std::string& cytoproteinName) const {
-    bool hasCytoprotein = false;
-    for (auto *cytoprotein : this->m_cytoproteins) {
-        if (cytoprotein->getName() == cytoproteinName) {
-            hasCytoprotein = true;
-            break;
-        }
-    }
-    return hasCytoprotein;
-}
-
-
-double MemAgent::get_cytoprotein_level(const std::string& cytoproteinName) const {
-    double cytoproteinLevel = 0.0f;
-    if (this->has_cytoprotein(cytoproteinName)) {
-        for (auto *cytoprotein: this->m_cytoproteins) {
-            if (cytoprotein->getName() == cytoproteinName) {
-                cytoproteinLevel = cytoprotein->getMemAgentLevel();
-                break;
-            }
-        }
-    }
-    return cytoproteinLevel;
-}
-void MemAgent::set_cytoprotein_level(const std::string& cytoproteinName, const double& newLevel) {
-    if (this->has_cytoprotein(cytoproteinName)) {
-        for (auto *cytoprotein: this->m_cytoproteins) {
-            if (cytoprotein->getName() == cytoproteinName) {
-                cytoprotein->setMemAgentLevel(newLevel);
-                break;
-            }
-        }
-    }
-}
-
-void MemAgent::add_cytoprotein(CytoProtein* cytoProtein) {
-    this->m_cytoproteins.push_back(cytoProtein);
-}
-
-void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, const std::string& cytoproteinName) {
-    // Attempts to accumulate cytoprotein in a given memAgent using cytoprotein from nearby memAgents.
-    // This function passes from this memAgent to another one.
-    int i, j, k, X, Y, Z, m;
-    bool alreadyPassed = false;
-
-    X = x - N;
-    Y = y - N;
-    Z = z - N;
-
-    for (i = X; i <= X + (2 * N); i++) {
-        for (j = Y; j <= Y + (2 * N); j++) {
-            for (k = Z; k <= Z + (2 * N); k++) {
-                if (worldP->insideWorld(i, j, k)) {
-                    if (worldP->grid[i][j][k].getType() == const_M) {
-                        for (auto *memAgent : worldP->grid[i][j][k].getMids()) {
-                            if (alreadyPassed) {
-                                if ((worldP->grid[i][j][k].getMids()[m]->FIL != NONE) && (worldP->grid[i][j][k].getMids()[m]->Cell == Cell)) {
-                                    float thisLevel = this->get_cytoprotein_level(cytoproteinName);
-                                    float targetLevel = worldP->grid[i][j][k].getMids()[m]->get_cytoprotein_level(cytoproteinName);
-                                    alreadyPassed = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
-    return this->m_cytoproteins;
 }
 
 void MemAgent::update_protein_level(const std::string& protein_name, const double& protein_delta) {
@@ -4670,7 +4325,7 @@ void MemAgent::extendProtrusions() {
 ProtrusionType* MemAgent::pickProtrusionType() {
     std::vector<ProtrusionType*> eligibleTypes, randomType;
     // Get the protrusion types that the cell can form.
-    checkConditions(this, eligibleTypes);
+//    checkConditions(this, eligibleTypes);
     // Choose one of the eligible protrusion types randomly and return it.
     std::sample(eligibleTypes.begin(),
                 eligibleTypes.end(),
@@ -4763,6 +4418,8 @@ void MemAgent::cycleProteinLevels() {
     }
 }
 
+
+
 void MemAgent::update_env_levels() {
     // Update average levels seen by the agent.
     for (auto &pair : this->m_mean_env_proteins_sensed) {
@@ -4771,7 +4428,7 @@ void MemAgent::update_env_levels() {
     }
     // Update total levels seen by the cell.
     for (auto &pair : this->Cell->get_env_protein_values()) {
-        auto newLevel = pair.second + env_protein_search(pair.first);
+        auto newLevel = pair.second + mean_env_protein_search(pair.first);
         this->Cell->get_env_protein_values()[pair.first] = newLevel;
     }
 }
@@ -4780,12 +4437,14 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
     double result = 0;
     for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
         for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
-            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+            for (int z = (int) (Mz - 1); z <= (int) (Mz + 1); z++) {
                 if (worldP->insideWorld(x, y, z)
                     && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
                     if (worldP->grid[x][y][z].getType() == const_E) {
                         auto env = worldP->grid[x][y][z].getEid();
-                        result += env->get_protein_level(proteinName);
+						if (!env->inside && env->has_protein(proteinName)) {
+							result += env->get_protein_level(proteinName);
+						}
                     }
                 }
             }
@@ -4797,21 +4456,30 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
 double MemAgent::mean_env_protein_search(const std::string& proteinName) {
     double result = 0;
     double count = 0;
-    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
-        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
-            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+	int currentX = std::floor(Mx);
+	int currentY = std::floor(My);
+	int currentZ = std::floor(Mz);
+    for (int x = (int) (currentX - 1); x <= (int) (currentX + 1); x++) {
+        for (int y = (int) (currentY - 1); y <= (int) (currentY + 1); y++) {
+            for (int z = (int) (currentZ - 1); z <= (int) (currentZ + 1); z++) {
                 if (worldP->insideWorld(x, y, z)
-                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    && !(x == currentX && y == currentY && z == currentZ)) {
                     if (worldP->grid[x][y][z].getType() == const_E) {
                         auto env = worldP->grid[x][y][z].getEid();
-                        count += 1;
-                        result += env->get_protein_level(proteinName);
+						if (!env->inside && env->has_protein(proteinName)) {
+							count += 1;
+							result += env->get_protein_level(proteinName);
+						}
                     }
                 }
             }
         }
     }
-    return result / count;
+	if (count == 0) {
+		return 0;
+	} else {
+		return result / count;
+	}
 }
 
 bool MemAgent::vonNeighSearch() {
@@ -4913,6 +4581,59 @@ double MemAgent::DLL4_search() {
 	return DLL4_seen;
 }
 
-double MemAgent::get_mean_env_protein(const std::string& name) {
-    return this->m_mean_env_proteins_sensed[name];
+double MemAgent::get_mean_env_protein(const std::string& proteinName) {
+    return this->m_mean_env_proteins_sensed[proteinName];
+}
+
+void MemAgent::neighCellSearch(const bool doesVonNeumann) {
+    assert(this->junction);
+    // Goes over local neighbourhood.
+    // If another cell is found, attempt to
+    // add it to the cell's list.
+
+    // When doesVonNeumann is true,
+    // only check non-diagonal positions.
+
+    for (int x = (int) this->Mx - 1; x <= (int) this->Mx + 1; x++) {
+        for (int y = (int) this->My - 1; y <= (int) this->My + 1; y++) {
+            for (int z = (int) this->Mz - 1; z <= (int) this->Mz + 1; z++) {
+                // Check we're not investigating this memAgent.
+                auto notThisMemAgent = (x != (int) this->Mx)
+                                       || (y != (int) this->My)
+                                       || (z != (int) this->Mz);
+
+                // If we're checking VonNeumann positions,
+                // check whether we're at one, otherwise
+                // continue as normal.
+                auto allowedPosition = true;
+                if (doesVonNeumann) {
+                    allowedPosition = is_VonNeu_position(x, y, z);
+                }
+
+                auto insideWorld = worldP->insideWorld(x, y, z);
+
+                if (notThisMemAgent && allowedPosition && insideWorld) {
+                    auto location = worldP->grid[x][y][z];
+                    // If grid site is a memAgent and is in the world,
+                    // check if it belongs to a different cell.
+                    // If so, attempt to add it to a cell.
+                    if (location.getType() == const_M) {
+                        for (auto memAgent : location.getMids()) {
+                            if (memAgent->Cell != this->Cell) {
+                                this->Cell->attempt_neigh_list_addition(memAgent->Cell);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+unsigned int MemAgent::get_fil_id() {
+	return this->m_fil_id;
+}
+
+void MemAgent::set_fil_id(const unsigned int fil_id) {
+	this->m_fil_id = fil_id;
 }

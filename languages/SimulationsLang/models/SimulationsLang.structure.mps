@@ -32,6 +32,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -72,21 +74,21 @@
     <node concept="1TJgyj" id="7wJJsVzvXDa" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472778" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_analysisContainer" />
+      <property role="20kJfa" value="_analysisFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWyd" resolve="AnalysisFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzvXDc" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472780" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_clusterContainer" />
+      <property role="20kJfa" value="_clusterFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWwS" resolve="ClusterFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzw7ex" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734512033" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_graphicsContainer" />
+      <property role="20kJfa" value="_graphicsFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWzR" resolve="GraphicsFacet" />
     </node>
@@ -97,9 +99,21 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5hUuDYP50tw" resolve="IncrementCombination" />
     </node>
+    <node concept="1TJgyj" id="3pydsmp63Wp" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559085337" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_loggingFacet" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3pydsmp5XmG" resolve="LoggingFacet" />
+    </node>
     <node concept="1TJgyi" id="7wJJsVzwenC" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734541288" />
       <property role="TrG5h" value="maxTimeSteps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4wGSNcrJYH4" role="1TKVEl">
+      <property role="IQ2nx" value="5200781478354479940" />
+      <property role="TrG5h" value="sweepCellNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="7wJJsVzwloN" role="PzmwI">
@@ -107,11 +121,6 @@
     </node>
     <node concept="PrWs8" id="5hUuDYPdjKn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyj" id="4jUcCWy80OH" role="1TKVEi">
-      <property role="IQ2ns" value="4970340729091001645" />
-      <property role="20kJfa" value="_shapeContainerRef" />
-      <ref role="20lvS9" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
     </node>
     <node concept="1TJgyj" id="4jUcCWy80PS" role="1TKVEi">
       <property role="IQ2ns" value="4970340729091001720" />
@@ -188,7 +197,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWwS">
     <property role="EcuMT" value="8660349304734468152" />
     <property role="TrG5h" value="ClusterFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXj2" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471362" />
@@ -204,7 +213,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWyd">
     <property role="EcuMT" value="8660349304734468237" />
     <property role="TrG5h" value="AnalysisFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXk3" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471427" />
@@ -215,7 +224,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWzR">
     <property role="EcuMT" value="8660349304734468343" />
     <property role="TrG5h" value="GraphicsFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXhY" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471294" />
@@ -227,6 +236,11 @@
     <property role="EcuMT" value="6087312672701024096" />
     <property role="TrG5h" value="IncrementCombination" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4wGSNcrNaPB" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355316071" />
+      <property role="20kJfa" value="_tissueTypeRef" />
+      <ref role="20lvS9" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    </node>
     <node concept="1TJgyj" id="5hUuDYP51rN" role="1TKVEi">
       <property role="IQ2ns" value="6087312672701028083" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -254,6 +268,11 @@
       <property role="20kJfa" value="_speciesRef" />
       <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     </node>
+    <node concept="1TJgyj" id="JH8k64GCQY" role="1TKVEi">
+      <property role="IQ2ns" value="859379669180517822" />
+      <property role="20kJfa" value="_gradientRef" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
     <node concept="1TJgyi" id="2D4cW4vHxMx" role="1TKVEl">
       <property role="IQ2nx" value="3045616152563031201" />
       <property role="TrG5h" value="_increment" />
@@ -273,6 +292,108 @@
       <property role="IQ2nx" value="3045616152565134433" />
       <property role="TrG5h" value="_containsWidth" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp5XmG">
+    <property role="EcuMT" value="3918753748559058348" />
+    <property role="TrG5h" value="LoggingFacet" />
+    <property role="3GE5qa" value="Facets" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="3pydsmp5XmK" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559058352" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_statements" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3pydsmp5XmH" resolve="LoggingStatement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp5XmH">
+    <property role="EcuMT" value="3918753748559058349" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LoggingStatement" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="DsR2vrfdjx" role="1TKVEl">
+      <property role="IQ2nx" value="746713701976691937" />
+      <property role="TrG5h" value="_interval" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="DsR2vrqXhF" role="1TKVEl">
+      <property role="IQ2nx" value="746713701979772011" />
+      <property role="TrG5h" value="_format" />
+      <ref role="AX2Wp" node="DsR2vrqXgw" resolve="Format_Enum" />
+    </node>
+    <node concept="1TJgyj" id="3pydsmp7I_C" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559522152" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_logTarget" />
+      <ref role="20lvS9" node="3pydsmp7I_B" resolve="LogTarget" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I__">
+    <property role="EcuMT" value="3918753748559522149" />
+    <property role="TrG5h" value="LogComponentTarget" />
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
+    <node concept="1TJgyj" id="3pydsmp7IAw" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559522208" />
+      <property role="20kJfa" value="_component" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_A">
+    <property role="EcuMT" value="3918753748559522150" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogFilopodiaTarget" />
+    <property role="R4oN_" value="Filopodia" />
+    <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_B">
+    <property role="EcuMT" value="3918753748559522151" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogTarget" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="25R3W" id="DsR2vrqXgw">
+    <property role="3F6X1D" value="746713701979771936" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="FormatEnum" />
+    <ref role="1H5jkz" node="DsR2vrqXgx" resolve="CSV" />
+    <node concept="25R33" id="DsR2vrqXgx" role="25R1y">
+      <property role="3tVfz5" value="746713701979771937" />
+      <property role="TrG5h" value="FORMAT_CSV" />
+      <property role="1L1pqM" value="CSV" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4wGSNcrNaNH">
+    <property role="EcuMT" value="5200781478355315949" />
+    <property role="TrG5h" value="ClusterParamBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4wGSNcrNJfC" role="1TKVEl">
+      <property role="IQ2nx" value="5200781478355465192" />
+      <property role="TrG5h" value="_sweepCellNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfw" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465184" />
+      <property role="20kJfa" value="_tissueTypeRef" />
+      <ref role="20lvS9" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfx" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465185" />
+      <property role="20kJfa" value="_parameterRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfy" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465186" />
+      <property role="20kJfa" value="_speciesRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
+    </node>
+    <node concept="1TJgyj" id="4wGSNcrNJfz" role="1TKVEi">
+      <property role="IQ2ns" value="5200781478355465187" />
+      <property role="20kJfa" value="_gradientRef" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBB" resolve="Gradient" />
     </node>
   </node>
 </model>

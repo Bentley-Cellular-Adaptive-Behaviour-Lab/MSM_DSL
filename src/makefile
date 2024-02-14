@@ -28,13 +28,11 @@ OBJS = ./core/contact.o \
 	   ./dsl/tissue/tissue.o \
 	   ./dsl/tissue/tissueContainer.o \
 	   ./dsl/tissue/tissueType.o \
-	   ./dsl/utils/logger.o \
 	   ./dsl/utils/shape.o \
 	   ./dsl/utils/utils.o \
 	   ./dsl/world/gradient.o \
 	   ./dsl/world/substrate.o \
 	   ./dsl/world/worldContainer.o \
-	   ./generated/dsl_shape_gen.o \
 	   ./generated/dsl_species_gen.o \
 	   ./generated/dsl_tissue_gen.o \
 	   ./generated/dsl_world_gen.o

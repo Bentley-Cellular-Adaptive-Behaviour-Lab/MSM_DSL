@@ -3,6 +3,7 @@
 #include <cmath>
 #include <numeric>
 #include <thread>
+#include <algorithm>
 
 #include "coordinates.h"
 #include "EC.h"
@@ -28,8 +29,8 @@ namespace ECUtils {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
-            && !memAgent->junction
-			&& memAgent->vonNeu) {
+			&& memAgent->vonNeu
+            && !memAgent->junction) {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
@@ -64,7 +65,7 @@ Coordinates EC::calcCOM_toroidal(void){
     int s=0;
     do{
         if(Springs[s]->filopodia==false){
-            if(sqrt((Springs[s]->end->Mx-Springs[s]->start->Mx)*(Springs[s]->end->Mx-Springs[s]->start->Mx))>xMAX/2.0f){
+            if(sqrt((Springs[s]->end->Mx-Springs[s]->start->Mx)*(Springs[s]->end->Mx-Springs[s]->start->Mx))>worldP->gridXDimensions/2.0f){
                 flag=1;
             }
         }
@@ -75,7 +76,7 @@ Coordinates EC::calcCOM_toroidal(void){
     if(flag==1){
         //cout<<"toroidal..";
         for(i=0;i<nodeAgents.size();i++){
-            if(nodeAgents[i]->Mx<xMAX/2.0f) xstart++;
+            if(nodeAgents[i]->Mx<worldP->gridXDimensions/2.0f) xstart++;
             else xend++;
 
         }
@@ -104,8 +105,8 @@ Coordinates EC::calcCOM_toroidal(void){
     for(i=0;i<uptoN;i++){
         if((nodeAgents[i]->FIL==BASE)||(nodeAgents[i]->FIL==NONE)){
             nodesUsed++;
-            if((toroidal==1)&&(nodeAgents[i]->Mx>xMAX/2.0f)) X = nodeAgents[i]->Mx-xMAX;
-            else if((toroidal==2)&&(nodeAgents[i]->Mx<xMAX/2.0f)) X = nodeAgents[i]->Mx+xMAX;
+            if((toroidal==1)&&(nodeAgents[i]->Mx>worldP->gridXDimensions/2.0f)) X = nodeAgents[i]->Mx-worldP->gridXDimensions;
+            else if((toroidal==2)&&(nodeAgents[i]->Mx<worldP->gridXDimensions/2.0f)) X = nodeAgents[i]->Mx+worldP->gridXDimensions;
             else
                 X = nodeAgents[i]->Mx;
 
@@ -124,8 +125,8 @@ Coordinates EC::calcCOM_toroidal(void){
 
     for(i=0;i<uptoSu;i++){
 
-        if((toroidal==1)&&(surfaceAgents[i]->Mx>xMAX/2.0f)) X = surfaceAgents[i]->Mx-xMAX;
-        else if((toroidal==2)&&(surfaceAgents[i]->Mx<xMAX/2.0f)) X = surfaceAgents[i]->Mx+xMAX;
+        if((toroidal==1)&&(surfaceAgents[i]->Mx>worldP->gridXDimensions/2.0f)) X = surfaceAgents[i]->Mx-worldP->gridXDimensions;
+        else if((toroidal==2)&&(surfaceAgents[i]->Mx<worldP->gridXDimensions/2.0f)) X = surfaceAgents[i]->Mx+worldP->gridXDimensions;
         else X = surfaceAgents[i]->Mx;
 
         aveX+=X;
@@ -344,7 +345,7 @@ void EC::allocateProts(void) {
 void EC::NotchDelay(void){
     
     int i;
-    std::vector<float>::iterator T=NotchDelayArray.begin();
+    std::vector<float>::iterator T = NotchDelayArray.begin();
     actNotCurrent=0.0f;
     
     //add new activeNotch value to delay array
@@ -366,7 +367,6 @@ void EC::NotchDelay(void){
     for(i=0;i<actNot_VEGFR_lasts;i++){
         actNotCurrent=actNotCurrent+NotchLastsArray[i];
     }
-    
     
 }
 //-------------------------------------------------------------------------------------------------------------
@@ -608,10 +608,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
 EC::EC(World*  world){
 
 	worldP = world;
-
-
 	mutant = false;
-
 	filCONST = FIL_VARY; //LTK link add user config value link here
 
 	//wt values FLTK link
@@ -658,10 +655,7 @@ EC::EC(World*  world){
 		VEGFRlastsArray.push_back(0.0f);
 	}
 
-
-
 	VonNeighs = 0;
-
 }
 
 
@@ -720,7 +714,7 @@ EC::EC(World *world, Cell_Type *cell_type) {
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::set_initial_proteins() {
+[[deprecated]] void EC::set_initial_proteins() {
     // Create a vector containing the number of all memAgents that have a particular protein.
     std::vector<int> protein_counts;
     for (int i = 0; i <this->m_cell_type->proteins.size(); i++) {
@@ -801,8 +795,8 @@ void EC::distributeProteins() {
             if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL) {
                     protein_counts[i]++;
             } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE
-				&& !nodeAgent->junction
-				&& nodeAgent->vonNeu) {
+                && nodeAgent->vonNeu
+				&& !nodeAgent->junction) {
                     protein_counts[i]++;
             } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION
 				&& nodeAgent->junction) {
@@ -815,7 +809,7 @@ void EC::distributeProteins() {
 	std::vector<double> protein_totals_per_memAgent;
 
 	for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        double current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
+        double current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(worldP->get_max_delay());
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
 
@@ -953,14 +947,15 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 }
 
 /*****************************************************************************************
-*  Name:		add_to_neighbour_list
+*  Name:		attempt_neigh_list_addition
 *  Description: If a queried cell is not already included in this cell's list of neighbours,
 *  				then add it. This should only be called when a cell is determining junction
 *  				agents.
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::add_to_neighbour_list(EC* query_ec) {
+void EC::attempt_neigh_list_addition(EC* query_ec) {
+    assert(query_ec != this);
     bool cell_found = false;
 	// Check we don't already know about this cell.
     for (auto *current_ec : this->m_neigh_cells) {
@@ -969,9 +964,12 @@ void EC::add_to_neighbour_list(EC* query_ec) {
             break;
         }
     }
-	if (!cellIsNeighbour(query_ec) && !cell_found) {
+
+//    bool cellIsNeighbour = this->cellIsNeighbour(query_ec);
+
+	if (!cell_found) {
 		this->m_neigh_cells.push_back(query_ec);
-	}
+    }
 }
 
 /*****************************************************************************************
@@ -982,6 +980,22 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 
 std::vector<EC*>& EC::getNeighCellVector() {
     return this->m_neigh_cells;
+}
+
+/*****************************************************************************************
+*  Name:		removeDuplicateNeighCells()
+*  Description: Removes duplicate cells from m_neigh_cells.
+*  Returns:		std::vector<EC*>&
+******************************************************************************************/
+
+void EC::removeDuplicateNeighCells() {
+    // For some reason, cells are being added twice
+    // to the neigh cell vector. I can't work out
+    // why - so this is a temporary fix.
+    std::sort(this->m_neigh_cells.begin(), this->m_neigh_cells.end());
+    this->m_neigh_cells.erase(unique(this->m_neigh_cells.begin(),
+                                     this->m_neigh_cells.end()),
+                              this->m_neigh_cells.end() );
 }
 
 /*****************************************************************************************
@@ -1021,7 +1035,8 @@ double EC::get_cell_protein_level(const std::string& protein_name,
 
 /*****************************************************************************************
 *  Name:		set_cell_protein_level
-*  Description: If a cell possesses a protein, then set the amount that cell has of that protein.
+*  Description: If a cell possesses a protein, then set the amount that cell has of that protein
+*	  			at a given timestep.
 *  Returns:		float
 ******************************************************************************************/
 
@@ -1032,18 +1047,10 @@ void EC::set_cell_protein_level(const std::string& protein_name,
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
                 if (protein->get_name() == protein_name) {
-                    if (new_level < 0) {
-                        // Not sure if this can ever happen, but better to be safe.
-                        protein->set_cell_level(0, timestep_value);
-                    } else if (new_level < protein->get_min()) {
-                        protein->set_cell_level(protein->get_min(), timestep_value);
-                    } else if (new_level > protein->get_max() && protein->get_max() != -1) {
-                        // If the max is set to -1, then it has no limit.
-                        protein->set_cell_level(protein->get_max(), timestep_value);
-                    } else {
-                        protein->set_cell_level(new_level, timestep_value);
-                    }
-                }
+					auto assigned_level = protein_level_guard(protein, new_level);
+					protein->set_cell_level(assigned_level, timestep_value);
+					break; // Found the protein, so stop looking.
+				}
             }
         } else {
             throw std::invalid_argument(protein_name);
@@ -1053,6 +1060,45 @@ void EC::set_cell_protein_level(const std::string& protein_name,
         std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
         exit(1);
     }
+}
+
+
+
+void EC::set_cell_all_protein_levels(const std::string& protein_name, const double& new_level) {
+	for (auto protein : this->m_cell_type->proteins) {
+		if (protein->get_name() == protein_name) {
+			// Guards against invalid protein levels.
+			auto assigned_level = protein_level_guard(protein, new_level);
+			for (auto protein_level : protein->cell_levels) {
+				protein_level = assigned_level;
+			}
+			break; // Found the protein, so stop looking.
+		}
+	}
+}
+
+/*****************************************************************************************
+*  Name:		protein_level_guard
+*  Description: Checks a level against the mins and maxes of proteins, and returns a level
+*				commensurate with those boundaries. Otherwise, return the level straight away.
+*  Returns:		float
+******************************************************************************************/
+
+double EC::protein_level_guard(Protein *protein, const double& query_level) {
+	double tmp_level;
+	double protein_min = protein->get_min();
+	double protein_max = protein->get_max();
+
+	if (query_level < 0) {
+		tmp_level = 0;
+	} else if (protein_min != -1 && query_level < protein_min) {
+		tmp_level = protein_min;
+	} else if (protein_max != -1 && query_level > protein_max) {
+		tmp_level = protein_max;
+	} else {
+		return query_level;
+	}
+	return tmp_level;
 }
 
 /*****************************************************************************************
@@ -1326,8 +1372,8 @@ void EC::newNodes(void) {
                         memp->filPos = stp->start->filPos + 1;
 
 
-                    if (DSL_TESTING) {
-                        this->worldP->set_focal_adhesion(memp);
+                    if (DSL_ADHESIVENESS_TESTING) {
+                        this->worldP->set_focal_adhesion(memp); // TOM : TESTED
                     } else {
                         memp->FA = true;
                     }
@@ -1339,7 +1385,6 @@ void EC::newNodes(void) {
                     memp->neigh[0] = stp->end;
                     memp->neighs = 1;
                     stp->end->filNeigh = memp;
-
 
                     //start
                     for (j = 0; j < stp->start->neighs; j++) {
@@ -1598,10 +1643,10 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
     //wrap round for springs that cros x axis toroidal boundary-------------------------------------
     //displace N to outside of grid to calculate then create spring ni correct position
     if ((toroidal == true) && (N[0] > P[0])) {
-        N[0] -= xMAX;
+        N[0] -= worldP->gridXDimensions;
         flag = 1;
     } else if ((toroidal == true) && (N[0] < P[0])) {
-        N[0] += xMAX;
+        N[0] += worldP->gridXDimensions;
         flag = 2;
     }
     //-------------------------------------------------------------------------------------------------------------
@@ -1629,10 +1674,10 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
                         //have to do the extra -1 here as otherwise it rounds -0.5 to 0 instead of -1..
-                    else if (flag == 1) createSpringAgent((int) (x - 1) + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) (x - 1) + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 x += steps;
             }
@@ -1649,9 +1694,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 x -= steps;
             }
@@ -1668,9 +1713,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 y += steps;
             }
@@ -1686,9 +1731,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 y -= steps;
             }
@@ -1704,9 +1749,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX))createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions))createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 z += steps;
             } //cout<<"z2>z1 ";
@@ -1721,9 +1766,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 z -= steps;
             }
@@ -2008,6 +2053,10 @@ std::vector<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
 
+std::vector<ProtrusionType*>& EC::getProtrusionTypeList() {
+	return this->m_protrusion_types;
+}
+
 /*****************************************************************************************
 *  Name:		initialiseProteinMemAgentBuffer
 *  Description: Goes over all proteins owned by a cell, then adds a key-value pair corresponding to
@@ -2249,4 +2298,42 @@ std::vector<int>& EC::get_creation_times() {
 
 void EC::add_creation_time(int creation_time) {
     this->m_filopodia_creation_times.push_back(creation_time);
+}
+
+double EC::calc_adjacent_species_level(const std::string& species_name,
+								   const bool memAgentODEs,
+								   const bool getsAverage,
+								   const unsigned int timestep) {
+	double level = 0.0;
+	for (auto *neighbour : this->getNeighCellVector()) {
+		if (memAgentODEs) {
+			auto map = neighbour->getProteinStartBuffer();
+			level += map[species_name];
+		} else {
+			level += neighbour->get_cell_protein_level(species_name,0);
+		}
+	}
+	if (getsAverage && this->getNeighCellVector().empty()) {
+		return 0.0;
+	} else if (getsAverage && !this->getNeighCellVector().empty() ) {
+		return level / (float) this->getNeighCellVector().size();
+	} else {
+		return level;
+	}
+}
+
+int EC::get_max_fils() {
+	return m_max_filopodia;
+}
+
+int EC::get_current_fils() {
+	return m_current_filopodia;
+}
+
+void EC::decrement_current_fils() {
+	m_current_filopodia--;
+}
+
+void EC::increment_current_fils() {
+	m_current_filopodia++;
 }

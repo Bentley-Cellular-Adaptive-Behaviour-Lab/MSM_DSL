@@ -2,7 +2,7 @@
 // Created by Tom on 20/09/2021.
 //
 
-#include <assert.h>
+#include <cassert>
 
 #include "cytoprotein.h"
 #include "protrusion.h"
@@ -20,7 +20,7 @@
 #include "../../core/spring.h"
 #include "../../core/world.h"
 
-// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
+// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHAPE BEHAVIOUR FUNCTIONS.
 
 // RETRACTION BEHAVIOUR?
 
@@ -462,9 +462,6 @@ bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMe
     for (auto *protein : memAgent->owned_proteins) {
         transferProtein(memAgent, neighbourMemAgent, protein->get_name());
     }
-    for (auto *cytoprotein : memAgent->getCytoproteins()) {
-        transferProtein(memAgent, neighbourMemAgent, cytoprotein->getName());
-    }
 
     /// Analysis of filopodia done here.
     if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
@@ -535,10 +532,6 @@ bool Protrusion::retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAge
     /// Send all proteins that this agent currently has back to its neighbour
     for (auto *protein : memAgent->owned_proteins) {
         this->transferProtein(memAgent, neighbourMemAgent, protein->get_name());
-    }
-
-    for (auto *cytoprotein : memAgent->getCytoproteins()) {
-        this->transferProtein(memAgent, neighbourMemAgent, cytoprotein->getName());
     }
 
     neighbourMemAgent->plusSite = nullptr;
@@ -659,39 +652,21 @@ bool Protrusion::deleteOldGridRefs(World *world, Spring *neighStp) {
     return springFound;
 }
 
-void Protrusion::transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& cytoproteinName) {
-    /// Transfers all of a specified cytoprotein from one memAgent to another.
-    /// Usually called before deletion of the source agent.
-    float sourceAmount = sourceMemAgent->get_cytoprotein_level(cytoproteinName);
-    float targetAmount = targetMemAgent->get_cytoprotein_level(cytoproteinName);
-
-    targetMemAgent->set_cytoprotein_level(cytoproteinName, targetAmount + sourceAmount);
-    sourceMemAgent->set_cytoprotein_level(cytoproteinName, 0);
-}
 
 void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& proteinName) {
     /// Transfers all of a specified protein from one memAgent to another.
     /// Usually called before deletion of the source agent.
-    float sourceAmount = sourceMemAgent->get_memAgent_current_level(proteinName);
-    float targetAmount = targetMemAgent->get_cytoprotein_level(proteinName);
+    double sourceAmount = sourceMemAgent->get_memAgent_current_level(proteinName);
+    double targetAmount = targetMemAgent->get_memAgent_current_level(proteinName);
 
-    targetMemAgent->set_cytoprotein_level(proteinName, targetAmount + sourceAmount);
-    sourceMemAgent->set_cytoprotein_level(proteinName, 0);
-}
-
-void Protrusion::updateCellCytoproteinLevel(EC *cell, const std::string& cytoproteinName,const float& proteinDelta) {
-    float currentCellLevel = cell->getCellCytoproteinLevel(cytoproteinName);
-    cell->setCellCytoproteinLevel(cytoproteinName, currentCellLevel + proteinDelta);
+    targetMemAgent->set_protein_current_level(proteinName, targetAmount + sourceAmount);
+    sourceMemAgent->set_protein_current_level(proteinName, 0);
 }
 
 void Protrusion::populateProteinList(MemAgent *memAgent) {
     Cell_Type *cellType = this->m_cell->m_cell_type;
     for (auto *protein : cellType->proteins) {
     }
-}
-
-void Protrusion::populateCytoproteinList(MemAgent *memAgent) {
-
 }
 
 bool Protrusion::proteinIsAllowed(const std::string& proteinName) {
@@ -762,7 +737,7 @@ void Protrusion::releaseCytoProtein(MemAgent *memAgent) {
 
     // Update the protrusion's used level of CytoProtein -> scale the amount required by the distance being travelled.
     auto cytoproteinLevelChange = (newDist - oldDist) * requiredCytoProteinLevel;
-    updateCellCytoproteinLevel(cell,requiredCytoProteinName, cytoproteinLevelChange);
+	cell->set_cell_protein_level(requiredCytoProteinName, cytoproteinLevelChange, 0);
 }
 
 void Protrusion::calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]) {

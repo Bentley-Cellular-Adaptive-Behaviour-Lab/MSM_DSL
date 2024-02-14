@@ -5,6 +5,7 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <utility>
 
 #include "cellType.h"
 #include "tissue.h"
@@ -19,7 +20,7 @@
 ******************************************************************************************/
 
 std::string Tissue_Type::get_name() {
-    return std::string();
+    return {};
 }
 
 /*****************************************************************************************
@@ -44,6 +45,24 @@ Tissue_Type::Tissue_Type(Tissue_Container *tissue_container,
     m_name = name;
     m_tissue_configuration = tissue_configuration;
     m_cell_type = new Cell_Type(*cell_type);
+}
+
+/*****************************************************************************************
+*  Name:		set_runs_cpm
+*  Description:	Sets whether a tissue type can run the CPM.
+*  Returns:		void
+******************************************************************************************/
+void Tissue_Type::set_runs_cpm(const bool runs_cpm) {
+	this->m_runs_cpm = runs_cpm;
+}
+
+/*****************************************************************************************
+*  Name:		runs_cpm
+*  Description:	Reports whether a tissue type can run the CPM.
+*  Returns:		bool
+******************************************************************************************/
+bool Tissue_Type::runs_cpm() const  {
+	return this->m_runs_cpm;
 }
 
 // Cylindrical //
@@ -74,7 +93,7 @@ int Tissue_Type_Cylindrical::get_tissue_configuration() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Cylindrical::get_length_in_cells() {
+int Tissue_Type_Cylindrical::get_length_in_cells() const {
     return this->m_cylinder_length_in_cells;
 }
 
@@ -94,7 +113,7 @@ int Tissue_Type_Cylindrical::get_cells_per_cross_section() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Cylindrical::get_total_radius() {
+int Tissue_Type_Cylindrical::get_total_radius() const {
     return this->m_cylinder_total_radius;
 }
 
@@ -156,7 +175,7 @@ int Tissue_Type_Flat::get_tissue_configuration() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Flat::get_height_in_cells() {
+int Tissue_Type_Flat::get_height_in_cells() const {
     return this->m_flat_height_in_cells;
 }
 
@@ -166,7 +185,7 @@ int Tissue_Type_Flat::get_height_in_cells() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Flat::get_width_in_cells() {
+int Tissue_Type_Flat::get_width_in_cells() const {
     return this->m_flat_width_in_cells;
 }
 
@@ -193,5 +212,4 @@ Tissue_Type_Flat::Tissue_Type_Flat(Tissue_Container *tissue_container,
         std::cout << "Invalid tissue configuration called (flat) for specified configuration: "
                   << tissue_configuration << ". Exception type: " << e;
     }
-
 }

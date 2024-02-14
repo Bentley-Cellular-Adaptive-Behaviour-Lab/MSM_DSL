@@ -8,7 +8,11 @@
 #include "clusterParams.h"
 #include "dsl_species_gen.h"
 
+EC* CURRENT_CELL;
+
 // Created using: Signalling //
+
+
 ODEs::ODEs() {
 	this->set_ODE_TYPE();
 }
@@ -22,182 +26,99 @@ int ODEs::get_ODE_TYPE() const {
 }
 
 void ODEs::check_cell_ODEs(EC *ec) {
-	assert(this->get_ODE_TYPE() != -1);
-	if (ec->m_cell_type->m_name == "Endothelial") {
-		Endothelial_run_cell_ODEs(ec);
-	}
 }
 
 void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
-	assert(this->get_ODE_TYPE() != -1);
- 	if (cell_type_name == "Endothelial") {
- 		Endothelial_run_memAgent_ODEs(memAgent);
- 	}
 }
 
 void ODEs::check_cell_only_ODEs(EC *ec) {
 	assert(this->get_ODE_TYPE() != -1);
-	if (ec->m_cell_type->m_name == "Endothelial") {
-		Endothelial_run_cell_only_ODEs(ec);
+	if (ec->m_cell_type->m_name == "EndothelialType") {
+		EndothelialType_run_cell_only_ODEs(ec);
 	}
 }
 
 
- void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
- // Species Definitions
- 	double DLL4_NOTCH = x[0];
- 	double VEGFR = x[1];
- 	double VEGF_VEGFR = x[2];
- 	double DLL4 = x[3];
- 	double VEGF = x[4];
- 	double NOTCH = x[5];
- 	double adjacent_DLL4 = x[6];
- 	double adjacent_NOTCH = x[7];
- // Parameter Definitions
- 	double VEGFR_INHIB = calc_VEGFR_INHIB_rate(DLL4_NOTCH);
- 	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR);
- 	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
- 	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
- 	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
- 	double VEGFR_PRODUCTION = calc_VEGFR_PRODUCTION_rate();
- 	double VEGF_VEGFR_DEGRADATION = calc_VEGF_VEGFR_DEGRADATION_rate(VEGF_VEGFR);
- 	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4, adjacent_NOTCH);
- 	double NOTCH_PRODUCTION = calc_NOTCH_PRODUCTION_rate();
- // ODE Definitions
- 	dxdt[0] = 0;
- 	dxdt[1] = +(VEGFR_PRODUCTION)-(VEGFR_INHIB);
- 	dxdt[2] = -(VEGF_VEGFR_DEGRADATION);
- 	dxdt[3] = -(DLL4_UPTAKE)+(DLL4_UPREG);
- 	dxdt[4] = 0;
- 	dxdt[5] = +(NOTCH_PRODUCTION);
- 	dxdt[6] = 0;
- 	dxdt[7] = 0;
- }
-
- void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
- 	Endothelial_cell_ode_states states;
- 	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
-
- 	states[0] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
- 	states[1] = ec->get_cell_protein_level("VEGFR", 0);
- 	states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
- 	states[3] = ec->get_cell_protein_level("DLL4", 0);
- 	states[5] = ec->get_cell_protein_level("NOTCH", 0);
- 	states[6] = calc_DLL4_adjacent_level(ec, false);
- 	states[7] = calc_NOTCH_adjacent_level(ec, false);
-
- 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
- 	controlled_stepper_type controlled_stepper;
- 	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
-
- 	ec->set_cell_protein_level("DLL4_NOTCH", states[0], 0);
- 	ec->set_cell_protein_level("VEGFR", states[1], 0);
- 	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
- 	ec->set_cell_protein_level("DLL4", states[3], 0);
- }
-
-void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
-// Species Definitions
-	double DLL4_NOTCH = x[0];
-	double VEGFR = x[1];
-	double VEGF_VEGFR = x[2];
-	double DLL4 = x[3];
-	double VEGF = x[4];
-	double NOTCH = x[5];
-	double adjacent_DLL4 = x[6];
-	double adjacent_NOTCH = x[7];
-// Parameter Definitions
-	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
-	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
-// ODE Definitions
-	dxdt[0] = +(DLL4_NOTCH_ON)*1;
-	dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-	dxdt[2] = +(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-	dxdt[3] = -(DLL4_NOTCH_ON)*1;
-	dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-	dxdt[5] = -(DLL4_NOTCH_ON)*1;
-	dxdt[6] = 0;
-	dxdt[7] = 0;
+void ODEs::EndothelialType_cell_only_system(const EndothelialType_cell_only_ode_states &x, EndothelialType_cell_only_ode_states &dxdt, double t) {
+	// Species Definitions
+	double NOTCH_9 = x[0];
+	double DLL4_9 = x[1];
+	double DLL4_NOTCH_9 = x[2];
+	double VEGF_MEAN_9 = x[3];
+	double VEGFR_9 = x[4];
+	double VEGF_VEGFR_9 = x[5];
+	double SEMA3A_MEAN_9 = x[6];
+	double PLEXIND1_9 = x[7];
+	double SEMA3A_PLEXIND1_9 = x[8];
+	double DLL4_MEAN_9 = x[9];
+	double NOTCH_MEAN_9 = x[10];
+	double VEGF_VEGFR_0 = x[11];
+	double DLL4_NOTCH_0 = x[12];
+	// Parameter Definitions
+	double BOUND_PLEXIN_9 = calc_BOUND_PLEXIN_rate(SEMA3A_MEAN_9, PLEXIND1_9, false);
+	double DLL4_NOTCH_ON_9 = calc_DLL4_NOTCH_ON_rate(DLL4_MEAN_9, NOTCH_9, false);
+	double VEGF_VEGFR_ON_9 = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN_9, VEGFR_9, false);
+	double VEGF_VEGFR_OFF_9 = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR_9, false);
+	double SEMA_PLEXIN_ON_9 = calc_SEMA_PLEXIN_ON_rate(SEMA3A_MEAN_9, PLEXIND1_9, false);
+	double SEMA_PLEXIN_OFF_9 = calc_SEMA_PLEXIN_OFF_rate(SEMA3A_PLEXIND1_9, false);
+	double DEG_RATE_9 = calc_DEG_RATE_rate(false);
+	double PROD_RATE_9 = calc_PROD_RATE_rate(false);
+	double DLL4_DEG_9 = calc_DLL4_DEG_rate(DLL4_9, DEG_RATE_9, false);
+	double DLL4_UPTAKE_9 = calc_DLL4_UPTAKE_rate(DLL4_9, NOTCH_MEAN_9, false);
+	double DLL4_NOTCH_DEG_9 = calc_DLL4_NOTCH_DEG_rate(DLL4_NOTCH_9, DEG_RATE_9, false);
+	double VEGFR_DEG_9 = calc_VEGFR_DEG_rate(VEGFR_9, false);
+	double VEGF_VEGFR2_DEG_9 = calc_VEGF_VEGFR2_DEG_rate(VEGF_VEGFR_9, DEG_RATE_9, false);
+	double PLEXIND1_DEG_9 = calc_PLEXIND1_DEG_rate(PLEXIND1_9, DEG_RATE_9, false);
+	double SEMA3A_PLEXIND1_DEG_9 = calc_SEMA3A_PLEXIND1_DEG_rate(SEMA3A_PLEXIND1_9, DEG_RATE_9, false);
+	double NOTCH_DEG_9 = calc_NOTCH_DEG_rate(NOTCH_9, DEG_RATE_9, false);
+	double DLL4_REMOVAL_9 = calc_DLL4_REMOVAL_rate(DLL4_UPTAKE_9, DLL4_DEG_9, false);
+	double DLL4_UPREG_0 = calc_DLL4_UPREG_rate(VEGF_VEGFR_0, false);
+	double VEGFR_INHIB_VIA_NOTCH_0 = calc_VEGFR_INHIB_VIA_NOTCH_rate(DLL4_NOTCH_0, false);
+	// ODE Definitions
+	dxdt[0] = +(PROD_RATE_9)-(NOTCH_DEG_9)-(DLL4_NOTCH_ON_9)*1; // NOTCH_9
+	dxdt[1] = -(DLL4_REMOVAL_9)-(DLL4_NOTCH_ON_9)*1+(DLL4_UPREG_0); // DLL4_9
+	dxdt[2] = -(DLL4_NOTCH_DEG_9)+(DLL4_NOTCH_ON_9)*1; // DLL4_NOTCH_9
+	dxdt[3] = 0; // VEGF_MEAN_9
+	dxdt[4] = +(PROD_RATE_9)-(VEGFR_DEG_9)-(VEGF_VEGFR_ON_9)*1+(VEGF_VEGFR_OFF_9)*1-(VEGFR_INHIB_VIA_NOTCH_0); // VEGFR_9
+	dxdt[5] = -(VEGF_VEGFR2_DEG_9)+(VEGF_VEGFR_ON_9)*1-(VEGF_VEGFR_OFF_9)*1-(BOUND_PLEXIN_9); // VEGF_VEGFR_9
+	dxdt[6] = 0; // SEMA3A_MEAN_9
+	dxdt[7] = +(PROD_RATE_9)-(PLEXIND1_DEG_9)-(SEMA_PLEXIN_ON_9)*1+(SEMA_PLEXIN_OFF_9)*1; // PLEXIND1_9
+	dxdt[8] = -(SEMA3A_PLEXIND1_DEG_9)+(SEMA_PLEXIN_ON_9)*1-(SEMA_PLEXIN_OFF_9)*1; // SEMA3A_PLEXIND1_9
+	dxdt[9] = 0; // DLL4_MEAN_9
+	dxdt[10] = 0; // NOTCH_MEAN_9
+	dxdt[11] = 0; // VEGF_VEGFR_0
+	dxdt[12] = 0; // DLL4_NOTCH_0
 }
 
-void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
-	Endothelial_memAgent_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+void ODEs::EndothelialType_run_cell_only_ODEs(EC *ec) {
+	CURRENT_CELL = ec;
+	EndothelialType_cell_only_ode_states states;
+	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_only_ode_states> error_stepper_type;
+	auto agents = (int) ec->nodeAgents.size();
 
-	states[4] = memAgent->get_environment_level("VEGF");
-	states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-	states[1] = memAgent->get_memAgent_current_level("VEGFR");
-	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-	states[3] = memAgent->get_memAgent_current_level("DLL4");
-	states[5] = memAgent->get_memAgent_current_level("NOTCH");
-	states[6] = memAgent->get_junction_protein_level("DLL4");
-	states[7] = memAgent->get_junction_protein_level("NOTCH");
+	states[0] = ec->get_cell_protein_level("NOTCH", 9);  //NOTCH_1
+	states[1] = ec->get_cell_protein_level("DLL4", 9);  //DLL4_1
+	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 9);  //DLL4_NOTCH_1
+	states[4] = ec->get_cell_protein_level("VEGFR", 9);  //VEGFR_1
+	states[5] = ec->get_cell_protein_level("VEGF_VEGFR", 9);  //VEGF_VEGFR_1
+	states[7] = ec->get_cell_protein_level("PLEXIND1", 9);  //PLEXIND1_1
+	states[8] = ec->get_cell_protein_level("SEMA3A_PLEXIND1", 9);  //SEMA3A_PLEXIND1_1
+	states[11] = ec->get_cell_protein_level("VEGF_VEGFR", 0);  //VEGF_VEGFR_10
+	states[12] = ec->get_cell_protein_level("DLL4_NOTCH", 0);  //DLL4_NOTCH_10
+	states[3] = ec->get_env_protein_level("VEGF") / agents;
+	states[6] = ec->get_env_protein_level("SEMA3A") / agents;
+	states[9] = ec->calc_adjacent_species_level("DLL4", false, true, 9);
+	states[10] = ec->calc_adjacent_species_level("NOTCH", false, true, 9);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
+	integrate_adaptive(controlled_stepper, EndothelialType_cell_only_system, states, 0.0, 1.0, 0.1);
 
-	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[0]);
-	memAgent->set_protein_buffer_level("VEGFR", states[1]);
-	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
-	memAgent->set_protein_buffer_level("DLL4", states[3]);
-	memAgent->set_protein_buffer_level("NOTCH", states[5]);
+	ec->set_cell_protein_level("NOTCH", states[0], 10);
+	ec->set_cell_protein_level("DLL4", states[1], 10);
+	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 10);
+	ec->set_cell_protein_level("VEGFR", states[4], 10);
+	ec->set_cell_protein_level("VEGF_VEGFR", states[5], 10);
+	ec->set_cell_protein_level("PLEXIND1", states[7], 10);
+	ec->set_cell_protein_level("SEMA3A_PLEXIND1", states[8], 10);
 }
-
-
-
-  void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
-  // Species Definitions
-  	double VEGFR = x[0];
-  	double VEGF_VEGFR = x[1];
-  	double DLL4 = x[2];
-  	double NOTCH = x[3];
-  	double DLL4_NOTCH = x[4];
-  	double VEGF = x[5];
-  	double adjacent_DLL4 = x[6];
-  	double adjacent_NOTCH = x[7];
-  // Parameter Definitions
-  	double VEGFR_INHIB = calc_VEGFR_INHIB_rate(DLL4_NOTCH);
-  	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR);
-  	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
-  	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-  	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
-  	double VEGFR_PRODUCTION = calc_VEGFR_PRODUCTION_rate();
-  	double VEGF_VEGFR_DEGRADATION = calc_VEGF_VEGFR_DEGRADATION_rate(VEGF_VEGFR);
-  	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4, adjacent_NOTCH);
-  	double NOTCH_PRODUCTION = calc_NOTCH_PRODUCTION_rate();
-  // ODE Definitions
-  	dxdt[0] = +(VEGFR_PRODUCTION)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB);
-  	dxdt[1] = -(VEGF_VEGFR_DEGRADATION)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-  	dxdt[2] = -(DLL4_UPTAKE)-(DLL4_NOTCH_ON)*1+(DLL4_UPREG);
-  	dxdt[3] = +(NOTCH_PRODUCTION)-(DLL4_NOTCH_ON)*1;
-  	dxdt[4] = +(DLL4_NOTCH_ON)*1;
-  	dxdt[5] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-  	dxdt[6] = 0;
-  	dxdt[7] = 0;
-  }
-
-  void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
-  	Endothelial_cell_ode_states states;
-  	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
-  	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
-  	states[0] = ec->get_cell_protein_level("VEGFR", 0);
-  	states[1] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-  	states[2] = ec->get_cell_protein_level("DLL4", 0);
-  	states[3] = ec->get_cell_protein_level("NOTCH", 0);
-  	states[4] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-  	states[5] = ec->get_env_protein_level("VEGF") / agents;
-  	states[6] = calc_DLL4_adjacent_level(ec, false);
-  	states[7] = calc_NOTCH_adjacent_level(ec, false);
-
-  	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-  	controlled_stepper_type controlled_stepper;
-  	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
-
-  	ec->set_cell_protein_level("DLL4_NOTCH", states[0], 0);
-  	ec->set_cell_protein_level("VEGFR", states[1], 0);
-  	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
-  	ec->set_cell_protein_level("DLL4", states[3], 0);
-  	ec->set_cell_protein_level("NOTCH", states[5], 0);
-  }

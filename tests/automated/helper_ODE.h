@@ -19,7 +19,7 @@ class Tissue;
 class Tissue_Container;
 class Tissue_Monolayer;
 class World;
-class World_Container;
+class WorldContainer;
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
 
@@ -29,14 +29,14 @@ protected:
 	void TearDown() override;
 public:
 	World *world;
-	World_Container *worldContainer;
+	WorldContainer *worldContainer;
 
 	MemAgent *memAgent1;
 	MemAgent *memAgent2;
 	MemAgent *memAgent3;
 
 	void addWorld(World *world);
-	void addWorldContainer(World_Container *worldContainer);
+	void addWorldContainer(WorldContainer *worldContainer);
 	void createMemAgents(EC *dummyCell, World *world);
 	void setupEnvironment();
 	void runODE(MemAgent *memAgent);
@@ -50,7 +50,7 @@ protected:
 	void TearDown() override;
 public:
 	World *world;
-	World_Container *worldContainer;
+	WorldContainer *worldContainer;
 
 	MemAgent *m_memAgent1;
 	MemAgent *m_memAgent2;
@@ -70,7 +70,7 @@ public:
     double m_memAgent4_B = -1; // Log the level of B at MemAgent 4 after one timestep.
 
     void addWorld(World *crossCellWorld);
-	void addWorldContainer(World_Container *JunctionWorldContainer);
+	void addWorldContainer(WorldContainer *JunctionWorldContainer);
 	void createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world);
 	void setupEnvironment();
 	static void runODE(MemAgent *memAgent);
@@ -87,7 +87,7 @@ public:
     typedef boost::array<double, 5> multiAgent_ode_states;
 
     World *world;
-	World_Container *worldContainer;
+	WorldContainer *worldContainer;
 
 	// Scenario 1.
 
@@ -103,7 +103,7 @@ public:
 	MemAgent *memAgent7;
 
 	void addWorld(World *multiNeighbourWorld);
-	void addWorldContainer(World_Container *multiNeighbourWorldContainer);
+	void addWorldContainer(WorldContainer *multiNeighbourWorldContainer);
 	void createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world);
 	void setupEnvironment();
 	static void runODE(MemAgent *memAgent);
@@ -122,11 +122,11 @@ public:
     typedef boost::array<double, 4> TranscriptionDelayTest_ode_states;
 
     World *world;
-    World_Container *worldContainer;
+    WorldContainer *worldContainer;
     Tissue_Container *tissueContainer;
     Tissue_Monolayer *tissueMonolayer;
 
-    void addWorldContainer(World_Container *w_container);
+    void addWorldContainer(WorldContainer *w_container);
     void addWorld(World *world);
     void setupCell();
     void runCellODEs(EC *ec);
@@ -298,7 +298,6 @@ class VenkatramanMemAgentTest : public ::testing::Test {
 private:
 	typedef boost::array<double, 11> Endothelial_cell_ode_states;
 	typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
-
 protected:
 	void SetUp() override;
 	void TearDown() override;
@@ -366,6 +365,52 @@ public:
 	static double calc_NOTCH_adjacent_level(EC *ec);
 };
 
+class FilopodiaExtensionTest : public ::testing::Test {
+private:
+	// Member variable.
+	World *m_world;
+	EC *m_cellAgent;
+	Tissue_Container *m_tissueContainer;
+protected:
+	void SetUp() override;
+	void TearDown() override;
+public:
 
+	// Set-up Functions.
+	void createEnvironment();
+	void createCell();
+
+	// Utility functions.
+	MemAgent *getCentreMemAgent();
+	float calcMSMProb(MemAgent* targetMemAgent);
+	float calcDSLProb(MemAgent* targetMemAgent);
+
+};
+
+class DSL_FilopodiaExtensionTest : public ::testing::Test {
+private:
+	// Member variable.
+	World *m_world;
+	EC *m_cellAgent;
+	Tissue_Container *m_tissueContainer;
+protected:
+	void SetUp() override;
+	void TearDown() override;
+public:
+
+	// Set-up Functions.
+	void createEnvironment();
+	void createCell();
+
+	// Utility functions.
+	MemAgent *getCentreMemAgent();
+	double calcMSMProb(MemAgent* targetMemAgent);
+	double calcDSLProb(MemAgent* targetMemAgent);
+	double calc_ACTIVE_VEGFR_rate(double VEGF_MEAN,
+								  double VEGFR2_NORM,
+								  const bool memAgent);
+	double calc_VEGFR2_LIMITER_rate(double VEGFR2,
+									bool memAgent);
+};
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_ODE_H

@@ -6,6 +6,8 @@
 #define SRC_SPRINGAGENT_TISSUETYPE_H
 
 class Tissue_Type {
+private:
+	bool m_runs_cpm = false;
 public:
     std::string m_name;
     int m_tissue_configuration;
@@ -16,6 +18,9 @@ public:
     virtual int get_tissue_configuration();
 
     Tissue_Type(Tissue_Container *tissue_container, std::string name, Cell_Type *cell_type, int tissue_configuration);
+
+	void set_runs_cpm(const bool runs_cpm);
+	bool runs_cpm() const;
 };
 
 class Tissue_Type_Cylindrical : public Tissue_Type {
@@ -26,9 +31,9 @@ public:
 
     std::string get_name() override;
     int get_tissue_configuration() override;
-    int get_length_in_cells();
+    int get_length_in_cells() const;
     int get_cells_per_cross_section();
-    int get_total_radius();
+    int get_total_radius() const;
     Tissue_Type_Cylindrical(Tissue_Container *tissue_container,
                             std::string name,
                             Cell_Type *cell_type,
@@ -52,8 +57,8 @@ public:
 
     std::string get_name();
     int get_tissue_configuration();
-    int get_height_in_cells();
-    int get_width_in_cells();
+    int get_height_in_cells() const;
+    int get_width_in_cells() const;
 };
 
 #endif //SRC_SPRINGAGENT_TISSUETYPE_H

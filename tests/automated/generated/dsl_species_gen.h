@@ -11,6 +11,10 @@
 class MemAgent;
 class EC;
 
+// Extern variable for tracking the current
+// cell being used in DSL processes.
+extern EC* CURRENT_CELL;
+
 namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 6> Endothelial_memAgent_ode_states;

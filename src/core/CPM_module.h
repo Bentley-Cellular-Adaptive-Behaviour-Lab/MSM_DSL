@@ -15,6 +15,7 @@
 #define J_SS  4///8
 #define J_MC  16///21
 
+class EC;
 class MedAgent;
 class MemAgent;
 class World;
@@ -43,12 +44,19 @@ public:
     float calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_med);
     float calc_Jsum_individual(MemAgent * individual, MedAgent* medInd);
     void calc_Cell_areas(void);
+	void calc_Cell_areas_DSL(void);
     void createMedium(void);
     void replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, MedAgent* replacer_med, MedAgent* replaced_med);
     int connectivity(MemAgent* replaced, MemAgent* replacer);
     void update_displaced_surfaceAgents(MemAgent* replaced_mem, MemAgent* replacer_mem);
     void clearUpSmallSeparatedBitsOfCells(void);
     bool move_fil_base(MemAgent* mp);
+
+	// DSL shuffling function.
+	float calc_Jsum_individual_DSL(MemAgent * individual, MedAgent* medInd);
+
+	// Tissue generator functions.
+	bool adhesion_condition_check(MemAgent *memAgent, bool useDiffAdNeighCell);
 };
 
 

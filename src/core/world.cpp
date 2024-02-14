@@ -2,8 +2,10 @@
 // Created by Tom on 12/11/2020.
 //
 
+#include <algorithm>
 #include <unordered_map>
 #include <random>
+#include <sys/stat.h>
 
 #include "CPM_module.h"
 #include "contact.h"
@@ -24,8 +26,8 @@
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueType.h"
 #include "../dsl/tissue/tissueContainer.h"
-#include "../dsl/utils/logger.h"
 #include "../dsl/utils/utils.h"
 #include "../dsl/world/worldContainer.h"
 
@@ -94,6 +96,7 @@ void write_time_to_outfile(const std::string &basicString, const int pattern);
 
 //   scale_ProtLevels_to_CellSize();
 //}
+
 World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s)
 {
 #ifdef _MSC_VER
@@ -222,15 +225,15 @@ World::World() {
     gridYDimensions = yMAX;
     gridZDimensions = zMAX;
 
-    std::cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << std::endl;
+    std::cout << "xMax: " << this->gridXDimensions << " yMax: " << this->gridYDimensions << " zMax: " << this->gridZDimensions << std::endl;
 
     int i, j;
-    grid = new ppLocation[xMAX];
-    for ( int i = 0; i < xMAX; i++)
+    grid = new ppLocation[this->gridXDimensions];
+    for ( int i = 0; i < this->gridXDimensions; i++)
     {
-        grid[i] = new pLocation[yMAX];
-        for (int j = 0; j < yMAX; j++)
-            grid[i][j] = new Location[zMAX];
+        grid[i] = new pLocation[this->gridYDimensions];
+        for (int j = 0; j < this->gridYDimensions; j++)
+            grid[i][j] = new Location[this->gridZDimensions];
     }
 
     VEGFgradient = GRADIENT;
@@ -248,11 +251,12 @@ World::World() {
     std::cout << "Creation timestep complete." << std::endl;
 }
 
-World::World(const int& grid_xMax,
-             const int& grid_yMax,
-             const int& grid_zMax,
-             const double& base_permittivity,
-             const std::vector<double>& paramValues) {
+World::World(const int grid_xMax,
+             const int grid_yMax,
+             const int grid_zMax,
+             const float base_permittivity,
+			 const float base_solidness,
+			 const std::vector<double>& paramValues) {
 #ifdef __GNUC__
     if (TESTING) {
         srand(100);
@@ -276,6 +280,7 @@ World::World(const int& grid_xMax,
 //    createLogger();
 
     this->fillParamVector(paramValues);
+	unsigned int paramSize = paramValues.size();
 
     Pause = 1;
     timeStep = -1;
@@ -306,7 +311,7 @@ World::World(const int& grid_xMax,
               << "Z: " << gridZDimensions << "\n";
 
     std::cout << "Placing environment agents..." << "\n";
-    create_new_environment(base_permittivity);
+    create_new_environment(base_permittivity, base_solidness);
     std::cout << "Environment created." << "\n";
 
     std::cout << "Setting up ODE systems..." << "\n";
@@ -329,9 +334,9 @@ World::~World(void) {
     destroyWorld();
     dataFile.close();
 
-    for(int i = 0; i < xMAX; i++)
+    for(int i = 0; i < this->gridXDimensions; i++)
     {
-        for (int j = 0; j < yMAX; j++)
+        for (int j = 0; j < this->gridYDimensions; j++)
         {
             delete[] grid[i][j];
         }
@@ -1088,8 +1093,8 @@ void World::getCellNeighbours(void) {
 
                     //-------------------------------
                     //toroidal only X
-                    if (m >= xMAX) m = 0;
-                    if (m < 0) m = xMAX - 1;
+                    if (m >= this->gridXDimensions) m = 0;
+                    if (m < 0) m = this->gridXDimensions - 1;
                     //-------------------------------
 
                     if (insideWorld(m, n, p) == true) {
@@ -1261,7 +1266,7 @@ std::vector<std::vector<std::vector<float>>> World::getFilopodiaBaseLocationsAnd
 
 std::vector< std::vector< std::vector < std::array<int,2> > > > World::getGridMapOfFilopodiaMovement()
 {
-    std::vector < std::vector < std::vector < std::array<int, 2> > > > retval(xMAX, std::vector < std::vector < std::array<int, 2> > >(yMAX, std::vector < std::array<int, 2> >(zMAX, {0,0})));
+    std::vector < std::vector < std::vector < std::array<int, 2> > > > retval(this->gridXDimensions, std::vector < std::vector < std::array<int, 2> > >(yMAX, std::vector < std::array<int, 2> >(zMAX, {0,0})));
 
     int totalExtenstions = 0;
     int totalRetractions = 0;
@@ -1298,11 +1303,11 @@ std::vector< std::vector<float> > World::getGridSiteData()
 //        }
 //    }
 
-    for (int x = 0; x < xMAX; x++)
+    for (int x = 0; x < this->gridXDimensions; x++)
     {
-        for (int y = 0; y < yMAX; y++)
+        for (int y = 0; y < this->gridYDimensions; y++)
         {
-            for (int z = 0; z < zMAX; z++)
+            for (int z = 0; z < this->gridZDimensions; z++)
             {
                 std::vector<float> gridSiteValues;
                 gridSiteValues.push_back(x);
@@ -1413,14 +1418,14 @@ std::vector< std::vector<float> > World::getGridSiteData()
 *  Returns:		void
 ******************************************************************************************/
 
-void World::create_new_environment(float base_permittivity) {
+void World::create_new_environment(const float base_adhesiveness, const float base_solidness) {
     Env* ep;
     //Create environment objects and place on grid.
     for (int x = 0; x < gridXDimensions; x++) {
         for (int y = 0; y < gridYDimensions; y++) {
             for (int z = 0; z < gridZDimensions; z++) {
                 if ((grid[x][y][z].getType() == const_E) && (grid[x][y][z].getEid() == NULL)) {
-                    create_env_agent(x, y, z, base_permittivity);
+                    create_env_agent(x, y, z, base_adhesiveness, base_solidness);
                 }
             }
         }
@@ -1434,7 +1439,11 @@ void World::create_new_environment(float base_permittivity) {
 *  Returns:		void
 ******************************************************************************************/
 
-void World::create_env_agent(int x, int y, int z, float base_permittivity) {
+void World::create_env_agent(const int x,
+							 const int y,
+							 const int z,
+							 const float base_permittivity,
+							 const float base_solidness) {
 
 	if (grid[x][y][z].getEid()!=NULL) {
 		std::cout<<"Attempted to assign an environment agent twice."<<std::endl;
@@ -1446,7 +1455,8 @@ void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 	ep->Ey=y;
 	ep->Ez=z;
 
-	ep->adhesiveness = base_permittivity;
+	ep->m_adhesiveness = base_permittivity;
+	ep->m_solidness = base_solidness;
 
 	grid[x][y][z].setEid(ep);
 	grid[x][y][z].setType(const_E);
@@ -1473,12 +1483,28 @@ void World::set_focal_adhesion(MemAgent *memp) {
 		Env *target_ep = worldP->grid[memp_x][memp_y][memp_z].getEid();
 		float chance = (float) new_rand() / (float) NEW_RAND_MAX;
 		// Check against the adhesiveness of the target environment location.
-		// Higher adhesiveness makes it easier to form an FA, therefore if the chance is less than
+		// Higher adhesiveness makes it easier to form an FA,
+		// therefore if the chance is less than
 		// a (high) prob, form a FA.
-		memp->FA = chance <= target_ep->adhesiveness;
+		// Also check for a tip
+		if (VEIL_ADVANCE) {
+			if (memp->FIL == TIP) {
+				memp->FA = chance <= target_ep->m_adhesiveness;
+			}
+		} else {
+			memp->FA = chance <= target_ep->m_adhesiveness;
+		}
+
 	} else {
-		// The mem agent is not on an environment agent and therefore cannot check for adhesiveness.
-		memp->FA = true;
+		// The mem agent is not on an environment agent
+		// and therefore cannot check for adhesiveness.
+		if (VEIL_ADVANCE) {
+			if (memp->FIL == TIP) {
+				memp->FA = true;
+			}
+		} else {
+			memp->FA = true;
+		}
 	}
 }
 
@@ -1581,10 +1607,12 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
-
-        if (timeStep % 10 == 0) {
-			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
-			write_to_outfiles();
+		if (timeStep % 10 == 0) {
+			std::cout << "Timestep: " << timeStep << "\n";
+//			for (auto *cell : ECagents) {
+//				std::cout << cell->activeVEGFRtot << ",";
+//			}
+//			std::cout << "\n";
 		}
 
 		simulateTimestep_MSM();
@@ -1607,7 +1635,6 @@ void World::runSimulation_MSM() {
         }
 
 	}
-	std::cout << "end of run simulation" << std::endl;
 }
 
 /*****************************************************************************************
@@ -1621,7 +1648,7 @@ void World::runSimulation_DSL() {
 	while (timeStep <= MAXtime) {
 		if (timeStep % 10 == 0) {
 			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
-			write_to_outfiles();
+			write_to_component_outfiles();
 		}
 
 		simulateTimestep_MSM();
@@ -1669,18 +1696,21 @@ void World::creationTimestep(int movie) {
 			createECagents(Junct_arrange);
 			connectMesh();
 		}
-		else if (CELL_SETUP == 3)
-		{
+		else if (CELL_SETUP == 3) {
 			createMonolayer();
 		}
-		else if (CELL_SETUP == 4)
-		{
+		else if (CELL_SETUP == 4) {
 			create_3D_round_cell();
 		}
 	}
 
 	auto *tissue_container = new Tissue_Container(this);
 	tissue_container->tissue_set_up(this);
+
+	if (DSL_PATTERNING_SCORE) {
+		create_pattern_outfile();
+		write_to_pattern_outfile();
+	}
 
 	//now place agents onto gridded lattice
 	for (int j = 0; j < (int) ECagents.size(); j++)
@@ -1738,22 +1768,36 @@ void World::creationTimestep(int movie) {
 	if (analysis_type == ANALYSIS_TYPE_TOTALVEGF_TOTAL_MEMBRANE)
 		calcEnvVEGFlevel();
 
+	this->set_up_cpm_dsl();
+
 	//on first timestep this sets up the CPM module
-	if (REARRANGEMENT)
+//	if (MSM_REARRANGEMENT)
+//		diffAd->run_CPM();
+
+	if (this->does_DSL_CPM()) {
 		diffAd->run_CPM();
+	}
 
 	if (analysis_type == ANALYSIS_TYPE_PROTLEVELS)
 		output_cell_protlevels(dataFile);
 
+	if (movie == 1) {
+		system("mkdir movie; rm -vf movie/*");
+	}
+
 }
 
 void World::simulateTimestep_MSM() {
-	int movie = 0;
+	int movie = 1;
+
 	timeStep++;
 	if (timeStep == 0) {
 		creationTimestep(movie);
+		// DSL logging.
+		write_to_component_outfiles();
+
 	} else {
-        for (EC* ec : ECagents) {
+		for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
                 ec->getNeighCellVector().clear();
@@ -1767,13 +1811,165 @@ void World::simulateTimestep_MSM() {
         resetCellLevels();
 		updateMemAgents_MSM();
 
-        if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
-			this->diffAd->run_CPM();
+		// If running the shuffle set-up from the thesis,
+		// do so here, otherwise, just check the CPM.
+		if (DSL_SHUFFLE_TEST) {
+			for (auto *cellAgent : this->ECagents) {
+				if (cellAgent->cell_number % 2 == 0) {
+					cellAgent->activeVEGFRtot = 500;
+					cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+				} else {
+					cellAgent->activeVEGFRtot = 0;
+					cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+				}
+			}
+			shuffleTest();
+		} else {
+			if (this->does_MSM_CPM() && (timeStep > this->get_start_CPM())) {
+				assert(!this->does_DSL_CPM());
+				this->diffAd->run_CPM();
+			} else if ((timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
+				assert(!this->does_MSM_CPM());
+				this->diffAd->run_CPM();
+			}
 		}
 
 		updateECagents_MSM();
 		updateEnvironment_MSM();
+		// DSL logging.
+		write_to_component_outfiles();
+		// Log levels of active VEGFR.
+		if (MSM_LOGGING) {
+			std::cout << this->timeStep << ",";
+			for (auto *cell : this->ECagents) {
+				std::cout << cell->activeVEGFRtot << ",";
+			}
+			std::cout << "\n";
+		}
+
+		if (DSL_PATTERNING_SCORE) {
+			write_to_pattern_outfile();
+		}
 	}
+}
+
+void World::create_pattern_outfile() {
+	// Create file.
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/pattern_times_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	// Add header information to file.
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Parameter Arguments: ";
+			for (auto &value : m_param_increments) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep,";
+			for (auto &tissue : m_tissueContainer->m_tissues) {
+				file << tissue->m_name << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create pattern results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_pattern_outfile() {
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/pattern_times_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &tissue : m_tissueContainer->m_tissues) {
+				// Go over all tissues, report the result for each in the file.
+				file << std::to_string(tissue_has_patterned(tissue)) << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create pattern results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+
+}
+
+unsigned int World::tissue_has_patterned(Tissue *tissue) {
+	bool neighbouringTipCells = false;
+	int n_tip_cells = 0;
+	for (auto *cellAgent : tissue->m_cell_agents) {
+		if (cell_is_tip(cellAgent)) {
+			n_tip_cells += 1;
+			// If this cell is a tip, then check there are no
+			// neighbouring tip cells.
+			for (auto *neighCell :cellAgent->getNeighCellVector()) {
+				if (cell_is_tip(neighCell)) {
+					neighbouringTipCells = true;
+					break;
+				}
+			}
+		}
+		if (neighbouringTipCells) {
+			break;
+		}
+	}
+	if (!neighbouringTipCells) {
+		// Check if we've met the threshold of tip cells.
+		// Default is 40%.
+		float activeProp = (float) n_tip_cells / (float) tissue->m_cell_agents.size();
+		if (activeProp > DSL_PATTERNED_AT_PROP) {
+			return 0; // Patterned.
+		} else {
+			return 1; // Haven't patterned due to not meeting threshold.
+		}
+	} else {
+		return 2; // Haven't patterned due to neighbouring tip cells.
+	}
+}
+
+bool World::cell_is_tip(EC *cellAgent) {
+	// Cells are defined as tip cells when the level of active VEGFR
+	// is greater than 50% of the total amount of VEGFR.
+	auto VEGFR = cellAgent->get_cell_protein_level("VEGFR",0);
+	auto VEGF_VEGFR = cellAgent->get_cell_protein_level("VEGF_VEGFR",0);
+	auto prop = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
+	auto test = VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > DSL_PATTERN_THRESHOLD;
+	return VEGF_VEGFR / (VEGFR + VEGF_VEGFR) > DSL_PATTERN_THRESHOLD;
 }
 
 void World::simulateTimestep_DSL() {
@@ -1823,7 +2019,7 @@ void World::hysteresisAnalysis() {
 }
 
 /*****************************************************************************************
-*  Name:		updateMemAgents_MSM (CORE MSM)
+*  Name:		updateMemAgents_MSM
 *  Description: Asynchronously update all memAgents across all cells, grows/retracts
 *  				filopodia and lamellipodia veil advance, and activates receptors from local
 *   			ligand levels
@@ -1844,6 +2040,7 @@ void World::updateMemAgents_MSM() {
 
 	JunctionAgents.clear();
 	ALLmemAgents.clear();
+
 	for (i = 0; i < uptoE; i++) {
 		uptoN = ECagents[i]->nodeAgents.size();
 		uptoS = ECagents[i]->springAgents.size();
@@ -1853,113 +2050,125 @@ void World::updateMemAgents_MSM() {
 		for (j = 0; j < uptoS; j++) ALLmemAgents.push_back(ECagents[i]->springAgents[j]);
 		for (j = 0; j < uptoSu; j++) ALLmemAgents.push_back(ECagents[i]->surfaceAgents[j]);
 	}
+
 	upto = ALLmemAgents.size();
-	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//reorder agents randomly
-	//random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
+	// Reorder agents randomly.
 	new_random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
-	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
+	// Pick one agent at a time and update its protein levels,
+	// and try to extend/retract filopodia/lamellipodia.
 	for (i = 0; i < upto; i++) {
 
-		tipDeleteFlag = false;
+		tipDeleteFlag = false; // Tracks whether a tip agent is scheduled to be deleted.
 
 		memp = ALLmemAgents[i];
 		memp->assessed = true;
 		memp->addedJunctionList = false;
+
+		// Check whether an agent has an environment agent
+		// in its von Neumann neighbourhood.
         memp->vonNeighSearch();
 
 		// Update the level of environmental proteins seen by the cell.
-        memp->update_env_levels();
+//		if (memp->node) {
+//			memp->update_env_levels();
+//		}
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
 
 		if (!deleted) {
-			//reset memAgents active Notch level ready for new binding
+			// Reset memAgents active Notch level ready for new binding
 			memp->activeNotch = 0.0f;
 
-			//this is needed to tell if triangle positions have changed
-			//on the fly surface agent coverage code
+			// This is needed to tell if triangle positions have changed.
+			// on the fly surface agent coverage code.
 			if (on_the_fly_surface_agents) {
 				memp->store_previous_triangle_pos();
 			}
 
             randomChance = new_rand() / (float) NEW_RAND_MAX;
 
-            memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
+			// Assess local Moore neighbourhood and store data (includes diagonal neighs).
+            memp->checkNeighs(false);
 
-			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
+			// Determine if an agent is on a junction for junctional behaviours.
+			memp->JunctionTest(true);
 
-            // Run ODES, then update the cell's level of that particular protein.
+			// Add neighbouring cells to the neighbour cell list.
+            if (memp->junction) {
+                memp->neighCellSearch(false);
+            }
 
-            if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
+            // Run MEMAGENT ODES, then update the cell's level of that particular protein.
+            if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
                 memp->passBackBufferLevels();
             }
 
-            if (SHAPE_TESTING) {
-                memp->shapeResponse(randomChance);
-            } else {
-                //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
-                if (memp->FIL == TIP) {
-                    if (VEIL_ADVANCE) {
-                        if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
-                            if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                                memp->veilAdvance();
-                            } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
-                                memp->veilAdvance();
-                            }
-                        }
-                    }
+			// If the memAgent resides at the tip of a filopodium,
+			// do veil advance/retraction behaviours.
+			if (memp->FIL == TIP) {
+				if (VEIL_ADVANCE) {
+					if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
+						if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0]) &&
+							(memp->Cell != ECagents[ECELLS - 1])) {
+							memp->veilAdvance();
+						} else if (analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+							memp->veilAdvance();
+						}
+					}
+				}
 
-                    // Retract filopodia if inactive.
-                    if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
-						|| ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
-                        if (memp->filRetract()) {
-                            tipDeleteFlag = true;
-                            deleteOldGridRef(memp, true);
-                            delete memp;
-                        }
-                            //NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
-                        else {
-                            memp->calcRetractDist();
-                        }
-                    }
-                    //------------------------------------
-                }
+				float current_FILTIPMAX;
+				if (SHANE_FILTIPMAX_RETRACT) {
+					current_FILTIPMAX = calc_shane_filtipmax(memp);
+//					current_FILTIPMAX = 1;
+				} else {
+					current_FILTIPMAX = FILTIPMAX;
+				}
 
-                //if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
-                if (!tipDeleteFlag) {
-                    memp->VEGFRactive = 0.0f; //reset VEGFR activation level
-                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                        if (memp->vonNeu) {
-                            memp->VEGFRresponse();
-                        }
-                    } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
-                        if (memp->vonNeu) {
-                            memp->VEGFRresponse();
-                        }
-                    }
-                    if (memp->junction && !FEEDBACK_TESTING) {
-                        memp->NotchResponse();
-                    }
+				// Retract filopodia if inactive.
+				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > current_FILTIPMAX))
+					|| ((RAND_FILRETRACT_CHANCE > -1) && (randomChance < RAND_FILRETRACT_CHANCE))) {
+					if (memp->filRetract()) {
+						tipDeleteFlag = true;
+						deleteOldGridRef(memp, true);
+						delete memp;
+					}
+						//NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
+					else {
+						memp->calcRetractDist();
+					}
+				}
+			}
 
-                    ///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
-                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                        //memp->ActinFlow();
-                        memp->TokenTrading();
-                    }
-                    else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
-                        //memp->ActinFlow();
-                        memp->TokenTrading();
-                    }
-                }
-            }
+			//------------------------------------
+			//if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
+
+			if (!tipDeleteFlag) {
+				memp->VEGFRactive = 0.0f; //reset VEGFR activation level
+				if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+					if (memp->vonNeu) {
+						memp->VEGFRresponse();
+					}
+				} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
+					if (memp->vonNeu) {
+						memp->VEGFRresponse();
+					}
+				}
+				if (memp->junction && !FEEDBACK_TESTING) {
+					memp->NotchResponse();
+				}
+
+				///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
+				if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+					//memp->ActinFlow();
+					memp->TokenTrading();
+				} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+					//memp->ActinFlow();
+					memp->TokenTrading();
+				}
+			}
 		}
 	}
 
@@ -1990,9 +2199,15 @@ void World::updateECagents_MSM() {
 			ECagents[j]->store_cell_COM(); //to see cell movement, monitor its centre of mass
 		}
 
+		for (auto nodeAgent : ECagents[j]->nodeAgents) {
+			if (nodeAgent->vonNeu) {
+				nodeAgent->update_env_levels();
+			}
+		}
+
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-		if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
+		if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
             ECagents[j]->updateFutureProteinLevels();
             // Then, calculate deltas then apply the delta values
@@ -2000,20 +2215,21 @@ void World::updateECagents_MSM() {
             this->odes->check_cell_ODEs(ECagents[j]);
             ECagents[j]->calculateDeltaValues();
             ECagents[j]->syncDeltaValues();
-		} else if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
-            // Perform ODEs.
+		} else if (DSL_SIGNALLING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
+            // Perform ODEs on cells.
             this->odes->check_cell_only_ODEs(ECagents[j]);
         }
 
         // Total up the memAgents new active receptor levels, add to time delay stacks.
-        ECagents[j]->updateProteinTotals();
+		if (!DSL_SHUFFLE_TEST) {
+			ECagents[j]->updateProteinTotals();
+		}
 
-        if (!FEEDBACK_TESTING) {
+        if (!DSL_SIGNALLING) {
             ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
         }
 
 		ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
-
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
@@ -2031,13 +2247,17 @@ void World::updateECagents_MSM() {
 		}
 	}
 
-	for (j = 0; j < (int) ECagents.size(); j++) {
-        // Distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
-        ECagents[j]->allocateProts();
+	if (!DSL_SIGNALLING) {
+		for (j = 0; j < (int) ECagents.size(); j++) {
+			// Distribute back out the new VR-2 and Dll4 and Notch
+			// levels to voxelised memAgents across the whole new cell surface.
+			ECagents[j]->allocateProts();
 
-        //use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
-		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
-			ECagents[j]->calcStability();
+			// use analysis method in JTB paper to obtain tip cell numbers,
+			// stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
+			if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
+				ECagents[j]->calcStability();
+		}
 	}
 }
 
@@ -2671,7 +2891,7 @@ void World::create_3D_round_cell(void){
     float dist;
     bool allow=false;
     MemAgent* memp;
-    int centreX = (int)((float)xMAX/2.0f);
+    int centreX = (int)((float)this->gridXDimensions/2.0f);
     int centreY = 10;//(int)((float)yMAX/2.0f);
     std::cout<<centreX<<" "<<centreY<<std::endl;
 
@@ -3019,8 +3239,8 @@ void World::connectMesh(void){
 
                 if(POS==0) POSminus=ablumenalSteps*ECcross-1;
                 else if(POS==ablumenalSteps*ECcross-1) POSplus=0;
-                if(Xplus==xMAX) Xplus = 0;
-                else if(Xminus<0) Xminus = xMAX-1;
+                if (Xplus == this->gridXDimensions) Xplus = 0;
+                else if(Xminus<0) Xminus = this->gridXDimensions-1;
 
                 //go through all other agents, in each cell and find the ones it should be neighs with
                 for(m=0;m<uptoE; m++){
@@ -5632,9 +5852,9 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
 
     range = findRange(Coords);
 
-    if (abs(range[0] - range[1]) >= xMAX / 2) {
+    if (abs(range[0] - range[1]) >= this->gridXDimensions / 2) {
 
-        diff = xMAX - abs(range[0] - range[1]);
+        diff = this->gridXDimensions - abs(range[0] - range[1]);
         range[0] = range[1];
         range[1] = range[0] + diff;
         r0 = range[0];
@@ -5648,7 +5868,7 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
                 for (Z = range[4]; Z <= range[5]; Z++) {
 
                     if (toroidal == true) {
-                        if (X >= xMAX) {
+                        if (X >= this->gridXDimensions) {
                             range[1] = r0;
                             range[0] = 0;
                             X = range[0];
@@ -5795,10 +6015,10 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
     //wrap round for springs that cros x axis toroidal boundary-------------------------------------
     //displace N to outside of grid to calculate then create spring ni correct position
     if ((toroidal == true) && (N[0] > P[0])) {
-        N[0] -= xMAX;
+        N[0] -= this->gridXDimensions;
         flag = 1;
     } else if ((toroidal == true) && (N[0] < P[0])) {
-        N[0] += xMAX;
+        N[0] += this->gridXDimensions;
         flag = 2;
     }
     //-------------------------------------------------------------------------------------------------------------
@@ -5826,10 +6046,10 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
                         //have to do the extra -1 here as otherwise it rounds -0.5 to 0 instead of -1..
-                    else if (flag == 1) createSurfaceAgent((int) (x - 1) + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) (x - 1) + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 x += steps;
             }
@@ -5846,9 +6066,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 x -= steps;
             }
@@ -5865,9 +6085,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 y += steps;
             }
@@ -5883,9 +6103,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 y -= steps;
             }
@@ -5901,9 +6121,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX))createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions))createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 z += steps;
             } //cout<<"z2>z1 ";
@@ -5918,9 +6138,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 z -= steps;
             }
@@ -6370,8 +6590,6 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 //------------------------------------------------------------
 
 void World::setMLocation(int x, int y, int z, MemAgent * ident) {
-    // TODO: REMOVE
-    Location loc_test = grid[x][y][z];
     grid[x][y][z].addMemAgent(ident);
     grid[x][y][z].setType(const_M);
     delete grid[x][y][z].getEid();
@@ -6593,16 +6811,17 @@ void World::new_random_shuffle(_RandomAccessIterator first, _RandomAccessIterato
 
 void World::shuffleEnvAgents(std::vector<Env*> &envAgents) {
     // Hacky way to get the shuffle function working.
+	auto test1 = envAgents;
+
+//	std::shuffle(envAgents.begin(),envAgents.end(), g);
 	new_random_shuffle(envAgents.begin(), envAgents.end());
+	auto test2 = envAgents;
+
 }
 
 void World::shuffleLocations(std::vector<Location*> &locations) {
 	// Hacky way to get the shuffle function working.
 	new_random_shuffle(locations.begin(), locations.end());
-}
-
-void World::createLogger() {
-    setWorldLogger(new WorldLogger(this));
 }
 
 WorldLogger* World::getWorldLogger() {
@@ -6682,7 +6901,7 @@ bool World::tissuesHavePatterned() const {
 
     try {
         int patternedTissues = 0;
-        for (auto tissue : m_tissueContainer->tissues) {
+        for (auto tissue : m_tissueContainer->m_tissues) {
             // If a tissue has not patterned, check that it has.
             // If it has patterned, don't bother checking.
             if (!tissue->is_patterned()) {
@@ -6692,9 +6911,9 @@ bool World::tissuesHavePatterned() const {
                 patternedTissues++;
             }
 
-            if (patternedTissues == m_tissueContainer->tissues.size()) {
+            if (patternedTissues == m_tissueContainer->m_tissues.size()) {
                 tissuesHavePatterned = true;
-            } else if (patternedTissues > m_tissueContainer->tissues.size()) {
+            } else if (patternedTissues > m_tissueContainer->m_tissues.size()) {
                 throw std::exception();
             }
         }
@@ -6762,6 +6981,7 @@ void World::create_outfiles(std::vector<double>& param_values) {
 		create_protein_outfile(name);
 		create_protein_outfile_headers(name, param_values);
 	}
+	create_DLL4_file();
     if (false) {
         create_probabilities_outfile();
         create_probabilities_outfile_headers(param_values);
@@ -6784,17 +7004,18 @@ void World::create_outfiles(std::vector<double>& param_values) {
     }
 }
 
-void World::write_to_outfiles() {
-	for (const auto& name : m_cellProteinNames) {
-		write_to_protein_cell_outfile(name);
-	}
-	for (const auto& name : m_envProteinNames) {
-		write_to_protein_env_outfile(name);
-	}
-	write_to_probabilities_file();
-	write_to_inhib_file();
-	write_to_upreg_file();
-}
+//void World::write_to_component_outfiles() {
+//	for (const auto& name : m_cellProteinNames) {
+//		write_to_protein_cell_outfile(name);
+//	}
+//	for (const auto& name : m_envProteinNames) {
+//		write_to_protein_env_outfile(name);
+//	}
+//	write_to_probabilities_file();
+//	write_to_inhib_file();
+//	write_to_upreg_file();
+//	write_to_DLL4_file();
+//}
 
 void World::write_time_to_pattern(const int time_to_pattern) {
     for (const auto& name : m_cellProteinNames) {
@@ -6832,6 +7053,40 @@ void World::create_protein_outfile(const std::string &protein_name) {
                               ".csv";
 
 	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_DLL4_file() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string file_string = "results/MSM_DLL4_run_"
+								+ std::to_string(this->m_run_number)
+								+ ".csv";
+
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::write_to_DLL4_file() {
+	std::ofstream file;
+	std::string file_string = "results/MSM_DLL4_run_"
+							+ std::to_string(this->m_run_number)
+							+ ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (const auto &cell: ECagents) {
+				file << cell->Dll4tot << ", ";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open results file for MSM DLL4. Please check the results directory exists.";
+		exit(e);
+	}
 }
 
 void World::create_protein_outfile_headers(const std::string &protein_name,
@@ -6930,6 +7185,14 @@ void World::set_run_number(const int run_number) {
 
 int World::get_run_number() const {
     return this->m_run_number;
+}
+
+void World::set_replicate_number(const int replicate_number) {
+	this->m_replicate_number = replicate_number;
+}
+
+int World::get_replicate_number() const {
+	return this->m_replicate_number;
 }
 
 void World::print_avg_prob() {
@@ -7425,4 +7688,621 @@ void World::log_filopodia() {
             }
         }
     }
+}
+
+bool World::solidness_check(Env* ep) {
+//	float prob = 1 - ep->m_solidness;
+	auto chance = (float) this->new_rand() / (float) NEW_RAND_MAX;
+	return ep->m_solidness <= chance;
+}
+
+float World::get_average_DLL4() {
+	// Gets average level of DLL4 from
+	// MSM values.
+	float total = 0;
+	for (auto *EC : this->ECagents) {
+		total += EC->Dll4tot;
+	}
+	if (ECagents.size() > 0) {
+		return total / (float) this->ECagents.size();
+	}
+
+}
+
+Env *World::findHighestConcPosition(MemAgent* memAgent,
+									const std::string& targetProteinName,
+									const float& prob,
+									const bool getsFurthestEnv) {
+	// Derived from MemAgent::extendFil()
+	// Finds the env objects with the highest level of the protrusions target protein and returns its address.
+	std::vector<Env*> envNeighs = memAgent->EnvNeighs;
+	World *world = memAgent->worldP;
+
+	float chance = (float) world->new_rand() / (float) NEW_RAND_MAX;
+	float highestProteinConc = 0.0f;
+
+	memAgent->worldP->shuffleEnvAgents(envNeighs);
+
+	auto *currentHighestEnv = envNeighs[0];
+	Env *chosenEnv;
+
+	// Check the level at each position for the desired environment protein - optionally ensure that the environment
+	// agent picked is the one furthest away from the base.
+
+	if (getsFurthestEnv) {
+		MemAgent* filNeigh = memAgent->filNeigh;
+		Env* furthest  = envNeighs[0];
+		float currentDist;
+		float furthestDist = 0;
+
+		if (furthest->get_protein_level(targetProteinName) > 0) {
+			if (memAgent->FIL == NONE) {
+				furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
+			} else {
+				furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+			}
+		} else {
+			furthest = nullptr;
+		}
+
+		for (auto & envNeigh : envNeighs) {
+			if (envNeigh->has_protein(targetProteinName)) {
+				auto currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
+				if (currentProteinLevel >= highestProteinConc) {
+					highestProteinConc = currentProteinLevel;
+					currentHighestEnv = envNeigh;
+				}
+
+				if (memAgent->FIL == NONE) {
+					currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
+				} else {
+					currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+				}
+
+				if (currentDist >= furthestDist) {
+					furthestDist = currentDist;
+					furthest = envNeigh;
+				}
+			}
+		}
+		chosenEnv = furthest;
+	} else {
+		for (auto & envNeigh : envNeighs) {
+			if (envNeigh->has_protein(targetProteinName)) {
+				float currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
+				if (currentProteinLevel > highestProteinConc) {
+					highestProteinConc = currentProteinLevel;
+					currentHighestEnv = envNeigh;
+				}
+			}
+		}
+
+		if (chance < prob) {
+			chosenEnv = currentHighestEnv;
+		} else {
+			int chosenIndex = (int) ((float)world->new_rand() * (float)envNeighs.size() / (float)NEW_RAND_MAX);
+			chosenEnv = envNeighs[chosenIndex];
+		}
+	}
+	return chosenEnv;
+}
+
+unsigned int World::get_start_CPM() const {
+	return this->m_start_CPM;
+}
+
+void World::set_start_CPM(const unsigned int startCPM) {
+	this->m_start_CPM = startCPM;
+}
+
+void World::set_DSL_CPM(const bool DSL_CPM) {
+	this->m_DSL_CPM = DSL_CPM;
+}
+
+void World::set_MSM_CPM(bool MSM_CPM) {
+    this->m_MSM_CPM = MSM_CPM;
+}
+
+bool World::does_MSM_CPM() const {
+    return this->m_MSM_CPM;
+}
+
+bool World::does_DSL_CPM() const {
+    return this->m_DSL_CPM;
+}
+
+void World::create_extension_file(const std::string& extension_file_name) {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	this->m_extensionFile = extension_file_name;
+
+	sprintf(file_buffer, "%s", extension_file_name.c_str());
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	file << "Timestep,filopodia_id,cell_id,memAgent_type,new_tip_X,new_tip_Y,new_tip_Z,MSM_prob,DSL_prob,DSL_mod_prob\n";
+	file.close();
+}
+
+void World::log_extension_event(MemAgent* memAgent) {
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
+			// Add memAgent type to file.
+			file << memAgent->FIL << ",";
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::add_prob_to_extension_file(const double prob, bool add_new_line=false) {
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add probability.
+			file << prob;
+			if (add_new_line) {
+				file << "\n";
+			} else {
+				file << ",";
+			}
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_retraction_file(const std::string& retraction_file_name) {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	this->m_retractionFile = retraction_file_name;
+
+	sprintf(file_buffer, "%s", retraction_file_name.c_str());
+	std::ofstream file;
+	file.open(this->m_retractionFile.c_str(), std::ios_base::app);
+	file << "Timestep,filopodia_id,cell_id,memAgent_type,new_tip_X,new_tip_Y,new_tip_Z\n";
+	file.close();
+}
+
+void World::log_retraction_event(MemAgent* memAgent) {
+	std::ofstream file;
+	file.open(this->m_retractionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+			// Add filtiptimer to file.
+			file << memAgent->filTipTimer << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::increment_unique_fils() {
+	this->m_unique_fils++;
+}
+
+unsigned int World::get_unique_fils() {
+	return this->m_unique_fils;
+}
+
+static const bool file_exists(const std::string &name) {
+	struct stat buffer;
+	return (stat (name.c_str(), &buffer) == 0);
+}
+
+void World::create_component_outfile_csv(const std::string &protein_name) {
+	// Create file.
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/" + protein_name + "_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	// Add header information to file.
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Parameter Arguments: ";
+			for (auto &value : m_param_increments) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep,";
+			unsigned int count = 1;
+			for (auto &cell : ECagents) {
+				file << "cellID_" << std::to_string(count) << "_" << cell->m_tissue->m_name << ",";
+				count++;
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create results file for " + protein_name + ". Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_filopodia_outfile_csv() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/filopodiaEvents_replicate_"
+					 + param_val_string
+					 + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb,retractTime\n";
+			// TEST - REMOVE
+//			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb,retractTime,VEGF,VEGFR,VEGF_VEGFR,SEMA,PLEXIN,SEMA_PLEXIN,\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_component_outfile_csv(const std::string &protein_name) {
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/" + protein_name + "_"
+					 + param_val_string
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &cell : ECagents) {
+				// Check if the protein is an environmental protein that
+				// the cell knows about.
+				// If so, get the value from the map.
+				// Otherwise, attempt to get the cellular protein level.
+				double protein_value;
+				if (cell->get_env_protein_values().count(protein_name)) {
+					protein_value = cell->get_env_protein_level(protein_name);
+				} else {
+					protein_value = cell->get_cell_protein_level(protein_name, this->m_max_delay);
+				}
+				file << std::to_string(protein_value) << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not write to results file for " + protein_name + ". Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgent, const double prob= 0.0) {
+	std::string param_val_string;
+	for (auto val : m_param_increments) {
+		param_val_string.append(std::to_string(val) + "_");
+	}
+	auto file_name = "results/filopodiaEvents_replicate_"
+					 + param_val_string
+					 + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
+			// Add tissue name to the file.
+			file << memAgent->Cell->m_tissue->m_name << ",";
+
+			// Add event type to the file.
+			if (eventID == FIL_EVENT_CREATION) {
+				file << "creation,";
+			} else if (eventID == FIL_EVENT_EXTENSION) {
+				file << "extension,";
+			} else if (eventID == FIL_EVENT_RETRACTION) {
+				file << "retraction,";
+			} else if (eventID == FIL_EVENT_DISASSEMBLY) {
+				file << "disassembly,";
+			}
+
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+
+			// Add extension probability to file,
+			// if the event is a creation or extension event.
+			if (eventID == FIL_EVENT_CREATION || eventID == FIL_EVENT_EXTENSION) {
+				file << std::to_string(prob) << ",";
+			} else {
+				file << "n/a,";
+			}
+
+			// Add filtip time ( i.e. time extension began) to file,
+			// if the event is a retraction or disassembly event.
+			if (eventID == FIL_EVENT_RETRACTION || eventID == FIL_EVENT_DISASSEMBLY) {
+				file << std::to_string(memAgent->filTipTimer) << ",";
+			} else {
+				file << "n/a,";
+			}
+
+			// TESTING - REMOVE.
+//			auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true, false);
+//			auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+//			auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
+//			auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
+//			file << VEGF_MEAN  << ",";
+//			file << VEGFR << ",";
+//			file << calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true) << ",";
+//			file << SEMA3A_MEAN  << ",";
+//			file << PLEXIND1 << ",";
+//			file << calc_SEMA_PLEXIN_ON_rate(SEMA3A_MEAN, PLEXIND1, true) << ",";
+
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+
+		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::set_max_delay(unsigned int new_delay) {
+	this->m_max_delay = new_delay;
+}
+
+unsigned int World::get_max_delay() {
+	return this->m_max_delay;
+}
+
+// https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exists-using-standard-c-c11-14-17-c
+inline bool World::file_exists(const std::string& name) {
+	struct stat buffer;
+	return (stat (name.c_str(), &buffer) == 0);
+}
+
+
+void World::create_shuffle_test_outfiles() {
+	if (this->does_DSL_CPM() && !this->does_MSM_CPM()) {
+		std::string file_string = "results/test_DSL_CPM.csv";
+		// Delete file if it already exists.
+		if (file_exists(file_string)) {
+			std::remove(file_string.c_str());
+		}
+		// Create file.
+		int file_buffer_size = 200;
+		char file_buffer[file_buffer_size];
+
+		// Delete results files that exist already.
+		// Create a new file in either case.
+		sprintf(file_buffer, "%s", file_string.c_str());
+	} else if (!this->does_DSL_CPM() && this->does_MSM_CPM()) {
+		std::string file_string = "results/test_MSM_CPM.csv";
+		// Delete file if it already exists.
+		if (file_exists(file_string)) {
+			std::remove(file_string.c_str());
+		}
+		// Create file.
+		int file_buffer_size = 200;
+		char file_buffer[file_buffer_size];
+
+		// Delete results files that exist already.
+		// Create a new file in either case.
+		sprintf(file_buffer, "%s", file_string.c_str());
+	}
+}
+
+unsigned int World::count_inactive_cells(EC* ec) {
+	unsigned int count = 0;
+	// If we're not using the DSL CPM,
+	// then we're using the MSM CPM by
+	// default.
+	auto uses_DSL_CPM = this->does_DSL_CPM();
+
+	// Check just in case I've set these both to true or false.
+	// One of these should always be active, and the other inactive.
+	assert(uses_DSL_CPM != this->does_MSM_CPM());
+	for (auto *neighCell : ec->getNeighCellVector()) {
+		if (uses_DSL_CPM) {
+			if (neighCell->get_cell_protein_level("VEGF_VEGFR", 0) < 200) {
+				count++;
+			}
+		} else {
+			if (neighCell->activeVEGFRtot < 200) {
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+unsigned int World::count_active_cells(EC* ec) {
+	unsigned int count = 0;
+	// If we're not using the DSL CPM,
+	// then we're using the MSM CPM by
+	// default.
+	auto uses_DSL_CPM = this->does_DSL_CPM();
+
+	// Check just in case I've set these both to true or false.
+	// One of these should always be active, and the other inactive.
+	assert(uses_DSL_CPM != this->does_MSM_CPM());
+	for (auto *neighCell : ec->getNeighCellVector()) {
+		if (uses_DSL_CPM) {
+			if (neighCell->get_cell_protein_level("VEGF_VEGFR", 0) > 200) {
+				count++;
+			}
+		} else {
+			if (neighCell->activeVEGFRtot > 200) {
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+std::vector<unsigned int> *World::evaluate_cells(const unsigned int timestep) {
+	// Create a vector. Add the timestep to it.
+	// Go over all cells.
+	// For each cell, add the number of inactive
+	// and active neighbours.
+	auto *values = new std::vector<unsigned int>();
+	values->push_back(timestep);
+	for (auto *cell : this->ECagents) {
+		values->push_back(count_inactive_cells(cell));
+		values->push_back(count_active_cells(cell));
+	}
+	return values;
+}
+
+void World::shuffleTest() {
+	// Before evaluating CPM, force the
+	// cell levels of active VEGFR to a
+	// particular level.
+
+	for (auto *cellAgent : this->ECagents) {
+		if (cellAgent->cell_number % 2 == 0) {
+			cellAgent->activeVEGFRtot = 500;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+		} else {
+			cellAgent->activeVEGFRtot = 0;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+		}
+	}
+
+	if (this->does_MSM_CPM()) {
+		assert(!this->does_DSL_CPM());
+	}
+
+	if (this->does_DSL_CPM()) {
+		assert(!this->does_MSM_CPM());
+	}
+
+	if ((this->does_MSM_CPM() || this->does_DSL_CPM())
+		&& (this->timeStep > this->get_start_CPM())) {
+		this->diffAd->run_CPM();
+		// After the CPM has run,
+		// evaluate the cells and
+		// log the results.
+//		std::cout << "Evaluating cells." << "\n";
+		m_shuffling_results.push_back(evaluate_cells(this->timeStep));
+	}
+}
+
+void World::write_to_shuffle_outfiles() {
+	std::string file_name;
+	std::ofstream file;
+	if (this->does_MSM_CPM() && !this->does_DSL_CPM()) {
+		file_name = "results/test_MSM_CPM.csv";
+	} else if (!this->does_MSM_CPM() && this->does_DSL_CPM()) {
+		file_name = "results/test_DSL_CPM.csv";
+	} else {
+		std::cout << "Invalid booleans passed when logging shuffling results.";
+		exit(1);
+	}
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			for (auto *shuffle_result : this->m_shuffling_results) {
+				for (auto entry: *shuffle_result) {
+					file << entry << ",";
+				}
+				file << "\n";
+			}
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not write to results file for shuffling tests.";
+		exit(e);
+	}
+}
+
+float World::calc_shane_filtipmax(MemAgent *memAgent) const {
+	auto SEMA3A_MEAN = memAgent->get_environment_level("SEMA3A", true, false);
+	auto PLEXIND1 = memAgent->get_memAgent_current_level("PLEXIND1");
+	double SEMA_PLEXIN_BOUND = SEMA3A_MEAN * PLEXIND1 * 0.1;
+	double PROP_PLEXIN_BOUND = SEMA_PLEXIN_BOUND / (SEMA_PLEXIN_BOUND + PLEXIND1);
+	double modifier = 1 - (PROP_PLEXIN_BOUND * 10);
+	float result = (float) FILTIPMAX * (modifier);
+	if (result < 1) {
+		return 1;
+	} else {
+		return result;
+	}
 }

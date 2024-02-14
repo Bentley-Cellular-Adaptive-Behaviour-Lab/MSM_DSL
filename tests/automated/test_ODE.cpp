@@ -82,9 +82,9 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B"), 1);
+    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B", true, false), 1);
+	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B", true, false), 1);
+	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B", true, false), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
@@ -513,6 +513,71 @@ TEST_F(VenkatramanCellTest, VenkatramanCellProductionTest) {
     EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(0), 0.00099950016); // Cell 2.
 }
 
+TEST_F(VenkatramanCellTest, VenkatramanCellLevelsAt1Test) {
+
+    // Set levels to 1.
+    for (auto *cell : this->m_tissue->m_cell_agents) {
+        for (auto *protein : cell->m_cell_type->proteins) {
+            protein->set_cell_level(1,0);
+            protein->set_cell_level(1,1);
+        }
+    }
+
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Run ODEs once.
+    runODEs(1);
+
+    auto test_VEGF = cell1->m_cell_type->proteins.at(0)->get_cell_level(0);
+    auto test_VEGFR = cell1->m_cell_type->proteins.at(1)->get_cell_level(0);
+    auto test_VEGF_VEGFR = cell1->m_cell_type->proteins.at(2)->get_cell_level(0);
+    auto test_DLL4 = cell1->m_cell_type->proteins.at(3)->get_cell_level(0);
+    auto test_NOTCH = cell1->m_cell_type->proteins.at(4)->get_cell_level(0);
+    auto test_DLL4_NOTCH = cell1->m_cell_type->proteins.at(5)->get_cell_level(0);
+    auto test_NICD = cell1->m_cell_type->proteins.at(6)->get_cell_level(0);
+    auto test_HEY = cell1->m_cell_type->proteins.at(7)->get_cell_level(0);
+    auto test_FILOPODIA = cell1->m_cell_type->proteins.at(8)->get_cell_level(0);
+
+    // TODO: CHECK THAT THESE MATCH THE ORIGINAL VENKATRAMAN SYSTEM.
+
+    // Check VEGF levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 0.91879212560399148); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 0.91879212560399148); // Cell 2.
+
+    // Check VEGFR levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 0.91400970100812462); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 0.91400970100812462); // Cell 2.
+
+    // Check VEGF_VEGFR levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 1.0760107098387417); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 1.0760107098387417); // Cell 2.
+
+    // Check DLL4 levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 1.1150126315029705); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 1.1150126315029705); // Cell 2.
+
+    // Check NOTCH levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(4)->get_cell_level(0), 1.0911171505520041); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(4)->get_cell_level(0), 1.0911171505520041); // Cell 2.
+
+    // Check DLL4_NOTCH levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(0), 0.90137838722005192); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(5)->get_cell_level(0), 0.90137838722005192); // Cell 2.
+
+    // Check NICD levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(0), 1.0897521601421558); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(6)->get_cell_level(0), 1.0897521601421558); // Cell 2.
+
+    // Check HEY levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(0), 1.0480992792986437); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(7)->get_cell_level(0), 1.0480992792986437); // Cell 2.
+
+    // Check FILOPODIA levels.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(8)->get_cell_level(0), 1.1080374489718179); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(0), 1.1080374489718179); // Cell 2.
+}
+
 TEST_F(VenkatramanCellTest, VenkatramanCellCompletionTest) {
 	this->printProteinNames();
 	// Run ODEs to completion (i.e. 20,000 timesteps).
@@ -704,6 +769,95 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentProductionTest) {
     EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(1), 0.00099950016); // Cell 2.
 }
 
+TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentLevelsAt1Test) {
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    for (auto *cell : this->m_tissue->m_cell_agents) {
+        for (auto *protein : cell->m_cell_type->proteins) {
+            protein->set_cell_level(1,0);
+            protein->set_cell_level(1,1);
+        }
+        cell->distributeProteins();
+    }
+
+    runODEs(1);
+
+    auto test_VEGF = cell1->m_cell_type->proteins.at(0)->get_cell_level(1);
+    auto test_VEGFR = cell1->m_cell_type->proteins.at(1)->get_cell_level(1);
+    auto test_VEGF_VEGFR = cell1->m_cell_type->proteins.at(2)->get_cell_level(1);
+    auto test_DLL4 = cell1->m_cell_type->proteins.at(3)->get_cell_level(1);
+    auto test_NOTCH = cell1->m_cell_type->proteins.at(4)->get_cell_level(1);
+    auto test_DLL4_NOTCH = cell1->m_cell_type->proteins.at(5)->get_cell_level(1);
+    auto test_NICD = cell1->m_cell_type->proteins.at(6)->get_cell_level(1);
+    auto test_HEY = cell1->m_cell_type->proteins.at(7)->get_cell_level(1);
+    auto test_FILOPODIA = cell1->m_cell_type->proteins.at(8)->get_cell_level(1);
+
+    // Check cell values are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(1)); // VEGF
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(1)); // VEGFR
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(1)); // VEGF_VEGFR
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(1)); // DLL4
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(4)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(4)->get_cell_level(1)); // NOTCH
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(5)->get_cell_level(1)); // DLL4_NOTCH
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(6)->get_cell_level(1)); // NICD
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(7)->get_cell_level(1)); // HEY
+
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(8)->get_cell_level(1),
+                    cell2->m_cell_type->proteins.at(8)->get_cell_level(1)); // FILOPODIA
+
+    // Check VEGF levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(1), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(1), 0); // Cell 2.
+
+    // Check VEGFR levels -> should be 0.005.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(1), 0.0049875206); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(1), 0.0049875206); // Cell 2.
+
+    // Check VEGF_VEGFR levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(1), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(1), 0); // Cell 2.
+
+    // Check DLL4 levels -> should be 0.005.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(1), 0.00049862755); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(1), 0.00049862755); // Cell 2.
+
+    // Check Notch levels -> should be 0.0025.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(4)->get_cell_level(1), 0.0024931373); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(4)->get_cell_level(1), 0.0024931373); // Cell 2.
+
+    // Check DLL4_Notch levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(1), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(5)->get_cell_level(1), 0); // Cell 2.
+
+    // Check NICD levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(1), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(6)->get_cell_level(1), 0); // Cell 2.
+
+    // Check HEY levels -> should be 0.001.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(1), 0.00099750422); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(7)->get_cell_level(1), 0.00099750422); // Cell 2.
+
+    // Check FILOPODIA levels -> should be 0.001.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(8)->get_cell_level(1), 0.00099950016); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(1), 0.00099950016); // Cell 2.
+}
+
 TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentCompletionTest) {
     this->printProteinNames();
     // Run ODEs to completion (i.e. 20,000 timesteps).
@@ -822,4 +976,18 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanPatteringTest) {
     }
     // Check that the tissue has patterned at a particular point in time.
 //    EXPECT_EQ(timestep, 679);
+}
+
+TEST_F(FilopodiaExtensionTest, checkProbsTest) {
+	auto centreMemAgent = this->getCentreMemAgent();
+	auto MSMProb = this->calcMSMProb(centreMemAgent);
+	auto DSLProb = this->calcDSLProb(centreMemAgent);
+	EXPECT_FLOAT_EQ(MSMProb, DSLProb);
+}
+
+TEST_F(DSL_FilopodiaExtensionTest, checkProbsTest) {
+	auto centreMemAgent = this->getCentreMemAgent();
+	auto MSMProb = this->calcMSMProb(centreMemAgent);
+	auto DSLProb = this->calcDSLProb(centreMemAgent);
+	EXPECT_FLOAT_EQ(MSMProb, DSLProb);
 }

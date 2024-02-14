@@ -24,9 +24,10 @@
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::add_env_protein(Env *ep, float calc_level) {
+void Gradient::add_env_protein(Env *ep, const float calc_level) const {
     bool protein_found = false;
-    for (auto protein : ep->owned_proteins) {
+
+	for (auto protein : ep->owned_proteins) {
         if (protein->get_name() == this->m_protein->get_name()) {
             protein_found = true;
             protein->set_env_level(protein->get_env_level() + calc_level);
@@ -45,9 +46,9 @@ void Gradient::add_env_protein(Env *ep, float calc_level) {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::calc_constant_env_protein(Env* ep) {
-    float protein_level = this->m_protein->get_env_level();
-    if (ep->blood == 0.0f) {
+void Gradient::calc_constant_env_protein(Env* ep) const {
+    auto protein_level = this->m_protein->get_env_level();
+    if (ep->blood == 0.0) {
         this->add_env_protein(ep, protein_level);
     }
 }
@@ -60,24 +61,24 @@ void Gradient::calc_constant_env_protein(Env* ep) {
 ******************************************************************************************/
 
 void Gradient::calc_linear_env_protein(Env* ep) {
-    float weight = 1.00f;
-    float protein_level = this->m_protein->get_env_level();
+    auto weight = 1.0;
+    auto protein_level = this->m_protein->get_env_level();
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
-        if (ep->blood == 0.0f) {
+        if (ep->blood == 0.0) {
             std::vector<float> ep_distances = calculate_dist_from_source(ep);
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-            if (x_varying) {
+            if (m_x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
                     weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
                 }
             }
-            if (y_varying) {
+            if (m_y_varying) {
                 if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
                     weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
                 }
             }
-            if (z_varying) {
+            if (m_z_varying) {
                 if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
                     weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
                 }
@@ -88,47 +89,47 @@ void Gradient::calc_linear_env_protein(Env* ep) {
     }
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
-        if (ep->blood == 0.0f) {
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+        if (ep->blood == 0.0) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
-                float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
-                weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
-                this->add_env_protein(ep, weight * protein_level);
-            }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
-                // Check how far along the y axis from the upper y bound the env agent is and set weight according to
-                // that value as a percentage.
-                float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
-                weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                this->add_env_protein(ep, weight * protein_level);
-            }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
-                // Check how far along the z axis from the upper z bound the env agent is and set weight according to
-                // that value as a percentage.
-                float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
-                weight = 1 - (z_dist / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
-                this->add_env_protein(ep, weight * protein_level);
-            }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
-                // Check how far along the x axis from the lower x bound the env agent is and set weight according to
-                // that value as a percentage.
-                float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
-                weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
+                auto x_dist = (m_centre_position->z + m_cuboidal_width / 2) - ep->Ez;
+                weight = 1 - (std::floor(x_dist) / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
                 this->add_env_protein(ep, weight * protein_level);
             }
             if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
-                // Check how far along the y axis from the lower y bound the env agent is and set weight according to
+                // Check how far along the y axis from the upper y bound the env agent is and set weight according to
                 // that value as a percentage.
-                float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
-                weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+                float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
+                weight = 1 - (std::floor(y_dist) / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
                 this->add_env_protein(ep, weight * protein_level);
             }
             if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
+                // Check how far along the z axis from the upper z bound the env agent is and set weight according to
+                // that value as a percentage.
+                float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
+                weight = 1 - (std::floor(z_dist) / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
+                this->add_env_protein(ep, weight * protein_level);
+            }
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+                // Check how far along the x axis from the lower x bound the env agent is and set weight according to
+                // that value as a percentage.
+                float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
+                weight = 1 - (std::floor(x_dist) / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
+                this->add_env_protein(ep, weight * protein_level);
+            }
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
+                // Check how far along the y axis from the lower y bound the env agent is and set weight according to
+                // that value as a percentage.
+                float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
+                weight = 1 - (std::floor(y_dist) / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+                this->add_env_protein(ep, weight * protein_level);
+            }
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
                 // Check how far along the y axis from the lower z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = ep->Ez - (m_centre_position->z - m_cuboidal_depth / 2);
-                weight = 1 - (z_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+                weight = 1 - (std::floor(z_dist) / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
                 this->add_env_protein(ep, weight * protein_level);
             }
         }
@@ -151,69 +152,69 @@ void Gradient::calc_exp_env_protein(Env* ep) {
 
         if (ep->blood == 0.0f) {
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-            if (x_varying) {
+            if (m_x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
                     weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
                 }
             }
-            if (y_varying) {
+            if (m_y_varying) {
                 if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
                     weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
                 }
             }
-            if (z_varying) {
+            if (m_z_varying) {
                 if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
                     weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
                 }
             }
             // Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-            this->add_env_protein(ep, exp(weight) * starting_protein_level);
+            this->add_env_protein(ep, exp(-weight) * starting_protein_level);
         }
     }
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
         if (ep->blood == 0.0f) {
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
-                this->add_env_protein(ep, exp(weight) * starting_protein_level);
+                this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
                 // Check how far along the y axis from the upper y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                this->add_env_protein(ep, exp(weight) * starting_protein_level);
+                this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
                 // Check how far along the z axis from the upper z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
                 weight = 1 - (z_dist / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
-                this->add_env_protein(ep, exp(weight) * starting_protein_level);
+                this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
                 // Check how far along the x axis from the lower x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+				this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
                 // Check how far along the y axis from the lower y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                this->add_env_protein(ep, exp(weight) * starting_protein_level);
+                this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
                 // Check how far along the y axis from the lower z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = ep->Ez - (m_centre_position->z - m_cuboidal_depth / 2);
                 weight = 1 - (z_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                this->add_env_protein(ep, exp(weight) * starting_protein_level);
+                this->add_env_protein(ep, exp(-weight) * starting_protein_level);
             }
         }
     }
@@ -248,17 +249,17 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
         if (ep->blood == 0.0f) {
             std::vector<float> ep_distances = calculate_dist_from_source(ep);
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-            if (x_varying) {
+            if (m_x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
                     weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
                 }
             }
-            if (y_varying) {
+            if (m_y_varying) {
                 if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
                     weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
                 }
             }
-            if (z_varying) {
+            if (m_z_varying) {
                 if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
                     weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
                 }
@@ -270,42 +271,42 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
         if (ep->blood == 0.0f) {
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
                 ep->VEGF += weight * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
                 // Check how far along the y axis from the upper y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
                 ep->VEGF += weight * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
                 // Check how far along the z axis from the upper z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
                 weight = 1 - (z_dist / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
                 ep->VEGF += weight * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
                 // Check how far along the x axis from the lower x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
                 ep->VEGF += weight * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
                 // Check how far along the y axis from the lower y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
                 ep->VEGF += weight * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
                 // Check how far along the y axis from the lower z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = ep->Ez - (m_centre_position->z - m_cuboidal_depth / 2);
@@ -332,69 +333,69 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
 
         if (ep->blood == 0.0f) {
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-            if (x_varying) {
+            if (m_x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
                     weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
                 }
             }
-            if (y_varying) {
+            if (m_y_varying) {
                 if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
                     weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
                 }
             }
-            if (z_varying) {
+            if (m_z_varying) {
                 if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
                     weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
                 }
             }
             // Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-            ep->VEGF += exp(weight) * starting_protein_level;
+            ep->VEGF += exp(-weight) * starting_protein_level;
         }
     }
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
         if (ep->blood == 0.0f) {
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
                 // Check how far along the y axis from the upper y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
                 // Check how far along the z axis from the upper z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
                 weight = 1 - (z_dist / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
                 // Check how far along the x axis from the lower x bound the env agent is and set weight according to
                 // that value as a percentage.
                 float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
                 // Check how far along the y axis from the lower y bound the env agent is and set weight according to
                 // that value as a percentage.
                 float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
                 weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
-            if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
-                // Check how far along the y axis from the lower z bound the env agent is and set weight according to
+            if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
+                // Check how far along the z axis from the lower z bound the env agent is and set weight according to
                 // that value as a percentage.
                 float z_dist = ep->Ez - (m_centre_position->z - m_cuboidal_depth / 2);
                 weight = 1 - (z_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
-                ep->VEGF += exp(weight) * starting_protein_level;
+                ep->VEGF += exp(-weight) * starting_protein_level;
             }
         }
     }
@@ -458,7 +459,7 @@ void Gradient::determine_source_to_sink_dists() {
 *  Returns:		std::vector<float>
 ******************************************************************************************/
 
-std::vector<float> Gradient::calculate_dist_from_source(Env *ep) {
+std::vector<float> Gradient::calculate_dist_from_source(Env *ep) const {
     assert(m_gradient_shape != GRADIENT_SHAPE_CUBOIDAL);
 
     std::vector<float> vector;
@@ -508,13 +509,13 @@ std::vector<float> Gradient::calculate_dist_from_source(Env *ep) {
 
 void Gradient::determine_directionality() {
     if (m_source_position->x != m_sink_position->x) {
-        this->x_varying = true;
+        this->m_x_varying = true;
     }
     if (m_source_position->y != m_sink_position->y) {
-        this->y_varying = true;
+        this->m_y_varying = true;
     }
     if (m_source_position->z != m_sink_position->z) {
-        this->z_varying = true;
+        this->m_z_varying = true;
     }
 }
 
@@ -528,21 +529,21 @@ void Gradient::determine_directionality() {
 ******************************************************************************************/
 
 void Gradient::apply_gradient_to_cuboid() {
-    float x_start = m_centre_position->x - ((float) m_cuboidal_width / 2);
-    float x_end = m_centre_position->x + ((float) m_cuboidal_width / 2);
-    float y_start = m_centre_position->y - ((float) m_cuboidal_height / 2);
-    float y_end = m_centre_position->y + ((float) m_cuboidal_height / 2);
-    float z_start = m_centre_position->z - ((float) m_cuboidal_depth / 2);
-    float z_end = m_centre_position->z + ((float) m_cuboidal_depth / 2);
+    auto x_start = std::floor(m_centre_position->x - ((float) m_cuboidal_width / 2));
+    auto x_end = std::floor(m_centre_position->x + ((float) m_cuboidal_width / 2));
+    auto y_start = std::floor(m_centre_position->y - ((float) m_cuboidal_height / 2));
+    auto y_end = std::floor(m_centre_position->y + ((float) m_cuboidal_height / 2));
+    auto z_start = std::floor(m_centre_position->z - ((float) m_cuboidal_depth / 2));
+    auto z_end = std::floor(m_centre_position->z + ((float) m_cuboidal_depth / 2));
     Env *ep;
 
     // Define a bounding box that contains the cuboidal gradient, centred around the centre position.
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
-    for (int x = x_start; x < x_end; x++) {
-        for (int y = y_start; y < y_end; y++) {
-            for (int z = z_start; z < z_end; z++) {
+    for (int x = (int) x_start; x < (int) x_end; x++) {
+        for (int y = (int) y_start; y < (int) y_end; y++) {
+            for (int z = (int) z_start; z < (int) z_end; z++) {
                 assert(x >= 0);
                 assert(y >= 0);
                 assert(z >= 0);
@@ -591,7 +592,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
 
     // Check if the gradient position vary along each axis, if yes, determine the start and end points for the cuboid loop.
     // If no, then the gradient affects all positions on that axis.
-    if (x_varying) {
+    if (m_x_varying) {
         if (m_source_position->x < m_sink_position->x) {
             x_start = int(m_source_position->x);
             x_end = int(m_sink_position->x);
@@ -604,7 +605,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
         x_end = m_parent_world->gridXDimensions;
     }
 
-    if (y_varying) {
+    if (m_y_varying) {
         if (m_source_position->y < m_sink_position->y) {
             y_start = int(m_source_position->y);
             y_end = int(m_sink_position->y);
@@ -617,7 +618,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
         y_end = m_parent_world->gridYDimensions;
     }
 
-    if (z_varying) {
+    if (m_z_varying) {
         if (m_source_position->z < m_sink_position->z) {
             z_start = int(m_source_position->z);
             z_end = int(m_sink_position->z);
@@ -670,26 +671,25 @@ void Gradient::apply_gradient_to_sinkandsource() {
 ******************************************************************************************/
 
 void Gradient::apply_gradient_to_sphere() {
-    float x_start, x_end, y_start, y_end, z_start, z_end;
     // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
-    float radius = m_centre_position->x - (float) m_spherical_radius;
+	auto radius = (float) m_spherical_radius;
     float dist_from_centre;
     Env *ep;
 
     // Define a bounding box that contains the sphere, centred around the source position.
 
-    x_start = m_centre_position->x - radius;
-    x_end = m_centre_position->x + radius;
-    y_start = m_centre_position->y - radius;
-    y_end = m_centre_position->y + radius;
-    z_start = m_centre_position->y - radius;
-    z_end = m_centre_position->y + radius;
+    auto x_start = m_centre_position->x - radius;
+    auto x_end = m_centre_position->x + radius;
+    auto y_start = m_centre_position->y - radius;
+    auto y_end = m_centre_position->y + radius;
+    auto z_start = m_centre_position->z - radius;
+    auto z_end = m_centre_position->z + radius;
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
-    for (int x = x_start; x < x_end; x++) {
-        for (int y = y_start; y < y_end; y++) {
-            for (int z = z_start; z < z_end; z++) {
+    for (int x = (int) x_start; x < (int) x_end; x++) {
+        for (int y = (int) y_start; y < (int) y_end; y++) {
+            for (int z = (int) z_start; z < (int) z_end; z++) {
                 if (x >= 0 && y >= 0 && z >= 0) {
                     if (x < m_parent_world->gridXDimensions &&
                         y < m_parent_world->gridYDimensions &&
@@ -697,7 +697,7 @@ void Gradient::apply_gradient_to_sphere() {
                         if (m_parent_world->grid[x][y][z].getType() == const_E) {
                             ep = m_parent_world->grid[x][y][z].getEid();
                             if (ep != nullptr) {
-                                dist_from_centre = sqrt(
+                                dist_from_centre = std::sqrt(
                                         ((m_centre_position->x - x) * (m_centre_position->x - x)) +
                                         ((m_centre_position->y - y) * (m_centre_position->y - y)) +
                                         ((m_centre_position->z - z) * (m_centre_position->z - z)));
@@ -736,11 +736,11 @@ void Gradient::apply_gradient_to_sphere() {
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *source_position,
-                   Coordinates *sink_position) {
+Gradient::Gradient(WorldContainer *container,
+				   int gradient_type,
+				   Protein *protein,
+				   Coordinates *source_position,
+				   Coordinates *sink_position) {
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;
@@ -756,13 +756,13 @@ Gradient::Gradient(World_Container *container,
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *centre_position,
-                   int width,
-                   int height,
-                   int depth) {
+Gradient::Gradient(WorldContainer *container,
+				   const int gradient_type,
+				   Protein *protein,
+				   Coordinates *centre_position,
+				   const int width,
+				   const int height,
+				   const int depth) {
 
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
@@ -781,11 +781,11 @@ Gradient::Gradient(World_Container *container,
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *centre_position,
-                   int sphere_radius) {
+Gradient::Gradient(WorldContainer *container,
+				   const int gradient_type,
+				   Protein *protein,
+				   Coordinates *centre_position,
+				   const int sphere_radius) {
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;

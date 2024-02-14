@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 
+class MemAgent;
 class Protein;
 class World;
 
@@ -38,16 +39,23 @@ public:
 	void calcInside();
 
 	// Determines the ability of filopodia to form focal adhesions
-	float adhesiveness;
+	float m_adhesiveness = 0;
+
+	// Determines the ability of filopodia to extend into
+	// a given location
+	float m_solidness = 0;
 
 	// List of proteins found at this location.
 	std::vector<Protein*> owned_proteins;
 
 	// Returns true if this environment agent has a protein.
 
-	bool has_protein(std::string protein_name);
-    float get_protein_level(std::string protein_name);
-    void set_protein_level(std::string protein_name, float new_level);
+	bool has_protein(const std::string &protein_name);
+    double get_protein_level(const std::string &protein_name);
+    void set_protein_level(const std::string &protein_name, float new_level);
+
+	double get_extension_target_level(MemAgent *memAgent);  // <- Generated function.
+
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H

@@ -79,11 +79,6 @@ public:
     void releaseCytoProtein(MemAgent* memAgent);
     static void calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]);
 
-    // Cytoprotein Functions:
-    void populateCytoproteinList(MemAgent *memAgent);
-    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& cytoproteinName);
-    static void updateCellCytoproteinLevel(EC *cell, const std::string& cytoproteinName, const float& proteinDelta);
-
     // Protein Functions:
     void populateProteinList(MemAgent *memAgent);
     bool proteinIsAllowed(const std::string& proteinName);

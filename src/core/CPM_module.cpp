@@ -18,6 +18,8 @@
 #include "world.h"
 
 #include "../dsl/utils/utils.h"
+#include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueType.h"
 
 std::vector<MemAgent*> deleteList;
 
@@ -55,245 +57,104 @@ void CPM_module::run_CPM() {
     if (worldP->timeStep == 0) {
         //createMedium();
         Temp = 10;
-        calc_Cell_areas();
-    } else{
-        //if (worldP->timeStep > 200) Temp = 15;
-        //if(worldP->timeStep>600) Temp = 10;
+//        calc_Cell_areas();
+		calc_Cell_areas_DSL();
+    } else {
         for (steps = 0; steps < MCS_STEPS; steps++) {
-            //cout<<"Step "<<steps<<endl;
+			upto = (int) worldP->JunctionAgents.size();
+			flag = 0;
+			replaced_med = nullptr;
+			replaced_mem = nullptr;
+			replacer_mem = nullptr;
+			replacer_med = nullptr;
+			do {
+				chose = worldP->new_rand() % upto;
+				auto tissueType = worldP->JunctionAgents[chose]->Cell->m_tissue->m_tissue_type;
+				if ((worldP->does_DSL_CPM() && tissueType->runs_cpm()) || worldP->does_MSM_CPM()) {
+					worldP->JunctionAgents[chose]->checkNeighs(true);
+					if (((worldP->JunctionAgents[chose]->FIL == BASE)
+						|| (worldP->JunctionAgents[chose]->FIL == NONE))) {
+						count = 0;
+						flag2 = 0;
+						for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
+							if (worldP->JunctionAgents[chose]->SpringNeigh[k] != NULL)
+								if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+									count++;
+									flag2 = 1;
+								}
+						}
+						if (flag2 == 1) {
+							if (count != 1) {
+								choseReplacer = worldP->new_rand() % count;
+							} else {
+								choseReplacer = 1;
+							}
 
-            //pick random memagent to be overwritten by neighbour state..
-            //go through all memagents randomised order, pick first one
-            //set all agents list---------------------------------------------------------------------------------------------------------------------------------------------------------
-            /*for (i = 0; i < ECELLS; i++) {
-			
-                    uptoN = worldP->ECagents[i]->nodeAgents.size();
-			
-                    for (j = 0; j < uptoN; j++) worldP->ALLmemAgents.push_back(worldP->ECagents[i]->nodeAgents[j]);
-				
-            }
-                            //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		
-            //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //reorder agents randomly
-            random_shuffle(worldP->ALLmemAgents.begin(), worldP->ALLmemAgents.end());*/
-            //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //add medium agents to all agents list..
-
-            upto = (int) worldP->JunctionAgents.size();
-            flag = 0;
-            replaced_med = nullptr;
-            replaced_mem = nullptr;
-            replacer_mem = nullptr;
-            replacer_med = nullptr;
-            do {
-                //chose = rand() % upto;
-                chose = worldP->new_rand() % upto;
-/*upto = worldP->ALLmemAgents.size();// + mediumAgents.size();
-
-            flag = 0;
-            replaced_med = NULL;
-            replaced_mem = NULL;
-            replacer_mem = NULL;
-            replacer_med = NULL;
- *
- ***********make sure uncomment this do while loop as soon as not debugging!!!!!!!
-            do {
-
-
-                chose = rand() % upto;
-
-                if (chose < worldP->ALLmemAgents.size()) {
-
-                    worldP->ALLmemAgents[chose]->checkNeighs();
-
-
-                    if ((worldP->ALLmemAgents[chose]->DiffAd_neighs.size() != 0)){ //|| (worldP->ALLmemAgents[chose]->mediumNeighs!= 0)) {
-                        //for (j = 0; j < worldP->ALLmemAgents[chose]->DiffAd_neighs.size(); j++) {
-
-                            choseReplacer = rand() % (int)(worldP->ALLmemAgents[chose]->DiffAd_neighs.size());// + worldP->ALLmemAgents[chose]->mediumNeighs);
-
-
-                        if (choseReplacer < worldP->ALLmemAgents[chose]->DiffAd_neighs.size()) {
-
-
-							//make sure it has no filoodia coming from it (for future vessel version...)
-                            if ((worldP->ALLmemAgents[chose]->node == true)&&(worldP->ALLmemAgents[chose]->FIL==NONE)) {
-                                if (worldP->ALLmemAgents[chose]->DiffAd_neighs[choseReplacer]->node == true) {
-                                    flag = 1;
-                                    replacer_mem = worldP->ALLmemAgents[chose]->DiffAd_neighs[choseReplacer];
-                                    replaced_mem = worldP->ALLmemAgents[chose];
-                                    pos = chose;
-                                    //replaced->diffAd_replaced = replacer->Cell;
-                                    //replaced->labelled = true;
-
-                                }
-                            }
-                        } else {
-                            if(worldP->ALLmemAgents[chose]->mediumNeighs==0) cout<<"no medium neighs!"<<endl;
-                            //cout<<"medium Neighs "<<worldP->ALLmemAgents[chose]->mediumNeighs<<endl;
-                            replacer_med = mediumAgents[0];
-                            replaced_mem = worldP->ALLmemAgents[chose];
-                            pos = chose;
-                            flag = 1;
-
-                        }
-                    }
-                } else{
-                    cout<<"med some how "<<endl;
-                    replaced_med = mediumAgents[chose - worldP->ALLmemAgents.size()];
-
-                    replaced_med->checkNeighs();
-
-                    if(mediumAgents[chose - worldP->ALLmemAgents.size()]->DiffAd_neighs.size() != 0) {
-
-
-                    choseReplacer = rand() % mediumAgents[chose - worldP->ALLmemAgents.size()]->DiffAd_neighs.size();
-                    replacer_mem = mediumAgents[chose - worldP->ALLmemAgents.size()]->DiffAd_neighs[choseReplacer];
-                    pos = chose - worldP->ALLmemAgents.size();
-                    flag = 1;
-                    }
-                }
-
-            } while (flag == 0);*/
-
-                    worldP->JunctionAgents[chose]->checkNeighs(true);
-                    
-
-               
-                        //for (j = 0; j < worldP->ALLmemAgents[chose]->DiffAd_neighs.size(); j++) {
-
-                        //find how many junction springs it has, then pick one to be the replacer on the other end
-                    //if it has a filopodia, try to find a neighbour node in the same cell to transfer the fil to
-                    //so it can be replaced - this allows the final stage of overtaking to occur!!
-                    
-
-                    if (((worldP->JunctionAgents[chose]->FIL==BASE) || (worldP->JunctionAgents[chose]->FIL==NONE))){
-                        count = 0;
-                        flag2 = 0;
-                        for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++){
-                            //cout<<worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction<<endl;
-                            //cout<<worldP->JunctionAgents[chose]->FIL<<" "<<worldP->JunctionAgents[chose]->neigh[k]<<" "<<worldP->JunctionAgents[chose]->SpringNeigh[k]<<endl;
-                            if (worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL)
-                            if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
-                            	count++;
-                            	flag2=1;
-                            }
-                            //else count++;
-                        }
-                        if (flag2 == 1) {
-                        	if (count != 1) {
-								//choseReplacer = rand()%count;
-								choseReplacer = worldP->new_rand()%count;
-                        	} else {
-								choseReplacer=1;
-                        	}
-                            
-                        	count = 1;
-                        	for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
-                        		if(worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL) {
-                                	if(worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
-                                		if(count==choseReplacer){
-                                			replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
-                                			replaced_mem = worldP->JunctionAgents[chose];
-                                    		pos = chose;
-                                    		flag=1;
-                                		} else {
-                                			count++;
-                                		}
-                                	}
-                        		}
-                        	}
-                        }
-                    }
-            } while (flag == 0);
-
-            if (flag ==1 ) {
-            //for(i=0;i<upto;i++) worldP->ALLmemAgents[i]->checkNeighs();
-                //cout<<"*";
-            changeH = calc_local_change(replacer_mem, replaced_mem, replacer_med, replaced_med);
-
-            //cout<<"changeH "<<changeH<<endl;
-            //store sum of each pairs J value..
-            //calc_J_sum();
-            //cout<<"3"<<endl;
-
-            //store sum of differences in area from ideal for each cell
-            //calc_area_sum();
-
-            //calc new H value
-
-            //changeH = Hamiltonian_change();
-            //cout<<"4"<<endl;
-
-            //calc probability of accepting change - compare to old H
-            accept = calcProb(changeH);
-
-            if (worldP->timeStep > 100) {
-				if (biased_mig_diffAd) {
-					biasAccept = check_gradient(replaced_mem, replacer_mem);
-					if (biasAccept) {
-						//float prob = (float)rand()/(float)RAND_MAX;
-						float prob = (float)worldP->new_rand() / (float)RAND_MAX;
-						if (prob < BIAS_DIFFAD_CHANCE) {
-							accept = true;
+							count = 1;
+							for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
+								if (worldP->JunctionAgents[chose]->SpringNeigh[k] != NULL) {
+									if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+										if (count == choseReplacer) {
+											replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
+											replaced_mem = worldP->JunctionAgents[chose];
+											pos = chose;
+											flag = 1;
+										} else {
+											count++;
+										}
+									}
+								}
+							}
 						}
 					}
-					//cout<<"biased"<<endl;
 				}
-            }
+			} while (flag == 0);
 
-            //cout<<"calcPorb"<<endl;
-            //if accept, replace, and replace springs(can do without springs for now? just gridded agent version..)
-            if (accept) {
-                //actually replace
-                //cout << "replacing" << endl;
-                 //cout<<"replace "<<replacer_mem<<" "<<replaced_mem<<" "<<replacer_med<<" "<<replaced_med<<endl;
-                if(worldP->JunctionAgents[chose]->FIL==BASE){
-                    //cout<<"_";
-                        moved = move_fil_base(worldP->JunctionAgents[chose]);
-                } else {
-                	moved = true;
-                }
+			if (flag == 1) {
+				changeH = calc_local_change(replacer_mem, replaced_mem, replacer_med, replaced_med);
+				accept = calcProb(changeH);
+				if (worldP->timeStep > 100) {
+					if (biased_mig_diffAd) {
+						biasAccept = check_gradient(replaced_mem, replacer_mem);
+						if (biasAccept) {
+							float prob = (float) worldP->new_rand() / (float) RAND_MAX;
+							if (prob < BIAS_DIFFAD_CHANCE) {
+								accept = true;
+							}
+						}
+					}
+				}
+				if (accept) {
+					if (worldP->JunctionAgents[chose]->FIL == BASE) {
+						moved = move_fil_base(worldP->JunctionAgents[chose]);
+					} else {
+						moved = true;
+					}
 
-                if (moved) {
-                    // cout<<"-";
-                    replace_agent(replacer_mem, replaced_mem, replacer_med, replaced_med, pos);
-                } else {
-                	if (replaced_med != NULL) {
-                		replaced_med->diffAd_replaced = NULL;
-                	}
+					if (moved) {
+						replace_agent(replacer_mem, replaced_mem, replacer_med, replaced_med, pos);
+					} else {
+						if (replaced_med != NULL) {
+							replaced_med->diffAd_replaced = NULL;
+						}
+						if (replaced_mem != NULL) {
+							replaced_mem->diffAd_replaced_cell = NULL;
+							replaced_mem->diffAd_replaced_med = NULL;
+						}
+					}
+				} else {
+					if (replaced_med != NULL) {
+						replaced_med->diffAd_replaced = NULL;
+					}
 					if (replaced_mem != NULL) {
 						replaced_mem->diffAd_replaced_cell = NULL;
 						replaced_mem->diffAd_replaced_med = NULL;
 					}
-                }
-                //WORLDpointer->Pause=true;
-                //cout<<"replaced"<<endl;
-                //Hamiltonian = new_Hamiltonian;
-            } else {
-                //cout<<"not replacing!"<<endl;
-                if (replaced_med != NULL) {
-                	replaced_med->diffAd_replaced = NULL;
-                }
-                if (replaced_mem != NULL) {
-                    replaced_mem->diffAd_replaced_cell = NULL;
-                    replaced_mem->diffAd_replaced_med = NULL;
-                }
-                //cout<<"not replaced"<<endl;
-                //replaced->labelled = false;
-            }
-            }
-        }
-    }
-
-    //counld do this only every few timesteps..
+				}
+			}
+		}
+	}
     clearUpSmallSeparatedBitsOfCells();
-    /*for(i=0;i<deleteList.size();i++)
-        delete deleteList[i];
-
-    deleteList.clear();*/
-    //worldP->ALLmemAgents.clear();
 }
 //----------------------------------------------------------------------------------
 
@@ -423,10 +284,16 @@ void CPM_module::calc_Cell_areas(void) {
     int var = ECwidth * 2;
 
     for (i = 0; i < ECELLS; i++) {
-        //Q = rand() % (var);
+        Q = rand() % (var);
         Q = worldP->new_rand() % (var);
         worldP->ECagents[i]->ideal_Cell_area = ideal_Area;// - ((float) var / 2.0f) + Q;
     }
+}
+
+void CPM_module::calc_Cell_areas_DSL(void) {
+	for (auto cell : worldP->ECagents) {
+		cell->ideal_Cell_area = (int) cell->nodeAgents.size();
+	}
 }
 
 //----------------------------------------------------------------------------------
@@ -785,8 +652,6 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 //----------------------------------------------------------------------------------
 
 float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_mem, MedAgent* replacer_med, MedAgent* replaced_med) {
-
-
     float old_Jsum, oldAsum;
     float new_Jsum, newAsum;
     EC* ecp;
@@ -794,164 +659,65 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
     bool Do1 = false;
     bool Do2 = false;
     int conec_score;
-    int area =0;
-    int area2=0;
-    //calc local Jsum value before change, and cell size area values, store
+    int area = 0;
+    int area2 = 0;
 
-    //cout<<replacer_mem<<" "<<replaced_mem<<" "<<replacer_med<<" "<<replaced_med<<endl;
     old_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
-
-    //perimeterCheck----------------------------------------------------
-    /*if ((replaced_mem!= NULL)&&(replacer_mem!=NULL)) {
-        oldPsumC = 0;
-        newPsumC=0;
-        oldPsumD = 0;
-        newPsumD=0;
-        ecp = replaced_mem->Cell;
-        ecp2 = replacer_mem->Cell;
-
-        if( ecp->ODE.Variables[VR2] == 0) Do1 = true;
-        if( ecp2->ODE.Variables[VR2] == 0) Do2 = true;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            if(ecp->nodeAgents[i]->junction==true) oldPsumC++;
-        }
-
-        first = (oldPsumC - ideal_Perimeter)*(oldPsumC - ideal_Perimeter);
-        }
-        else first = 0;
-
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            if(ecp2->nodeAgents[i]->junction==true) oldPsumD++;
-        }
-        second = (oldPsumD - ideal_Perimeter)*(oldPsumD - ideal_Perimeter);
-        }
-        else second = 0;
-
-        oldPsum = (first)+(second);
-
-        replaced_mem->Cell = ecp2;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            ecp->nodeAgents[i]->JunctionTest(false);
-            if(ecp->nodeAgents[i]->junction==true) newPsumC++;
-        }
-        first = (newPsumC - ideal_Perimeter)*(newPsumC - ideal_Perimeter);
-        }
-        else first = 0;
-
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            ecp2->nodeAgents[i]->JunctionTest(false);
-            if(ecp2->nodeAgents[i]->junction==true) newPsumD++;
-        }
-        second = (newPsumD - ideal_Perimeter)*(newPsumD - ideal_Perimeter);
-        }
-        else second = 0;
-
-        newPsum = (first)+(second);
-
-        replaced_mem->Cell = ecp;
-
-        if(Do1==true){
-        for(i=0;i<ecp->nodeAgents.size();i++){
-            ecp->nodeAgents[i]->JunctionTest(false);
-
-        }
-        }
-        if(Do2==true){
-        for(i=0;i<ecp2->nodeAgents.size();i++){
-            ecp2->nodeAgents[i]->JunctionTest(false);
-
-        }
-        }
-
-    }*/
-
-    //-------------------------------------------------------------------
     conec_score = connectivity(replaced_mem, replacer_mem);
-    //cout<<"old J"<<old_Jsum<<endl;
 
     if (replaced_mem != NULL) {
-
         ecp = replaced_mem->Cell;
-        //if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-        for(i=0;i < (int) ecp->nodeAgents.size();i++){
-            if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area++;
+        for (i = 0; i < (int) ecp->nodeAgents.size(); i++) {
+            if ((ecp->nodeAgents[i]->FIL!=TIP) && (ecp->nodeAgents[i]->FIL!=STALK)) {
+				area++;
+			}
         }
-        //cout<<"mem replaced area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = (float) ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
+		oldAsum = (float) ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
 
-        //}
-
-        if (replacer_mem != NULL) {
+		if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
-          //   if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            for(i = 0; i < (int) ecp->nodeAgents.size();i++){
-            if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area2++;
-        }
-            //cout<<"mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
+            for (i = 0; i < (int) ecp->nodeAgents.size(); i++) {
+            	if ((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) {
+					area2++;
+				}
+        	}
             oldAsum += (float) ((area2  - ecp->ideal_Cell_area)*(area2  - ecp->ideal_Cell_area));
         }
-        //}
-        
-            //calc with change
-     } 
-    //if medium guy is to be assesed
+	}
     else {
-
         ecp = replacer_mem->Cell;
-        //cout<<"medium overtaken, mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
+		oldAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)
+				* (ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
      }
 
-    //cout<<"oldAsum "<<oldAsum<<endl;
-    //now replace temporarily
-    if(replaced_mem!=NULL){
-        if(replacer_mem!=NULL) replaced_mem->diffAd_replaced_cell = replacer_mem->Cell;
-        else  replaced_mem->diffAd_replaced_med = replacer_med;
-    }
-    else{
+    // Now replace temporarily
+    if (replaced_mem != NULL) {
+        if (replacer_mem!=NULL) {
+			replaced_mem->diffAd_replaced_cell = replacer_mem->Cell;
+		} else {
+			replaced_mem->diffAd_replaced_med = replacer_med;
+		}
+    } else {
         replaced_med->diffAd_replaced = replacer_mem;
     }
-        //replaced->labelled = true;
 
+	new_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
 
-        new_Jsum = calcLocal_Jsum(replaced_mem, replaced_med);
+	if (replaced_mem != NULL) {
+		ecp = replaced_mem->Cell;
+		newAsum = (float) ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
 
-        //cout<<"new Jsum "<<new_Jsum<<endl;
-        if (replaced_mem != NULL) {
-
-            ecp = replaced_mem->Cell;
-           //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            newAsum = (float) ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
-            // }
-
-        if (replacer_mem != NULL) {
+		if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
-           //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
             newAsum += (float) ((area2 +1 - ecp->ideal_Cell_area)*(area2 +1  - ecp->ideal_Cell_area));
-           //  }
         }
-         //calc with change
-     }
-    //if medium guy is to be assesed
-    else {
-
+     } else {
         ecp = replacer_mem->Cell;
-            newAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
+            newAsum = (float) ( (ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)
+					* (ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
      }
-       
-
-        //cout<<"new Asum "<<newAsum<<endl;
-        //return difference
-        return ((new_Jsum + newAsum)-(old_Jsum + oldAsum));
-        //return ((newAsum)-(oldAsum));
-        //return ((new_Jsum)-(old_Jsum));
-
+	// Return difference.
+	return ((new_Jsum + newAsum)-(old_Jsum + oldAsum));
 }
 
 
@@ -960,25 +726,19 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
         int x, m, n, p, zed;
         int i, j, k;
         bool connected;
-        if(replaced_mem!=NULL){
-        i = (int) replaced_mem->Mx;
-        j = (int) replaced_mem->My;
-        k = (int) replaced_mem->Mz;
+
+        if (replaced_mem!=NULL) {
+			i = (int) replaced_mem->Mx;
+			j = (int) replaced_mem->My;
+			k = (int) replaced_mem->Mz;
+        } else if(replaced_med!=NULL) {
+			i = (int) replaced_med->Mx;
+			j = (int) replaced_med->My;
+			k = (int) replaced_med->Mz;
         }
-        else if(replaced_med!=NULL){
-        i = (int) replaced_med->Mx;
-        j = (int) replaced_med->My;
-        k = (int) replaced_med->Mz;
-        }
+
         float JsumLocal = 0.0f;
 
-        //cout<<i<<" "<<j<<" "<<k<<endl;
-
-        //--------------
-
-        //--------------
-
-        //same layer
         for (x = 0; x < 27; x++) {
             if (x == 0) {
                 m = i + 1;
@@ -1049,48 +809,47 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
                 m = i;
                 n = j;
                 p = k - 1;
-            }//layer above
-        else if (x == 17) {
-            m = i + 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 18) {
-            m = i + 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 19) {
-            m = i + 1;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 20) {
-            m = i;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 21) {
-            m = i;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 22) {
-            m = i - 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 23) {
-            m = i - 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 24) {
-            m = i - 1;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 25) {
-            m = i;
-            n = j;
-            p = k + 1;
-        } else {
-            m = i;
-            n = j;
-            p = k;
-        }
+            } else if (x == 17) {
+                m = i + 1;
+                n = j - 1;
+                p = k + 1;
+            } else if (x == 18) {
+                m = i + 1;
+                n = j;
+                p = k + 1;
+            } else if (x == 19) {
+                m = i + 1;
+                n = j + 1;
+                p = k + 1;
+            } else if (x == 20) {
+                m = i;
+                n = j - 1;
+                p = k + 1;
+            } else if (x == 21) {
+                m = i;
+                n = j + 1;
+                p = k + 1;
+            } else if (x == 22) {
+                m = i - 1;
+                n = j - 1;
+                p = k + 1;
+            } else if (x == 23) {
+                m = i - 1;
+                n = j;
+                p = k + 1;
+            } else if (x == 24) {
+                m = i - 1;
+                n = j + 1;
+                p = k + 1;
+            } else if (x == 25) {
+                m = i;
+                n = j;
+                p = k + 1;
+            } else {
+                m = i;
+                n = j;
+                p = k;
+            }
 
 
         //-------------------------------
@@ -1101,32 +860,39 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
         if (n >= yMAX) n = 0;
         if (n < 0) n = yMAX - 1;*/
 
-        if(worldP->insideWorld(m,n,p)){
-        if (worldP->grid[m][n][p].getType() == const_M) {
-            //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
-            for (zed = 0; zed < (int) worldP->grid[m][n][p].getMids().size(); zed++) {
-                if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
-                    connected = replaced_mem->meshConnected(worldP->grid[m][n][p].getMids()[zed]);
+            if(worldP->insideWorld(m,n,p)){
+                if (worldP->grid[m][n][p].getType() == const_M) {
+                //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
+                    for (zed = 0; zed < (int) worldP->grid[m][n][p].getMids().size(); zed++) {
+                    if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
+                        connected = replaced_mem->meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                     if (connected) {
                         worldP->grid[m][n][p].getMids()[zed]->checkNeighs(true);
                         //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
                         //so for this guy, checkNeighs, then put through Jsum calc..
-                        JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+						if (worldP->does_DSL_CPM() && !worldP->does_MSM_CPM()) {
+                            JsumLocal += calc_Jsum_individual_DSL(worldP->grid[m][n][p].getMids()[zed], NULL);
+                        }
+						if (worldP->does_MSM_CPM() && !worldP->does_DSL_CPM()) {
+							JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+						}
                     }
                 }
 
             }
         } else if (worldP->grid[m][n][p].getType() == MED) { //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
-
             worldP->grid[m][n][p].getMed()->checkNeighs();
             //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
             //so for this guy, checkNeighs, then put through Jsum calc..
             //cout<<m<<" "<<n<<" "<<p<<endl;
-            JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].getMed());
-
-
-        }
-        }
+			if (worldP->does_DSL_CPM() && !worldP->does_MSM_CPM()) {
+				JsumLocal += calc_Jsum_individual_DSL(NULL, worldP->grid[m][n][p].getMed());
+			}
+            if (worldP->does_MSM_CPM() && !worldP->does_DSL_CPM()) {
+                JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+            }
+		}
+		}
 
 
 
@@ -1209,7 +975,7 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
                             J_sumL += J_TS;
                         } else {
                             J_sumL += J_TT;
-							
+
                         }
 						
                     }
@@ -1254,6 +1020,94 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
 	
 	return (J_sumL);
 }
+
+float CPM_module::calc_Jsum_individual_DSL(MemAgent * individual, MedAgent* medInd) {
+	int j;
+	MemAgent* mp = individual;
+	float J_sumL = 0;
+
+	// Get the cell from either the memAgent or the diffAd_neigh (also a memAgent).
+
+	if (mp != nullptr) {
+		if (mp->diffAd_replaced_cell != nullptr) {
+			J_sumL += (float) mp->mediumNeighs*J_MC;
+			for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
+				// Decide types.
+				// mp->diffAd_replaced_cell->activeVEGFRtot
+				if (adhesion_condition_check(mp, true)) {
+					// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+						J_sumL += J_SS;
+					} else {
+						J_sumL += J_TS;
+					}
+				} else {
+					// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+						J_sumL += J_TS;
+					} else {
+						J_sumL += J_TT;
+					}
+				}
+			}
+		} else if (mp->diffAd_replaced_med != nullptr) {
+			J_sumL += (float) mp->DiffAd_neighs.size() * J_MC;
+		} else {
+			J_sumL += (float) mp->mediumNeighs*J_MC;
+			for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
+				if (mp->DiffAd_neighs[j]->diffAd_replaced_cell != nullptr) {
+					// Decide types.
+					// mp->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp, false)) {
+						// mp->DiffAd_neighs[j]->diffAd_replaced_cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], true)) {
+							J_sumL += J_SS;
+						} else {
+							J_sumL += J_TS;
+						}
+					} else {
+						// mp->DiffAd_neighs[j]->diffAd_replaced_cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], true)) {
+							J_sumL += J_TS;
+						} else {
+							J_sumL += J_TT;
+						}
+					}
+				} else if (mp->DiffAd_neighs[j]->diffAd_replaced_med != nullptr) {
+					J_sumL += J_MC;
+				} else {
+					// Decide types
+					// mp->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp, false)) {
+						// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+							J_sumL += J_SS;
+						} else {
+							J_sumL += J_TS;
+						}
+					} else {
+						// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+							J_sumL += J_TS;
+						} else {
+							J_sumL += J_TT;
+						}
+					}
+				}
+			}
+		}
+	} else {
+		if (medInd->diffAd_replaced == nullptr) {
+			J_sumL += (float) medInd->DiffAd_neighs.size() * J_MC;
+		}
+		else {
+			J_sumL += (float) medInd->mediumNeighs*J_MC;
+		}
+	}
+
+	return (J_sumL);
+}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void MedAgent::checkNeighs(void) {
@@ -1435,8 +1289,8 @@ void CPM_module::createMedium(void) {
     int i, j, k;
     MedAgent* medp;
 
-    for (i = 0; i < xMAX; i++) {
-        for (j = 0; j < yMAX; j++) {
+    for (i = 0; i < worldP->gridXDimensions; i++) {
+        for (j = 0; j < worldP->gridYDimensions; j++) {
             if (worldP->grid[i][j][0].getType() != const_M) {
                 worldP->grid[i][j][0].setType(MED);
                 medp = new MedAgent(worldP);
@@ -2321,7 +2175,6 @@ void CPM_module::clearUpSmallSeparatedBitsOfCells(void) {
 
                     do {
                         //score++;
-
                         if (Mcurrent->FIL == TIP) {
                             Mcurrent->filTipTimer = FILTIPMAX + 1;
                             flag = 1;

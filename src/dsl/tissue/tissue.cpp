@@ -54,7 +54,7 @@ namespace TissueUtils {
 *  Returns:		string
 ******************************************************************************************/
 
-std::string Tissue::get_name() {
+std::string Tissue::get_name() const {
     return this->m_name;
 }
 
@@ -74,19 +74,19 @@ int Tissue::get_n_cells() {
 *  Returns:		*Tissue_Type
 ******************************************************************************************/
 
-Tissue_Type* Tissue::get_tissue_type() {
+Tissue_Type* Tissue::get_tissue_type() const {
     return this->m_tissue_type;
 }
 
 // Setters //
 
 /*****************************************************************************************
-*  Name:		get_name
-*  Description: Returns the total number of cells in the tissue.
+*  Name:		set_name
+*  Description: Sets the name of the tissue.
 *  Returns:		string
 ******************************************************************************************/
 
-void Tissue::set_name(std::string name) {
+void Tissue::set_name(const std::string &name) {
     this->m_name = name;
 }
 
@@ -96,7 +96,7 @@ void Tissue::set_name(std::string name) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue::set_n_cells(int n_cells) {
+void Tissue::set_n_cells(const int n_cells) {
 	this->m_cell_number = n_cells;
 }
 
@@ -326,7 +326,7 @@ void Tissue::determineJunctions() {
 *  Returns:		int
 ******************************************************************************************/
 
-int  Tissue_Vessel::get_vessel_length() {
+int Tissue_Vessel::get_vessel_length() const {
     return this->m_vessel_length;
 }
 
@@ -336,7 +336,7 @@ int  Tissue_Vessel::get_vessel_length() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_length_in_cells() {
+int Tissue_Vessel::get_vessel_length_in_cells() const {
     return this->m_vessel_length;
 }
 
@@ -346,7 +346,7 @@ int Tissue_Vessel::get_vessel_length_in_cells() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_cells_per_cross_section() {
+int Tissue_Vessel::get_vessel_cells_per_cross_section() const {
     return this->m_vessel_cells_per_cross_section;
 }
 
@@ -356,7 +356,7 @@ int Tissue_Vessel::get_vessel_cells_per_cross_section() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_interior_radius() {
+int Tissue_Vessel::get_vessel_interior_radius() const {
     return this->m_vessel_interior_radius;
 }
 
@@ -366,7 +366,7 @@ int Tissue_Vessel::get_vessel_interior_radius() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_total_radius() {
+int Tissue_Vessel::get_vessel_total_radius() const {
     return this->m_vessel_total_radius;
 }
 
@@ -377,8 +377,18 @@ int Tissue_Vessel::get_vessel_total_radius() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_dist_from_edge() {
+int Tissue_Vessel::get_vessel_dist_from_edge() const {
     return this->m_vessel_dist_from_edge;
+}
+
+/*****************************************************************************************
+*  Name:		get_vessel_centre_x_coord
+*  Description: Gets the x coordinate of the vessel's centre.
+*  Returns:		int
+******************************************************************************************/
+
+float Tissue_Vessel::get_vessel_centre_x_coord() const {
+	return this->m_vessel_centre_x_coord;
 }
 
 /*****************************************************************************************
@@ -387,7 +397,7 @@ int Tissue_Vessel::get_vessel_dist_from_edge() {
 *  Returns:		int
 ******************************************************************************************/
 
-float Tissue_Vessel::get_vessel_centre_y_coord() {
+float Tissue_Vessel::get_vessel_centre_y_coord() const {
     return this->m_vessel_centre_y_coord;
 }
 
@@ -397,11 +407,9 @@ float Tissue_Vessel::get_vessel_centre_y_coord() {
 *  Returns:		int
 ******************************************************************************************/
 
-float Tissue_Vessel::get_vessel_centre_z_coord() {
+float Tissue_Vessel::get_vessel_centre_z_coord() const {
     return this->m_vessel_centre_z_coord;
 }
-
-// SETTERS //
 
 /*****************************************************************************************
 *  Name:		set_vessel_length
@@ -410,7 +418,7 @@ float Tissue_Vessel::get_vessel_centre_z_coord() {
 ******************************************************************************************/
 
 
-void Tissue_Vessel::set_vessel_length( int vessel_length ) {
+void Tissue_Vessel::set_vessel_length(const int vessel_length) {
     this->m_vessel_length = vessel_length;
 }
 
@@ -420,7 +428,7 @@ void Tissue_Vessel::set_vessel_length( int vessel_length ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_length_in_cells( int vessel_length_in_cells ) {
+void Tissue_Vessel::set_vessel_length_in_cells(const int vessel_length_in_cells) {
     this->m_vessel_length_in_cells = vessel_length_in_cells;
 }
 
@@ -430,7 +438,7 @@ void Tissue_Vessel::set_vessel_length_in_cells( int vessel_length_in_cells ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_cells_per_cross_section( int vessel_cells_per_cross_section ) {
+void Tissue_Vessel::set_vessel_cells_per_cross_section(const int vessel_cells_per_cross_section) {
     this->m_vessel_cells_per_cross_section = vessel_cells_per_cross_section;
 }
 
@@ -440,7 +448,7 @@ void Tissue_Vessel::set_vessel_cells_per_cross_section( int vessel_cells_per_cro
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_interior_radius( int vessel_interior_radius ) {
+void Tissue_Vessel::set_vessel_interior_radius(const int vessel_interior_radius) {
     this->m_vessel_interior_radius = vessel_interior_radius;
 }
 
@@ -451,7 +459,7 @@ void Tissue_Vessel::set_vessel_interior_radius( int vessel_interior_radius ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_total_radius( int vessel_total_radius ) {
+void Tissue_Vessel::set_vessel_total_radius(const int vessel_total_radius) {
     this->m_vessel_total_radius = vessel_total_radius;
 }
 
@@ -461,8 +469,18 @@ void Tissue_Vessel::set_vessel_total_radius( int vessel_total_radius ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_dist_from_edge( int vessel_dist_from_edge ) {
+void Tissue_Vessel::set_vessel_dist_from_edge(const int vessel_dist_from_edge) {
     this->m_vessel_dist_from_edge = vessel_dist_from_edge;
+}
+
+/*****************************************************************************************
+*  Name:		set_vessel_centre_x_coord
+*  Description: Records the y coordinate of the vessel's centre.
+*  Returns:		int
+******************************************************************************************/
+
+void Tissue_Vessel::set_vessel_centre_x_coord(const float vessel_centre_x_coord) {
+	this->m_vessel_centre_x_coord = vessel_centre_x_coord;
 }
 
 /*****************************************************************************************
@@ -471,7 +489,7 @@ void Tissue_Vessel::set_vessel_dist_from_edge( int vessel_dist_from_edge ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_centre_y_coord( float vessel_centre_y_coord ) {
+void Tissue_Vessel::set_vessel_centre_y_coord(const float vessel_centre_y_coord) {
     this->m_vessel_centre_y_coord = vessel_centre_y_coord;
 }
 
@@ -481,7 +499,7 @@ void Tissue_Vessel::set_vessel_centre_y_coord( float vessel_centre_y_coord ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_centre_z_coord( float vessel_centre_z_coord ) {
+void Tissue_Vessel::set_vessel_centre_z_coord(const float vessel_centre_z_coord) {
     this->m_vessel_centre_z_coord = vessel_centre_z_coord;
 }
 
@@ -492,18 +510,15 @@ void Tissue_Vessel::set_vessel_centre_z_coord( float vessel_centre_z_coord ) {
 ******************************************************************************************/
 
 bool Tissue_Vessel::check_boundaries() {
-    Cell *current_cell;
-    Tissue *current_tissue;
-
-    for (int i = 0; i < m_tissue_container->cells.size(); i++) {
-        current_cell = m_tissue_container->cells[i];
+    for (auto *current_cell : m_tissue_container->cells) {
         if (m_tissue_container->check_cell_vessel_overlap(current_cell, this)) {
-            return false; // <- Overlap detected, send false to the assert statement calling this function.
+            // Overlap detected, send false to
+            // the assert statement calling this function.
+            return false;
         }
     }
 
-    for (int i = 0; i < m_tissue_container->tissues.size(); i++) {
-        current_tissue = m_tissue_container->tissues[i];
+    for (auto *current_tissue : m_tissue_container->m_tissues) {
         if (current_tissue != this) {
             if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
                 auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
@@ -528,16 +543,14 @@ bool Tissue_Vessel::check_boundaries() {
 ******************************************************************************************/
 
 void Tissue_Vessel::determine_boundaries() {
-    float x_coord_1, x_coord_2;
-    Coordinates vessel_end_1, vessel_end_2;
 	std::vector<Coordinates> boundary_coords;
 
-    x_coord_1 = m_position->get_x_coord() - (float(m_vessel_length)/2.0f);
-    vessel_end_1 = Coordinates(x_coord_1, m_position->get_y_coord(), m_position->get_z_coord());
+    auto x_coord_1 = std::floor(m_position->get_x_coord() - ( (float) m_vessel_length / 2.0f));
+    auto vessel_end_1 = Coordinates((int) x_coord_1, (int)m_position->get_y_coord(), (int)m_position->get_z_coord());
     boundary_coords.push_back(vessel_end_1);
 
-    x_coord_2 = m_position->get_x_coord() + (float(m_vessel_length)/2.0f);
-    vessel_end_2 = Coordinates(x_coord_2, m_position->get_y_coord(), m_position->get_z_coord());
+    auto x_coord_2 = std::floor(m_position->get_x_coord() + ( (float) m_vessel_length / 2.0f));
+    auto vessel_end_2 = Coordinates((int) x_coord_2, (int)m_position->get_y_coord(), (int)m_position->get_z_coord());
     boundary_coords.push_back(vessel_end_2);
 
     this->m_boundaries = boundary_coords;
@@ -566,6 +579,7 @@ Tissue_Vessel::Tissue_Vessel(  Tissue_Container *tissue_container,
             set_n_cells(tissue_type->get_length_in_cells() * tissue_type->get_cells_per_cross_section());
             set_vessel_length(tissue_type->get_length_in_cells() * tissue_type->m_cell_type->m_shape->get_width());
             set_vessel_interior_radius(tissue_type->get_total_radius() - 2 );
+			set_vessel_centre_x_coord(position->get_x_coord());
             set_vessel_centre_y_coord(position->get_y_coord());
             set_vessel_centre_z_coord(position->get_z_coord());
             std::cout << "Tissue: Vessel created successfully!" << std::endl;
@@ -617,8 +631,8 @@ void Tissue_Vessel::create_vessel() {
 		this->m_cell_agents[i]->green = ((float)rand()/(float)RAND_MAX);
 		this->m_cell_agents[i]->blue = ((float)rand()/(float)RAND_MAX);
 
-		// For each memAgent along the cell's width, create enough memAgents vertically to
-		// complete the cell.
+        // For each memAgent along the cell's width, create
+		// enough memAgents vertically to complete the cell.
         for (int j = 0; j < cell_width; j++) {
             this->tissue_vessel_draw_mesh(i, j, newCellAgent);
         }
@@ -627,7 +641,8 @@ void Tissue_Vessel::create_vessel() {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
         newCellAgent->initialiseProteinMemAgentBuffer();
-    }
+
+	}
 }
 
 /*****************************************************************************************
@@ -646,84 +661,71 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     float thetaStart, deltaSteps;
     float depth;
     MemAgent* newMemAgent;
-    int circlePosStartAb=0;
+    int circlePosStartAb = 0;
     vesselDelta = ((2.0f * (float)Pi) / (float)m_vessel_cells_per_cross_section);
 
     //Calculate the total number of memAgents that form the vessel circumference, and therefore the number per cell.
-    int totalAbSteps = (int)(2.0f * (float)Pi * (float)m_vessel_total_radius);
-    int ablumenalSteps = (int)((float)totalAbSteps / (float)m_vessel_cells_per_cross_section);
+    int totalAbSteps = (int) std::floor((2.0f * (float)Pi * (float) m_vessel_total_radius));
+    int ablumenalSteps = (int) std::floor((float) totalAbSteps / (float) m_vessel_cells_per_cross_section);
 
     deltaSteps = vesselDelta / float(ablumenalSteps);
     float offset;
     float offsetPercentage;
 
     // Tidy this bit up.
-    float x = (float)i / (float)m_vessel_cells_per_cross_section;
-    lx = (int)x;
-    depth = cell_width * lx;
-    thetaStart = vesselDelta * (float)i;
-    circlePosStartAb = ablumenalSteps*i;
+    float x = (float) i / (float)m_vessel_cells_per_cross_section;
+    lx = (int) std::floor(x);
+    depth = (float) cell_width * (float) lx;
+    thetaStart = vesselDelta * (float) i;
+    circlePosStartAb = ablumenalSteps * i;
 
-    if (lx % 2 != 0) {
-        offset=0.5;
-        thetaStart+=offset*vesselDelta;
-        circlePosStartAb+=(int)(offset*ablumenalSteps);
-    }
+//    if (lx % 2 != 0) {
+//        offset=0.5;
+//        thetaStart+=offset*vesselDelta;
+//        circlePosStartAb += (int) std::floor(offset * (float) ablumenalSteps);
+//    }
 
-    circlePosStartAb = circlePosStartAb % int(ablumenalSteps * m_vessel_cells_per_cross_section);
+    circlePosStartAb = circlePosStartAb % (int) std::floor(ablumenalSteps * m_vessel_cells_per_cross_section);
 
-    if( thetaStart >= 2 * Pi ) {
+    if ( thetaStart >= 2 * Pi ) {
         thetaStart -= 2 * Pi;
     }
 
-    int lowerXboundary = this->m_boundaries[0].x;
+    int lowerXBoundary = (int) std::floor(this->m_boundaries[0].x);
 
-    X = (float)j; // X-Coordinate is not currently set, will need to think about this when changing the periodic boundary.
-    Y = (float)m_vessel_centre_y_coord;
-    Z = (float)m_vessel_centre_z_coord;
-
+    // X-Coordinate is not currently set, will need
+    // to think about this when changing the periodic boundary.
+    X = (float) j;
+    Y = (float) m_vessel_centre_y_coord;
+    Z = (float) m_vessel_centre_z_coord;
 
     for (int J = 0; J < ablumenalSteps; J++) {
-
         theta = thetaStart + (deltaSteps * (float)J);
-        k = (float)m_vessel_total_radius * cos(theta);
-        l = (float)m_vessel_total_radius * sin(theta);
+        k = (float) m_vessel_total_radius * cos(theta);
+        l = (float) m_vessel_total_radius * sin(theta);
 
     //If within vessel, but not lumen, create a memAgent.
-        if (m_world->insideWorld(j + depth + (float)lowerXboundary, k+Y, l+Z)) {
+        if (m_world->insideWorld(j + depth + (float)lowerXBoundary, k+Y, l+Z)) {
 
             newMemAgent = new MemAgent(cellAgent, this->m_world);
 
-            newMemAgent->Mx = (float)j + (float)depth + (float)lowerXboundary;
+            newMemAgent->Mx = (float) j + (float) depth + (float) lowerXBoundary;
             newMemAgent->My = k + Y;
             newMemAgent->FA = true;
-            //---------------------------------------
-            ///for CELL_SETUP=2 (lars and rearrangement paper models with sewn up front).
-            ///label the front row of nodes so they can be sewn up once gridded
-            if (BLINDENDED_SPROUT==true){
-                if ((i == m_cell_number - 1) || (i == m_cell_number - 2)) {
-                    if(j == cell_width - 1) newMemAgent->labelledBlindended =  true;
-                }
-            }
-            //---------------------------------------
+
             newMemAgent->Mz = l + Z;
 
             newMemAgent->setPreviousX(newMemAgent->Mx);
             newMemAgent->setPreviousY(newMemAgent->My);
             newMemAgent->setPreviousZ(newMemAgent->Mz);
 
-
             newMemAgent->circlePos=(int)(J + circlePosStartAb);
 
-            if(newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
+            if (newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
                 newMemAgent->circlePos -= ablumenalSteps * m_vessel_cells_per_cross_section;
             }
-
             cellAgent->nodeAgents.push_back(newMemAgent);
-
-            m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), newMemAgent);
-
-            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
+            m_world->setMLocation(int(j + depth) + lowerXBoundary, int(k+Y), int(l+Z), newMemAgent);
         }
     }
 }
@@ -908,15 +910,15 @@ bool Tissue_Monolayer::check_boundaries() {
     Cell *current_cell;
     Tissue *current_tissue;
 
-    for (int i = 0; i < m_tissue_container->cells.size(); i++) {
-        current_cell = m_tissue_container->cells[i];
+    for (auto & cell : m_tissue_container->cells) {
+        current_cell = cell;
         if (m_tissue_container->check_cell_monolayer_overlap(current_cell, this)) {
             return false; // <- Overlap detected, send false to the assert statement calling this function.
         }
     }
 
-    for (int i = 0; i < m_tissue_container->tissues.size(); i++) {
-        current_tissue = m_tissue_container->tissues[i];
+    for (auto & m_tissue : m_tissue_container->m_tissues) {
+        current_tissue = m_tissue;
         if (current_tissue != this) {
             if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
                 auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
@@ -947,13 +949,17 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
     int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
-    for (i = (int)(centreX-(float)cell_width/2.0f); i < (int)(centreX+(float)cell_width/2.0f); i++) {
-        for (j = (int)(centreY-(float)cell_height/2.0f); j < (int)(centreY+(float)cell_height/2.0f); j++) {
+    for (i = (int) (std::floor( (float) centreX - (float)cell_width / 2.0f));
+            i < (int)( std::floor((float) centreX + (float) cell_width / 2.0f));
+            i++) {
+        for (j = (int) (std::floor( (float) centreY - (float) cell_height / 2.0f));
+                j < (int) (std::floor((float) centreY + (float)cell_height / 2.0f));
+                j++) {
 
             newMemAgent = new MemAgent(m_cell_agents[cell_number], (World*) this->m_world);
-            newMemAgent->Mx = (float)i;
-            newMemAgent->My = (float)j;
-            newMemAgent->Mz = (float)z_coord;
+            newMemAgent->Mx = (float) i;
+            newMemAgent->My = (float) j;
+            newMemAgent->Mz = (float) z_coord;
             m_cell_agents[cell_number]->nodeAgents.push_back(newMemAgent);
             m_world->setMLocation(int(i), int(j), z_coord, newMemAgent);
             newMemAgent->node=true;
@@ -1067,23 +1073,21 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
 ******************************************************************************************/
 
 void Tissue_Monolayer::determine_boundaries() {
-	float x_coord_1, x_coord_2, y_coord_1, y_coord_2;
-	Coordinates monolayer_end_1, monolayer_end_2;
 	std::vector<Coordinates> boundary_coords;
 
 	auto cell_width = float(m_tissue_type->m_cell_type->m_shape->get_width());
 	auto cell_height = float(m_tissue_type->m_cell_type->m_shape->get_height());
 
-	x_coord_1 = m_position->get_x_coord() - ((float(m_width_in_cells) * cell_width)/2.0f);
-	y_coord_1 = m_position->get_y_coord() - ((float(m_height_in_cells) * cell_height)/2.0f);
+	auto x_coord_1 = std::floor(m_position->get_x_coord() - ((float(m_width_in_cells) * cell_width)/2.0f));
+	auto y_coord_1 = std::floor(m_position->get_y_coord() - ((float(m_height_in_cells) * cell_height)/2.0f));
 
-	monolayer_end_1 = Coordinates(x_coord_1, y_coord_1, m_position->get_z_coord());
+	auto monolayer_end_1 = Coordinates((int) x_coord_1, (int) y_coord_1, (int) m_position->get_z_coord());
 	boundary_coords.push_back(monolayer_end_1);
 
-	x_coord_2 = m_position->get_x_coord() + ((float(m_width_in_cells) * cell_width)/2.0f);
-	y_coord_2 = m_position->get_y_coord() + ((float(m_height_in_cells) * cell_height)/2.0f);
+	auto x_coord_2 = m_position->get_x_coord() + ((float(m_width_in_cells) * cell_width)/2.0f);
+	auto y_coord_2 = m_position->get_y_coord() + ((float(m_height_in_cells) * cell_height)/2.0f);
 
-	monolayer_end_2 = Coordinates(x_coord_2, y_coord_2, m_position->get_z_coord());
+	auto monolayer_end_2 = Coordinates((int) x_coord_2, (int) y_coord_2, (int) m_position->get_z_coord());
 	boundary_coords.push_back(monolayer_end_2);
 
 	this->m_boundaries = boundary_coords;
@@ -1157,19 +1161,19 @@ bool Tissue::checkTissueHasPatterned() {
     }
 }
 
-const int& Tissue::get_pattern_history() {
+int Tissue::get_pattern_history() const {
     return this->m_patternHistory;
 }
 
-void Tissue::set_pattern_history(const int& new_value) {
+void Tissue::set_pattern_history(const int new_value) {
     this->m_patternHistory = new_value;
 }
 
-const bool& Tissue::is_patterned() {
+bool Tissue::is_patterned() const {
     return this->m_hasPatterned;
 }
 
-void Tissue::set_patterned(const bool& hasPatterned) {
+void Tissue::set_patterned(const bool hasPatterned) {
     this->m_hasPatterned = hasPatterned;
 }
 

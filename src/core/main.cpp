@@ -73,7 +73,8 @@ bool MEM_LEAK_OCCURRING = false; //core removal
 
 float dll4_SIG = 7.0f;
 float FIL_VARY = 2;
-float EPSILON = 0.9;
+//float EPSILON = 0.9;  // TOM: Testing env selection. Move back to 0.9 at some point.
+float EPSILON = 1.0;  // TOM: Testing env selection. Move back to 0.9 at some point.
 float tokenStrength = 1;
 float FILTIPMAX = 15;
 int FIL_SPACING = 2;
@@ -179,117 +180,123 @@ void varyParams(double& param, const double& min, const double& max) {
     }
 }
 
+void shuffleTestSetup(World* world, const bool DSL_mode) {
+	// Set mode for CPM to be DSL or MSM.
+	// Create files to log the number of
+	// active and inactive cells over time.
+
+	if (DSL_mode) {
+		world->set_MSM_CPM(false);
+		world->set_DSL_CPM(true);
+	} else {
+		world->set_MSM_CPM(true);
+		world->set_DSL_CPM(false);
+	}
+
+	for (auto *cellAgent : world->ECagents) {
+		if (cellAgent->cell_number % 2 == 0) {
+			cellAgent->activeVEGFRtot = 500;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 500, 0);
+		} else {
+			cellAgent->activeVEGFRtot = 0;
+			cellAgent->set_cell_protein_level("VEGF_VEGFR", 0, 0);
+		}
+	}
+
+	world->create_shuffle_test_outfiles();
+}
+
+void shane_alternate_start(const bool randomActive, World *world) {
+	if (randomActive) {
+		for (auto current_cell : world->ECagents) {
+			auto chance = (float) world->new_rand() / (float) NEW_RAND_MAX;
+			// Cell is partially active.
+			if (chance < SHANE_PROB_ACTIVE) {
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double &cell_level : active_VEGFR->cell_levels) {
+					cell_level = SHANE_ACTIVE_LEVEL;
+				}
+				for (float &level : current_cell->VEGFRDelayArray) {
+					level = VEGFRmin + (SHANE_ACTIVE_LEVEL*VEGFRmin);
+				}
+			// Cell is partially inactive.
+			} else {
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double &cell_level : active_VEGFR->cell_levels) {
+					cell_level = SHANE_INACTIVE_LEVEL;
+				}
+				for (float &level : current_cell->VEGFRDelayArray) {
+					level = VEGFRmin;
+				}
+			}
+
+		}
+	} else {
+		for (unsigned int i = 0; i < world->ECagents.size(); i++) {
+			if (i % 2 != 0) {
+				auto current_cell = world->ECagents.at(i);
+				auto active_VEGFR = current_cell->m_cell_type->get_protein("VEGF_VEGFR");
+				for (double & cell_level : active_VEGFR->cell_levels) {
+					cell_level = 0;
+				}
+			}
+		}
+	}
+}
+
 int main(int argc, char * argv[]) {
-    if (SWEEP_TESTING) {
-        // Set analysis_type to none in case something goes wrong.
-        analysis_type = 0;
-        // Set buffer for file name.
-        int file_buffer_size = 200;
-        char file_buffer[file_buffer_size];
-        std::vector<double> param_values;
-        int replicate_no, current_run_number;
-        readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
-        // Create output file.
-//        std::string file_string;
-//        construct_file_string(replicate_no, param_values, file_string);
-//        sprintf(file_buffer, "%s", file_string.c_str());
-//		write_args_to_outfile(file_string, replicate_no, param_values);
+	World *world;
+	auto *w_container = new WorldContainer();
 
-    } else {
+	// Set analysis_type to none in case something goes wrong.
+	analysis_type = 0;
+	// Set buffer for file name.
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+	std::vector<double> param_values;
+	int replicate_no, current_run_number;
+	readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
-        World *world;
-        auto *w_container = new World_Container();
+	std::cout << "Replicate number: " << std::to_string(replicate_no) << "\n";
+	std::cout << "Run number: " << std::to_string(run_number) << "\n";
 
-        // Set analysis_type to none in case something goes wrong.
-        analysis_type = 0;
-        // Set buffer for file name.
-        int file_buffer_size = 200;
-        char file_buffer[file_buffer_size];
-        std::vector<double> param_values;
-        int replicate_no, current_run_number;
-        readArgs(argc, argv, param_values, replicate_no, current_run_number);
-
-        std::cout << "Replicate number: " << std::to_string(replicate_no) << "\n";
-
-        std::cout << "Run number: " << std::to_string(run_number) << "\n";
-
-        // Create output file.
-//        std::string file_string;
-//        construct_file_string(replicate_no, param_values, file_string);
-//        sprintf(file_buffer, "%s", file_string.c_str());
-//        write_args_to_outfile(file_string, replicate_no, param_values);
-
-        //---------------------------------------------------------------
-
-        char outfilename[500];
+	char outfilename[500];
 
 
-//    RUNSfile.open(outfilename);
+	std::cout << "Creating world..." << "\n";
 
-        std::cout << "Creating world..." << "\n";
+	w_container->world_setup(param_values); // Set the current increments that we are at.
+	world = w_container->get_world();
+	world->set_run_number(current_run_number);
+	world->set_replicate_number(replicate_no);
+	world->create_outfiles();
+	WORLDpointer = world;
 
+	if (DSL_SHUFFLE_TEST) {
+		shuffleTestSetup(world, true);
+	}
 
-        w_container->world_setup(param_values); // Set the current increments that we are at.
-        world = w_container->get_world();
-        world->set_run_number(current_run_number);
-        WORLDpointer = world;
-
-
-
-        // -----------------------------------------------------------------------------------------------------------//
-        // Venkatraman Example Specific Stuff.
-
-        // Vary parameters by a random amount.
-//        varyParams(param_values.at(0), 0.1, 0.5);
-//        varyParams(param_values.at(1), 0.1, 0.5);
-
-//        auto tissue = world->getTissueContainer()->tissues.at(0);
-//        auto cell1 = tissue->m_cell_agents.at(0);
-//        auto cell2 = tissue->m_cell_agents.at(1);
-////
-//        // Force add the cells to each others neighbour lists.
-//        // Junction testing may not happen quickly enough for this test to be valid.
-//        cell1->add_to_neighbour_list(cell2);
-//        cell2->add_to_neighbour_list(cell1);
-//
-//        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
-//        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
-//
-//        auto val1 = world->getParamValue(V0_VALUE);
-//        auto val2 = world->getParamValue(V1_VALUE);
-//
-//        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
-//        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
-//
-//        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-//        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-//        cell1->distributeProteins();
-//        cell2->distributeProteins();
-
-        // -----------------------------------------------------------------------------------------------------------//
+	if (SHANE_ALTERNATE_START) {
+		shane_alternate_start(true, world);
+	}
 
 #if GRAPHICS
-		std::cout << "World created." << "\n";
-		world->create_outfiles(param_values);
-		std::cout << "Running simulation." << std::endl;
-        displayGlui(&argc, argv);
-        glutMainLoop();
+	std::cout << "World created." << "\n";
+	std::cout << "Running simulation." << std::endl;
+	displayGlui(&argc, argv);
+	glutMainLoop();
 #else
-        std::cout << "World created." << "\n";
-		world->create_outfiles(param_values);
-		std::cout << "Running simulation." << std::endl;
-		world->runSimulation_MSM();
+	std::cout << "World created." << "\n";
+	std::cout << "Running simulation." << std::endl;
+	world->runSimulation_MSM();
 
-        std::cout << "Ending simulation. Logging filopodia dynamics." << "\n";
-        world->log_filopodia();
-        world->write_to_retraction_file();
-        world->write_to_creation_file();
-        world->write_to_lifespan_file();
+	world->write_to_shuffle_outfiles();
 
-        //Get end time, and calculate elapsed time -> add these to results file.
-        std::time_t end_time = get_current_time();
-        std::cout << "End time: " << std::ctime(&end_time) << std::endl;
+	//Get end time, and calculate elapsed time -> add these to results file.
+	std::time_t end_time = get_current_time();
+	std::cout << "End time: " << std::ctime(&end_time) << std::endl;
 #endif
-    }
 }
+
+

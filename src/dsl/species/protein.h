@@ -47,7 +47,7 @@ public:
     std::string get_name();
 
     void update_protein_level();
-    double get_initial_level() const;
+    [[nodiscard]] double get_initial_level() const;
 
     // Constructor for cellular proteins.
     Protein(const std::string& name,

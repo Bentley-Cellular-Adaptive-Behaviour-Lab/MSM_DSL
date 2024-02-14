@@ -29,25 +29,29 @@ public:
     // Types of cytoskeletal proteins that a cell type had.
     std::vector<CytoProtein*> m_cytoskeletal_proteins;
 
-    ODE *ode_system;
-
-    Cell_Type(Tissue_Container *tissue_container, std::string name, Shape *shape);
+    Cell_Type(Tissue_Container *tissue_container, const std::string &name, Shape *shape);
     // Copy constructor for Cell Type objects.
     Cell_Type(const Cell_Type& rhs);
 
     void add_protein(Protein* protein);
-    void set_ODE_system(ODE *ode_system);
-    bool has_protein(std::string proteinName);
+    bool has_protein(const std::string &proteinName);
+	Protein* get_protein(const std::string &proteinName);
 
-    void add_protrusion_type(ProtrusionType *protrusionType);
-    void add_cytoprotein(CytoProtein *cytoProtein);
-    bool has_cytoprotein(std::string cytoProteinName);
-    CytoProtein* get_cytoprotein(std::string cytoProteinName);
-    Protein* get_protein(std::string proteinName);
+    // Shape response functions.
+    // Deprecating these in case somebody
+    // wants to extend the shape language in the future.
+    [[deprecated]] void add_protrusion_type(ProtrusionType *protrusionType);
+    [[deprecated]] void add_cytoprotein(CytoProtein *cytoProtein);
+    [[deprecated]] bool has_cytoprotein(const std::string &cytoProteinName);
+    [[deprecated]] CytoProtein* get_cytoprotein(const std::string &cytoProteinName);
+
 
 
     // Copy operator for Cell Type objects;
     Cell_Type& operator=(const Cell_Type& rhs) {
+        if (this == &rhs)
+            return *this;
+
         this->m_name = rhs.m_name;
         this->m_shape = rhs.m_shape;
         this->m_tissue_container = rhs.m_tissue_container;

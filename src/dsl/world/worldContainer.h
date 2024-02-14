@@ -15,7 +15,7 @@ class Shape;
 class Substrate;
 class World;
 
-class World_Container {
+class WorldContainer {
 public:
     World *m_world;
     std::vector<Substrate*> m_substrates;
@@ -23,21 +23,17 @@ public:
 
     void world_setup(std::vector<double>& paramIncrements);
 
-    World *create_world(const int& xMax,
-                        const int& yMax,
-                        const int& zMax,
-                        const double& base_permittivity,
-                        const std::vector<double>& paramValues);
+    World *create_world(int xMax,
+                        int yMax,
+                        int zMax,
+                        float base_permittivity,
+						float base_solidness,
+						const std::vector<double>& paramValues);
 
-    void create_substrate(Shape *substrate_shape, Coordinates *centre_coordinates, int substrate_direction, float adhesiveness);
-
-    [[deprecated("Use overloaded functions specific to each gradient type.")]]
-    void create_gradient(int gradient_type,
-                         int gradient_shape,
-                         std::string protein,
-                         Coordinates *source_position,
-                         float source_starting_amount,
-                         Coordinates *sink_position);
+    void create_substrate(Shape *substrate_shape,
+						  Coordinates *centre_coordinates,
+						  float adhesiveness,
+						  float solidness);
 
     void create_gradient(int gradient_type,
                          Protein *protein,
@@ -62,7 +58,6 @@ public:
 
     void store_substrate(Substrate *gradient);
     void store_gradient(Gradient *gradient);
-    std::string get_time_string();
 
     World *get_world();
 };

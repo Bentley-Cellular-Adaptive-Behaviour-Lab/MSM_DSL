@@ -18,12 +18,8 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
-      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
-        <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -37,6 +33,7 @@
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -63,7 +60,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="2Hxmt3eVfFH">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="9S07l" id="2Hxmt3eVfFI" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfFJ" role="2VODD2">
@@ -74,7 +71,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfOn">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfOo" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfOp" role="2VODD2">
@@ -87,7 +84,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfWw">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfWx" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfWy" role="2VODD2">
@@ -100,8 +97,23 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5jwDGo4A5$F">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
+    <node concept="EnEH3" id="7tkDipCuzUD" role="1MhHOB">
+      <ref role="EomxK" to="w3cn:7tkDipCsRot" resolve="_delay" />
+      <node concept="QB0g5" id="7tkDipCuzVN" role="QCWH9">
+        <node concept="3clFbS" id="7tkDipCuzVO" role="2VODD2">
+          <node concept="3cpWs6" id="7tkDipCu_o6" role="3cqZAp">
+            <node concept="3eOSWO" id="7tkDipCuBfj" role="3cqZAk">
+              <node concept="1Wqviy" id="7tkDipCu_yJ" role="3uHU7B" />
+              <node concept="3cmrfG" id="7tkDipCuBiO" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="9S07l" id="5jwDGo4A5$G" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4A5$H" role="2VODD2">
         <node concept="3cpWs6" id="5jwDGo4A5CA" role="3cqZAp">
@@ -113,8 +125,8 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5jwDGo4BSoS">
-    <property role="3GE5qa" value="Processes" />
-    <ref role="1M2myG" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+    <property role="3GE5qa" value="Interactions" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4Bf0N" resolve="Interaction" />
     <node concept="9S07l" id="5jwDGo4BSoT" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4BSoU" role="2VODD2">
         <node concept="3cpWs6" id="5jwDGo4BSsN" role="3cqZAp">
@@ -124,8 +136,8 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5jwDGo4BSxH">
-    <property role="3GE5qa" value="Processes" />
-    <ref role="1M2myG" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+    <property role="3GE5qa" value="Interactions" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4BeZW" resolve="Downregulates" />
     <node concept="9S07l" id="5jwDGo4BSxI" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4BSxJ" role="2VODD2">
         <node concept="3cpWs6" id="5jwDGo4BS_C" role="3cqZAp">
@@ -137,7 +149,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5jwDGo4BSAD">
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="w3cn:5jwDGo4BeZX" resolve="Upregulates" />
     <node concept="9S07l" id="5jwDGo4BSAE" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4BSAF" role="2VODD2">
@@ -153,22 +165,7 @@
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
   </node>
   <node concept="1M2fIO" id="5$qoOFye2an">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
-    <node concept="EnEH3" id="5$qoOFye2aK" role="1MhHOB">
-      <ref role="EomxK" to="w3cn:5$qoOFyduhF" resolve="_delay" />
-      <node concept="QB0g5" id="5$qoOFye2eX" role="QCWH9">
-        <node concept="3clFbS" id="5$qoOFye2eY" role="2VODD2">
-          <node concept="3clFbF" id="3CIYR32WI_G" role="3cqZAp">
-            <node concept="2d3UOw" id="3CIYR32WK45" role="3clFbG">
-              <node concept="1Wqviy" id="3CIYR32WI_F" role="3uHU7B" />
-              <node concept="3cmrfG" id="3CIYR32WK1V" role="3uHU7w">
-                <property role="3cmrfH" value="1" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
   </node>
   <node concept="1M2fIO" id="4Ei2F7s4c4V">
     <ref role="1M2myG" to="w3cn:3F9nTx49ScX" resolve="SpeciesContainerHeader" />

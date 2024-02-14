@@ -11,6 +11,8 @@
 #include <random>
 #include <vector>
 
+#include "../dsl/world/worldContainer.h"
+
 #define NEIGH 26
 #define NEW_RAND_MAX 32767
 
@@ -26,16 +28,48 @@ class MemAgent;
 class ODEs;
 class ProtrusionType;
 class Tissue_Container;
-class World_Container;
+class Tissue;
+class WorldContainer;
 class WorldLogger;
+
+// Enums used for DSL logging functionality.
+enum FILE_FORMATS {
+	FILE_FORMAT_CSV,
+	N_FILE_FORMATS
+};
+
+enum FIL_EVENTS {
+	FIL_EVENT_CREATION,
+	FIL_EVENT_EXTENSION,
+	FIL_EVENT_RETRACTION,
+	FIL_EVENT_DISASSEMBLY,
+	N_FIL_EVENTS
+};
 
 class World {
 private:
-    int m_run_number;
-    std::vector<double> m_param_increments;
+	// Parameter values.
+	unsigned int m_replicate_number = -1;
+	unsigned int m_analysis_type = -1;
+	unsigned int m_run_number = -1;
+
+	unsigned int m_max_delay = 0;
+
+	bool m_DSL_CPM = false; // Used by DSL to determine whether the cellular potts model is run.
+    bool m_MSM_CPM = false; // Used by MSM to determine whether the cellular potts model is run.
+	unsigned int m_start_CPM = 0; // When the cellular potts model runs, if at all.
+	unsigned int m_unique_fils = 0; // Tracks the number of fils in the simulation.
+
+	std::string m_extensionFile;
+	std::string m_retractionFile;
+	std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
-    World_Container* m_worldContainer;
+    WorldContainer* m_worldContainer;
     WorldLogger *m_worldLogger;
+
+	// Used to log the number of active/inactive neighbours when
+	// testing the DSL and MSM CPM.
+	std::vector<std::vector<unsigned int>*> m_shuffling_results;
 public:
 
     const float m_VCONCST = 0.04;
@@ -80,9 +114,9 @@ public:
     void runSimulation_MSM();
     void creationTimestep(int movie);
     void simulateTimestep_MSM();
-    int gridXDimensions;
-    int gridYDimensions;
-    int gridZDimensions;
+    unsigned int gridXDimensions;
+    unsigned int gridYDimensions;
+    unsigned int gridZDimensions;
     void simulateTimestep(std::vector< std::vector<float> > cellIncrements);
     std::vector< std::vector<float> > getGridSiteData();
     std::vector< std::vector< std::vector<float> > > getFilopodiaBaseLocationsAndTotalVegfr();
@@ -211,8 +245,13 @@ public:
 
     //New world functions (for DSL).
 
-    void create_new_environment(float base_permittivity);
-    void create_env_agent(int x, int y, int z, float base_permittivity);
+    void create_new_environment(const float base_adhesiveness,
+								const float base_solidness);
+    void create_env_agent(const int x,
+						  const int y,
+						  const int z,
+						  const float base_adhesiveness,
+						  const float base_solidness);
     void set_focal_adhesion(MemAgent *memp);
     bool is_within_triangle(Env *ep,
                             std::tuple<float, float> triangle_point_1,
@@ -223,11 +262,12 @@ public:
                    std::tuple<float, float> point_2);
 
     // World constructor for DSL.
-    World(const int& grid_xMax,
-          const int& grid_yMax,
-          const int& grid_zMax,
-          const double& base_permittivity,
-          const std::vector<double>& paramValues);
+    World(const int grid_xMax,
+          const int grid_yMax,
+          const int grid_zMax,
+          const float base_permittivity,
+		  const float base_solidness,
+		  const std::vector<double>& paramValues);
 
     ODEs *odes;
 
@@ -255,12 +295,13 @@ public:
 	void shuffleLocations(std::vector<Location*> &locations);
 
     //
-    World_Container* getWorldContainer() {
+    WorldContainer* getWorldContainer() {
         return m_worldContainer;
     }
 
-    void setWorldContainer(World_Container* container) {
+    void setWorldContainer(WorldContainer* container) {
         m_worldContainer = container;
+		container->m_world = this;
     }
 
     Tissue_Container* getTissueContainer() {
@@ -275,7 +316,27 @@ public:
     void fillParamVector(const std::vector<double>& param_increments);
     double getParamValue(const int& i);
 
-    /// World info logger.
+	// Tissue gen.
+	bool cytoprotein_check(EC *cell,
+                           float distance,
+                           const bool extendingFil);
+	Env* highest_search(EC *cell, MemAgent *memAgent);
+	Env* findHighestConcPosition(MemAgent* memAgent,
+								 const std::string& targetProteinName,
+								 const float& prob,
+								 bool getsFurthestEnv);
+	void set_up_cpm_dsl();
+	double calc_extension_prob(EC* cell, MemAgent* memAgent);
+
+	// DSL CPM control functions.
+	unsigned int get_start_CPM() const;
+	void set_start_CPM(unsigned int startCPM);
+	void set_DSL_CPM(bool DSL_CPM);
+    void set_MSM_CPM(bool MSM_CPM);
+    bool does_MSM_CPM() const;
+    bool does_DSL_CPM() const;
+
+    // World info logger.
 
     void createLogger();
     WorldLogger* getWorldLogger();
@@ -301,7 +362,6 @@ public:
 	std::vector<std::string> m_cellProteinNames;
 	std::vector<std::string> m_envProteinNames;
 	void create_outfiles(std::vector<double>& param_values);
-	void write_to_outfiles();
 	void create_protein_outfile(const std::string &protein_name);
 	void write_to_protein_cell_outfile(const std::string &protein_name);
 	void create_protein_outfile_headers(const std::string &protein_name, std::vector<double>& param_values);
@@ -309,6 +369,8 @@ public:
 	void write_to_protein_env_outfile(const std::string &protein_name);
     void set_run_number(const int run_number);
     int get_run_number() const;
+	void set_replicate_number(const int replicate_number);
+	int get_replicate_number() const;
 
     void write_time_to_pattern(const int time_to_pattern);
     void write_time_to_outfile(const std::string &protein_name, const int time_to_pattern);
@@ -316,12 +378,10 @@ public:
 	void print_avg_prob();
 
 	void runSimulation_DSL();
-
 	void simulateTimestep_DSL();
 
-    bool can_extend(EC* cell, MemAgent* memAgent);
 
-    // Debug filopodia files.
+    // Debug files.
 	void create_probabilities_outfile();
 	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;
 	void write_to_probabilities_file();
@@ -345,6 +405,52 @@ public:
     void create_creation_outfile();
     void write_to_creation_file();
     void log_filopodia();
+	bool solidness_check(Env* ep);
+	float get_average_DLL4();
+	void create_DLL4_file();
+	void write_to_DLL4_file();
+
+	// Debug
+	void create_extension_file(const std::string& extension_file_name);
+	void log_extension_event(MemAgent* memAgent);
+	void add_prob_to_extension_file(const double prob, bool add_new_line);
+	void create_retraction_file(const std::string& retraction_file_name);
+	void log_retraction_event(MemAgent* memAgent);
+	void increment_unique_fils();
+	unsigned int get_unique_fils();
+
+	// DSL Logging
+	void create_outfiles();  // <- Generated function.
+	void write_to_component_outfiles();  // <- Generated function.
+	void create_component_outfile_csv(const std::string &protein_name);
+	void write_to_component_outfile_csv(const std::string &protein_name);
+
+	void create_filopodia_outfile_csv(); // <- Generated function.
+	void write_to_filopodia_outfile(const unsigned int eventID, MemAgent *memAgent,const  double prob);
+	void write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgent, const double prob);
+
+	void set_max_delay(unsigned int new_delay);
+	unsigned int get_max_delay();
+
+	void create_pattern_outfile();
+	void write_to_pattern_outfile();
+	unsigned int tissue_has_patterned(Tissue *tissue);
+	bool cell_is_tip(EC *cellAgent);
+
+	// Shuffle test specific - checks the
+	// number of active/inactive neighbours over
+	// time and writes to a file for the MSM/DSL CPM.
+	inline bool file_exists(const std::string& name);
+	void create_shuffle_test_outfiles();
+	void save_neigh_results(const std::string &file_string);
+	unsigned int count_inactive_cells(EC* ec);
+	unsigned int count_active_cells(EC* ec);
+	std::vector<unsigned int> *evaluate_cells(unsigned int timestep);
+	void shuffleTest();
+	void write_to_shuffle_outfiles();
+
+	// Shane setup specific
+	float calc_shane_filtipmax(MemAgent *memAgent) const;
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

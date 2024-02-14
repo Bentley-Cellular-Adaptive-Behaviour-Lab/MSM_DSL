@@ -14,7 +14,6 @@
 #include <vector>
 
 class Coordinates;
-class CytoProtein;
 class EC;
 class Env;
 class Filopodia;
@@ -31,10 +30,10 @@ private:
     float m_previous_x;
     float m_previous_y;
     float m_previous_z;
+	unsigned int m_fil_id; // If a tip agent, then track the filopodia id.
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
     std::map<std::string, double> m_mean_env_proteins_sensed;
-    std::vector<CytoProtein*> m_cytoproteins;
 
     Protrusion* m_belongsToProtrusion;
 public:
@@ -91,7 +90,7 @@ public:
 	Filopodia* base_fil_belong; ///involved in quantification of filopidia dynamics
 	void tryActinPassRadiusN(int x, int y, int z, int N); ///pass actin to nearest neighbours with filopodia
 	void veilAdvance(void); ///control release of filopida FAs and movement of lamella
-	bool extendFil(void); ///extend filopodia
+	bool extendFil(const double prob); ///extend filopodia -> TOM: Added prob for
 	bool filRetract(void); ///retract filopodia
 	void ActinFlow(void); ///actin dynamics, simple and high level at present.. degradation after 5 timesteps
 	void calcRetractDist(void); ///NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
@@ -148,30 +147,50 @@ public:
 	void add_cell_proteins();
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
-    double get_memAgent_current_level(const std::string& protein_name) const;
-    double get_environment_level(const std::string& protein_name);
-    double get_local_protein_level(const std::string& protein_name);
-    double get_junction_protein_level(const std::string& protein_name);
+	bool is_VonNeu_position(const unsigned int x,
+							const unsigned int y,
+							const unsigned int z);
+    [[nodiscard]] double get_memAgent_current_level(const std::string& protein_name) const;
+	double get_local_protein_level(const std::string& protein_name);
+	double get_environment_level(const std::string& protein_name,
+								 bool getsAverage,
+								 bool doesVonNeumann);
+
+	double get_filopodia_protein_level(const std::string& protein_name,
+									   bool getsAverage,
+									   bool doesVonNeumann);
+
+	double get_junction_protein_level(const std::string& protein_name,
+									  bool getsAverage,
+									  bool doesVonNeumann);
 
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
     void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
 
     double get_memAgent_buffer_level(const std::string& protein_name) const;
-    double get_filopodia_protein_level(const std::string& protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(const std::string& protein_name,
                                         const double& total_protein_level,
                                         const bool& affects_this_cell,
                                         const bool& affects_neighbour_cell,
                                         const int& protein_location);
+
     void distribute_proteins(const std::string& protein_name,
                              const double& start_protein_level,
                              const double& end_protein_level,
                              const bool& affects_this_cell,
                              const bool& affects_neighbour_cell,
                              const int& protein_location);
+
     std::vector<EC*> find_cells(const bool& add_this_cell);
 
+    void cycleProteinLevels();
+    void update_env_levels();
+    double env_protein_search(const std::string& proteinName);
+    double mean_env_protein_search(const std::string &proteinName);
+    double get_mean_env_protein(const std::string &proteinName);
+    bool vonNeighSearch();
+    void neighCellSearch(bool doesVonNeumann);
     void passBackBufferLevels();
 
     std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*>& relevantCells,
@@ -180,56 +199,41 @@ public:
                                                            const bool& affectsNeighbourCell,
                                                            const int& proteinLocation);
     void add_allowed_protrusion_proteins(ProtrusionType *protrusionType);
-    bool has_cytoprotein(const std::string& cytoproteinName) const;
-    double get_cytoprotein_level(const std::string& cytoproteinName) const;
-    void set_cytoprotein_level(const std::string& cytoproteinName, const double& newLevel);
-    void add_cytoprotein(CytoProtein* cytoProtein);
-    void tryCytoproteinPass(int x, int y, int z, int N, const std::string& cytoproteinName);
-    std::vector<CytoProtein*>& getCytoproteins();
 
-    void setPreviousX(float previous_x);
-    void setPreviousY(float previous_y);
-    void setPreviousZ(float previous_Z);
+    void setPreviousX(const float previous_x);
+    void setPreviousY(const float previous_y);
+    void setPreviousZ(const float previous_Z);
 
-    float getPreviousX();
-    float getPreviousY();
-    float getPreviousZ();
+    [[nodiscard]] float getPreviousX() const;
+    [[nodiscard]] float getPreviousY() const;
+    [[nodiscard]] float getPreviousZ() const;
 
-    // Checking and updating of neighbouring location objects.
-    std::array<Location*, 26> getNeighbourLocations();
-    void setNeighbourLocations(std::array<Location*, 26> *arr);
-    void calcNeighbourLocations();
-    Location* getStoredLocation(int index);
-    void setStoredLocation(Location* location, int index);
+	float get_sensitivity();  // <- Generated.
 
-    // DSL functions for controlling protrusion behaviour.
-    void shapeResponse(const float& randomChance);
+    // DSL functions for controlling shape behaviour.
+    // Made these deprecated, but are still being used in case
+    // somebody wants to develop the shape language further.
+    [[deprecated]]void shapeResponse(const float& randomChance);
 
-    void extendProtrusions();
-    ProtrusionType* pickProtrusionType();
-    bool positionHasFormedProtrusion();
-    void setBelongsToProtrusion(Protrusion* protrusion);
-    void getEligibleTypes(std::vector<ProtrusionType*>& types);
+    [[deprecated]]void extendProtrusions();
+    [[deprecated]]ProtrusionType* pickProtrusionType();
+    [[deprecated]]bool positionHasFormedProtrusion();
+    [[deprecated]]void setBelongsToProtrusion(Protrusion* protrusion);
+    [[deprecated]]void getEligibleTypes(std::vector<ProtrusionType*>& types);
 
-    bool retractProtrusions();
-    Protrusion* getBelongsToProtrusion();
-    bool retractionCanOccur(const float& randomChance) const;
+    [[deprecated]]bool retractProtrusions();
+    [[deprecated]]Protrusion* getBelongsToProtrusion();
+    [[deprecated]]bool retractionCanOccur(const float& randomChance) const;
 
-    void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
-    void doVeilAdvance(const float& randomChance);
-    void cycleProteinLevels();
+    [[deprecated]]void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
+    [[deprecated]]void doVeilAdvance(const float& randomChance);
 
-    void update_env_levels();
-    double env_protein_search(const std::string& proteinName);
-
-    bool vonNeighSearch();
-
-	// DEBUG: Remove at some point.
+	// DEBUG.
 	double DLL4_search();
 	bool passedBackBufferLevels = false;
-    double mean_env_protein_search(const std::string &proteinName);
-
-    double get_mean_env_protein(const std::string &name);
+	void NotchResponseOld();
+	void set_fil_id(const unsigned int fil_id);
+	unsigned int get_fil_id();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

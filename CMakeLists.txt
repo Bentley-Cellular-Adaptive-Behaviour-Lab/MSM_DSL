@@ -45,7 +45,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/tissue/tissue.cpp
             src/dsl/tissue/tissueContainer.cpp
             src/dsl/tissue/tissueType.cpp
-            src/dsl/utils/logger.cpp
             src/dsl/utils/shape.cpp
             src/dsl/utils/utils.cpp
             src/dsl/world/gradient.cpp
@@ -53,7 +52,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/worldContainer.cpp
             src/graphics/display.cpp
             src/graphics/ScreenRecording.cpp
-            src/generated/dsl_shape_gen.cpp
             src/generated/dsl_tissue_gen.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_world_gen.cpp)
@@ -84,7 +82,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/tissue/tissue.h
             src/dsl/tissue/tissueContainer.h
             src/dsl/tissue/tissueType.h
-            src/dsl/utils/logger.h
             src/dsl/utils/shape.h
             src/dsl/utils/utils.h
             src/dsl/world/gradient.h
@@ -148,7 +145,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/tissue/tissue.cpp
             src/dsl/tissue/tissueContainer.cpp
             src/dsl/tissue/tissueType.cpp
-            src/dsl/utils/logger.cpp
             src/dsl/utils/shape.cpp
             src/dsl/utils/utils.cpp
             src/dsl/world/gradient.cpp
@@ -156,15 +152,18 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/worldContainer.cpp
             src/graphics/display.cpp
             src/graphics/ScreenRecording.cpp
+            tests/automated/helper_comparison.cpp
+            tests/automated/helper_memAgent.cpp
             tests/automated/helper_ODE.cpp
             tests/automated/helper_shape.cpp
+            tests/automated/test_comparison.cpp
+            tests/automated/test_memAgent.cpp
             tests/automated/test_ODE.cpp
             tests/automated/test_setup.cpp
             tests/automated/test_shape.cpp
-            tests/automated/generated/dsl_shape_gen.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
-            tests/automated/generated/dsl_world_gen.cpp)
+            tests/automated/generated/dsl_world_gen.cpp tests/automated/helper_venk_ODE.cpp tests/automated/helper_venk_ODE.h tests/automated/test_venk_ODE.cpp)
 
     set (Headers src/core/contact.h
             src/core/coordinates.h
@@ -194,16 +193,16 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/tissue/tissue.h
             src/dsl/tissue/tissueContainer.h
             src/dsl/tissue/tissueType.h
-            src/dsl/utils/logger.h
             src/dsl/utils/shape.h
             src/dsl/utils/utils.h
             src/dsl/world/gradient.h
             src/dsl/world/substrate.h
             src/dsl/world/worldContainer.h
+            tests/automated/helper_comparison.h
+            tests/automated/helper_memAgent.h
             tests/automated/helper_ODE.h
             tests/automated/helper_shape.h
-            tests/automated/generated/dsl_shape_gen.h
-            tests/automated/generated/dsl_species_gen.h)
+            tests/automated/generated/dsl_species_gen.h tests/automated/helper_comparison.cpp tests/automated/helper_comparison.h tests/automated/test_comparison.cpp tests/automated/helper_venk_ODE.cpp tests/automated/helper_venk_ODE.h)
 
     find_package(Boost REQUIRED)
 

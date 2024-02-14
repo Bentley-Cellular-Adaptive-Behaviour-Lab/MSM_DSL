@@ -11,7 +11,7 @@ class Coordinates;
 class Env;
 class Protein;
 class World;
-class World_Container;
+class WorldContainer;
 
 enum GRADIENT_TYPE {
     GRADIENT_TYPE_LINEAR,
@@ -48,9 +48,9 @@ public:
     Protein *m_protein;
 
     // Booleans to check whether the gradient changes along the relevant axis - used by sink and source gradients.
-    bool x_varying = false;
-    bool y_varying = false;
-    bool z_varying = false;
+    bool m_x_varying = false;
+    bool m_y_varying = false;
+    bool m_z_varying = false;
 
     // Dimensions for cuboidal gradients - if not cuboidal, set to -1 (these must always be positive integers otherwise)
     int m_cuboidal_height = -1;
@@ -70,38 +70,38 @@ public:
     // Enum for gradient direction, used by cuboidal gradients.
     int m_gradient_direction = -1;
 
-    World_Container *m_parent_container;
+    WorldContainer *m_parent_container;
     World *m_parent_world;
 
     //Constructor for sink and source gradients.
-    Gradient(World_Container *container,
-             int gradient_type,
-             Protein *protein,
-             Coordinates *source_position,
-             Coordinates *sink_position);
+    Gradient(WorldContainer *container,
+			 int gradient_type,
+			 Protein *protein,
+			 Coordinates *source_position,
+			 Coordinates *sink_position);
 
     //Constructor for cuboidal gradients.
-    Gradient(World_Container *container,
-             int gradient_type,
-             Protein *protein,
-             Coordinates *centre_position,
-             int width,
-             int height,
-             int depth);
+    Gradient(WorldContainer *container,
+			 int gradient_type,
+			 Protein *protein,
+			 Coordinates *centre_position,
+			 int width,
+			 int height,
+			 int depth);
 
     //Constructor for spherical gradients.
-    Gradient(World_Container *container,
-             int gradient_type,
-             Protein *protein,
-             Coordinates *centre_position,
-             int sphere_radius);
+    Gradient(WorldContainer *container,
+			 int gradient_type,
+			 Protein *protein,
+			 Coordinates *centre_position,
+			 int sphere_radius);
 
-    std::vector<float> calculate_dist_from_source(Env* ep);
+    std::vector<float> calculate_dist_from_source(Env* ep) const;
 
-    void add_env_protein(Env *ep, float calc_level);
+    void add_env_protein(Env *ep, const float calc_level) const;
 
     //Generic functions for creating new protein gradients.
-    void calc_constant_env_protein(Env* ep);
+    void calc_constant_env_protein(Env* ep) const;
     void calc_exp_env_protein(Env* ep);
     void calc_linear_env_protein(Env* ep);
 

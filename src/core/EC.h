@@ -39,12 +39,13 @@ namespace ECUtils {
 class EC {
 private:
     std::vector<Protrusion*> m_protrusions;
-    std::vector<EC*> m_neigh_cells;
+	std::vector<ProtrusionType*> m_protrusion_types;
+	std::vector<EC*> m_neigh_cells = {};
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
 
-    // Stores values of environmental proteins. Only used during cell-only ODES.
+    // Store values of environmental proteins. Only used during cell-only ODES.
     // Key: protein name, value: protein level.
     std::map<std::string, double> m_env_protein_values;
 
@@ -53,11 +54,18 @@ private:
     std::vector<int> m_retraction_times;
     std::vector<int> m_filopodia_lifespans;
     std::vector<int> m_filopodia_creation_times;
+	int m_max_filopodia = 1;
+	int m_current_filopodia = 0;
+
+	std::vector<float> m_msm_extension_probabilities;
+	std::vector<float> m_dsl_extension_probabilities;
+
 public:
 	World *worldP;
 	Hysteresis *hyst;
 	///general
 	double En_VEGF;
+
 	int VonNeighs; ///how many memAgents with von neumann neighbour Env objects does it have
 	float red, blue, green; ///individual cell colour allocation
 
@@ -86,6 +94,7 @@ public:
 	Coordinates calcCOM_toroidal(void);
 
 	///GRN signalling pathways
+
 	float Vsink; ///VEGFR-1 parameter
 	float VEGFRnorm; //VEGFR2 level
 	float actNotCurrent; ///active Notch after time delay (able to affect Gene expression)
@@ -140,6 +149,11 @@ public:
 	void remove_DoubledUp_SurfaceAgents(void);
 	void gridAgents(void); ///snap continuous space positions of meAgents to the gridded lattice including surface agent creation via voxelisation
 
+	/// DSL FUNCTIONS
+
+	// Debug variable for checking how much VEGF is tracked
+	// during an MSM timestep.
+	float MSM_VEGF = 0;
 
 	EC(World* world);
 	EC(World *world, Cell_Type *cell_type);
@@ -149,12 +163,14 @@ public:
 
     void distributeProteins();
 
-    void set_initial_proteins();
+    [[deprecated]] void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
+	double protein_level_guard(Protein *protein, const double& query_level);
     bool has_protein(const std::string& protein_name) const;
     double get_cell_protein_level(const std::string& protein_name, const int& timestep_value);
     void set_cell_protein_level(const std::string& protein_name, const double& new_level, const int& timestep_value);
+	void set_cell_all_protein_levels(const std::string& protein_name, const double& new_level);
     void print_current_protein_levels(const int& timestep_interval);
     void print_memAgent_protein_levels(int timestep_interval);
 
@@ -178,7 +194,7 @@ public:
 	// Tracks which cells are neighbouring this one i.e. have formed junctions.
 	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
     bool cellIsNeighbour(EC *query_ec);
-	void add_to_neighbour_list(EC *query_ec);
+	void attempt_neigh_list_addition(EC *query_ec);
 	void cycle_protein_levels() const;
 
     double getCellCytoproteinLevel(const std::string& cytoproteinName) const;
@@ -189,7 +205,9 @@ public:
     void addProtrusionToList(Protrusion* protrusion);
     bool removeProtrusionFromList(Protrusion* protrusion);
     std::vector<Protrusion*>& getProtrusionList();
-    std::vector<EC*>& getNeighCellVector();
+	std::vector<ProtrusionType*>& getProtrusionTypeList();
+	std::vector<EC*>& getNeighCellVector();
+    void removeDuplicateNeighCells();
 
     const std::map<std::string, double>& getProteinMemAgentBuffer();
     void initialiseProteinMemAgentBuffer();
@@ -219,9 +237,17 @@ public:
     std::vector<int>& get_creation_times();
 
     void add_retraction_time(int retraction_time);
-
     void add_creation_time(int creation_time);
-
     void add_lifespan(int lifespan);
+
+	double calc_adjacent_species_level(const std::string& species_name,
+									   const bool memAgentODEs,
+									   const bool getsAverage,
+									   const unsigned int delay);
+
+	int get_max_fils();
+	int get_current_fils();
+	void decrement_current_fils();
+	void increment_current_fils();
 };
 #endif //SPRINGAGENT_EC_H

@@ -177,14 +177,14 @@ void Tissue_Container::create_cell(const std::string& name,
             newCellAgent->m_cell = cell;
             check_position(cell);
 
-            create_2d_square_cell(m_single_cell_agents.size(),
-                                  cell->m_position->get_x_coord(),
-                                  cell->m_position->get_y_coord(),
-                                  cell->m_position->get_z_coord(),
+            create_2d_square_cell((int) m_single_cell_agents.size(),
+                                  (int) cell->m_position->get_x_coord(),
+                                  (int) cell->m_position->get_y_coord(),
+                                  (int) cell->m_position->get_z_coord(),
                                   cell->m_cell_type->m_shape->get_width(),
                                   cell->m_cell_type->m_shape->get_height());
 
-            connect_2d_square_cell(m_single_cell_agents.size());
+            connect_2d_square_cell((int) m_single_cell_agents.size());
             newCellAgent->initialiseProteinMemAgentBuffer();
             newCellAgent->distributeProteins();
         } else {
@@ -216,9 +216,9 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylind
             tissue->create_vessel();
             tissue->tissue_vessel_connect_mesh();
             tissue->determineJunctions();
-			set_vessel_neighbours(tissue);
+//			set_vessel_neighbours(tissue);
             store_tissue(tissue);
-        }
+		}
     } catch (int e) {
         std::cout <<"Invalid tissue definition called (FLAT) for specified shape type: "
                   << tissue_type->get_tissue_configuration() << ". Exception type: " << e;
@@ -295,7 +295,7 @@ void Tissue_Container::store_cell(Cell *cell) {
 
 void Tissue_Container::store_tissue(Tissue *tissue) {
     assert(tissue != nullptr);
-    this->tissues.push_back(tissue);
+    this->m_tissues.push_back(tissue);
 }
 
 /*****************************************************************************************
@@ -322,13 +322,19 @@ void Tissue_Container::create_2d_square_cell(const int& cell_number,
     int i, j;
     MemAgent *memp;
 
-    for (i = (int) (centreX - (double) cell_width / 2.0f); i < (double) (centreX + (double) cell_width / 2.0f); i++) {
-        for (j = (int) (centreY - (double) cell_height / 2.0f); j < (int) (centreY + (double) cell_height / 2.0f); j++) {
+	auto i_start = centreX - (int) std::floor((float) cell_width / 2.0f);
+	auto i_end = centreX + (int) std::floor((float) cell_width / 2.0f);
+	auto j_start = centreY - (int) std::floor((float) cell_height / 2.0f);
+	auto j_end = centreY + (int) std::floor((float) cell_height / 2.0f);
+
+	for (i = i_start; i < i_end; i++) {
+        for (j = j_start; j < j_end; j++) {
             memp = new MemAgent(m_single_cell_agents[cell_number-1], this->m_world);
             memp->Mx = (float) i;
             memp->My = (float) j;
             memp->Mz = (float) centreZ;
-            m_single_cell_agents[cell_number-1]->nodeAgents.push_back(memp);
+
+			m_single_cell_agents[cell_number-1]->nodeAgents.push_back(memp);
             m_world->setMLocation(int(i), int(j), centreZ, memp);
             memp->node = true;
             // Distribute proteins belonging to the cell type out to memAgents
@@ -357,13 +363,10 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
         mp = m_single_cell_agents[cell_number-1]->nodeAgents[i];
         N=0;
 
-        if (m_world->insideWorld(mp->Mx-1, mp->My, mp->Mz)) {
-
+        if (m_world->insideWorld((int) mp->Mx-1, (int) mp->My, (int) mp->Mz)) {
             if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getType() == const_M) {
-
                 for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids().size(); kelp++) {
                     nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids()[kelp];
-
                     if(mp->Cell == nmp->Cell) {
                         mp->neigh[N] = nmp;
                         m_single_cell_agents[cell_number-1]->createSpringTokenObject(mp, nmp, N);
@@ -375,7 +378,7 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
                 }
             }
         }
-        if (m_world->insideWorld(mp->Mx+1, mp->My, mp->Mz)) {
+        if (m_world->insideWorld((int) mp->Mx+1, (int) mp->My, (int) mp->Mz)) {
 
             if (m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getType() == const_M) {
 
@@ -457,7 +460,7 @@ void Tissue_Container::check_positions() {
         assert(current_cell->check_boundaries());
     }
 
-    for (auto & tissue : tissues) {
+    for (auto & tissue : m_tissues) {
         current_tissue = tissue;
         assert(current_tissue->check_boundaries());
     }
@@ -492,7 +495,6 @@ void Tissue_Container::check_position(Tissue *tissue) {
 
 bool Tissue_Container::check_cell_cell_overlap(Cell *cell_1, Cell *cell_2) {
     if (cell_1->m_position->get_z_coord() == cell_2->m_position->get_z_coord()) {
-        // TODO: LOOK INTO CLEVERER WAYS TO DO THIS.
 
         // The following if/else statement checks these conditions:
         // Is this cell's lower x-boundary value within the x-boundaries of the compared cell?
@@ -526,24 +528,24 @@ bool Tissue_Container::check_cell_cell_overlap(Cell *cell_1, Cell *cell_2) {
 
 bool Tissue_Container::check_cell_vessel_overlap(Cell *cell, Tissue_Vessel *vessel) {
 
-    float vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
-    float vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
+    auto vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
+    auto vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
 
-    // If the cell is between the upper and lower z-boundaries of the vessel, work out the Y-coordinate using
-    // Pythagoras' theorem.
+    // If the cell is between the upper and lower z-boundaries of the vessel,
+    // work out the Y-coordinate using Pythagoras' theorem.
     if ((cell->m_boundaries[0].get_z_coord() >= vessel_lower_z_bound
          && cell->m_boundaries[0].get_z_coord() <= vessel_upper_z_bound)
         || (cell->m_boundaries[1].get_z_coord() >= vessel_lower_z_bound
             && cell->m_boundaries[1].get_z_coord() <= vessel_upper_z_bound)) {
 
-        float cell_z_offset = cell->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
+        auto cell_z_offset = cell->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
         cell_z_offset = cell_z_offset * cell_z_offset;
 
-        float vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
+        auto vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
 
-        float vessel_y_boundary_offset = sqrt(vessel_radius_squared - cell_z_offset);
-        float vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
-        float vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
+        auto vessel_y_boundary_offset = std::sqrt(vessel_radius_squared - cell_z_offset);
+        auto vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
+        auto vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
 
         if ((cell->m_boundaries[0].get_y_coord() >= vessel_y_lower_boundary
              && cell->m_boundaries[0].get_y_coord() <= vessel_y_upper_boundary)
@@ -595,19 +597,35 @@ bool Tissue_Container::check_cell_monolayer_overlap(Cell *cell, Tissue_Monolayer
 ******************************************************************************************/
 
 bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2) {
-    float min_dist, y_offset, z_offset, y_offset_squared, z_offset_squared;
 
-    auto vessel_1_radius = float(vessel_1->get_vessel_total_radius());
-    auto vessel_2_radius = float(vessel_2->get_vessel_total_radius());
+    auto vessel_1_radius = vessel_1->get_vessel_total_radius();
+    auto vessel_2_radius = vessel_2->get_vessel_total_radius();
 
-    y_offset = vessel_1->get_vessel_centre_y_coord() - vessel_2->get_vessel_centre_y_coord();
-    z_offset = vessel_1->get_vessel_centre_z_coord() - vessel_2->get_vessel_centre_z_coord();
-    y_offset_squared = y_offset * y_offset;
-    z_offset_squared = z_offset * z_offset;
+    auto y_offset = vessel_1->get_vessel_centre_y_coord() - vessel_2->get_vessel_centre_y_coord();
+    auto z_offset = vessel_1->get_vessel_centre_z_coord() - vessel_2->get_vessel_centre_z_coord();
+    auto y_offset_squared = y_offset * y_offset;
+    auto z_offset_squared = z_offset * z_offset;
 
-    min_dist = sqrt(y_offset_squared + z_offset_squared);
+	auto min_dist = std::sqrt(y_offset_squared + z_offset_squared);
 
-    if (vessel_1_radius + vessel_2_radius >= min_dist) {
+	auto vessel_1_lowerx = vessel_1->get_vessel_centre_x_coord() - (vessel_1->get_vessel_length() / 2.0f);
+	auto vessel_1_upperx = vessel_1->get_vessel_centre_x_coord() + (vessel_1->get_vessel_length() / 2.0f);
+
+	auto vessel_2_lowerx = vessel_2->get_vessel_centre_x_coord() - (vessel_2->get_vessel_length() / 2.0f);
+	auto vessel_2_upperx = vessel_2->get_vessel_centre_x_coord() + (vessel_2->get_vessel_length() / 2.0f);
+
+	bool x_overlap = false;
+	if (vessel_1_lowerx >= vessel_2_lowerx && vessel_1_lowerx <= vessel_2_upperx) {
+		x_overlap = true;
+	} else if (vessel_1_upperx >= vessel_2_lowerx && vessel_1_upperx <= vessel_2_upperx) {
+		x_overlap = true;
+	} else if (vessel_2_lowerx >= vessel_1_lowerx && vessel_2_lowerx <= vessel_1_upperx) {
+		x_overlap = true;
+	} else if (vessel_2_upperx >= vessel_1_lowerx && vessel_2_upperx <= vessel_1_upperx) {
+		x_overlap = true;
+	}
+
+    if (((float) vessel_1_radius + (float) vessel_2_radius >= min_dist) && x_overlap) {
         return true;
     }
     return false;
@@ -622,24 +640,24 @@ bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tiss
 
 bool Tissue_Container::check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer) {
 
-    float vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
-    float vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
+    auto vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
+    auto vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
 
-    // If the monolayer is between the upper and lower z-boundaries of the vessel, work out the Y-coordinate using
-    // Pythagoras' theorem.
+    // If the monolayer is between the upper and lower z-boundaries of the vessel,
+    // work out the Y-coordinate using Pythagoras' theorem.
     if ((monolayer->m_boundaries[0].get_z_coord() >= vessel_lower_z_bound
          && monolayer->m_boundaries[0].get_z_coord() <= vessel_upper_z_bound)
         || (monolayer->m_boundaries[1].get_z_coord() >= vessel_lower_z_bound
             && monolayer->m_boundaries[1].get_z_coord() <= vessel_upper_z_bound)) {
 
-        float monolayer_z_offset = monolayer->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
+        auto monolayer_z_offset = monolayer->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
         monolayer_z_offset = monolayer_z_offset * monolayer_z_offset;
 
-        float vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
+        auto vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
 
-        float vessel_y_boundary_offset = sqrt(vessel_radius_squared - monolayer_z_offset);
-        float vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
-        float vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
+        auto vessel_y_boundary_offset = std::sqrt(vessel_radius_squared - monolayer_z_offset);
+        auto vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
+        auto vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
 
         if ((monolayer->m_boundaries[0].get_y_coord() >= vessel_y_lower_boundary
              && monolayer->m_boundaries[0].get_y_coord() <= vessel_y_upper_boundary)
@@ -684,7 +702,7 @@ bool Tissue_Container::check_monolayer_monolayer_overlap(Tissue_Monolayer *monol
 }
 
 void Tissue_Container::add_env_protein_to_tissues(const std::string& protein_name) {
-    for (auto tissue : this->tissues) {
+    for (auto tissue : this->m_tissues) {
         for (auto cell_agent : tissue->m_cell_agents) {
             cell_agent->store_env_protein(protein_name);
         }

@@ -14,6 +14,11 @@
 #include "../core/spring.h"
 #include "../core/world.h"
 
+#include "../dsl/species/protein.h"
+#include "../dsl/world/gradient.h"
+#include "../dsl/world/worldContainer.h"
+
+
 // J Switch for os type
 
 #ifdef __APPLE__
@@ -40,6 +45,10 @@
 
 #include <math.h>
 
+// TESTING BOOLEANS
+
+bool shaneRecordingSetup = true;
+
 GLUI_Button* startRecordButton;
 GLUI_Button* endRecordButton;
 GLUI_StaticText* statText;
@@ -59,6 +68,11 @@ int   main_window;
 float xy_aspect;
 int   last_x, last_y;
 float rotationX = 0.0, rotationY = 0.0;
+
+// Sets threshold of VEGF_VEGFR to see cells
+// when running the Inverse Shane Setup. (viewType 17)
+const float active_threshold = 0.3;
+const float inactive_threshold = 0.01;
 
 //live vars
 
@@ -119,7 +133,6 @@ int labelledView = 0;
 int gridView=0;
 int meshView=1;
 int bloodView=1;
-int cytoView=0;
 int junctionView=1;
 int membrane=1;
 int springAgentsView =1;
@@ -128,7 +141,9 @@ int nodeAgentView=1;
 int linesView=0;
 int astro =0;
 int VEGFview=1;
-int AdhesivenessView = 1;
+int AdhesivenessView = 0;
+int SolidnessView = 0;
+int ExternSpeciesView = 1;
 int viewType=2;
 int FAview=0;
 int horizontalView = 0;
@@ -794,16 +809,34 @@ void World::viewMesh(void) {
                                 else if(viewType==12){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
                                 else if(viewType==13){ red = 0.534f;
-                                    green = 0.0623f+mp->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                    green = 0.0623f+(mp->Cell->get_cell_protein_level("VEGF_VEGFR",0)*2.0); blue = 0.5923f;}
                                 else if(viewType==14){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
                                 else if(viewType==15){ red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
-                                else if(viewType==16){ red = 0.534f;
+                                else if(viewType==16) { red = 0.534f;
                                     green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
+								else if(viewType==17) {
+									// Check if VEGF_VEGFR is above a threshold.
+									if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) > active_threshold) {
+										green = 1;
+										red = 0.534f;
+										blue = 0.5923f;
+									} else if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) < inactive_threshold) {
+										green = 0;
+										red = 0.534f;
+										blue = 0.5923f;
+									} else {
+										green = 0.5;
+										red = 0;
+										blue = 0.5;
+									}
+								} else if(viewType==18) {
+									red=mp->Cell->activeVEGFRtot/5.0f; green=0.2245098; blue = 0.545098;
+								}
 
 
-                               //if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
+									//if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
 
                     if(mutantView==1){
                         if(mp->Cell->mutant==true){
@@ -894,8 +927,23 @@ void World::viewMesh(void) {
                         green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
                     else if(viewType==16){ red = 0.534f;
                         green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-
-
+					else if(viewType==17) {
+						if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) > active_threshold) {
+							green = 1;
+							red = 0.534f;
+							blue = 0.5923f;
+						} else if (mp->Cell->get_cell_protein_level("VEGF_VEGFR",0) < inactive_threshold) {
+							green = 0;
+							red = 0.534f;
+							blue = 0.5923f;
+						} else {
+							green = 0.5;
+							red = 0;
+							blue = 0.5;
+						}
+					} else if(viewType==18) {
+						red=mp->Cell->activeVEGFRtot/5.0f; green=0.2245098; blue = 0.545098;
+					}
                    
                     if(viewType==8){
                     if((mp->FIL==BASE)&&(baseView)){red = 0.8; green = 0.8; blue = 0.8;}
@@ -914,7 +962,9 @@ void World::viewMesh(void) {
                     else if((mp->labelled2==true)&&(labelledView)){ red = 0.6; green = 0.6;}
                     }
 
-                    if((mp->FIL!=STALK)&&(mp->FA==true)&&(FAview))green = 1.8;
+//                    if((mp->FIL!=STALK)&&(mp->FA==true)&&(FAview))green = 1.8;
+                    if((mp->FA==true)&&(FAview))green = 1.8;
+
 
                     if(mutantView==1){
                         if(mp->Cell->mutant==true){
@@ -1200,16 +1250,25 @@ void World::viewGrid(void){
     float red, green, blue;
     int flag;
     
-    if(sectX<0) sectX=0;
-    if(sectY<0) sectY=0;
-    if(sectZ<0) sectZ=0;
+    if (sectX < 0) {
+		sectX = 0;
+	}
+    if (sectY < 0) {
+		sectY = 0;
+	}
+    if (sectZ < 0) {
+		sectZ = 0;
+	}
     
-    if(sectX2 > gridXDimensions)
-    	sectX2 = gridXDimensions;
-    if(sectY2 > gridYDimensions)
-    	sectY2 = gridYDimensions;
-    if(sectZ2 > gridZDimensions)
-    	sectZ2 = gridZDimensions;
+    if (sectX2 > gridXDimensions) {
+		sectX2 = gridXDimensions;
+	}
+    if (sectY2 > gridYDimensions) {
+		sectY2 = gridYDimensions;
+	}
+    if (sectZ2 > gridZDimensions) {
+		sectZ2 = gridZDimensions;
+	}
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -1217,283 +1276,445 @@ void World::viewGrid(void){
     
     int recentreZ = (int)(sectZ+(sectZ2-sectZ)/2.00);
     
-    if(viewType==8){
+    if (viewType == 8) {
     	glDepthMask(GL_FALSE);
     	glEnable(GL_BLEND);
     	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
     }
 
-    //solid cubes
-    for(i=sectX;i<sectX2;i++)
-        for(j=sectY;j<sectY2;j++)
-            for(k=sectZ;k<sectZ2;k++){
+    for (i = sectX; i < sectX2; i++)
+        for (j = sectY; j < sectY2; j++)
+            for (k = sectZ; k < sectZ2; k++) {
                 flag=0;
-                
-                //if(grid[i][j][k].Eid!=NULL)
-                        //if(junctionView==1)DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, 0.1, 0.1, 1.0, 0.6, L);
-                               if(grid[i][j][k].getType()==const_E){
-
-                        if(viewInsideEnv==1){
-                            if(grid[i][j][k].getEid()->inside==true){
-                            red=0.9f; green = 0.0f; blue =0.0;
-                            DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
-                       }
-                        }
-                        
-                                //........................................................................................................................................................................
-                //astrocytes blue
-                if(((grid[i][j][k].getEid()->Astro)||(grid[i][j][k].getEid()->OldAstro))&&(astro)){
-                    red=0.067; green=0.1245098; blue = 0.445098;
-                    DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0, L);
-
-                }
-                //........................................................................................................................................................................
-
-                        
-                               }
-                //........................................................................................................................................................................
-                //view filopodia
-                if((grid[i][j][k].getFids().size()!=0)){
-                    
-                    if(membrane==1){
-                        for(m=0;m<(int)grid[i][j][k].getFids().size();m++){
-                            if((pickedCell==ECELLS)||(grid[i][j][k].getFids()[m]->Cell==ECagents[pickedCell])){
-                                if((nodeAgentView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
-                                if((springAgentsView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
-                                if(flag==1){
-                                    unsigned int agents = grid[i][j][k].getFids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size();
-                                    if(viewType==1){ red=((float)grid[i][j][k].getFids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].getFids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getFids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getFids()[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].getFids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].getFids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getFids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
-                                    else if(viewType==8) {
-										if(!grid[i][j][k].getFids()[m]->node==false) {
-											red= 0.7f;green=0.7f; blue = 0.7f;}
-										else {
-											red= 0.0f;green=0.0f; blue = 0.0f;
+				if (grid[i][j][k].getType()==const_E){
+					if (viewInsideEnv == 1) {
+						if (grid[i][j][k].getEid()->inside){
+							red = 0.9f;
+							green = 0.0f;
+							blue = 0.0;
+							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0,L);
+						}
+					}
+					// View astrocytes.
+					if ( ((grid[i][j][k].getEid()->Astro) || (grid[i][j][k].getEid()->OldAstro)) &&(astro)) {
+                    	red = 0.067;
+						green = 0.1245098;
+						blue = 0.445098;
+                    	DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0, L);
+					}
+				}
+                // View filopodia
+                if (!grid[i][j][k].getFids().empty()){
+                    if (membrane == 1) {
+                        for (m = 0; m < (int)grid[i][j][k].getFids().size(); m++) {
+							if (pickedCell == ECELLS || grid[i][j][k].getFids()[m]->Cell == ECagents[pickedCell]) {
+								if (nodeAgentView == 1 && grid[i][j][k].getFids()[m]->node) {
+									flag = 1;
+								}
+								if (springAgentsView == 1 && grid[i][j][k].getFids()[m]->node) {
+									flag = 1;
+								}
+								if (flag == 1) {
+									unsigned int agents = grid[i][j][k].getFids()[m]->Cell->nodeAgents.size() +
+														  grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size() +
+														  grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size();
+									if (viewType == 1) {
+										red = ((float) grid[i][j][k].getFids()[m]->Cell->VEGFRtot /
+											   ((float) VEGFRNORM / (float) ECcross));
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 3) {
+										red = (float) grid[i][j][k].getFids()[m]->filTokens / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 2) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getFids()[m]->Cell->Dll4tot / (float) MAX_dll4;
+										blue = 0.5923f;
+									} else if (viewType == 4) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getFids()[m]->Dll4 / 50.0f;
+										blue = 0.5923f;
+									} else if (viewType == 5) {
+										red = grid[i][j][k].getFids()[m]->VEGFR / 20.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 6) {
+										red = grid[i][j][k].getFids()[m]->VEGFRactive / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 7) {
+										red = 0.534f;
+										green = 0.0623f +
+												(float) grid[i][j][k].getFids()[m]->activeNotch / (float) NotchNorm;
+										blue = 0.5923f;
+									} else if (viewType == 8) {
+										if (!grid[i][j][k].getFids()[m]->node == false) {
+											red = 0.7f;
+											green = 0.7f;
+											blue = 0.7f;
+										} else {
+											red = 0.0f;
+											green = 0.0f;
+											blue = 0.0f;
 										}
-                                    } else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
-                                    else if(viewType==11){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
-                                    else if(viewType==12){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==13){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==14){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
-                                    else if(viewType==15){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
-                                    else if(viewType==16){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-                                    if((junctionView==1)&&(grid[i][j][k].getFids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].getFids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
-                                    
-                                    //drawFilAgentsCylinders(grid[i][j][k].Fids[m]->Mx,grid[i][j][k].Fids[m]->My, grid[i][j][k].Fids[m]->Mz, recentreX, recentreY, recentreZ, red, green, blue, 0.2, m);
-                                    DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, red, green, blue, 0.6, L);
-                                }
-                            }
-                        }
-                        
+									} else if (viewType == 10) {
+										red = grid[i][j][k].getFids()[m]->Cell->red;
+										green = grid[i][j][k].getFids()[m]->Cell->green;
+										blue = grid[i][j][k].getFids()[m]->Cell->blue;
+									} else if (viewType == 11) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") /
+												agents;
+										blue = 0.5923f;
+									} else if (viewType == 12) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR", 0);
+										blue = 0.5923f;
+									} else if (viewType == 13) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",
+																										 0);
+										blue = 0.5923f;
+									} else if (viewType == 14) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4", 0);
+										blue = 0.5923f;
+									} else if (viewType == 15) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH", 0);
+										blue = 0.5923f;
+									} else if (viewType == 16) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",
+																										 0);
+										blue = 0.5923f;
+									}
+									if ((junctionView == 1) && (grid[i][j][k].getFids()[m]->junction)) {
+										red = 1.03f;
+										green = 1.8f;
+										blue = 1.2f;
+									}
+									if ((FAview == 1) && (grid[i][j][k].getFids()[m]->FA)) {
+										red = 0.03f;
+										green = 1.8f;
+										blue = 0.2f;
+									}
+									DrawCube(((float) i) - recentreX, ((float) j) - recentreY, ((float) k) - recentreZ,
+											 red, green, blue, 0.6, L);
+								}
+							}
+						}
                     }
                 }
-                //........................................................................................................................................................................
-                //........................................................................................................................................................................
-                //there is no cytoplasm in this model version!
-                if(grid[i][j][k].getType()==MED){
-                    
-                    //if(cytoView==1){
-                        red=0.8f; green = 0.5f; blue = 0.7f;
-                        DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, red, green, blue, 1, L);
-                    //}
-                }
-                //........................................................................................................................................................................
-                //........................................................................................................................................................................
-                //membrane
-                if(grid[i][j][k].getType()==const_M){
-                    /*tester
-                     * int LER;
-                     * int fleg=0;
-                     *
-                     * if(grid[i][j][k].Mids.size()>1){
-                     * for(LER=0;LER<grid[i][j][k].Mids.size();LER++){
-                     * if((grid[i][j][k].Mids[LER]->FIL==BASE)||(grid[i][j][k].Mids[LER]->FIL==NONE)){
-                     * if(fleg==1) cout<<"node = "<<grid[i][j][k].Mids[LER]->node<<endl<<"doubled up!"<<grid[i][j][k].Mids.size()<<endl;
-                     * if(fleg==0){ fleg=1; cout<<"node = "<<grid[i][j][k].Mids[LER]->node<<endl;}
-                     *
-                     * }
-                     * }
-                     * }*/
-                    uptoM = grid[i][j][k].getMids().size();
-                    
-                    if(membrane==1){
-                        for(m=0;m<uptoM;m++){
-                            if((pickedCell==ECELLS)||(grid[i][j][k].getMids()[m]->Cell==ECagents[pickedCell])){
-                                /*if((springAgentsView==1)&&(grid[i][j][k].Mids[m]->node==false)&&(grid[i][j][k].Mids[m]->triangle.size()==0)){
-                                    
-                                    //if(grid[i][j][k].Mids[m]->FIL==NONE) cout<<"left over"<<endl;
-                                    red=0.30f; green = 0.40f; blue = 1.0f;
-                                    //if(grid[i][j][k].Mids.size()>1)cout<<"doubled up!"<<grid[i][j][k].Mids.size()<<endl;
-                                    if(viewType==1){ red=((float)grid[i][j][k].Mids[m]->Cell->VEGFRtot/(float)VEGFRnorm); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].Mids[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Cell->Dll4tot/5000.0f; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].Mids[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].Mids[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Notch1/50.0f; blue = 0.5923f;}
-                                    else if(viewType==8){ red= 0.5f;green=0.5f; blue = 0.5f;}
 
-                                    if((junctionView==1)&&(grid[i][j][k].Mids[m]->junction ==true)) {red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].Mids[m]->FA ==true)) {red=0.03f; green = 1.8f; blue = 0.2f;}
-                                    DrawCube(i-recentreX-L/2.0f, j-recentreY-L/2.0f, k-recentreZ-L/2.0f, red, green, blue, 0.5, L);
-                                }*/
+				// There is no cytoplasm in this model version!
+                if (grid[i][j][k].getType()==MED){
+					red=0.8f;
+					green = 0.5f;
+					blue = 0.7f;
+					DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, red, green, blue, 1, L);
+				}
+
+                // View membrane.
+                if (grid[i][j][k].getType() == const_M) {
+                    uptoM = (int) grid[i][j][k].getMids().size();
+                    if (membrane == 1) {
+                        for (m = 0; m < uptoM; m++) {
+                            if (pickedCell == ECELLS || grid[i][j][k].getMids()[m]->Cell==ECagents[pickedCell]) {
+                                if (surfaceAgentsView==1 && grid[i][j][k].getMids()[m]->triangle.empty()) {
+									unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() +
+														  grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() +
+														  grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
+									red = 0.30f;
+									green = 0.40f;
+									blue = 1.0f;
+									if (viewType == 1) {
+										red = (float) grid[i][j][k].getMids()[m]->Cell->VEGFRtot /
+											  ((float) VEGFRNORM / (float) ECcross);
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 3) {
+										red = (float) grid[i][j][k].getMids()[m]->filTokens / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 2) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getMids()[m]->Cell->Dll4tot / (float) MAX_dll4;
+										blue = 0.5923f;
+									} else if (viewType == 4) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getMids()[m]->Dll4 / 50.0f;
+										blue = 0.5923f;
+									} else if (viewType == 5) {
+										red = (grid[i][j][k].getMids()[m]->VEGFR / 20.0f);
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 6) {
+										red = grid[i][j][k].getMids()[m]->VEGFRactive / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									}
+									else if (viewType == 7) {
+										red = 0.534f;
+										green = 0.0623f +
+												(float) grid[i][j][k].getMids()[m]->activeNotch / (float) NotchNorm;
+										blue = 0.5923f;
+									}
+									else if (viewType == 8) {
+										red = 0.3f;
+										green = 0.3f;
+										blue = 0.3f;
+									}
+									else if (viewType == 10) {
+										red = grid[i][j][k].getMids()[m]->Cell->red;
+										green = grid[i][j][k].getMids()[m]->Cell->green;
+										blue = grid[i][j][k].getMids()[m]->Cell->blue;
+									}
+									else if (viewType == 11) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") /
+												agents;
+										blue = 0.5923f;
+									} else if (viewType == 12) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR", 0);
+										blue = 0.5923f;
+									} else if (viewType == 13) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",
+																										 0);
+										blue = 0.5923f;
+									} else if (viewType == 14) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4", 0);
+										blue = 0.5923f;
+									} else if (viewType == 15) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH", 0);
+										blue = 0.5923f;
+									} else if (viewType == 16) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",
+																										 0);
+										blue = 0.5923f;
+									}
+
+
+									if ((junctionView == 1) && (grid[i][j][k].getMids()[m]->junction)) {
+										red = 1.03f;
+										green = 1.8f;
+										blue = 1.2f;
+									}
+									if ((FAview == 1) && (grid[i][j][k].getMids()[m]->FA)) {
+										red = 0.03f;
+										green = 1.8f;
+										blue = 0.2f;
+									}
+
+									if ((grid[i][j][k].getMids()[m]->labelled) && (labelledView))green = 0.8;
+									if ((grid[i][j][k].getMids()[m]->labelled2) && (labelledView))green = 0;
+
+									DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue, 0.6, L);
+								}
                                 
-                                if((surfaceAgentsView==1)&&(grid[i][j][k].getMids()[m]->triangle.size()!=0)){
-
-                                    unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
-
-                                    //if(grid[i][j][k].Mids[m]->FIL==NONE) cout<<"left over"<<endl;
-                                    red=0.30f; green = 0.40f; blue = 1.0f;
-                                    //if(grid[i][j][k].Mids.size()>1)cout<<"doubled up!"<<grid[i][j][k].Mids.size()<<endl;
-                                    if(viewType==1){ red=((float)grid[i][j][k].getMids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].getMids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].getMids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].getMids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getMids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
-                                    else if(viewType==8){ red= 0.3f;green=0.3f; blue = 0.3f;}
-                                    else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
-                                    else if(viewType==11){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
-                                    else if(viewType==12){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==13){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==14){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
-                                    else if(viewType==15){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
-                                    else if(viewType==16){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-
-									
-                                    if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
-
-                                    if((grid[i][j][k].getMids()[m]->labelled)&&(labelledView))green = 0.8;
-                                    if((grid[i][j][k].getMids()[m]->labelled2)&&(labelledView))green = 0;
-
-                                    DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.6, L);
-                                }
-                                
-                                if((nodeAgentView==1)&&(grid[i][j][k].getMids()[m]->node)){
-                                    unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
+                                if((nodeAgentView==1)&&(grid[i][j][k].getMids()[m]->node)) {
+									unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() +
+														  grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() +
+														  grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
 
 
-                                    if(viewType==1){ red=((float)grid[i][j][k].getMids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].getMids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].getMids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].getMids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getMids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;
-                                    //cout<<grid[i][j][k].Mids[m]->activeNotch<<endl;
-                                    }
-                                    else if(viewType==8){ red= 0.0f;green=0.0f; blue = 0.0f;}
-                    else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
-                                    else if(viewType==11){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
-                                    else if(viewType==12){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==13){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
-                                    else if(viewType==14){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
-                                    else if(viewType==15){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
-                                    else if(viewType==16){ red = 0.534f;
-                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
+									if (viewType == 1) {
+										red = ((float) grid[i][j][k].getMids()[m]->Cell->VEGFRtot /
+											   ((float) VEGFRNORM / (float) ECcross));
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 3) {
+										red = (float) grid[i][j][k].getMids()[m]->filTokens / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 2) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getMids()[m]->Cell->Dll4tot / (float) MAX_dll4;
+										blue = 0.5923f;
+									} else if (viewType == 4) {
+										red = 0.534f;
+										green = 0.0623f + grid[i][j][k].getMids()[m]->Dll4 / 50.0f;
+										blue = 0.5923f;
+									} else if (viewType == 5) {
+										red = (grid[i][j][k].getMids()[m]->VEGFR / 20.0f);
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 6) {
+										red = grid[i][j][k].getMids()[m]->VEGFRactive / 5.0f;
+										green = 0.2245098;
+										blue = 0.545098;
+									} else if (viewType == 7) {
+										red = 0.534f;
+										green = 0.0623f +
+												(float) grid[i][j][k].getMids()[m]->activeNotch / (float) NotchNorm;
+										blue = 0.5923f;
+									} else if (viewType == 8) {
+										red = 0.0f;
+										green = 0.0f;
+										blue = 0.0f;
+									} else if (viewType == 10) {
+										red = grid[i][j][k].getMids()[m]->Cell->red;
+										green = grid[i][j][k].getMids()[m]->Cell->green;
+										blue = grid[i][j][k].getMids()[m]->Cell->blue;
+									} else if (viewType == 11) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") /
+												agents;
+										blue = 0.5923f;
+									} else if (viewType == 12) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR", 0);
+										blue = 0.5923f;
+									} else if (viewType == 13) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",
+																										 0);
+										blue = 0.5923f;
+									} else if (viewType == 14) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4", 0);
+										blue = 0.5923f;
+									} else if (viewType == 15) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH", 0);
+										blue = 0.5923f;
+									} else if (viewType == 16) {
+										red = 0.534f;
+										green = 0.0623f +
+												grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",
+																										 0);
+										blue = 0.5923f;
+									}
 
-                                    if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)){ red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
-                                    if((grid[i][j][k].getMids()[m]->labelled)&&(labelledView))green = 0.8;
-                                    if((grid[i][j][k].getMids()[m]->labelled2)&&(labelledView))green = 0;
-                                    
-                                    DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.6, L);
-                                    
-                                    
-                                }
+									if ((junctionView == 1) && (grid[i][j][k].getMids()[m]->junction)) {
+										red = 1.03f;
+										green = 1.8f;
+										blue = 1.2f;
+									}
+									if ((FAview == 1) && (grid[i][j][k].getMids()[m]->FA)) {
+										red = 0.03f;
+										green = 1.8f;
+										blue = 0.2f;
+									}
+									if ((grid[i][j][k].getMids()[m]->labelled) && (labelledView)) {
+										green = 0.8;
+									}
+									if ((grid[i][j][k].getMids()[m]->labelled2) && (labelledView)) {
+										green = 0;
+									}
+									DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue, 0.6, L);
+								}
                             }
                         }
-                        
                     }
                 }
             }
     //........................................................................................................................................................................
     
-    //if(viewType!=10){
     glDepthMask(GL_FALSE);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
-    
-    if((bloodView==1)||(VEGFview==1)){
-        for(i=sectX;i<sectX2;i++)
-            for(j=sectY;j<sectY2;j++)
-                for(k=sectZ;k<sectZ2;k++){
-                    
-                
-                    //........................................................................................................................................................................
-                    //environment -VEGF or blood  *translucent*
-                    if(grid[i][j][k].getType()==BLOOD){
-                        
-                        if(bloodView==1){
-                            red=1.0f; green = 0.0f; blue = 0.0f;
-                            
-                            DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.1, L);
-                        }
-                    }
-                    if(grid[i][j][k].getType() == const_E){
 
-                        //if(grid[i][j][k].Eid->inside==true){
-                        //    red=0.2f; green = 0.57f; blue =0.3;
-                        //    DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
-
-                        //}
-                        if((VEGFview==1)&&(grid[i][j][k].getEid()->VEGF>0.0f)){
-                            
-                                                        //red=1.0f; green = 1.0f; blue =(grid[i][j][k].Eid->VEGF)*0.01f;
-                            red=0.2f; green = 0.57f; blue =0.3+(grid[i][j][k].getEid()->VEGF)*0.01f;
-                            DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].getEid()->VEGF)*0.01,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
-                            
-                            /*glColor4f(1.0f,1.0f,(grid[i][j][k].Eid->VEGF)*0.01, (grid[i][j][k].Eid->VEGF)*0.01);
-                             * // Specify the point size before the primitive is specified
-                             * glPointSize(5.0f);
-                             *
-                             * // Draw the point
-                             * glBegin(GL_POINTS);
-                             * glVertex3f(i-recentreX,j-recentreY,k-recentreZ );
-                             * glEnd();
-                            */
-                            
-                        }
-                        if (AdhesivenessView == 1) {
-							red = grid[i][j][k].getEid()->adhesiveness; green = grid[i][j][k].getEid()->adhesiveness; grid[i][j][k].getEid()->adhesiveness;
-							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].getEid()->adhesiveness)*0.1,L);
+	// TOM: ADD IN VISUALISATION OF GRADIENTS HERE.
+	if (bloodView == 1 || VEGFview == 1 || ExternSpeciesView == 1) {
+        for(i=sectX;i<sectX2;i++) {
+			for (j = sectY; j < sectY2; j++) {
+				for (k = sectZ; k < sectZ2; k++) {
+					// Environment - VEGF or blood *translucent*
+					if (grid[i][j][k].getType() == BLOOD) {
+						if (bloodView == 1) {
+							red = 1.0f;
+							green = 0.0f;
+							blue = 0.0f;
+							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue, 0.1, L);
 						}
-                    }
-                    //........................................................................................................................................................................
-                }
-        
+					}
+					if (grid[i][j][k].getType() == const_E) {
+						if ((VEGFview == 1) && (grid[i][j][k].getEid()->VEGF > 0.0f)) {
+							red = 0.2f;
+							green = 0.57f;
+							blue = 0.3 + (grid[i][j][k].getEid()->VEGF) * 0.01f;
+							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+									 (grid[i][j][k].getEid()->VEGF) * 0.01, L);
+						}
+
+						if (AdhesivenessView == 1) {
+							red = grid[i][j][k].getEid()->m_adhesiveness;
+							green = grid[i][j][k].getEid()->m_adhesiveness;
+							grid[i][j][k].getEid()->m_adhesiveness;
+							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+									 (float) grid[i][j][k].getEid()->m_adhesiveness * 0.1, L);
+						}
+
+						if (SolidnessView == 1) {
+							red = 0.2f;
+							green = 0.57f;
+							blue = grid[i][j][k].getEid()->m_solidness;
+							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+									 (float) grid[i][j][k].getEid()->m_solidness * 0.1, L);
+						}
+
+						// Get all gradients - apply a colour to them.
+						if (ExternSpeciesView == 1) {
+							float count = 0;
+							for (auto speciesGradient : this->m_worldContainer->m_gradients) {
+								std::string proteinName = speciesGradient->m_protein->get_name();
+								if (shaneRecordingSetup) {
+									if (proteinName == "VEGF") {
+										red = 0.2f;
+										green = 0.57f;
+										blue = 0.3 + (grid[i][j][k].getEid()->get_protein_level("VEGF")) * 0.01f;
+										DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+												 grid[i][j][k].getEid()->get_protein_level("VEGF") * 0.01, L);
+									} else if (proteinName == "SEMA3A") {
+										red = grid[i][j][k].getEid()->get_protein_level("SEMA3A");
+										green = grid[i][j][k].getEid()->get_protein_level("SEMA3A");
+										grid[i][j][k].getEid()->m_adhesiveness;
+										DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+												 grid[i][j][k].getEid()->get_protein_level("SEMA3A") * 0.01, L);
+									}
+								} else {
+									red = 0.2f * count;
+									green = 0.1f*count;
+									blue = 0.3 + (grid[i][j][k].getEid()->get_protein_level(proteinName)) * 0.01f;
+									DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+											 (float) grid[i][j][k].getEid()->get_protein_level(proteinName) * 0.1, L);
+									count++;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
     }
-     glDepthMask(GL_TRUE);
+	glDepthMask(GL_TRUE);
     glDisable(GL_BLEND);
-  
-    
 }
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+
 //test out the grids line function
 void testGridAgents(void){
     
@@ -1744,10 +1965,9 @@ void myGlutReshape( int x, int y ) {
 }
 //----------------------------------------------------------------------------------------------------
 
-void screenRecording()
-{
-    switch (screenRecordState)
-    {
+void screenRecording() {
+
+    switch (screenRecordState) {
         case NotRecording:
             break;
         case Recording:
@@ -1782,21 +2002,24 @@ GLUI_CB endRecording()
 //--------------------------------------------------------------------------------------------------------------------------------------------
 void display(void) {
 
-    //on the fly movie making
-    if((startMovie==1)&&(movie==1)){ movie=2; startMovie=0;}
-    else if((startMovie==1)&&(movie==0)) movie=1;
-    else if(endMovie==1){ movie=3; endMovie=0;}
-    else if((endMovie==0)&&(movie==3)) movie=0;
+    // Movie-making
+    if (startMovie == 1 && movie == 1) {
+		movie = 2;
+		startMovie = 0;
+	} else if (startMovie == 1 && movie==0) {
+		movie = 1;
+	} else if (endMovie == 1) {
+		movie = 3;
+		endMovie = 0;
+	} else if (endMovie == 0 && movie == 3) {
+		movie = 0;
+	}
 
-    
-    if(WORLDpointer->Pause==0){
+
+    if (WORLDpointer->Pause == 0) {
         //simulate_multiple();
         //WORLDpointer->simulate(movie);
         if (WORLDpointer->timeStep < MAXtime) {
-			if (WORLDpointer->timeStep % 10 == 0) {
-				std::cout << "Writing to results files. Timestep: " << WORLDpointer->timeStep << "\n";
-				WORLDpointer->write_to_outfiles();
-			}
             WORLDpointer->simulateTimestep_MSM();
             screenRecording();
             counter_edittext->set_int_val(WORLDpointer->timeStep);
@@ -1806,8 +2029,7 @@ void display(void) {
 //                WORLDpointer->evaluateSandP();
         }
 
-        if (WORLDpointer->timeStep >= MAXtime && screenRecordState == Recording)
-        {
+        if (WORLDpointer->timeStep >= MAXtime && screenRecordState == Recording) {
             endRecording();
         }
         
@@ -1854,10 +2076,7 @@ void display(void) {
     glMaterialf(GL_FRONT, GL_SHININESS, 55.0);
     glEnable(GL_COLOR_MATERIAL);
     glEnable(GL_LIGHTING);
-    
-  
 
-   
     //cout<< "starting viewWorld"<<endl;
     WORLDpointer->viewWorld();
     //cout<< "done viewWorld"<<endl;
@@ -1960,7 +2179,7 @@ void displayGlui(int * argc, char  ** argv) {
 
     statText->set_text("Recording...");
     startRecordButton->disable();
-    screenRecordState = NotRecording;
+    screenRecordState = Recording;
     
     GLUI_Panel *viewer= glui->add_panel("View", true);
     
@@ -1981,38 +2200,39 @@ void displayGlui(int * argc, char  ** argv) {
     listbox->add_item(14, "DSL - DLL4");
     listbox->add_item(15, "DSL - NOTCH");
     listbox->add_item(16, "DSL - DLL4_NOTCH");
+	listbox->add_item(17, "DSL - Shane Inverse View");
+	listbox->add_item(18, "DSL - Active VEGFR");
 
     GLUI_Panel *vessels= glui->add_panel("Display elements", true);
     glui->add_checkbox_to_panel( vessels, "Mesh", &meshView);
     glui->add_checkbox_to_panel( vessels, "grid", &gridView);
     //glui->add_checkbox_to_panel( vessels, "Cytoplasm", &cytoView);
     glui->add_checkbox_to_panel( vessels, "Junction", &junctionView);
-    glui->add_checkbox_to_panel( vessels, "horizontal springs", &horizontalView);
-    glui->add_checkbox_to_panel( vessels, "right springs", &rightView);
+//    glui->add_checkbox_to_panel( vessels, "horizontal springs", &horizontalView);
+//    glui->add_checkbox_to_panel( vessels, "right springs", &rightView);
     glui->add_checkbox_to_panel( vessels, "Focal Adhesions", &FAview);
     glui->add_checkbox_to_panel( vessels, "Membrane", &membrane);
     glui->add_checkbox_to_panel( vessels, "springAgents", &springAgentsView );
     glui->add_checkbox_to_panel( vessels, "nodeAgents", &nodeAgentView );
-    glui->add_checkbox_to_panel( vessels, "surface agents", &surfaceAgentsView );
-    glui->add_checkbox_to_panel( vessels, "surface triangles", &surfaceTriangles );
-    //glui->add_checkbox_to_panel( vessels, "lines", &linesView );
-    glui->add_checkbox_to_panel( vessels, "astrocytes", &astro );
-    //glui->add_checkbox_to_panel( vessels, "view single agent", &pickAgent);
+//    glui->add_checkbox_to_panel( vessels, "surface agents", &surfaceAgentsView );
+//    glui->add_checkbox_to_panel( vessels, "surface triangles", &surfaceTriangles );
+//    glui->add_checkbox_to_panel( vessels, "astrocytes", &astro );
     glui->add_checkbox_to_panel( vessels, "VEGF", &VEGFview);
+	glui->add_checkbox_to_panel( vessels, "External Species", &ExternSpeciesView);
 	glui->add_checkbox_to_panel( vessels, "Adhesiveness", &AdhesivenessView);
-    glui->add_checkbox_to_panel( vessels, "view light pos", &viewLight);
-    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);
-    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);
-    glui->add_checkbox_to_panel( vessels, "view inside vessel", &viewInsideEnv);
-    glui->add_checkbox_to_panel( vessels, "junctions only", &junctionOnlyView);
-    glui->add_checkbox_to_panel( vessels, "view Basement Membrane", &viewBM);
-
-    glui->add_checkbox_to_panel( vessels, "BASE", &baseView);
-    glui->add_checkbox_to_panel( vessels, "NONE", &noneView);
-    glui->add_checkbox_to_panel( vessels, "STALK", &stalkView);
-    glui->add_checkbox_to_panel( vessels, "TIP", &tipView);
-    glui->add_checkbox_to_panel( vessels, "labelled", &labelledView);
-    glui->add_checkbox_to_panel( vessels, "mutants", &mutantView);
+	glui->add_checkbox_to_panel( vessels, "Solidness", &SolidnessView);
+//    glui->add_checkbox_to_panel( vessels, "view light pos", &viewLight);
+//    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);
+//    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);
+//    glui->add_checkbox_to_panel( vessels, "view inside vessel", &viewInsideEnv);
+//    glui->add_checkbox_to_panel( vessels, "junctions only", &junctionOnlyView);
+//    glui->add_checkbox_to_panel( vessels, "view Basement Membrane", &viewBM);
+//    glui->add_checkbox_to_panel( vessels, "BASE", &baseView);
+//    glui->add_checkbox_to_panel( vessels, "NONE", &noneView);
+//    glui->add_checkbox_to_panel( vessels, "STALK", &stalkView);
+//    glui->add_checkbox_to_panel( vessels, "TIP", &tipView);
+//    glui->add_checkbox_to_panel( vessels, "labelled", &labelledView);
+//    glui->add_checkbox_to_panel( vessels, "mutants", &mutantView);
     
     GLUI_Rollout *cells = glui->add_rollout_to_panel( viewer, "cell", true);
     GLUI_Spinner *cellsspinner = glui->add_spinner_to_panel(cells, "choose cell", GLUI_SPINNER_INT, &pickedCell);
