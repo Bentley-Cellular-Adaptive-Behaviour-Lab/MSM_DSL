@@ -46,10 +46,14 @@ CDBG +=
 CPPFLAGS =
 LIBS = 
 PYBIND_INC =
+INC =
 
-ifeq ($(UNAME), Darwin)
-	LIBS := -L/usr/local/Cellar/boost/1.76.0 -lboost
-endif
+# ifeq ($(UNAME), Darwin)
+# 	LIBS := -L/usr/local/Cellar/boost/1.76.0 -lboost
+# endif
+
+# ADD BOOST LIBRARY - ASSUMES VERSION 1.84.0
+INC := -I/usr/local/Cellar/boost/1.84.0/include/boost
 
 ifeq ($(GRAPHICS), true)
 		LIBS += -framework OpenGL -framework GLUT -L/usr/local/Cellar/glui/2.37 -lglui
@@ -65,7 +69,7 @@ ${TARGET} : ${OBJS}
 	${CC} -o ${TARGET} ${CPPFLAGS} *.o ${LIBS}
 
 .cpp.o:
-	${CC} ${CPPFLAGS} -c $*.cpp
+	${CC} ${CPPFLAGS} -c $*.cpp ${INC}
 
 clean:
 	rm -f *.o *.so springAgent
