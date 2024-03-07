@@ -498,6 +498,13 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1WKfT4J945w" role="3cqZAp">
+          <node concept="3cpWsn" id="1WKfT4J945z" role="3cpWs9">
+            <property role="TrG5h" value="runWithDocker" />
+            <node concept="10P_77" id="1WKfT4J945u" role="1tU5fm" />
+            <node concept="3clFbT" id="1WKfT4J9KZ5" role="33vP2m" />
+          </node>
+        </node>
         <node concept="3clFbH" id="1PDLoEBLLYg" role="3cqZAp" />
         <node concept="3clFbF" id="6Z$0llxVgD4" role="3cqZAp">
           <node concept="2OqwBi" id="6Z$0llxVje0" role="3clFbG">
@@ -4339,9 +4346,112 @@
       <node concept="3Tm1VV" id="7wJJsVzsFOM" role="1B3o_S" />
       <node concept="3cqZAl" id="7wJJsVzsNj$" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="1WKfT4JeiWH" role="jymVt" />
+    <node concept="2YIFZL" id="1WKfT4JeP$Z" role="jymVt">
+      <property role="TrG5h" value="runDockerSpringAgent" />
+      <node concept="3clFbS" id="1WKfT4JeP_2" role="3clF47">
+        <node concept="3SKdUt" id="1WKfT4JeYF_" role="3cqZAp">
+          <node concept="1PaTwC" id="1WKfT4JeYFA" role="1aUNEU">
+            <node concept="3oM_SD" id="1WKfT4JeYJG" role="1PaTwD">
+              <property role="3oM_SC" value="Attempt" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JeYJH" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JeYJI" role="1PaTwD">
+              <property role="3oM_SC" value="run" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JeYJJ" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JeYJK" role="1PaTwD">
+              <property role="3oM_SC" value="MSM" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JeYJL" role="1PaTwD">
+              <property role="3oM_SC" value="with" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4Jf1Gx" role="1PaTwD">
+              <property role="3oM_SC" value="Docker." />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1WKfT4Jf1W1" role="3cqZAp">
+          <node concept="2OqwBi" id="1WKfT4Jf1W2" role="3clFbG">
+            <node concept="10M0yZ" id="1WKfT4Jf1W3" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+            </node>
+            <node concept="liA8E" id="1WKfT4Jf1W4" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+              <node concept="Xl_RD" id="1WKfT4Jf1WM" role="37wK5m">
+                <property role="Xl_RC" value="Attempting Docker run with no analysis. " />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1WKfT4JfanP" role="3cqZAp">
+          <node concept="1PaTwC" id="1WKfT4JfanQ" role="1aUNEU">
+            <node concept="3oM_SD" id="1WKfT4Jfa$r" role="1PaTwD">
+              <property role="3oM_SC" value="Build" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4Jfa$S" role="1PaTwD">
+              <property role="3oM_SC" value="Docker" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JfaD9" role="1PaTwD">
+              <property role="3oM_SC" value="container" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JfaFk" role="1PaTwD">
+              <property role="3oM_SC" value="using" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JfaFO" role="1PaTwD">
+              <property role="3oM_SC" value="image" />
+            </node>
+            <node concept="3oM_SD" id="1WKfT4JfaI1" role="1PaTwD">
+              <property role="3oM_SC" value="repo." />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1WKfT4Jfg4T" role="3cqZAp">
+          <node concept="3cpWsn" id="1WKfT4Jfg4U" role="3cpWs9">
+            <property role="TrG5h" value="pbBuild" />
+            <node concept="3uibUv" id="1WKfT4Jfg4V" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~ProcessBuilder" resolve="ProcessBuilder" />
+            </node>
+            <node concept="2ShNRf" id="1WKfT4Jfi86" role="33vP2m">
+              <node concept="1pGfFk" id="1WKfT4Jfi7I" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~ProcessBuilder.&lt;init&gt;(java.lang.String...)" resolve="ProcessBuilder" />
+                <node concept="Xl_RD" id="1WKfT4Jfj71" role="37wK5m">
+                  <property role="Xl_RC" value="docker" />
+                </node>
+                <node concept="Xl_RD" id="1WKfT4Jfkn8" role="37wK5m">
+                  <property role="Xl_RC" value="buildx" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1WKfT4JfbsU" role="3cqZAp">
+          <node concept="2OqwBi" id="1WKfT4JfbsV" role="3clFbG">
+            <node concept="10M0yZ" id="1WKfT4JfbsW" role="2Oq$k0">
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+            </node>
+            <node concept="liA8E" id="1WKfT4JfbsX" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+              <node concept="Xl_RD" id="1WKfT4JfbsY" role="37wK5m">
+                <property role="Xl_RC" value="Running Docker build. " />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1WKfT4Jfbr5" role="3cqZAp" />
+      </node>
+      <node concept="3Tm1VV" id="1WKfT4JeDmZ" role="1B3o_S" />
+      <node concept="3cqZAl" id="1WKfT4JePpp" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="7wJJsVzs$Fl" role="jymVt" />
     <node concept="2YIFZL" id="7wJJsVzsc5G" role="jymVt">
-      <property role="TrG5h" value="runLocalSpringAgent" />
+      <property role="TrG5h" value="runLocalSpringAgenxt" />
       <node concept="3clFbS" id="7wJJsVzsc5J" role="3clF47">
         <node concept="3SKdUt" id="6JBqwueotKs" role="3cqZAp">
           <node concept="1PaTwC" id="6JBqwueotKt" role="1aUNEU">

@@ -106,14 +106,21 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3pydsmp5XmG" resolve="LoggingFacet" />
     </node>
+    <node concept="1TJgyj" id="1WKfT4J9ZZN" role="1TKVEi">
+      <property role="IQ2ns" value="2247366106851835891" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_dockerFacet" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="1WKfT4J6Pgo" resolve="DockerFacet" />
+    </node>
     <node concept="1TJgyi" id="7wJJsVzwenC" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734541288" />
-      <property role="TrG5h" value="maxTimeSteps" />
+      <property role="TrG5h" value="_maxTimeSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4wGSNcrJYH4" role="1TKVEl">
       <property role="IQ2nx" value="5200781478354479940" />
-      <property role="TrG5h" value="sweepCellNumber" />
+      <property role="TrG5h" value="_sweepCellNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="7wJJsVzwloN" role="PzmwI">
@@ -394,6 +401,33 @@
       <property role="IQ2ns" value="5200781478355465187" />
       <property role="20kJfa" value="_gradientRef" />
       <ref role="20lvS9" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1WKfT4J6Pgo">
+    <property role="EcuMT" value="2247366106851005464" />
+    <property role="3GE5qa" value="Facets" />
+    <property role="TrG5h" value="DockerFacet" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="1WKfT4J78RT" role="1TKVEl">
+      <property role="IQ2nx" value="2247366106851085817" />
+      <property role="TrG5h" value="_dockerType" />
+      <ref role="AX2Wp" node="1WKfT4J6Phx" resolve="DockerTypeEnum" />
+    </node>
+  </node>
+  <node concept="25R3W" id="1WKfT4J6Phx">
+    <property role="3F6X1D" value="2247366106851005537" />
+    <property role="3GE5qa" value="Enums" />
+    <property role="TrG5h" value="DockerTypeEnum" />
+    <ref role="1H5jkz" node="1WKfT4J6Pkn" resolve="_dockerOff" />
+    <node concept="25R33" id="1WKfT4J6Pkn" role="25R1y">
+      <property role="3tVfz5" value="2247366106851005719" />
+      <property role="TrG5h" value="_dockerOff" />
+      <property role="1L1pqM" value="No" />
+    </node>
+    <node concept="25R33" id="1WKfT4J6Phy" role="25R1y">
+      <property role="3tVfz5" value="2247366106851005538" />
+      <property role="TrG5h" value="_dockerOn" />
+      <property role="1L1pqM" value="Yes" />
     </node>
   </node>
 </model>
