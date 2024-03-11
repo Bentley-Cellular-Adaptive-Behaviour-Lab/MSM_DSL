@@ -338,7 +338,7 @@
                 <node concept="3cpWsn" id="DsR2vrfjq5" role="3cpWs9">
                   <property role="TrG5h" value="targetSpecies" />
                   <node concept="3Tqbb2" id="DsR2vrfjq0" role="1tU5fm">
-                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                   <node concept="2OqwBi" id="DsR2vrfmLC" role="33vP2m">
                     <node concept="1PxgMI" id="DsR2vrfmLD" role="2Oq$k0">
@@ -384,7 +384,7 @@
                         </node>
                       </node>
                       <node concept="3Tsc0h" id="DsR2vrfgfN" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_species" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_components" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="DsR2vrfdtv" role="2LFqv$">
@@ -394,7 +394,7 @@
                             <ref role="3cqZAo" node="DsR2vrfjq5" resolve="targetSpecies" />
                           </node>
                           <node concept="2GrUjf" id="DsR2vrfmWz" role="3uHU7B">
-                            <ref role="2Gs0qQ" node="DsR2vrfdtt" resolve="species" />
+                            <ref role="2Gs0qQ" node="DsR2vrfdtt" resolve="currentSpecies" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="DsR2vrfmWp" role="3clFbx">
@@ -644,7 +644,7 @@
                     <node concept="3cpWsn" id="DsR2vrP89q" role="3cpWs9">
                       <property role="TrG5h" value="queryComponent" />
                       <node concept="3Tqbb2" id="DsR2vrP89m" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="DsR2vrPaiR" role="33vP2m">
                         <node concept="1PxgMI" id="DsR2vrPa0r" role="2Oq$k0">
@@ -671,7 +671,7 @@
                     <node concept="3cpWsn" id="DsR2vrQ3xO" role="3cpWs9">
                       <property role="TrG5h" value="targetComponent" />
                       <node concept="3Tqbb2" id="DsR2vrQ3xJ" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="DsR2vrQ5G9" role="33vP2m">
                         <node concept="1PxgMI" id="DsR2vrQ5nG" role="2Oq$k0">

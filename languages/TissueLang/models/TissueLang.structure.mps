@@ -449,7 +449,7 @@
       <property role="IQ2ns" value="6117388699950642719" />
       <property role="20kJfa" value="targetSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="5j_l9LXEwno">
@@ -511,7 +511,7 @@
       <property role="IQ2ns" value="5740677014464676534" />
       <property role="20kJfa" value="_targetSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="1Rle6qVWwjh">
@@ -553,7 +553,7 @@
   <node concept="1TIwiD" id="7hT7CbBqNUj">
     <property role="EcuMT" value="8392772928158776979" />
     <property role="TrG5h" value="CellSweepBin" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7hT7CbBqNUk" role="1TKVEl">
       <property role="IQ2nx" value="8392772928158776980" />
       <property role="TrG5h" value="_cellNumber" />

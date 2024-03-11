@@ -760,7 +760,7 @@
     <property role="TrG5h" value="ParameterDelayBin" />
     <property role="R4oN_" value="Groups a parameter and a delay together." />
     <property role="3GE5qa" value="DelayBins" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7tkDipEXCdl" role="1TKVEl">
       <property role="IQ2nx" value="8598679172979000149" />
       <property role="TrG5h" value="_delay" />
@@ -804,7 +804,7 @@
   <node concept="1TIwiD" id="6_eTNevhST5">
     <property role="EcuMT" value="7588256631067479621" />
     <property role="TrG5h" value="CellSweepBin" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6_eTNevhST6" role="1TKVEl">
       <property role="IQ2nx" value="7588256631067479622" />
       <property role="TrG5h" value="cellNumber" />

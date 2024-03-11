@@ -16855,7 +16855,7 @@
             <node concept="2OqwBi" id="cPxbW3tSJI" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSJJ" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSJK" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSJM" />
+                <ref role="37wK5l" node="cPxbW3tSJM" resolve="get_radius_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSJL" role="2OqNvi">
@@ -17020,7 +17020,7 @@
             <node concept="2OqwBi" id="cPxbW3tSNf" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSNg" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSNh" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSNj" />
+                <ref role="37wK5l" node="cPxbW3tSNj" resolve="get_sphere_upperx_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSNi" role="2OqNvi">
@@ -17141,7 +17141,7 @@
             <node concept="2OqwBi" id="cPxbW3tSOc" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSOd" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSOe" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSOg" />
+                <ref role="37wK5l" node="cPxbW3tSOg" resolve="get_sphere_lowerx_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSOf" role="2OqNvi">
@@ -17262,7 +17262,7 @@
             <node concept="2OqwBi" id="cPxbW3tSP9" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSPa" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSPb" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSPd" />
+                <ref role="37wK5l" node="cPxbW3tSPd" resolve="get_sphere_uppery_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSPc" role="2OqNvi">
@@ -17283,7 +17283,7 @@
               <node concept="2OqwBi" id="cPxbW3tSPj" role="2Oq$k0">
                 <node concept="13iPFW" id="cPxbW3tSPk" role="2Oq$k0" />
                 <node concept="2qgKlT" id="cPxbW3tSPl" role="2OqNvi">
-                  <ref role="37wK5l" node="cPxbW3tSJM" resolve="get_cuboid_height_decimal" />
+                  <ref role="37wK5l" node="cPxbW3tSJM" resolve="get_radius_decimal" />
                 </node>
               </node>
               <node concept="liA8E" id="cPxbW3tSPm" role="2OqNvi">
@@ -17395,7 +17395,7 @@
             <node concept="2OqwBi" id="cPxbW3tSQ6" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSQ7" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSQ8" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSQa" />
+                <ref role="37wK5l" node="cPxbW3tSQa" resolve="get_sphere_lowery_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSQ9" role="2OqNvi">
@@ -17516,7 +17516,7 @@
             <node concept="2OqwBi" id="cPxbW3tSR3" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSR4" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSR5" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSR7" />
+                <ref role="37wK5l" node="cPxbW3tSR7" resolve="get_sphere_upperz_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSR6" role="2OqNvi">
@@ -17637,7 +17637,7 @@
             <node concept="2OqwBi" id="cPxbW3tSS0" role="2Oq$k0">
               <node concept="13iPFW" id="cPxbW3tSS1" role="2Oq$k0" />
               <node concept="2qgKlT" id="cPxbW3tSS2" role="2OqNvi">
-                <ref role="37wK5l" node="cPxbW3tSS4" />
+                <ref role="37wK5l" node="cPxbW3tSS4" resolve="get_sphere_lowerz_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="cPxbW3tSS3" role="2OqNvi">
