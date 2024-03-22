@@ -9,6 +9,7 @@
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -64,6 +65,9 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -111,6 +115,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -333,7 +338,7 @@
                 <node concept="3cpWsn" id="DsR2vrfjq5" role="3cpWs9">
                   <property role="TrG5h" value="targetSpecies" />
                   <node concept="3Tqbb2" id="DsR2vrfjq0" role="1tU5fm">
-                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                   <node concept="2OqwBi" id="DsR2vrfmLC" role="33vP2m">
                     <node concept="1PxgMI" id="DsR2vrfmLD" role="2Oq$k0">
@@ -379,7 +384,7 @@
                         </node>
                       </node>
                       <node concept="3Tsc0h" id="DsR2vrfgfN" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_species" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_components" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="DsR2vrfdtv" role="2LFqv$">
@@ -389,7 +394,7 @@
                             <ref role="3cqZAo" node="DsR2vrfjq5" resolve="targetSpecies" />
                           </node>
                           <node concept="2GrUjf" id="DsR2vrfmWz" role="3uHU7B">
-                            <ref role="2Gs0qQ" node="DsR2vrfdtt" resolve="species" />
+                            <ref role="2Gs0qQ" node="DsR2vrfdtt" resolve="currentSpecies" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="DsR2vrfmWp" role="3clFbx">
@@ -639,7 +644,7 @@
                     <node concept="3cpWsn" id="DsR2vrP89q" role="3cpWs9">
                       <property role="TrG5h" value="queryComponent" />
                       <node concept="3Tqbb2" id="DsR2vrP89m" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="DsR2vrPaiR" role="33vP2m">
                         <node concept="1PxgMI" id="DsR2vrPa0r" role="2Oq$k0">
@@ -666,7 +671,7 @@
                     <node concept="3cpWsn" id="DsR2vrQ3xO" role="3cpWs9">
                       <property role="TrG5h" value="targetComponent" />
                       <node concept="3Tqbb2" id="DsR2vrQ3xJ" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="DsR2vrQ5G9" role="33vP2m">
                         <node concept="1PxgMI" id="DsR2vrQ5nG" role="2Oq$k0">
@@ -989,6 +994,50 @@
     <node concept="1YaCAy" id="355VSbVp8mh" role="1YuTPh">
       <property role="TrG5h" value="statement" />
       <ref role="1YaFvo" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1WKfT4JbRb1">
+    <property role="TrG5h" value="check_noDockerWithSweep" />
+    <node concept="3clFbS" id="1WKfT4JbRb2" role="18ibNy">
+      <node concept="3clFbJ" id="1WKfT4JbRfT" role="3cqZAp">
+        <node concept="1Wc70l" id="1WKfT4JbRZt" role="3clFbw">
+          <node concept="2OqwBi" id="1WKfT4JbSfM" role="3uHU7w">
+            <node concept="1YBJjd" id="1WKfT4JbS3J" role="2Oq$k0">
+              <ref role="1YBMHb" node="1WKfT4JbRd2" resolve="container" />
+            </node>
+            <node concept="2qgKlT" id="1WKfT4JbS$d" role="2OqNvi">
+              <ref role="37wK5l" to="5ycg:1PDLoEBKYSg" resolve="doingClusterAnalysis" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1WKfT4JbRrM" role="3uHU7B">
+            <node concept="1YBJjd" id="1WKfT4JbRg5" role="2Oq$k0">
+              <ref role="1YBMHb" node="1WKfT4JbRd2" resolve="container" />
+            </node>
+            <node concept="2qgKlT" id="1WKfT4JbRCv" role="2OqNvi">
+              <ref role="37wK5l" to="5ycg:1WKfT4J9Y8I" resolve="usingDocker" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="1WKfT4JbRfV" role="3clFbx">
+          <node concept="2MkqsV" id="1WKfT4JbS$T" role="3cqZAp">
+            <node concept="Xl_RD" id="1WKfT4JbS_5" role="2MkJ7o">
+              <property role="Xl_RC" value="Cannot run Docker when the simulation has been set to do cluster analysis." />
+            </node>
+            <node concept="2OqwBi" id="1WKfT4JbSMe" role="1urrMF">
+              <node concept="1YBJjd" id="1WKfT4JbSBD" role="2Oq$k0">
+                <ref role="1YBMHb" node="1WKfT4JbRd2" resolve="container" />
+              </node>
+              <node concept="3TrEf2" id="1WKfT4JbT3T" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:1WKfT4J9ZZN" resolve="_dockerFacet" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1WKfT4JbRd2" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     </node>
   </node>
 </model>

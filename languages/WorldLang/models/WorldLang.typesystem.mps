@@ -595,7 +595,7 @@
                 <node concept="17R0WA" id="6XP8jkgtKTA" role="3clFbw">
                   <node concept="2OqwBi" id="6XP8jkgtKTB" role="3uHU7w">
                     <node concept="2GrUjf" id="6XP8jkgtKTC" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="6XP8jkgtKTw" resolve="querySubstrate" />
+                      <ref role="2Gs0qQ" node="6XP8jkgtKTw" resolve="queryGradient" />
                     </node>
                     <node concept="3TrcHB" id="6XP8jkgtKTD" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -603,7 +603,7 @@
                   </node>
                   <node concept="2OqwBi" id="6XP8jkgtKTE" role="3uHU7B">
                     <node concept="2GrUjf" id="6XP8jkgtKTF" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="6XP8jkgtKSO" resolve="targetGradient" />
+                      <ref role="2Gs0qQ" node="6XP8jkgtKSO" resolve="targetSubstrate" />
                     </node>
                     <node concept="3TrcHB" id="6XP8jkgtKTG" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -616,7 +616,7 @@
                       <property role="Xl_RC" value="Substrates cannot have identical names." />
                     </node>
                     <node concept="2GrUjf" id="6XP8jkgtKTK" role="1urrMF">
-                      <ref role="2Gs0qQ" node="6XP8jkgtKSO" resolve="targetGradient" />
+                      <ref role="2Gs0qQ" node="6XP8jkgtKSO" resolve="targetSubstrate" />
                     </node>
                   </node>
                 </node>
@@ -2362,7 +2362,7 @@
             </node>
             <node concept="2OqwBi" id="cPxbW3tD_O" role="1urrMF">
               <node concept="1YBJjd" id="cPxbW3tD_P" role="2Oq$k0">
-                <ref role="1YBMHb" node="cPxbW3tDAx" resolve="shape" />
+                <ref role="1YBMHb" node="cPxbW3tDAx" resolve="substrateShapeSpherical" />
               </node>
               <node concept="3TrEf2" id="cPxbW3tD_Q" role="2OqNvi">
                 <ref role="3Tt5mk" to="s9ob:cPxbW3tFrQ" resolve="_radius" />
@@ -2378,7 +2378,7 @@
             <node concept="2OqwBi" id="cPxbW3tD_U" role="2Oq$k0">
               <node concept="2OqwBi" id="cPxbW3tD_V" role="2Oq$k0">
                 <node concept="1YBJjd" id="cPxbW3tD_W" role="2Oq$k0">
-                  <ref role="1YBMHb" node="cPxbW3tDAx" resolve="shape" />
+                  <ref role="1YBMHb" node="cPxbW3tDAx" resolve="substrateShapeSpherical" />
                 </node>
                 <node concept="3TrEf2" id="cPxbW3tD_X" role="2OqNvi">
                   <ref role="3Tt5mk" to="s9ob:cPxbW3tFrQ" resolve="_radius" />
@@ -2482,7 +2482,7 @@
             </node>
             <node concept="2OqwBi" id="ZNkh68t5oY" role="1urrMF">
               <node concept="1YBJjd" id="ZNkh68t5oZ" role="2Oq$k0">
-                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="substrateShapeSpherical" />
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
               </node>
               <node concept="3TrEf2" id="ZNkh68t5p0" role="2OqNvi">
                 <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="_depth" />
@@ -2620,7 +2620,7 @@
                     </node>
                   </node>
                   <node concept="3TrcHB" id="10MOZxVrLfi" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -2689,14 +2689,14 @@
                 <node concept="2OqwBi" id="10MOZxVrYJS" role="3clFbw">
                   <node concept="2OqwBi" id="10MOZxVrYJT" role="2Oq$k0">
                     <node concept="37vLTw" id="10MOZxVrYJU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="10MOZxVrYJE" resolve="minParamExpression" />
+                      <ref role="3cqZAo" node="10MOZxVrYJE" resolve="maxParamExpression" />
                     </node>
                     <node concept="3TrEf2" id="10MOZxVrYJV" role="2OqNvi">
                       <ref role="3Tt5mk" to="w3cn:5jwSz93TLML" resolve="Parameter" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="10MOZxVrYJW" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>

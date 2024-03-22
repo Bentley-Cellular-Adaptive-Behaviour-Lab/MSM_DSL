@@ -102,7 +102,7 @@
   <node concept="1M2fIO" id="DsR2vrUXgv">
     <ref role="1M2myG" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     <node concept="EnEH3" id="DsR2vrUXh4" role="1MhHOB">
-      <ref role="EomxK" to="yy1h:7wJJsVzwenC" resolve="maxTimeSteps" />
+      <ref role="EomxK" to="yy1h:7wJJsVzwenC" resolve="_maxTimeSteps" />
       <node concept="QB0g5" id="DsR2vrUXi1" role="QCWH9">
         <node concept="3clFbS" id="DsR2vrUXi2" role="2VODD2">
           <node concept="3clFbF" id="DsR2vrUXmW" role="3cqZAp">

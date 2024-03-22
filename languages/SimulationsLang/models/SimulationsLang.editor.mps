@@ -477,7 +477,7 @@
             </node>
           </node>
           <node concept="3F0A7n" id="2B5sNxPnwla" role="3EZMnx">
-            <ref role="1NtTu8" to="yy1h:7wJJsVzwenC" resolve="maxTimeSteps" />
+            <ref role="1NtTu8" to="yy1h:7wJJsVzwenC" resolve="_maxTimeSteps" />
             <node concept="VechU" id="59YMCJZSQ1R" role="3F10Kt">
               <property role="Vb096" value="fLwANPr/green" />
               <node concept="1iSF2X" id="59YMCJZSQ1S" role="VblUZ">
@@ -511,6 +511,10 @@
       <node concept="3F0ifn" id="72wB6_dUsw5" role="3EZMnx" />
       <node concept="3F1sOY" id="7wJJsVzwel_" role="3EZMnx">
         <ref role="1NtTu8" to="yy1h:7wJJsVzw7ex" resolve="_graphicsFacet" />
+      </node>
+      <node concept="3F0ifn" id="1WKfT4Ja06u" role="3EZMnx" />
+      <node concept="3F1sOY" id="1WKfT4Ja0bf" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:1WKfT4J9ZZN" resolve="_dockerFacet" />
       </node>
       <node concept="3F0ifn" id="5hUuDYPchLW" role="3EZMnx" />
       <node concept="3EZMnI" id="5hUuDYPchL5" role="3EZMnx">
@@ -1047,6 +1051,130 @@
       <node concept="Vb9p2" id="DsR2vrSRPZ" role="3F10Kt">
         <property role="Vbekb" value="g1_k_vY/BOLD" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="1WKfT4J78Ne">
+    <property role="3GE5qa" value="Facets" />
+    <ref role="1XX52x" to="yy1h:1WKfT4J6Pgo" resolve="DockerFacet" />
+    <node concept="3EZMnI" id="1WKfT4J78Pw" role="2wV5jI">
+      <node concept="1v6uyg" id="1WKfT4J78Tx" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3EZMnI" id="1WKfT4J78Us" role="wsdo6">
+          <node concept="3F0ifn" id="1WKfT4J78Uz" role="3EZMnx">
+            <property role="3F0ifm" value="Sets whether to run the MSM with Docker, which" />
+          </node>
+          <node concept="3F0ifn" id="1WKfT4J78UV" role="3EZMnx">
+            <property role="3F0ifm" value="utilises a pre-configured container with C++" />
+          </node>
+          <node concept="3F0ifn" id="1WKfT4J78UZ" role="3EZMnx">
+            <property role="3F0ifm" value="dependencies. Requires Docker to be installed." />
+          </node>
+          <node concept="2iRkQZ" id="1WKfT4J78Uv" role="2iSdaV" />
+        </node>
+        <node concept="3F0ifn" id="1WKfT4J78TJ" role="1j7Clw">
+          <property role="3F0ifm" value="Docker :" />
+          <node concept="VQ3r3" id="1WKfT4J7bdf" role="3F10Kt">
+            <property role="2USNnj" value="gtbM8PH/underlined" />
+          </node>
+          <node concept="2biZxu" id="1WKfT4J7bdg" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1WKfT4J7bdh" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0A7n" id="1WKfT4J78Qf" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:1WKfT4J78RT" resolve="_dockerType" />
+        <node concept="VechU" id="1WKfT4J78Qg" role="3F10Kt">
+          <property role="Vb096" value="fLwANPu/blue" />
+        </node>
+        <node concept="Vb9p2" id="1WKfT4J78Qh" role="3F10Kt">
+          <property role="Vbekb" value="g1_k_vY/BOLD" />
+        </node>
+        <node concept="2biZxu" id="1WKfT4J78Qi" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="1WKfT4J78Qj" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="257fbBg9YbD" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;- Running with &quot;" />
+        <node concept="pkWqt" id="4oPFft7pqsG" role="pqm2j">
+          <node concept="3clFbS" id="4oPFft7pqsH" role="2VODD2">
+            <node concept="3clFbF" id="4oPFft7pr2i" role="3cqZAp">
+              <node concept="2OqwBi" id="4oPFft7prhB" role="3clFbG">
+                <node concept="pncrf" id="4oPFft7pr2h" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4oPFft7pr_d" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:257fbBg8MNf" resolve="_no_cache" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1v6uyg" id="257fbBg9Ycd" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3EZMnI" id="257fbBg9Ydn" role="wsdo6">
+          <node concept="3F0ifn" id="257fbBg9Ydu" role="3EZMnx">
+            <property role="3F0ifm" value="Running Docker with no-cache causes Docker" />
+          </node>
+          <node concept="3F0ifn" id="257fbBg9Yd$" role="3EZMnx">
+            <property role="3F0ifm" value="causes Docker to remove files saved from a " />
+          </node>
+          <node concept="3F0ifn" id="257fbBg9YdL" role="3EZMnx">
+            <property role="3F0ifm" value="previous build. Use this if Docker stops working." />
+          </node>
+          <node concept="2iRkQZ" id="257fbBg9Ydq" role="2iSdaV" />
+        </node>
+        <node concept="3F0ifn" id="257fbBg9Ydh" role="1j7Clw">
+          <property role="3F0ifm" value="no-cache" />
+          <node concept="VQ3r3" id="257fbBg9Ye4" role="3F10Kt">
+            <property role="2USNnj" value="gtbM8PH/underlined" />
+          </node>
+          <node concept="pkWqt" id="4oPFft7prFP" role="pqm2j">
+            <node concept="3clFbS" id="4oPFft7prFQ" role="2VODD2">
+              <node concept="3clFbF" id="4oPFft7prGC" role="3cqZAp">
+                <node concept="2OqwBi" id="4oPFft7prH3" role="3clFbG">
+                  <node concept="pncrf" id="4oPFft7prGB" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="4oPFft7prUz" role="2OqNvi">
+                    <ref role="3TsBF5" to="yy1h:257fbBg8MNf" resolve="_no_cache" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="pkWqt" id="4oPFft7s9$_" role="pqm2j">
+          <node concept="3clFbS" id="4oPFft7s9$A" role="2VODD2">
+            <node concept="3clFbF" id="4oPFft7s9_V" role="3cqZAp">
+              <node concept="2OqwBi" id="4oPFft7s9Ns" role="3clFbG">
+                <node concept="pncrf" id="4oPFft7s9_U" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4oPFft7s9Z0" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:257fbBg8MNf" resolve="_no_cache" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="257fbBg9YcV" role="3EZMnx">
+        <property role="3F0ifm" value="&quot;." />
+        <node concept="pkWqt" id="4oPFft7ps4z" role="pqm2j">
+          <node concept="3clFbS" id="4oPFft7ps4$" role="2VODD2">
+            <node concept="3clFbF" id="4oPFft7ps5m" role="3cqZAp">
+              <node concept="2OqwBi" id="4oPFft7ps5L" role="3clFbG">
+                <node concept="pncrf" id="4oPFft7ps5l" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4oPFft7ps7v" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:257fbBg8MNf" resolve="_no_cache" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="1WKfT4J78Pz" role="2iSdaV" />
     </node>
   </node>
 </model>

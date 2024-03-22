@@ -892,7 +892,7 @@
                 </node>
               </node>
               <node concept="3TrcHB" id="10MOZxVS55c" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSweep" />
               </node>
             </node>
           </node>

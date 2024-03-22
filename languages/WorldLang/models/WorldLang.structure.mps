@@ -170,7 +170,7 @@
       <property role="IQ2ns" value="859379669173932256" />
       <property role="20kJfa" value="_speciesTarget" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyi" id="3EojsBVloFX" role="1TKVEl">
       <property role="IQ2nx" value="4222210180560292605" />
