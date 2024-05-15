@@ -1477,44 +1477,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7wd92" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7wlzu" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7wBT0" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="4oPFft7wMLs" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7wMLT" role="3uHU7w">
-                        <property role="Xl_RC" value="\\initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7wK27" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7wd90" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbKYtrt" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbKYtru" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbKYtrv" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="6dr3lbKYtrw" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbKYtrx" role="3uHU7w">
-                        <property role="Xl_RC" value="\\runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbKYtry" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbKYtrz" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="4y9zBuXll5C" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBuzKO" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBuzKP" role="1aUNEU">
@@ -1649,44 +1611,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7xrrt" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7x$oH" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7xQSl" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="4oPFft7y8Hx" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7yhL3" role="3uHU7w">
-                        <property role="Xl_RC" value="\\src\\initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7xZF2" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7xrrr" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbKYDf3" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbKYDf4" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbKYDf5" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="6dr3lbKYDf6" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbKYDf7" role="3uHU7w">
-                        <property role="Xl_RC" value="\\src\\runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbKYDf8" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbKYDf9" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="1vG5M8DnSTR" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBuKk7" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBuKk8" role="1aUNEU">
@@ -1812,8 +1736,131 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbH" id="7A6EWPRdVpU" role="3cqZAp" />
+              <node concept="3SKdUt" id="7A6EWPReoPd" role="3cqZAp">
+                <node concept="1PaTwC" id="7A6EWPReoPe" role="1aUNEU">
+                  <node concept="3oM_SD" id="7A6EWPReoUV" role="1PaTwD">
+                    <property role="3oM_SC" value="Set" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoUW" role="1PaTwD">
+                    <property role="3oM_SC" value="EOLS" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoUX" role="1PaTwD">
+                    <property role="3oM_SC" value="for" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoUY" role="1PaTwD">
+                    <property role="3oM_SC" value="shell" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoUZ" role="1PaTwD">
+                    <property role="3oM_SC" value="scripts" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoV0" role="1PaTwD">
+                    <property role="3oM_SC" value="to" />
+                  </node>
+                  <node concept="3oM_SD" id="7A6EWPReoV1" role="1PaTwD">
+                    <property role="3oM_SC" value="LF." />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="3LoyMOBvgQM" role="3cqZAp">
+                <node concept="2YIFZM" id="3LoyMOBvqLq" role="3clFbG">
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                  <node concept="2OqwBi" id="3LoyMOBw1Ac" role="37wK5m">
+                    <node concept="37vLTw" id="3LoyMOBv$wM" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1vG5M8DkgBA" resolve="new_buildScript_path" />
+                    </node>
+                    <node concept="liA8E" id="3LoyMOBwczc" role="2OqNvi">
+                      <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                    </node>
+                  </node>
+                  <node concept="Rm8GO" id="3LoyMOBwGjb" role="37wK5m">
+                    <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                    <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="7A6EWPRdXwM" role="3cqZAp" />
               <node concept="3clFbJ" id="6dr3lbKMbsx" role="3cqZAp">
                 <node concept="3clFbS" id="6dr3lbKMbsz" role="3clFbx">
+                  <node concept="3clFbF" id="4oPFft7wd92" role="3cqZAp">
+                    <node concept="37vLTI" id="4oPFft7wlzu" role="3clFbG">
+                      <node concept="2YIFZM" id="4oPFft7wBT0" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="4oPFft7wMLs" role="37wK5m">
+                          <node concept="Xl_RD" id="4oPFft7wMLT" role="3uHU7w">
+                            <property role="Xl_RC" value="\\initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="4oPFft7wK27" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="4oPFft7wd90" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6dr3lbKYtrt" role="3cqZAp">
+                    <node concept="37vLTI" id="6dr3lbKYtru" role="3clFbG">
+                      <node concept="2YIFZM" id="6dr3lbKYtrv" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="6dr3lbKYtrw" role="37wK5m">
+                          <node concept="Xl_RD" id="6dr3lbKYtrx" role="3uHU7w">
+                            <property role="Xl_RC" value="\\runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="6dr3lbKYtry" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="6dr3lbKYtrz" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRfAXr" role="3cqZAp" />
+                  <node concept="3clFbF" id="4oPFft7xrrt" role="3cqZAp">
+                    <node concept="37vLTI" id="4oPFft7x$oH" role="3clFbG">
+                      <node concept="2YIFZM" id="4oPFft7xQSl" role="37vLTx">
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <node concept="3cpWs3" id="4oPFft7y8Hx" role="37wK5m">
+                          <node concept="Xl_RD" id="4oPFft7yhL3" role="3uHU7w">
+                            <property role="Xl_RC" value="\\src\\initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="4oPFft7xZF2" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="4oPFft7xrrr" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6dr3lbKYDf3" role="3cqZAp">
+                    <node concept="37vLTI" id="6dr3lbKYDf4" role="3clFbG">
+                      <node concept="2YIFZM" id="6dr3lbKYDf5" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="6dr3lbKYDf6" role="37wK5m">
+                          <node concept="Xl_RD" id="6dr3lbKYDf7" role="3uHU7w">
+                            <property role="Xl_RC" value="\\src\\runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="6dr3lbKYDf8" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="6dr3lbKYDf9" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRfE0J" role="3cqZAp" />
                   <node concept="3clFbF" id="4oPFft7z4Y8" role="3cqZAp">
                     <node concept="2YIFZM" id="4oPFft7z4Y9" role="3clFbG">
                       <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
@@ -1846,74 +1893,49 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbH" id="7A6EWPReGe5" role="3cqZAp" />
+                  <node concept="3clFbF" id="3LoyMOBqduq" role="3cqZAp">
+                    <node concept="2YIFZM" id="3LoyMOBqnhu" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <node concept="2OqwBi" id="3LoyMOBtMH2" role="37wK5m">
+                        <node concept="37vLTw" id="3LoyMOBqwUP" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="3LoyMOBtX45" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="3LoyMOBqX7$" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRcFGO" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRcFGP" role="3clFbG">
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <node concept="2OqwBi" id="7A6EWPRcFGQ" role="37wK5m">
+                        <node concept="37vLTw" id="7A6EWPRcFGR" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="7A6EWPRcFGS" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRcFGT" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node concept="37vLTw" id="6dr3lbKMA_N" role="3clFbw">
                   <ref role="3cqZAo" node="6dr3lbKMeiD" resolve="usingDocker" />
                 </node>
               </node>
               <node concept="3clFbH" id="4oPFft7z4U9" role="3cqZAp" />
-              <node concept="3SKdUt" id="3LoyMOBuWpd" role="3cqZAp">
-                <node concept="1PaTwC" id="3LoyMOBuWpe" role="1aUNEU">
-                  <node concept="3oM_SD" id="3LoyMOBv6wb" role="1PaTwD">
-                    <property role="3oM_SC" value="Set" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBv6Dv" role="1PaTwD">
-                    <property role="3oM_SC" value="EOLS" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBv6Ih" role="1PaTwD">
-                    <property role="3oM_SC" value="for" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBwPZY" role="1PaTwD">
-                    <property role="3oM_SC" value="shell" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBwQ4n" role="1PaTwD">
-                    <property role="3oM_SC" value="scripts" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBwQaq" role="1PaTwD">
-                    <property role="3oM_SC" value="to" />
-                  </node>
-                  <node concept="3oM_SD" id="3LoyMOBwQd9" role="1PaTwD">
-                    <property role="3oM_SC" value="LF." />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="3LoyMOBqduq" role="3cqZAp">
-                <node concept="2YIFZM" id="3LoyMOBqnhu" role="3clFbG">
-                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                  <node concept="2OqwBi" id="3LoyMOBtMH2" role="37wK5m">
-                    <node concept="37vLTw" id="3LoyMOBqwUP" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                    </node>
-                    <node concept="liA8E" id="3LoyMOBtX45" role="2OqNvi">
-                      <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
-                    </node>
-                  </node>
-                  <node concept="Rm8GO" id="3LoyMOBqX7$" role="37wK5m">
-                    <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
-                    <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="3LoyMOBvgQM" role="3cqZAp">
-                <node concept="2YIFZM" id="3LoyMOBvqLq" role="3clFbG">
-                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                  <node concept="2OqwBi" id="3LoyMOBw1Ac" role="37wK5m">
-                    <node concept="37vLTw" id="3LoyMOBv$wM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1vG5M8DkgBA" resolve="new_buildScript_path" />
-                    </node>
-                    <node concept="liA8E" id="3LoyMOBwczc" role="2OqNvi">
-                      <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
-                    </node>
-                  </node>
-                  <node concept="Rm8GO" id="3LoyMOBwGjb" role="37wK5m">
-                    <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
-                    <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="1vG5M8DoSsf" role="3cqZAp" />
               <node concept="3clFbJ" id="1PDLoEBTe8v" role="3cqZAp">
                 <node concept="3clFbS" id="1PDLoEBTe8w" role="3clFbx">
                   <node concept="3clFbF" id="1vG5M8DgQSe" role="3cqZAp">
@@ -2058,7 +2080,7 @@
                       <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
                       <node concept="2OqwBi" id="3LoyMOBAMt8" role="37wK5m">
                         <node concept="37vLTw" id="3LoyMOBAMt9" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                          <ref role="3cqZAo" node="1jdEj7$huJ5" resolve="new_runParameterSweep_path" />
                         </node>
                         <node concept="liA8E" id="3LoyMOBAMta" role="2OqNvi">
                           <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
@@ -2076,7 +2098,7 @@
                       <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
                       <node concept="2OqwBi" id="3LoyMOBAMte" role="37wK5m">
                         <node concept="37vLTw" id="3LoyMOBAMtf" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1vG5M8DkgBA" resolve="new_buildScript_path" />
+                          <ref role="3cqZAo" node="1jdEj7$huJ8" resolve="new_slurmMSM_path" />
                         </node>
                         <node concept="liA8E" id="3LoyMOBAMtg" role="2OqNvi">
                           <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
@@ -2360,44 +2382,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7zx0j" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7zx0k" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7zx0l" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="4oPFft7zx0m" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7zx0n" role="3uHU7w">
-                        <property role="Xl_RC" value="/initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7zx0o" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7zx0p" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbKZQrG" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbKZQrH" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbKZQrI" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="6dr3lbKZQrJ" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbKZQrK" role="3uHU7w">
-                        <property role="Xl_RC" value="/runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbKZQrL" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbKZQrM" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="6dr3lbKZQmN" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBx6Gh" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBx6Gi" role="1aUNEU">
@@ -2535,44 +2519,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7$gVv" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7$gVw" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7$gVx" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="4oPFft7$gVy" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7$gVz" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7$gV$" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7$gV_" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbL0vx3" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbL0vx4" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbL0vx5" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="6dr3lbL0vx6" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbL0vx7" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbL0vx8" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbL0vx9" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="1jdEj7$qrlP" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBxqIm" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBxqIn" role="1aUNEU">
@@ -2698,46 +2644,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbJ" id="6dr3lbKZGDn" role="3cqZAp">
-                <node concept="3clFbS" id="6dr3lbKZGDo" role="3clFbx">
-                  <node concept="3clFbF" id="6dr3lbKZGDp" role="3cqZAp">
-                    <node concept="2YIFZM" id="6dr3lbKZGDq" role="3clFbG">
-                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                      <node concept="37vLTw" id="6dr3lbKZGDr" role="37wK5m">
-                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbKZGDs" role="37wK5m">
-                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                      </node>
-                      <node concept="Rm8GO" id="6dr3lbKZGDt" role="37wK5m">
-                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="6dr3lbKZGDu" role="3cqZAp">
-                    <node concept="2YIFZM" id="6dr3lbKZGDv" role="3clFbG">
-                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                      <node concept="37vLTw" id="6dr3lbKZGDw" role="37wK5m">
-                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbKZGDx" role="37wK5m">
-                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
-                      </node>
-                      <node concept="Rm8GO" id="6dr3lbKZGDy" role="37wK5m">
-                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="6dr3lbKZGDz" role="3clFbw">
-                  <ref role="3cqZAo" node="6dr3lbKMeiD" resolve="usingDocker" />
-                </node>
-              </node>
-              <node concept="3clFbH" id="1PDLoEBTec6" role="3cqZAp" />
+              <node concept="3clFbH" id="7A6EWPRhqaL" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBy9Bu" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBy9Bv" role="1aUNEU">
                   <node concept="3oM_SD" id="3LoyMOBy9Bw" role="1PaTwD">
@@ -2763,28 +2670,10 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="3LoyMOBy9BB" role="3cqZAp">
-                <node concept="2YIFZM" id="3LoyMOBy9BC" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
-                  <node concept="2OqwBi" id="3LoyMOBy9BD" role="37wK5m">
-                    <node concept="37vLTw" id="3LoyMOBy9BE" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                    </node>
-                    <node concept="liA8E" id="3LoyMOBy9BF" role="2OqNvi">
-                      <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
-                    </node>
-                  </node>
-                  <node concept="Rm8GO" id="3LoyMOBy9BG" role="37wK5m">
-                    <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
-                    <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="3LoyMOBy9BH" role="3cqZAp">
                 <node concept="2YIFZM" id="3LoyMOBy9BI" role="3clFbG">
-                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
                   <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
                   <node concept="2OqwBi" id="3LoyMOBy9BJ" role="37wK5m">
                     <node concept="37vLTw" id="3LoyMOBy9BK" role="2Oq$k0">
                       <ref role="3cqZAo" node="1vG5M8DkgBA" resolve="new_buildScript_path" />
@@ -2799,7 +2688,162 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="3LoyMOBy09$" role="3cqZAp" />
+              <node concept="3clFbH" id="7A6EWPRhqfM" role="3cqZAp" />
+              <node concept="3clFbJ" id="7A6EWPRgDC_" role="3cqZAp">
+                <node concept="3clFbS" id="7A6EWPRgDCA" role="3clFbx">
+                  <node concept="3clFbF" id="7A6EWPRgDCB" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRgDCC" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRgDCD" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="7A6EWPRgDCE" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRgDCF" role="3uHU7w">
+                            <property role="Xl_RC" value="/initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRgDCG" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDCH" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRgDCI" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRgDCJ" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRgDCK" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="7A6EWPRgDCL" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRgDCM" role="3uHU7w">
+                            <property role="Xl_RC" value="/runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRgDCN" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDCO" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRgDCP" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRgDCQ" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRgDCR" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRgDCS" role="37vLTx">
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <node concept="3cpWs3" id="7A6EWPRgDCT" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRgDCU" role="3uHU7w">
+                            <property role="Xl_RC" value="/src/initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRgDCV" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDCW" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRgDCX" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRgDCY" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRgDCZ" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="7A6EWPRgDD0" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRgDD1" role="3uHU7w">
+                            <property role="Xl_RC" value="/src/runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRgDD2" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDD3" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRgDD4" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRgDD5" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRgDD6" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                      <node concept="37vLTw" id="7A6EWPRgDD7" role="37wK5m">
+                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDD8" role="37wK5m">
+                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRgDD9" role="37wK5m">
+                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRgDDa" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRgDDb" role="3clFbG">
+                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <node concept="37vLTw" id="7A6EWPRgDDc" role="37wK5m">
+                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRgDDd" role="37wK5m">
+                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRgDDe" role="37wK5m">
+                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRgDDf" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRgDDg" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRgDDh" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <node concept="2OqwBi" id="7A6EWPRgDDi" role="37wK5m">
+                        <node concept="37vLTw" id="7A6EWPRgDDj" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="7A6EWPRgDDk" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRgDDl" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRgDDm" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRgDDn" role="3clFbG">
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <node concept="2OqwBi" id="7A6EWPRgDDo" role="37wK5m">
+                        <node concept="37vLTw" id="7A6EWPRgDDp" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="7A6EWPRgDDq" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRgDDr" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="7A6EWPRgDDs" role="3clFbw">
+                  <ref role="3cqZAo" node="6dr3lbKMeiD" resolve="usingDocker" />
+                </node>
+              </node>
+              <node concept="3clFbH" id="1PDLoEBTec6" role="3cqZAp" />
               <node concept="3clFbJ" id="1PDLoEBTec7" role="3cqZAp">
                 <node concept="3clFbS" id="1PDLoEBTec8" role="3clFbx">
                   <node concept="3clFbF" id="1jdEj7$mvmn" role="3cqZAp">
@@ -2974,7 +3018,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="3LoyMOBAjZ6" role="3cqZAp" />
                 </node>
                 <node concept="37vLTw" id="1PDLoEBTecp" role="3clFbw">
                   <ref role="3cqZAo" node="1PDLoEBY7qx" resolve="doingClusterAnalysis" />
@@ -3248,44 +3291,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7zN6p" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7zN6q" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7zN6r" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="4oPFft7zN6s" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7zN6t" role="3uHU7w">
-                        <property role="Xl_RC" value="/initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7zN6u" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7zN6v" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbL10OY" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbL10OZ" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbL10P0" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="6dr3lbL10P1" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbL10P2" role="3uHU7w">
-                        <property role="Xl_RC" value="/runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbL10P3" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbL10P4" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="3LoyMOByLrN" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOByVrX" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOByVrY" role="1aUNEU">
@@ -3420,44 +3425,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="4oPFft7_8Ru" role="3cqZAp">
-                <node concept="37vLTI" id="4oPFft7_8Rv" role="3clFbG">
-                  <node concept="2YIFZM" id="4oPFft7_8Rw" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="4oPFft7_8Rx" role="37wK5m">
-                      <node concept="Xl_RD" id="4oPFft7_8Ry" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/initiateDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7_8Rz" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="4oPFft7_8R$" role="37vLTJ">
-                    <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="6dr3lbL1OBD" role="3cqZAp">
-                <node concept="37vLTI" id="6dr3lbL1OBE" role="3clFbG">
-                  <node concept="2YIFZM" id="6dr3lbL1OBF" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="6dr3lbL1OBG" role="37wK5m">
-                      <node concept="Xl_RD" id="6dr3lbL1OBH" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/runDocker.sh" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbL1OBI" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6dr3lbL1OBJ" role="37vLTJ">
-                    <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="6dr3lbL1Erp" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOBzOdZ" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOBzOe0" role="1aUNEU">
@@ -3583,45 +3550,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbJ" id="6dr3lbKOvHz" role="3cqZAp">
-                <node concept="3clFbS" id="6dr3lbKOvH_" role="3clFbx">
-                  <node concept="3clFbF" id="4oPFft7A2sj" role="3cqZAp">
-                    <node concept="2YIFZM" id="4oPFft7A2sk" role="3clFbG">
-                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                      <node concept="37vLTw" id="4oPFft7A2sl" role="37wK5m">
-                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
-                      </node>
-                      <node concept="37vLTw" id="4oPFft7A2sm" role="37wK5m">
-                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                      </node>
-                      <node concept="Rm8GO" id="4oPFft7A2sn" role="37wK5m">
-                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="6dr3lbL2vbM" role="3cqZAp">
-                    <node concept="2YIFZM" id="6dr3lbL2vbN" role="3clFbG">
-                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                      <node concept="37vLTw" id="6dr3lbL2vbO" role="37wK5m">
-                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
-                      </node>
-                      <node concept="37vLTw" id="6dr3lbL2vbP" role="37wK5m">
-                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
-                      </node>
-                      <node concept="Rm8GO" id="6dr3lbL2vbQ" role="37wK5m">
-                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="6dr3lbKODcS" role="3clFbw">
-                  <ref role="3cqZAo" node="6dr3lbKMeiD" resolve="usingDocker" />
-                </node>
-              </node>
               <node concept="3clFbH" id="4oPFft7A2om" role="3cqZAp" />
               <node concept="3SKdUt" id="3LoyMOB$anf" role="3cqZAp">
                 <node concept="1PaTwC" id="3LoyMOB$ang" role="1aUNEU">
@@ -3648,24 +3576,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="3LoyMOB$mcU" role="3cqZAp">
-                <node concept="2YIFZM" id="3LoyMOB$mcV" role="3clFbG">
-                  <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
-                  <node concept="2OqwBi" id="3LoyMOB$mcW" role="37wK5m">
-                    <node concept="37vLTw" id="3LoyMOB$mcX" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
-                    </node>
-                    <node concept="liA8E" id="3LoyMOB$mcY" role="2OqNvi">
-                      <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
-                    </node>
-                  </node>
-                  <node concept="Rm8GO" id="3LoyMOB$mcZ" role="37wK5m">
-                    <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
-                    <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="3LoyMOB$md0" role="3cqZAp">
                 <node concept="2YIFZM" id="3LoyMOB$md1" role="3clFbG">
                   <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
@@ -3684,6 +3594,162 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbH" id="7A6EWPRidd0" role="3cqZAp" />
+              <node concept="3clFbJ" id="7A6EWPRk8tj" role="3cqZAp">
+                <node concept="3clFbS" id="7A6EWPRk8tk" role="3clFbx">
+                  <node concept="3clFbF" id="7A6EWPRk8tl" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRk8tm" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRk8tn" role="37vLTx">
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <node concept="3cpWs3" id="7A6EWPRk8to" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRk8tp" role="3uHU7w">
+                            <property role="Xl_RC" value="/initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRk8tq" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8tr" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRk8ts" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRk8tt" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRk8tu" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="7A6EWPRk8tv" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRk8tw" role="3uHU7w">
+                            <property role="Xl_RC" value="/runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRk8tx" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8ty" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRk8tz" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRk8t$" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRk8t_" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRk8tA" role="37vLTx">
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <node concept="3cpWs3" id="7A6EWPRk8tB" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRk8tC" role="3uHU7w">
+                            <property role="Xl_RC" value="/src/initiateDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRk8tD" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8tE" role="37vLTJ">
+                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRk8tF" role="3cqZAp">
+                    <node concept="37vLTI" id="7A6EWPRk8tG" role="3clFbG">
+                      <node concept="2YIFZM" id="7A6EWPRk8tH" role="37vLTx">
+                        <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                        <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                        <node concept="3cpWs3" id="7A6EWPRk8tI" role="37wK5m">
+                          <node concept="Xl_RD" id="7A6EWPRk8tJ" role="3uHU7w">
+                            <property role="Xl_RC" value="/src/runDocker.sh" />
+                          </node>
+                          <node concept="37vLTw" id="7A6EWPRk8tK" role="3uHU7B">
+                            <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8tL" role="37vLTJ">
+                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRk8tM" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRk8tN" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRk8tO" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                      <node concept="37vLTw" id="7A6EWPRk8tP" role="37wK5m">
+                        <ref role="3cqZAo" node="4oPFft7vjTG" resolve="old_buildDocker_path" />
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8tQ" role="37wK5m">
+                        <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRk8tR" role="37wK5m">
+                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRk8tS" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRk8tT" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                      <node concept="37vLTw" id="7A6EWPRk8tU" role="37wK5m">
+                        <ref role="3cqZAo" node="6dr3lbKWIiE" resolve="old_runDocker_path" />
+                      </node>
+                      <node concept="37vLTw" id="7A6EWPRk8tV" role="37wK5m">
+                        <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRk8tW" role="37wK5m">
+                        <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                        <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="7A6EWPRk8tX" role="3cqZAp" />
+                  <node concept="3clFbF" id="7A6EWPRk8tY" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRk8tZ" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <node concept="2OqwBi" id="7A6EWPRk8u0" role="37wK5m">
+                        <node concept="37vLTw" id="7A6EWPRk8u1" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oPFft7vW8s" resolve="new_buildDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="7A6EWPRk8u2" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRk8u3" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7A6EWPRk8u4" role="3cqZAp">
+                    <node concept="2YIFZM" id="7A6EWPRk8u5" role="3clFbG">
+                      <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                      <ref role="37wK5l" node="3LoyMOBkx5o" resolve="set_line_separators" />
+                      <node concept="2OqwBi" id="7A6EWPRk8u6" role="37wK5m">
+                        <node concept="37vLTw" id="7A6EWPRk8u7" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6dr3lbKXuZL" resolve="new_runDocker_path" />
+                        </node>
+                        <node concept="liA8E" id="7A6EWPRk8u8" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile()" resolve="toFile" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="7A6EWPRk8u9" role="37wK5m">
+                        <ref role="1Px2BO" node="3LoyMOBnbrv" resolve="allowed_EOLS" />
+                        <ref role="Rm8GQ" node="3LoyMOBnIwV" resolve="LF" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="7A6EWPRk8ua" role="3clFbw">
+                  <ref role="3cqZAo" node="6dr3lbKMeiD" resolve="usingDocker" />
+                </node>
+              </node>
+              <node concept="3clFbH" id="7A6EWPRifJT" role="3cqZAp" />
               <node concept="3clFbH" id="3LoyMOB$7Ez" role="3cqZAp" />
               <node concept="3clFbJ" id="1PDLoEBTefI" role="3cqZAp">
                 <node concept="3clFbS" id="1PDLoEBTefJ" role="3clFbx">
